@@ -50,3 +50,6 @@ Desktop.ini
 # Thumbnail cache files
 ._*
 Thumbs.db
+
+#Ignore scraped sites
+/data/scraped_sites
