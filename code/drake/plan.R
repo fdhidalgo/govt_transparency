@@ -3,7 +3,10 @@ plan <- drake_plan(
                         trigger = trigger(change = get_labels_date())),
   labels = aggregate_human_labels(human_labels),
   urls = readr::read_csv(file_in("./data/urls.csv")),
-  scraped_sites = remove_scrape_errors(import_rda(file_in("./data/scraped_sites/sites_rda/"))) #,
+  scraped_sites = remove_scrape_errors(import_rda(file_in("./data/scraped_sites/sites_rda/"))),
+  unscraped_sites = unique(labels$ST_FIPS[labels$ST_FIPS %in% as.integer(names(scraped_sites)) == FALSE &
+                                            labels$ST_FIPS %in% urls$ST_FIPS]),
+  scraped_missing = scrape_missing(unscraped_sites, urls)
   ##text_df = make_site_df(scraped_sites, labels)
 #  text_traindf = readr::read_csv(file_in("./data/scraped_sites/scraped_df.gz")),
 #  ga_df = readr::read_csv(file_in("./data/scraped_sites/ga_df.gz")),

@@ -1,4 +1,4 @@
-library(tidyverse); library(Rcrawler); library(urltools); library(rvest)
+library(tidyverse); library(rvest)
 
 scrape_website <- function(file, home_url=NULL) {
   html_page <- try(read_html(file))
@@ -27,7 +27,7 @@ scrape_website <- function(file, home_url=NULL) {
   links[grep("^//", links)] <- paste0('http:', links[grep("^//", links)])
 
   #Make relative links absolute
-  external_links <- !is.na(domain(links)) & domain(links) %in% domain(home_url) == FALSE
+  external_links <- !is.na(urltools::domain(links)) & urltools::domain(links) %in% urltools::domain(home_url) == FALSE
   #Remove external links
   link_text <- link_text[external_links == FALSE]
   links <- links[external_links == FALSE]
@@ -48,11 +48,28 @@ scrape_website <- function(file, home_url=NULL) {
 }
 
 run_spider <- function(url){
-  write_csv(tibble(url = url), path = "./code/scraper/scrapy_scraper/spiders/url_list.csv")
-  system("Rscript  ./code/scraper/scrapy_scraper/spiders/scraper.R ./code/scraper/scrapy_scraper/spiders/url_list.csv")
+  write_csv(tibble(url = url), path = "./code/scraper/site_scraper/site_scraper/spiders/url_list.csv")
+  system("Rscript  ./code/scraper/site_scraper/site_scraper/spiders/scraper.R ./code/scraper/site_scraper/site_scraper/spiders/url_list.csv")
 
-  files <- dir("./code/scraper/scrapy_scraper/spiders/sites/", recursive = TRUE, pattern = "txt$", full.names = TRUE)
+  files <- dir("./code/scraper/site_scraper/site_scraper/spiders/sites/", recursive = TRUE, pattern = "txt$", full.names = TRUE)
   scraped <- map(files, ~ try(scrape_website(file = .x, home_url = url)))
-  fs::dir_delete( fs::dir_ls("./code/scraper/scrapy_scraper/spiders/sites"))
+  fs::dir_delete( fs::dir_ls("./code/scraper/site_scraper/site_scraper/spiders/sites"))
   return(scraped)
 }
+
+scrape_missing <- function(unscraped_sites, urls){
+  unscraped_urls <- filter(urls, ST_FIPS %in% unscraped_sites) %>%
+    distinct() %>%
+    filter(!is.na(url)) %>%
+    mutate(url = paste0("http://", url))
+
+  for(i in 1:nrow(unscraped_urls)){
+    if(fs::dir_exists("./code/scraper/site_scraper/site_scraper/spiders/sites/")){
+      fs::dir_delete("./code/scraper/site_scraper/site_scraper/spiders/sites/")
+    }
+    raw_scraped_temp <- try(run_spider(url = paste0("http://", urltools::url_parse(unscraped_urls$url[i])$domain)))
+    saveRDS(raw_scraped_temp, file = paste0("./data/scraped_sites/sites_rda/", unscraped_urls$ST_FIPS[i], ".Rda"))
+  }
+  TRUE
+}
+
