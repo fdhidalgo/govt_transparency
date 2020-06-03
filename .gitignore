@@ -1,3 +1,6 @@
+#Temporary Files Downloaded by Scraper
+/code/scraper/site_scraper/site_scraper/spiders/sites/
+/code/scraper/site_scraper/site_scraper/spiders/*.csv
 # History files
 .Rhistory
 .Rapp.history
@@ -5,6 +8,8 @@
 # Session Data files
 .RData
 .Rda
+.rds
+.rda
 
 # User-specific files
 .Ruserdata

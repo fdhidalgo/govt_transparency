@@ -1,12 +1,12 @@
 
 library(quanteda)
 
-import_rda <- function(dir){
+import_rds <- function(dir){
   raw_scraped <- vector(mode = "list",
-                        length = length(dir(dir, pattern = "Rda")))
-  raw_scraped <- map(dir(dir, pattern = "Rda", full.names = TRUE), read_rds)
+                        length = length(dir(dir, pattern = "rds")))
+  raw_scraped <- map(dir(dir, pattern = "rds", full.names = TRUE), read_rds)
   names(raw_scraped) <- gsub(pattern = "^([0-9]{2,}).*",
-                             x = dir(dir, pattern = "Rda"),
+                             x = dir(dir, pattern = "rds"),
                              replacement = "\\1")
   raw_scraped <- raw_scraped[sapply(raw_scraped, class) != "try-error"]
   raw_scraped <- raw_scraped[duplicated(names(raw_scraped)) == FALSE]

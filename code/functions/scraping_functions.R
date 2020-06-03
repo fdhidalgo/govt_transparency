@@ -49,7 +49,8 @@ scrape_website <- function(file, home_url=NULL) {
 
 run_spider <- function(url){
   write_csv(tibble(url = url), path = "./code/scraper/site_scraper/site_scraper/spiders/url_list.csv")
-  system("Rscript  ./code/scraper/site_scraper/site_scraper/spiders/scraper.R ./code/scraper/site_scraper/site_scraper/spiders/url_list.csv")
+  system("Rscript  ./code/scraper/site_scraper/site_scraper/spiders/scraper.R ./code/scraper/site_scraper/site_scraper/spiders/url_list.csv",
+         timeout = 180)
 
   files <- dir("./code/scraper/site_scraper/site_scraper/spiders/sites/", recursive = TRUE, pattern = "txt$", full.names = TRUE)
   scraped <- map(files, ~ try(scrape_website(file = .x, home_url = url)))
@@ -68,7 +69,7 @@ scrape_missing <- function(unscraped_sites, urls){
       fs::dir_delete("./code/scraper/site_scraper/site_scraper/spiders/sites/")
     }
     raw_scraped_temp <- try(run_spider(url = paste0("http://", urltools::url_parse(unscraped_urls$url[i])$domain)))
-    saveRDS(raw_scraped_temp, file = paste0("./data/scraped_sites/sites_rda/", unscraped_urls$ST_FIPS[i], ".Rda"))
+    saveRDS(raw_scraped_temp, file = paste0("./data/scraped_sites/sites_rds/", unscraped_urls$ST_FIPS[i], ".rds"))
   }
   TRUE
 }

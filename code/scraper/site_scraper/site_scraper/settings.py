@@ -15,7 +15,7 @@ SPIDER_MODULES = ['site_scraper.spiders']
 NEWSPIDER_MODULE = 'site_scraper.spiders'
 DEPTH_LIMIT = 2
 COOKIES_ENABLED = True
-CLOSESPIDER_PAGECOUNT = 500
+CLOSESPIDER_PAGECOUNT = 100
 DOWNLOAD_TIMEOUT = 30
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

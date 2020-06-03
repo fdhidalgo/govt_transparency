@@ -5,7 +5,7 @@ from scrapy.linkextractors import LinkExtractor
 import csv
 import random
 
-basepath = "/Users/dhidalgo/projects/govt_transparency/code/scraper/site_scraper/site_scraper/" #path to folder containing "spiders" directory
+basepath = "./code/scraper/site_scraper/site_scraper/" #path to folder containing "spiders" directory
 
 
 
