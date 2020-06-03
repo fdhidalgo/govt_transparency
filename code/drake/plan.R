@@ -2,11 +2,20 @@ plan <- drake_plan(
   human_labels = target(download_labels(),
                         trigger = trigger(change = get_labels_date())),
   labels = aggregate_human_labels(human_labels),
-  urls = readr::read_csv(file_in("./data/urls.csv")),
-  scraped_sites = remove_scrape_errors(import_rds(file_in("./data/scraped_sites/sites_rds/"))),
-  unscraped_sites = unique(labels$ST_FIPS[labels$ST_FIPS %in% as.integer(names(scraped_sites)) == FALSE &
+
+  urls =  target(download_urls(),
+                 trigger = trigger(change = get_urls_date())),
+  scraped_sites = as.integer(str_extract(fs::dir_ls("./data/scraped_sites/sites_rds/"), "[0-9]{2,}")),
+  unscraped_sites = unique(labels$ST_FIPS[labels$ST_FIPS %in% scraped_sites == FALSE &
                                             labels$ST_FIPS %in% urls$ST_FIPS]),
-  scraped_missing = scrape_missing(unscraped_sites, urls)
+  #scraped_missing = scrape_missing(unscraped_sites, urls),
+  bad_urls = filter(urls, ST_FIPS %in% report_scraping_errors(file_in("./data/scraped_sites/sites_rds/"))) %>%
+    write_csv(path = file_out("./data/bad_urls.csv"))
+)
+
+
+  #,
+#  site_text = remove_scrape_errors(import_rds(file_in("./data/scraped_sites/sites_rds/"))),
   ##text_df = make_site_df(scraped_sites, labels)
 #  text_traindf = readr::read_csv(file_in("./data/scraped_sites/scraped_df.gz")),
 #  ga_df = readr::read_csv(file_in("./data/scraped_sites/ga_df.gz")),
@@ -38,7 +47,6 @@ plan <- drake_plan(
 #                                         output_file = file_out("analysis/classifier_performance.html"),
 #                                         quiet = TRUE,
 #                                         output_dir = "analysis")
-)
 
 
 

@@ -4,12 +4,22 @@ get_labels_date <- function(){
   googledrive::drive_get(id = "1gAp_qpH7brx-IBpkPuWfBaQ_c6H1vSGrSj4CveZvJ0g")$drive_resource[[1]]$modifiedTime
 }
 
+get_urls_date <- function(){
+  googledrive::drive_auth(email  = "fdhidalgo@gmail.com")
+  googledrive::drive_get(id = "1tC3lvUUVH4NB0yLysyZAuZUops0GdQjdUFBeEboi7so")$drive_resource[[1]]$modifiedTime
+}
+
 download_labels <- function(){
   googledrive::drive_auth(email  = "fdhidalgo@gmail.com")
   googlesheets4::gs4_auth(token = googledrive::drive_token())
   googlesheets4::read_sheet("1gAp_qpH7brx-IBpkPuWfBaQ_c6H1vSGrSj4CveZvJ0g")
 }
 
+download_urls <- function(){
+  googledrive::drive_auth(email  = "fdhidalgo@gmail.com")
+  googlesheets4::gs4_auth(token = googledrive::drive_token())
+  googlesheets4::read_sheet("1tC3lvUUVH4NB0yLysyZAuZUops0GdQjdUFBeEboi7so")
+}
 
 aggregate_human_labels <- function(human_labels){
 
@@ -39,6 +49,12 @@ aggregate_human_labels <- function(human_labels){
               label = ifelse(mean_label >= 0.5, 1, 0)) %>%
     filter(variable != "CHECK")
   labels
+}
+
+report_scraping_errors <- function(path){
+  str_extract(fs::dir_ls(path)[fs::file_size(fs::dir_ls(path)) <= 44], "[0-9]{2,}") %>%
+    na.omit %>%
+    as.integer()
 }
 
 remove_scrape_errors <-  function(x){
