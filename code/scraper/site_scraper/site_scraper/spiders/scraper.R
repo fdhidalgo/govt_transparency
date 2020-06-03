@@ -42,4 +42,4 @@ write.csv(domains, "./code/scraper/site_scraper/site_scraper/spiders/domains.csv
 cmd2 <- paste0("cd ", basepath)
 system(cmd2)
 setwd("./code/scraper/site_scraper/")
-system("/usr/local/bin/python3 -m scrapy crawl td")
+system("/usr/bin/python3 -m scrapy crawl td")

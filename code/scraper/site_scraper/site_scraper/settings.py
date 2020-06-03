@@ -17,6 +17,7 @@ DEPTH_LIMIT = 2
 COOKIES_ENABLED = True
 CLOSESPIDER_PAGECOUNT = 100
 DOWNLOAD_TIMEOUT = 30
+LOG_LEVEL = 'INFO'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'site_scraper (+http://www.yourdomain.com)'
