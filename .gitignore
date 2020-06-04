@@ -5,6 +5,9 @@
 .Rhistory
 .Rapp.history
 
+##projectile file
+.projectile
+
 # Session Data files
 .RData
 .Rda
