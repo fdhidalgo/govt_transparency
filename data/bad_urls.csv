@@ -15,6 +15,8 @@ ST_FIPS,state,city_name,url
 1378996,Georgia,Varnell city,www.cityofvarnell.com
 1707744,Illinois,Bradley village,il-bradley.civicplus.com
 1733383,Illinois,Harvey city,www.cityofharvey.org
+1748021,Illinois,Mechanicsburg village,"NA"
+1769888,Illinois,Sidney township,"NA"
 1781087,Illinois,Wheeling,www.vi.wheeling.il.us
 1842462,Indiana,Lawrenceburg city,lawrenceburg-in.com
 1865214,Indiana,Rochester city,rochester.itright.biz
@@ -23,6 +25,7 @@ ST_FIPS,state,city_name,url
 2132572,Kentucky,Grayson,www.graysonky.net
 2173110,Kentucky,Stanford,www.stanfordky.org
 2205000,Louisiana,Baton Rouge city,brgov.com
+2207030,Louisiana,Bernice town,"NA"
 2222019,Louisiana,Calcasieu Parish,www.cppj.net
 2358445,Maine,Phillips town,www.phillipsmaine.com
 2512995,Massachusetts,Chatham town,www.town.chatham.ma.us
@@ -34,7 +37,9 @@ ST_FIPS,state,city_name,url
 2712700,Minnesota,Columbia Heights,www.ci.columbia-heights.mn.us
 2758648,Minnesota,Sauk Centre,www.ci.sauk-centre.mn.us
 2808820,Mississippi,Brookhaven city,brookhavenms.com
+2909838,Missouri,Burlington Junction city,"NA"
 3111825,Nebraska,Curtis,www.curtis-ne.com
+3139695,Nebraska,Ponca city,"NA"
 3312260,New Hampshire,Chesterfield town,nhchesterfield.com
 3440440,New Jersey,Lindenwold borough,www.lindenwold.net
 3601000,New York,Albany city,www.albanyny.org
@@ -46,17 +51,18 @@ ST_FIPS,state,city_name,url
 3684000,New York,Yonkers city,www.cityofyonkers.com
 3736060,North Carolina,Kitty Hawk,www.townofkittyhawk.org
 3742860,North Carolina,Midway town,www.midway-nc.gov
+3901637,Ohio,Amanda township,"NA"
 4001700,Oklahoma,Altus city,cityofaltus.org
 4007350,Oklahoma,Bokchito town,www.bokchito.org
 4110750,Oregon,Canby city,www.ci.canby.or.us
 4208048,Pennsylvania,Bradford township,bradfordtwpmckeancnty.jimdo.com
 4223304,Pennsylvania,Ellwood City borough,www.ecboro.com
 4263624,Pennsylvania,Reading city,www.readingpa.gov
+4267120,Pennsylvania,Saegertown borough,"NA"
 4617620,South Dakota,Eagle Butte city,www.eaglebuttesd.com
 4719380,Tennessee,Dandridge town,townofdandridge.com
 4774540,Tennessee,Tiptonville,www.tiptonville.org
 4804000,Texas,Arlington city,www.arlington-tx.gov
-4819000,Texas,Dallas city,www.dallascityhall.com
 4824912,Texas,Everman city,www.evermantx.net
 4826604,Texas,Forney city,www.cityofforney.org
 4840264,Texas,Lago Vista,lagovista.org
