@@ -5,4 +5,4 @@ source("./code/functions/text_functions.R")
 
 r_outdated()
 r_make()
-#r_vis_drake_graph()
+r_vis_drake_graph()

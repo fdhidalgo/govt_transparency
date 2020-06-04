@@ -16,12 +16,14 @@ plan <- drake_plan(
   bad_urls = filter(urls, ST_FIPS %in% report_scraping_errors(file_in("./data/scraped_sites/sites_rds/"))) %>%
     write_csv(path = file_out("./data/bad_urls.csv")),
   delete_bad_urls = fs::file_delete(fs::dir_ls(file_in("./data/scraped_sites/sites_rds/"))[fs::file_size(
-    fs::dir_ls(file_in("./data/scraped_sites/sites_rds/"))) <= 44])
+    fs::dir_ls(file_in("./data/scraped_sites/sites_rds/"))) <= 44]),
+
+  site_text = remove_scrape_errors(import_rds(file_in("./data/scraped_sites/sites_rds/")))
 )
 
 
 #,
-#  site_text = remove_scrape_errors(import_rds(file_in("./data/scraped_sites/sites_rds/"))),
+
 ##text_df = make_site_df(scraped_sites, labels)
 #  text_traindf = readr::read_csv(file_in("./data/scraped_sites/scraped_df.gz")),
 #  ga_df = readr::read_csv(file_in("./data/scraped_sites/ga_df.gz")),
