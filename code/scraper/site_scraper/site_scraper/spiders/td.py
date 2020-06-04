@@ -2,10 +2,13 @@
 import scrapy
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
+from scrapy.utils.conf import closest_scrapy_cfg
 import csv
 import random
+import os
 
-basepath = "/home/dhidalgo/Dropbox (MIT)/projects/govt_transparency/code/scraper/site_scraper/site_scraper/" #path to folder containing "spiders" directory
+proj_root = os.path.dirname(closest_scrapy_cfg())
+basepath = proj_root + "/site_scraper/" #path to folder containing "spiders" directory
 
 
 
