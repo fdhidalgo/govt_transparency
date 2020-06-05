@@ -9,7 +9,7 @@ plan <- drake_plan(
                  trigger = trigger(change = get_urls_date())),
   scraped_sites = as.integer(str_extract(fs::dir_ls("./data/scraped_sites/sites_rds/"), "[0-9]{2,}")),
 
-  ##Scrape Missing
+  ##Scrape Missing Sites
   unscraped_sites = unique(labels$ST_FIPS[labels$ST_FIPS %in% scraped_sites == FALSE &
                                             labels$ST_FIPS %in% urls$ST_FIPS]),
   scraped_missing = scrape_missing(unscraped_sites, urls),
@@ -18,7 +18,12 @@ plan <- drake_plan(
   delete_bad_urls = fs::file_delete(fs::dir_ls(file_in("./data/scraped_sites/sites_rds/"))[fs::file_size(
     fs::dir_ls(file_in("./data/scraped_sites/sites_rds/"))) <= 44]),
 
-  site_text = remove_scrape_errors(import_rds(file_in("./data/scraped_sites/sites_rds/")))
+  #Create Training Data
+  site_text = remove_scrape_errors(import_rds(file_in("./data/scraped_sites/sites_rds/"))),
+  sitetext_df = create_textdf(site_text),
+
+  #Train Models
+  bdg_mod = tune_mod(data = sitetext_df, labels = labels, dv = BDG)
 )
 
 

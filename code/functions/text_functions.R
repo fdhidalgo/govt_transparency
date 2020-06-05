@@ -17,7 +17,7 @@ import_rds <- function(dir){
 
 
 get_linktext <- function(x){
-  linktext <- map(x, ~ .$link_text) %>%
+  linktext <- map(x, ~ .["link_text"]) %>%
     unlist() %>%
     str_trim()
   linktext <- linktext[!is.na(linktext)]
@@ -26,7 +26,7 @@ get_linktext <- function(x){
 }
 
 get_pagetext <- function(x){
-  pagetext <- map(x, ~ .$page_text) %>%
+  pagetext <- map(x, ~ .["page_text"]) %>%
     unlist() %>%
     str_trim()
   pagetext <- pagetext[!is.na(pagetext)]
@@ -35,7 +35,7 @@ get_pagetext <- function(x){
 }
 
 get_titletext <- function(x){
-  pagetitle <- map(x, ~ .$page_title) %>%
+  pagetitle <- map(x, ~ .["page_title"]) %>%
     unlist() %>%
     str_trim()
   pagetitle <- pagetitle[!is.na(pagetitle)]
@@ -43,25 +43,23 @@ get_titletext <- function(x){
   paste(pagetitle, collapse = " ")
 }
 
-make_textdf <- function(dfm){
-  text_df <- (quanteda::convert(dfm, to = "data.frame"))
-  names(text_df)[1] <- "ST_FIPS"
-  text_df$ST_FIPS <- as.numeric(text_df$ST_FIPS)
-  names(text_df) <- janitor::make_clean_names(names(text_df))
-  names(text_df)[1] <- toupper(names(text_df)[1])
-  text_df
+
+create_textdf <- function(text_list){
+  linktext <- map_chr(text_list, ~ get_linktext(.))
+  linktext_df <- tibble(ST_FIPS = as.numeric(names(linktext)), linktext = linktext)
+  pagetext <- map_chr(text_list, ~ get_pagetext(.))
+  pagetext_df <- tibble(ST_FIPS = as.numeric(names(pagetext)), pagetext = pagetext)
+  titletext <- map_chr(text_list, ~ get_titletext(.))
+  titletext_df <- tibble(ST_FIPS = as.numeric(names(titletext)), titletext = titletext)
+
+  left_join(linktext_df, pagetext_df) %>%
+    left_join(titletext_df)
 }
 
-make_dfm <- function(text, min_docfreq = .1){
-  names(text) <- names(text)
-  text_corpus <- corpus(text)
-  docvars(text_corpus, "ST_FIPS") <- names(text)
-  text_dfm <- dfm(text_corpus, tolower = TRUE,
-                  remove_punct = TRUE,
-                  remove_symbols = TRUE,
-                  remove_hyphens = TRUE,
-                  verbose = TRUE,
-                  remove = stopwords("english")) %>%
-    dfm_trim(min_docfreq = min_docfreq, docfreq_type = "prop") #Trimming document term matrix
-  text_dfm
+
+
+count_tokens <- function(x){
+  quanteda::corpus(x) %>%
+    quanteda::tokens(what = "fastestword") %>%
+    quanteda::ntoken()
 }
