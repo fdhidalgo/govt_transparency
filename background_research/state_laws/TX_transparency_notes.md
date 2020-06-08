@@ -1,5 +1,6 @@
 ### Texas Transparency Notes
 ***Transparency Stars Program***
+- link to Transparency Stars Entities: https://comptroller.texas.gov/transparency/local/stars/approved.php 
 - Texas Comptroller of Public Accounts' Transparency Stars program recognizes local governments for going above and beyond in their transparency efforts
 - Recognizes government entities that:
   - Open their books not only in their traditional finances, but also in the areas of contracts and procurement, economic development, public pensions and debt obligations
