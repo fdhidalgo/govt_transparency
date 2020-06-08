@@ -29,21 +29,21 @@ tune_mod <- function(data, labels,  dv){
     step_rename_at(all_predictors(), fn = ~ janitor::make_clean_names(string = .))
 
   mod_spec <- rand_forest(mode = "classification",
-                         trees = 1000,
-                         min_n = tune(),
-                         mtry = tune()
-                         ) %>%
-                           set_engine("ranger")
+                          trees = 1000,
+                          min_n = tune(),
+                          mtry = tune()
+  ) %>%
+    set_engine("ranger")
 
 
   tune_grid <- grid_latin_hypercube(
     min_n(),
     finalize(mtry(), sitetext_df),
-    size = 10
+    size = 2
   )
 
 
-  cv_folds <- vfold_cv(sitetext_df, v = 5, strata = {{dv}}, repeats = 1)
+  cv_folds <- vfold_cv(sitetext_df, v = 2, strata = {{dv}}, repeats = 1)
 
 
   wf <- workflow() %>%
@@ -57,15 +57,43 @@ tune_mod <- function(data, labels,  dv){
     grid = tune_grid,
     metrics = metric_set(accuracy, ppv, npv, roc_auc),
     control = control_grid(verbose = TRUE, pkgs = "textrecipes",
-                           save_pred = FALSE)
+                           save_pred = TRUE)
   )
 
-  metrics <- collect_metrics(tune_out) %>%
-    show_best(n = 1)
+  metrics <- show_best(tune_out, metric = "accuracy", n = 1)
+  cv_preds <- collect_predictions(tune_out, summarize = TRUE)
 
   best_hyper <- select_best(tune_out, "accuracy")
+  rm(tune_out)
+
   best_wf <- finalize_workflow(wf, best_hyper)
   model_fitted <- fit(best_wf, sitetext_df)
+  rm(best_wf)
+
   list(cv_metrics = metrics,
+       cv_preds = cv_preds,
        model_fitted = model_fitted)
+}
+
+get_pred_prob <- function(data, labels, urls, mod, dv){
+  labels_wide <- pivot_wider(select(labels, ST_FIPS, variable, label),
+                             id_cols = ST_FIPS,
+                             names_from = variable,
+                             values_from = label)
+  sitetext_df <- data %>%
+    left_join(select(labels_wide, ST_FIPS, {{dv}})) %>%
+    na.omit()
+
+  cv_preds <- mod$cv_metrics %>%
+    left_join(mod$cv_preds)
+
+  cv_preds$ST_FIPS <- sitetext_df$ST_FIPS
+
+  cv_preds <- select(cv_preds, ST_FIPS, {{dv}}, .pred_1) %>%
+    rename(pred_prob = .pred_1,
+           label = {{dv}})
+
+  cv_preds %>%
+    left_join(urls)
+
 }

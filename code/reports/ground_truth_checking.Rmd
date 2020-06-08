@@ -1,0 +1,93 @@
+---
+title: "Checking for Ground Truth Errors"
+output: github_document
+---
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+#library(gt)
+```
+
+This document lists towns that the model gets wrong on one or more indicators. For the cases listed below, not only did the model get the classification wrong, but it had high certainty over its classification. While it's very possible that the model is simply wrong, it is also possible that the "ground truth" or human label is incorrect. This type of error is a problem because it means that our estimates of model accuracy will be incorrect. 
+
+To improve our accuracy estimates, use the following table to select towns for checking. Once you check an indicator, if the ground truth label is wrong, correct it at the [master spreadsheet](https://docs.google.com/spreadsheets/d/1gAp_qpH7brx-IBpkPuWfBaQ_c6H1vSGrSj4CveZvJ0g/edit?usp=sharing). 
+
+
+```{r, get_incorrect}
+drake::loadd(bdg_pred_prob)
+drake::loadd(agd_pred_prob)
+drake::loadd(bid_pred_prob)
+drake::loadd(cafr_pred_prob)
+drake::loadd(min_pred_prob)
+drake::loadd(rec_pred_prob)
+
+
+bdg_incorrect <- bdg_pred_prob %>%
+  mutate(pred_label = as.numeric(pred_prob > .5),
+         label = as.numeric(as.character(label)), 
+         certainty = abs(label - pred_prob), 
+         indicator = "BDG") %>%
+  filter(pred_label != label & certainty > .75) %>%
+  arrange(desc(certainty)) %>%
+  select(ST_FIPS, indicator, label, state, city_name, url)
+
+agd_incorrect <- agd_pred_prob %>%
+  mutate(pred_label = as.numeric(pred_prob > .5),
+         label = as.numeric(as.character(label)), 
+         certainty = abs(label - pred_prob), 
+         indicator = "AGD") %>%
+  filter(pred_label != label & certainty > .75) %>%
+  arrange(desc(certainty)) %>%
+  select(ST_FIPS, indicator, label, state, city_name, url)
+
+bid_incorrect <- bid_pred_prob %>%
+  mutate(pred_label = as.numeric(pred_prob > .5),
+         label = as.numeric(as.character(label)), 
+         certainty = abs(label - pred_prob), 
+         indicator = "BID") %>%
+  filter(pred_label != label & certainty > .75) %>%
+  arrange(desc(certainty)) %>%
+  select(ST_FIPS, indicator, label, state, city_name, url)
+
+cafr_incorrect <- cafr_pred_prob %>%
+  mutate(pred_label = as.numeric(pred_prob > .5),
+         label = as.numeric(as.character(label)), 
+         certainty = abs(label - pred_prob), 
+         indicator = "CAFR") %>%
+  filter(pred_label != label & certainty > .7) %>%
+  arrange(desc(certainty)) %>%
+  select(ST_FIPS, indicator, label, state, city_name, url)
+
+min_incorrect <- min_pred_prob %>%
+  mutate(pred_label = as.numeric(pred_prob > .5),
+         label = as.numeric(as.character(label)), 
+         certainty = abs(label - pred_prob), 
+         indicator = "MIN") %>%
+  filter(pred_label != label & certainty > .7) %>%
+  arrange(desc(certainty)) %>%
+  select(ST_FIPS, indicator, label, state, city_name, url)
+
+rec_incorrect <- rec_pred_prob %>%
+  mutate(pred_label = as.numeric(pred_prob > .5),
+         label = as.numeric(as.character(label)), 
+         certainty = abs(label - pred_prob), 
+         indicator = "REC") %>%
+  filter(pred_label != label & certainty > .7) %>%
+  arrange(desc(certainty)) %>%
+  select(ST_FIPS, indicator, label, state, city_name, url)
+
+need_to_check <- bind_rows(bdg_incorrect, agd_incorrect, bid_incorrect,
+          cafr_incorrect, min_incorrect, rec_incorrect) %>%
+  rename(ground_truth = label) %>% 
+  arrange(ST_FIPS) %>% 
+  group_by(ST_FIPS) %>%
+  mutate(checker = sample(c("Karla", "William", "Jenny"), size = 1))  %>% 
+  ungroup()
+```
+
+
+```{r, incorrect_table}
+knitr::kable(need_to_check)
+```
+

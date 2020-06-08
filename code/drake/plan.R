@@ -38,7 +38,27 @@ plan <- drake_plan(
   min_mod = target(tune_mod(data = sitetext_df, labels = labels, dv = MIN),
                    format = "qs"),
   rec_mod = target(tune_mod(data = sitetext_df, labels = labels, dv = REC),
-                   format = "qs")
+                   format = "qs"),
+
+  bdg_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
+                urls = urls, mod = bdg_mod, dv = BDG),
+  agd_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
+                                urls = urls, mod = agd_mod, dv = AGD),
+  bid_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
+                                urls = urls, mod = bid_mod, dv = BID),
+  cafr_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
+                                urls = urls, mod = cafr_mod, dv = CAFR),
+  min_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
+                                 urls = urls, mod = min_mod, dv = MIN),
+  rec_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
+                                 urls = urls, mod = rec_mod, dv = REC),
+
+  report = rmarkdown::render(
+    knitr_in("./code/reports/ground_truth_checking.Rmd"),
+    output_format = rmarkdown::md_document(variant = "gfm"),
+    output_dir = "./reports/"
+  )
+
 )
 
 
