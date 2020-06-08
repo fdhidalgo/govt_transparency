@@ -1,8 +1,10 @@
 plan <- drake_plan(
   ##Labels
   human_labels = target(download_labels(),
-                        trigger = trigger(change = get_labels_date())),
-  labels = aggregate_human_labels(human_labels),
+                        trigger = trigger(change = get_labels_date()),
+                        format = "fst"),
+  labels = target(aggregate_human_labels(human_labels),
+                  format = "fst"),
 
   ##URLs
   urls =  target(download_urls(),
@@ -13,17 +15,30 @@ plan <- drake_plan(
   unscraped_sites = unique(labels$ST_FIPS[labels$ST_FIPS %in% scraped_sites == FALSE &
                                             labels$ST_FIPS %in% urls$ST_FIPS]),
   scraped_missing = scrape_missing(unscraped_sites, urls),
+
   bad_urls = filter(urls, ST_FIPS %in% report_scraping_errors(file_in("./data/scraped_sites/sites_rds/"))) %>%
     write_csv(path = file_out("./data/bad_urls.csv")),
   delete_bad_urls = fs::file_delete(fs::dir_ls(file_in("./data/scraped_sites/sites_rds/"))[fs::file_size(
     fs::dir_ls(file_in("./data/scraped_sites/sites_rds/"))) <= 44]),
 
   #Create Training Data
-  site_text = remove_scrape_errors(import_rds(file_in("./data/scraped_sites/sites_rds/"))),
-  sitetext_df = create_textdf(site_text),
+  site_text = target(remove_scrape_errors(import_rds(file_in("./data/scraped_sites/sites_rds/"))),
+                     format = "qs"),
+  sitetext_df = target(create_textdf(site_text), format = "qs"),
 
   #Train Models
-  bdg_mod = tune_mod(data = sitetext_df, labels = labels, dv = BDG)
+  bdg_mod = target(tune_mod(data = sitetext_df, labels = labels, dv = BDG),
+                   format = "qs"),
+  agd_mod = target(tune_mod(data = sitetext_df, labels = labels, dv = AGD),
+                   format = "qs"),
+  bid_mod =  target(tune_mod(data = sitetext_df, labels = labels, dv = BID),
+                    format = "qs"),
+  cafr_mod = target(tune_mod(data = sitetext_df, labels = labels, dv = CAFR),
+                    format = "qs"),
+  min_mod = target(tune_mod(data = sitetext_df, labels = labels, dv = MIN),
+                   format = "qs"),
+  rec_mod = target(tune_mod(data = sitetext_df, labels = labels, dv = REC),
+                   format = "qs")
 )
 
 

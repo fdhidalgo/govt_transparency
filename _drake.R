@@ -5,4 +5,7 @@ source("./code/functions/scraping_functions.R")
 source("./code/functions/text_functions.R")
 source("./code/functions/ml_functions.R")
 
-drake_config(plan)
+future::plan(future::multiprocess)
+
+drake_config(plan, parallelism = "future", jobs = 6,
+             memory_strategy = "autoclean")
