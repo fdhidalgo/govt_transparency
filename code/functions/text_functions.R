@@ -1,6 +1,3 @@
-
-library(quanteda)
-
 import_rds <- function(dir){
   raw_scraped <- vector(mode = "list",
                         length = length(dir(dir, pattern = "rds")))

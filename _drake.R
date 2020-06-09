@@ -6,6 +6,7 @@ source("./code/functions/text_functions.R")
 source("./code/functions/ml_functions.R")
 
 options(clustermq.scheduler = "multicore")
+future::plan(future::multiprocess)
 
-drake_config(plan, parallelism = "clustermq", jobs = 6,
+drake_config(plan, parallelism = "future", jobs = 3,
              memory_strategy = "autoclean")

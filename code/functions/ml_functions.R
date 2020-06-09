@@ -39,11 +39,11 @@ tune_mod <- function(data, labels,  dv){
   tune_grid <- grid_latin_hypercube(
     min_n(),
     finalize(mtry(), sitetext_df),
-    size = 2
+    size = 10
   )
 
 
-  cv_folds <- vfold_cv(sitetext_df, v = 2, strata = {{dv}}, repeats = 1)
+  cv_folds <- vfold_cv(sitetext_df, v = 5, strata = {{dv}}, repeats = 1)
 
 
   wf <- workflow() %>%
