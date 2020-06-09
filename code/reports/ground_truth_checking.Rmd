@@ -9,6 +9,8 @@ library(tidyverse)
 #library(gt)
 ```
 
+# Possible Ground Truth Errors
+
 This document lists towns that the model gets wrong on one or more indicators. For the cases listed below, not only did the model get the classification wrong, but it had high certainty over its classification. While it's very possible that the model is simply wrong, it is also possible that the "ground truth" or human label is incorrect. This type of error is a problem because it means that our estimates of model accuracy will be incorrect. 
 
 To improve our accuracy estimates, use the following table to select towns for checking. Once you check an indicator, if the ground truth label is wrong, correct it at the [master spreadsheet](https://docs.google.com/spreadsheets/d/1gAp_qpH7brx-IBpkPuWfBaQ_c6H1vSGrSj4CveZvJ0g/edit?usp=sharing). 
