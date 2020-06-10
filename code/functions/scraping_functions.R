@@ -61,6 +61,7 @@ run_spider <- function(url){
 scrape_missing <- function(unscraped_sites, urls){
   unscraped_urls <- filter(urls, ST_FIPS %in% unscraped_sites) %>%
     distinct() %>%
+    mutate(url = urltools::domain(url)) %>%
     filter(!is.na(url)) %>%
     mutate(url = paste0("http://", url))
 
@@ -72,5 +73,22 @@ scrape_missing <- function(unscraped_sites, urls){
     saveRDS(raw_scraped_temp, file = paste0("./data/scraped_sites/sites_rds/", unscraped_urls$ST_FIPS[i], ".rds"))
   }
   TRUE
+}
+
+sample_for_active_learning <- function(n = 100, urls, labels, model){
+  sample_urls <- urls %>%
+    filter(ST_FIPS %in% labels$ST_FIPS == FALSE) %>%
+    mutate(url = paste0("http://", urltools::domain(url))) %>%
+    sample_n(n)
+
+  scraped <- map(sample_urls$url, ~ run_spider(.x))
+
+  site_features <- map_df(scraped, ~ tibble(linktext = get_linktext(.x),
+                                            pagetext = get_pagetext(.x),
+                                            titletext = get_titletext(.x)
+  ))
+
+  tibble(ST_FIPS = sample_urls$ST_FIPS,
+         prob = predict(model$model_fitted, new_data = site_features, type = "prob")$.pred_1)
 }
 

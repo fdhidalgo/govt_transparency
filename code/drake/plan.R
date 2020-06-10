@@ -41,26 +41,30 @@ plan <- drake_plan(
                    format = "qs"),
 
   bdg_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-                urls = urls, mod = bdg_mod, dv = BDG),
+                                urls = urls, mod = bdg_mod, dv = BDG),
   agd_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
                                 urls = urls, mod = agd_mod, dv = AGD),
   bid_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
                                 urls = urls, mod = bid_mod, dv = BID),
   cafr_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-                                urls = urls, mod = cafr_mod, dv = CAFR),
+                                 urls = urls, mod = cafr_mod, dv = CAFR),
   min_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-                                 urls = urls, mod = min_mod, dv = MIN),
+                                urls = urls, mod = min_mod, dv = MIN),
   rec_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-                                 urls = urls, mod = rec_mod, dv = REC),
+                                urls = urls, mod = rec_mod, dv = REC),
 
-  report = rmarkdown::render(
+  bdg_act_lrn_sample = target(sample_for_active_learning(n = 100,
+                                                         urls = urls,
+                                                         labels = labels,
+                                                         model = bdg_mod),
+                              trigger = trigger(condition = TRUE)),
+
+  ground_truth_checking_report = target(rmarkdown::render(
     knitr_in("./code/reports/ground_truth_checking.Rmd"),
     output_format = rmarkdown::md_document(variant = "gfm"),
-    output_dir = "./reports/"
-  )
-
+    output_dir = "./reports/"),
+    trigger = trigger(condition = FALSE))
 )
-
 
 #,
 
