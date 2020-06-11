@@ -32,7 +32,7 @@
 	- Lots of Georgian local governments have been in violation of Sunshine laws and have had fines levied against them - a team of journalists named the SunLight Project openly attempts to promote open governments in these towns [3]
 </br>
 
-**Bibliography**
+**Bibliography** </br>
 [1] https://gfaf.org/2020/03/transparency-in-the-time-of-coronavirus-tips-for-virtual-government-meetings/ </br>
 [2] https://gfaf.org/red-book/ </br>
 [3] https://www.valdostadailytimes.com/news/local_news/freedom-of-information-georgia-laws-demand-transparency/article_8f5cb4fa-24a9-5870-8384-c79277fc68f2.html </br>
