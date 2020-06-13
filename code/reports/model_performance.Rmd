@@ -14,12 +14,13 @@ library(kableExtra)
 This document reports our estimates of the accuracy of the six models that produce our transparency classifications. The estimates are calculated using 3-fold cross calidation. 
 
 The three indicators are as follows:
-  - *accuracy*: proportion of labels that are correctly classificed. 
+
+  - *accuracy*: proportion of labels that are correctly classified. 
   - *negative predictive value*: proportion of towns labeled with a 0  with a ground truth of 0. 
   - *positive predictive value*: proportion of towns labeled with a 1 with a ground truth of 1.
 
 
-```{r, load_models, message=FALSE, warning=FALSE}
+```{r, load_models, eval=FALSE, warning=FALSE, include=TRUE, message=FALSE}
 drake::loadd(bdg_mod)
 drake::loadd(agd_mod)
 drake::loadd(bid_mod)
@@ -36,7 +37,7 @@ baseline_labels <- labels %>%
 
 ## Accuracy
 
-```{r table, message=FALSE, warning=FALSE}
+```{r table, eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 ppv <- bind_rows(filter(bdg_mod$cv_metrics, .metric == "ppv"),
           filter(agd_mod$cv_metrics, .metric == "ppv"),
           filter(bid_mod$cv_metrics, .metric == "ppv"),
@@ -73,8 +74,9 @@ bind_rows(filter(bdg_mod$cv_metrics, .metric == "accuracy"),
   left_join(baseline_labels) %>%
   left_join(ppv) %>% 
   left_join(npv) %>%
-  arrange(Indicator, Baseline, Accuracy, PPV, NPV) %>%
-  kable()
+  select(Indicator, Baseline, Accuracy, PPV, NPV) %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 
 ```
 
