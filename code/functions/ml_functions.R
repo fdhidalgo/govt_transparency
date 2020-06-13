@@ -22,8 +22,9 @@ tune_mod <- function(data, labels,  dv){
     ##Create hash of text tokens
     step_tokenize(ends_with("text")) %>%
     step_stopwords(ends_with("text")) %>%
-    step_texthash(ends_with("text"), num_terms = 10000) %>%
-    #step_tokenfilter(ends_with("text"), max_tokens = 10000) %>%
+    #step_texthash(ends_with("text"), num_terms = 10000) %>%
+    step_tokenfilter(ends_with("text"), max_tokens = 10000) %>%
+    step_tf(ends_with("text"), weight_scheme = "log normalization") %>%
     ##Remove near zero variance predictors
     step_nzv(all_predictors()) %>%
     step_rename_at(all_predictors(), fn = ~ janitor::make_clean_names(string = .))
@@ -38,12 +39,12 @@ tune_mod <- function(data, labels,  dv){
 
   tune_grid <- grid_latin_hypercube(
     min_n(),
-    finalize(mtry(), sitetext_df),
-    size = 10
+    mtry(c(10, 5000)),
+    size = 15
   )
 
 
-  cv_folds <- vfold_cv(sitetext_df, v = 5, strata = {{dv}}, repeats = 1)
+  cv_folds <- vfold_cv(sitetext_df, v = 3, strata = {{dv}}, repeats = 1)
 
 
   wf <- workflow() %>%
@@ -61,6 +62,8 @@ tune_mod <- function(data, labels,  dv){
   )
 
   metrics <- show_best(tune_out, metric = "accuracy", n = 1)
+  cv_metrics <- collect_metrics(tune_out) %>%
+    filter(mtry == metrics$mtry & min_n == metrics$min_n)
   cv_preds <- collect_predictions(tune_out, summarize = TRUE)
 
   best_hyper <- select_best(tune_out, "accuracy")
@@ -70,7 +73,7 @@ tune_mod <- function(data, labels,  dv){
   model_fitted <- fit(best_wf, sitetext_df)
   rm(best_wf)
 
-  list(cv_metrics = metrics,
+  list(cv_metrics = cv_metrics,
        cv_preds = cv_preds,
        model_fitted = model_fitted)
 }
@@ -85,6 +88,7 @@ get_pred_prob <- function(data, labels, urls, mod, dv){
     na.omit()
 
   cv_preds <- mod$cv_metrics %>%
+    filter(.metric == "accuracy") %>%
     left_join(mod$cv_preds)
 
   cv_preds$ST_FIPS <- sitetext_df$ST_FIPS

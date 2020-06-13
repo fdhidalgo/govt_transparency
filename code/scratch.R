@@ -1,31 +1,14 @@
-options(tidymodels.dark = TRUE)
-
-
 library(tidyverse)
 library(tidymodels)
 library(textrecipes)
 
-source("./code/functions/text_functions.R")
-source("./code/functions//ml_functions.R")
-
-drake::loadd(sitetext_df)
-
+drake::loadd(urls)
 drake::loadd(labels)
+drake::loadd(sitetext_df)
+drake::loadd(bdg_mod)
 
+source("./code/functions/scraping_functions.R")
+source("./code/functions/text_functions.R")
+source("./code/functions/ml_functions.R")
 
-
-bdg_tuned <- tune_mod(sitetext_df, labels, BDG)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+tune_mod(data = sitetext_df, labels = labels, dv = BDG)

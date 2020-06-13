@@ -1,0 +1,80 @@
+---
+title: "Model Accuracy"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(kableExtra)
+```
+
+This document reports our estimates of the accuracy of the six models that produce our transparency classifications. The estimates are calculated using 3-fold cross calidation. 
+
+The three indicators are as follows:
+  - *accuracy*: proportion of labels that are correctly classificed. 
+  - *negative predictive value*: proportion of towns labeled with a 0  with a ground truth of 0. 
+  - *positive predictive value*: proportion of towns labeled with a 1 with a ground truth of 1.
+
+
+```{r, load_models, message=FALSE, warning=FALSE}
+drake::loadd(bdg_mod)
+drake::loadd(agd_mod)
+drake::loadd(bid_mod)
+drake::loadd(cafr_mod)
+drake::loadd(min_mod)
+drake::loadd(rec_mod)
+
+drake::loadd(labels)
+baseline_labels <- labels %>%
+  group_by(variable) %>%
+  summarise(Baseline = round(mean(label, na.rm = TRUE), 2)) %>%
+  rename(Indicator = variable)
+```
+
+## Accuracy
+
+```{r table, message=FALSE, warning=FALSE}
+ppv <- bind_rows(filter(bdg_mod$cv_metrics, .metric == "ppv"),
+          filter(agd_mod$cv_metrics, .metric == "ppv"),
+          filter(bid_mod$cv_metrics, .metric == "ppv"),
+          filter(cafr_mod$cv_metrics, .metric == "ppv"),
+          filter(min_mod$cv_metrics, .metric == "ppv"),
+          filter(rec_mod$cv_metrics, .metric == "ppv")) %>%
+  select(mean) %>%
+  mutate(Indicator = c("BDG", "AGD", "BID", "CAFR", "MIN", "REC"),
+         PPV  = round(mean, 2)) %>%
+  select(-mean)
+
+npv <- bind_rows(filter(bdg_mod$cv_metrics, .metric == "npv"),
+          filter(agd_mod$cv_metrics, .metric == "npv"),
+          filter(bid_mod$cv_metrics, .metric == "npv"),
+          filter(cafr_mod$cv_metrics, .metric == "npv"),
+          filter(min_mod$cv_metrics, .metric == "npv"),
+          filter(rec_mod$cv_metrics, .metric == "npv")) %>%
+  select(mean) %>%
+  mutate(Indicator = c("BDG", "AGD", "BID", "CAFR", "MIN", "REC"),
+         NPV  = round(mean, 2)) %>%
+  select(-mean)
+
+
+bind_rows(filter(bdg_mod$cv_metrics, .metric == "accuracy"),
+          filter(agd_mod$cv_metrics, .metric == "accuracy"),
+          filter(bid_mod$cv_metrics, .metric == "accuracy"),
+          filter(cafr_mod$cv_metrics, .metric == "accuracy"),
+          filter(min_mod$cv_metrics, .metric == "accuracy"),
+          filter(rec_mod$cv_metrics, .metric == "accuracy")) %>%
+  select(mean) %>%
+  mutate(Indicator = c("BDG", "AGD", "BID", "CAFR", "MIN", "REC"),
+         Accuracy  = round(mean, 2)) %>%
+  select(-mean) %>%
+  left_join(baseline_labels) %>%
+  left_join(ppv) %>% 
+  left_join(npv) %>%
+  arrange(Indicator, Baseline, Accuracy, PPV, NPV) %>%
+  kable()
+
+```
+

@@ -1,4 +1,3 @@
-library(tidyverse); library(rvest)
 
 scrape_website <- function(file, home_url=NULL) {
   html_page <- try(read_html(file))
@@ -81,12 +80,16 @@ sample_for_active_learning <- function(n = 100, urls, labels, model){
     mutate(url = paste0("http://", urltools::domain(url))) %>%
     sample_n(n)
 
-  scraped <- map(sample_urls$url, ~ run_spider(.x))
+  poss_run_spider <- possibly(run_spider, NA)
+  scraped <- map(sample_urls$url, ~ poss_run_spider(.x))
+
+  scraped <- scraped[is.na(scraped) == FALSE]
 
   site_features <- map_df(scraped, ~ tibble(linktext = get_linktext(.x),
                                             pagetext = get_pagetext(.x),
                                             titletext = get_titletext(.x)
-  ))
+                                            ))
+  site_features$ST_FIPS <- sample_urls$ST_FIPS
 
   tibble(ST_FIPS = sample_urls$ST_FIPS,
          prob = predict(model$model_fitted, new_data = site_features, type = "prob")$.pred_1)
