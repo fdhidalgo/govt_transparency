@@ -52,7 +52,19 @@ such files, the disclosure of which would constitute an unwarranted invasion of 
 **Website Posting Requirements**
 - Brown Act: Agendas must be posted at least 72 hours in advance of regular meetings, and 24 hours in advance of special meetings. As of Jan 2019, agendas must be "retrievable, downloadable, indexable, and electronically searchable by commonly used Internet search applications; platform independent and machine readable."
 - Board and Staff Compensation Report: provides data on employee pay and benefits. Can be accessed at publicpay.ca.gov
-- Financial Transaction Report:required reporting of specified financial transactions.
+- Financial Transactions Reporting (must be submitted to CA State Controller):
+  - Special Districts Financial Report
+    - General Information form 
+    - Statement of Revenues, Expenditures, and Changes in Fund Balances form 
+    - Transportation form (if applicable) 
+    - Balance Sheet form 
+    - Noncurrent Assets, Deferred Outflows of Resources, Noncurrent Liabilities, and Deferred Inflows of Resources form 
+    - Debt forms (as applicable) 
+    - Debt Service Reconciliation form (if applicable) 
+    - Appropriations Limit Information form 
+   - Parcel Tax Form
+   - U.S. Bureau of the Census Supplement to the Annual Report of Special Districts 
+   - Independent Financial Audit
 - Enterprise System Catalog: 
   - Enterprise System: A multi-departmental system or a system that contains information collected about the public.
   - Link to Enterprise System Catalog: https://www.scag.ca.gov/about/Documents/Enterprise_System_Catalog.pdf
