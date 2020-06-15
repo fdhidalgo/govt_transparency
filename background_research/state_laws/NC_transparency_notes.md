@@ -3,9 +3,10 @@
 North Carolina Open Meetings Law:
 
 *	All meetings of public entities are open to the public, this includes electronic meetings as well.
-*	Internet/electronic specifics under North Carolina Open Meetings Law (Article 33c) include:
+*	Internet/electronic specifics under North Carolina Open Meetings Law (Article 33c, § 143-318.12. Public notice of official meetings) include:
 “(d)       *If a public body has a Web site and has established a schedule of regular meetings, the public body shall post the schedule of regular meetings to the Web site*.
 (e)        If a public body has a Web site that one or more of its employees maintains, *the public body shall post notice of any meeting held under subdivisions (b)(1) and (b)(2) of this section prior to the scheduled time of that meeting.*”
+* § 143-318.12, Public notice of official meetings section, was first added in 1979 and most recently amended in 2009
 https://www.ncleg.net/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_143/Article_33C.html
 
 North Carolina Public Records Law:
