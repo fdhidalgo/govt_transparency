@@ -25,7 +25,7 @@ aggregate_human_labels <- function(human_labels){
 
   trusted_coder <- c("dhidalgo", "cadibe", "elizariley", "upwork_sarah_g",
                      "alisinan", "mpapagel", "mcarleto", "jennyyu", "ambzheng",
-                     "wyang")
+                     "wyang", "kmagana")
 
   outdated_trusted_labels <- human_labels %>%
     filter(!is.na(ST_FIPS)) %>%

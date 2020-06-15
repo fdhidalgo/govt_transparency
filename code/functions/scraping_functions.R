@@ -74,7 +74,7 @@ scrape_missing <- function(unscraped_sites, urls){
   TRUE
 }
 
-sample_for_active_learning <- function(n = 100, urls, labels, model){
+sample_for_active_learning <- function(n = 100, urls, labels, recipe, model){
   sample_urls <- urls %>%
     filter(ST_FIPS %in% labels$ST_FIPS == FALSE) %>%
     mutate(url = paste0("http://", urltools::domain(url))) %>%
@@ -91,7 +91,9 @@ sample_for_active_learning <- function(n = 100, urls, labels, model){
                                             ))
   site_features$ST_FIPS <- sample_urls$ST_FIPS
 
+  test_data <- bake(recipe, new_data = site_features)
+
   tibble(ST_FIPS = sample_urls$ST_FIPS,
-         prob = predict(model$model_fitted, new_data = site_features, type = "prob")$.pred_1)
+         prob = predict(model$model_fitted, new_data = test_data, type = "prob")$.pred_1)
 }
 

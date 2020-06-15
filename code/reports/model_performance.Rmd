@@ -13,6 +13,7 @@ library(kableExtra)
 
 This document reports our estimates of the accuracy of the six models that produce our transparency classifications. The estimates are calculated using 3-fold cross calidation. 
 
+
 The three indicators are as follows:
 
   - *accuracy*: proportion of labels that are correctly classified. 
@@ -75,8 +76,7 @@ bind_rows(filter(bdg_mod$cv_metrics, .metric == "accuracy"),
   left_join(ppv) %>% 
   left_join(npv) %>%
   select(Indicator, Baseline, Accuracy, PPV, NPV) %>%
-  kable() %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  kable() 
 
 ```
 

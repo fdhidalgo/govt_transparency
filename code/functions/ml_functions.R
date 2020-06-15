@@ -1,19 +1,9 @@
-
-tune_mod <- function(data, labels,  dv){
-
-  labels_wide <- pivot_wider(select(labels, ST_FIPS, variable, label),
-                             id_cols = ST_FIPS,
-                             names_from = variable,
-                             values_from = label)
-  sitetext_df <- data %>%
-    left_join(select(labels_wide, ST_FIPS, {{dv}})) %>%
-    na.omit()
-
+make_recipe <- function(sitetext_df){
   rec_spec <- recipe(sitetext_df) %>%
     update_role(ST_FIPS, new_role = "ID") %>%
-    update_role({{dv}}, new_role = "outcome") %>%
+  #  update_role({{dv}}, new_role = "outcome") %>%
     update_role(ends_with("text"), new_role = "predictor") %>%
-    step_mutate({{dv}} := as.factor({{dv}}), skip = TRUE) %>%
+   # step_mutate({{dv}} := as.factor({{dv}}), skip = TRUE) %>%
     step_mutate(linktext_raw = linktext,
                 pagetext_raw = pagetext,
                 titletext_raw = titletext) %>%
@@ -22,12 +12,39 @@ tune_mod <- function(data, labels,  dv){
     ##Create hash of text tokens
     step_tokenize(ends_with("text")) %>%
     step_stopwords(ends_with("text")) %>%
+    step_stem(ends_with("text")) %>%
     #step_texthash(ends_with("text"), num_terms = 10000) %>%
-    step_tokenfilter(ends_with("text"), max_tokens = 10000) %>%
+    step_tokenfilter(ends_with("text"), max_tokens = 2000) %>%
     step_tf(ends_with("text"), weight_scheme = "log normalization") %>%
     ##Remove near zero variance predictors
     step_nzv(all_predictors()) %>%
     step_rename_at(all_predictors(), fn = ~ janitor::make_clean_names(string = .))
+
+  trained_rec <- prep(rec_spec, training = sitetext_df, retain = TRUE)
+  trained_rec
+}
+
+tune_mod <- function(recipe, labels,  dv){
+
+  labels_wide <- pivot_wider(select(labels, ST_FIPS, variable, label),
+                             id_cols = ST_FIPS,
+                             names_from = variable,
+                             values_from = label)
+  train_data <- juice(recipe)
+  rm(recipe)
+
+
+  train_data <- train_data %>%
+    left_join(select(labels_wide, ST_FIPS, {{dv}})) %>%
+    na.omit()
+
+  dv_chr <- as.character(quo_name(enquo(dv)))
+
+  rec_spec <- recipe(as.formula(paste(dv_chr, "~ .")), data = train_data) %>%
+    update_role(ST_FIPS, new_role = "ID") %>%
+    update_role(starts_with("tf"), new_role = "predictor") %>%
+    update_role(starts_with("textfeature"), new_role = "predictor") %>%
+    step_mutate({{dv}} := as.factor({{dv}}), skip = TRUE)
 
   mod_spec <- rand_forest(mode = "classification",
                           trees = 1000,
@@ -39,12 +56,12 @@ tune_mod <- function(data, labels,  dv){
 
   tune_grid <- grid_latin_hypercube(
     min_n(),
-    mtry(c(10, 5000)),
+    finalize(mtry(), train_data),
     size = 15
   )
 
 
-  cv_folds <- vfold_cv(sitetext_df, v = 3, strata = {{dv}}, repeats = 1)
+  cv_folds <- vfold_cv(train_data, v = 3, strata = {{dv}}, repeats = 1)
 
 
   wf <- workflow() %>%
@@ -70,7 +87,7 @@ tune_mod <- function(data, labels,  dv){
   rm(tune_out)
 
   best_wf <- finalize_workflow(wf, best_hyper)
-  model_fitted <- fit(best_wf, sitetext_df)
+  model_fitted <- fit(best_wf, train_data)
   rm(best_wf)
 
   list(cv_metrics = cv_metrics,

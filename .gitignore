@@ -1,6 +1,7 @@
 #Temporary Files Downloaded by Scraper
 /code/scraper/site_scraper/site_scraper/spiders/sites/
 /code/scraper/site_scraper/site_scraper/spiders/*.csv
+/data/embeddings/
 # History files
 .Rhistory
 .Rapp.history
