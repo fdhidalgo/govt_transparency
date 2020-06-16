@@ -4,7 +4,7 @@ args = commandArgs(trailingOnly = TRUE)
 setwd(here::here())
 
 basepath <- "./code/scraper/site_scraper/site_scraper/"  #path to folder containing "spiders" directory
-spiderpath <- paste0(basepath, "spiders/")
+spiderpath <- paste0("/tmp/")
 
 urls <- (read.csv(args[1])['url']) #either read from file or maybe run as script
 urls <- as.character(urls$url)

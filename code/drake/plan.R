@@ -56,12 +56,12 @@ plan <- drake_plan(
   #                               urls = urls, mod = rec_mod, dv = REC),
 
   ##Active Learning
-  #bdg_act_lrn_sample = target(sample_for_active_learning(n = 200,
-  #                                                       urls = urls,
-  #                                                       labels = labels,
-  #                                                       recipe = trained_rec,
-  #                                                       model = bdg_mod),
-  #                            trigger = trigger(condition = FALSE, mode = "condition")),
+  bdg_act_lrn_sample = target(sample_for_active_learning(n = 200,
+                                                         urls = urls,
+                                                         labels = labels,
+                                                         recipe = trained_rec,
+                                                         model = bdg_mod),
+                              trigger = trigger(condition = TRUE, mode = "condition")),
 
 #  ground_truth_checking_report = target(rmarkdown::render(
 #    knitr_in("./code/reports/ground_truth_checking.Rmd"),

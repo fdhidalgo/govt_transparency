@@ -40,7 +40,7 @@ class TdSpider(CrawlSpider):
 				# tfile = open(spiderpath + domain + '/' + str(counter) + ".txt", "w")
 				# tfile.write(response.text)
 				try:
-					tfile = open(spiderpath + "sites/" + domain + '/' + str(counter) + ".txt", "w")
+					tfile = open("/tmp/" + "sites/" + domain + '/' + str(counter) + ".txt", "w")
 					tfile.write(response.text)
 				except:
 					pass
