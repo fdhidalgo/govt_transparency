@@ -29,7 +29,9 @@ site_preds_nolabels <- anti_join(site_preds, select(labels, ST_FIPS, variable)) 
   left_join(urls) %>%
   group_by(ST_FIPS) %>%
   mutate(checker = sample(c("Karla", "William", "Jenny"), size = 1)) %>%
-  arrange(abs(prob - .5))
+  arrange(abs(prob - .5)) %>%
+  ungroup() %>%
+  slice(1:500)
 
 ```
 
