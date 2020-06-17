@@ -1,9 +1,9 @@
 make_recipe <- function(sitetext_df){
   rec_spec <- recipe(sitetext_df) %>%
     update_role(ST_FIPS, new_role = "ID") %>%
-  #  update_role({{dv}}, new_role = "outcome") %>%
+    #  update_role({{dv}}, new_role = "outcome") %>%
     update_role(ends_with("text"), new_role = "predictor") %>%
-   # step_mutate({{dv}} := as.factor({{dv}}), skip = TRUE) %>%
+    # step_mutate({{dv}} := as.factor({{dv}}), skip = TRUE) %>%
     step_mutate(linktext_raw = linktext,
                 pagetext_raw = pagetext,
                 titletext_raw = titletext) %>%
@@ -116,5 +116,59 @@ get_pred_prob <- function(data, labels, urls, mod, dv){
 
   cv_preds %>%
     left_join(urls)
+
+}
+
+predict_sites <- function(mods, trained_rec, rds_dir){
+  library(progress)
+
+  fs::file_delete(fs::dir_ls("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")[fs::file_size(
+    fs::dir_ls("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")) <= 44])
+
+  rds_files <- fs::dir_ls("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")
+
+  num_iters <- floor(length(rds_files)/100)
+
+  pred_list <- vector("list", length = num_iters)
+  pb <- progress_bar$new(total = num_iters)
+  for(i in 1:num_iters){
+    files <- rds_files[(1 + (i-1) * 100):(i * 100)]
+    scraped <- map(files, ~ read_rds(.x))
+
+    site_features <- map_df(scraped, ~ tibble(linktext = get_linktext(.x),
+                                              pagetext = get_pagetext(.x),
+                                              titletext = get_titletext(.x)
+    ))
+
+
+    site_features$ST_FIPS <- as.numeric(gsub(pattern = ".*/([0-9]{4,})\\..*",
+                                             x =  files,
+                                             replacement = "\\1"))
+
+    sites_pred_data <- bake(trained_rec, new_data = site_features)
+
+    bdg_preds <- tibble(ST_FIPS = sites_pred_data$ST_FIPS,
+                        prob = predict(mods$bdg_mod$model_fitted, new_data = sites_pred_data, type = "prob")$.pred_1,
+                        indicator = "BDG")
+    agd_preds <- tibble(ST_FIPS = sites_pred_data$ST_FIPS,
+                        prob = predict(mods$agd_mod$model_fitted, new_data = sites_pred_data, type = "prob")$.pred_1,
+                        indicator = "AGD")
+    bid_preds <- tibble(ST_FIPS = sites_pred_data$ST_FIPS,
+                        prob = predict(mods$bid_mod$model_fitted, new_data = sites_pred_data, type = "prob")$.pred_1,
+                        indicator = "BID")
+    cafr_preds <- tibble(ST_FIPS = sites_pred_data$ST_FIPS,
+                         prob = predict(mods$cafr_mod$model_fitted, new_data = sites_pred_data, type = "prob")$.pred_1,
+                         indicator = "CAFR")
+    min_preds <- tibble(ST_FIPS = sites_pred_data$ST_FIPS,
+                        prob = predict(mods$min_mod$model_fitted, new_data = sites_pred_data, type = "prob")$.pred_1,
+                        indicator = "MIN")
+    rec_preds <- tibble(ST_FIPS = sites_pred_data$ST_FIPS,
+                        prob = predict(mods$rec_mod$model_fitted, new_data = sites_pred_data, type = "prob")$.pred_1,
+                        indicator = "REC")
+
+    pred_list[[i]] <- bind_rows(bdg_preds, agd_preds, bid_preds, cafr_preds, min_preds, rec_preds)
+    pb$tick()
+  }
+  bind_rows(pred_list)
 
 }

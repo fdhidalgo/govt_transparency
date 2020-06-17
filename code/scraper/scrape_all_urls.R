@@ -31,3 +31,6 @@ urls <- slice_sample(ungroup(urls), n = nrow(urls))
 
 
 scrape_missing(urls)
+
+fs::file_delete(fs::dir_ls("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")[fs::file_size(
+  fs::dir_ls("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")) <= 44])

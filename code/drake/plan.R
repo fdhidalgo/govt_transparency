@@ -41,35 +41,22 @@ plan <- drake_plan(
   rec_mod = target(tune_mod(recipe = trained_rec, labels = labels, dv = REC),
                    format = "qs"),
 
-  ## Training Sample Predicted Probabilities
-  # bdg_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-  #                               urls = urls, mod = bdg_mod, dv = BDG),
-  # agd_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-  #                               urls = urls, mod = agd_mod, dv = AGD),
-  # bid_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-  #                               urls = urls, mod = bid_mod, dv = BID),
-  # cafr_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-  #                                urls = urls, mod = cafr_mod, dv = CAFR),
-  # min_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-  #                               urls = urls, mod = min_mod, dv = MIN),
-  # rec_pred_prob = get_pred_prob(data = sitetext_df, labels = labels,
-  #                               urls = urls, mod = rec_mod, dv = REC),
-
-  ##Active Learning
-  bdg_act_lrn_sample = target(sample_for_active_learning(n = 200,
-                                                         urls = urls,
-                                                         labels = labels,
-                                                         recipe = trained_rec,
-                                                         model = bdg_mod),
-                              trigger = trigger(condition = TRUE, mode = "condition")),
-
-#  ground_truth_checking_report = target(rmarkdown::render(
-#    knitr_in("./code/reports/ground_truth_checking.Rmd"),
-#    output_format = rmarkdown::md_document(variant = "gfm"),
-#    output_dir = "./reports/"),
-#    trigger = trigger(condition = FALSE, mode = "condition")),
+  ##Predict all sites
+  site_preds = target(predict_sites(mods = list(bdg_mod = bdg_mod,
+                                                agd_mod = agd_mod,
+                                                bid_mod = bid_mod,
+                                                cafr_mod = cafr_mod,
+                                                min_mod = min_mod,
+                                                rec_mod = rec_mod),
+                                    trained_rec = trained_rec,
+                                    rds_dir = drake::file_in("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")),
+                      trigger = trigger(condition = fs::dir_exists("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/"))),
   model_performance_report = target(rmarkdown::render(
     knitr_in("./code/reports/model_performance.Rmd"),
+    output_format = rmarkdown::md_document(variant = "gfm"),
+    output_dir = "./reports/")),
+  active_learning_assignments = target(rmarkdown::render(
+    knitr_in("./code/reports/active_learning_assignments.Rmd"),
     output_format = rmarkdown::md_document(variant = "gfm"),
     output_dir = "./reports/"))
 )

@@ -1,0 +1,40 @@
+---
+title: "Assignments for Active Learning"
+output: github_document
+---
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+# Improving the Model
+
+**Last Update**: `r Sys.Date()`
+
+This document lists towns that we don't have any ground truth labels for. They are arranged such that the indicators with the highest uncertainty (closest to .5) are higher in the table. The assignments are in the `checker` column.
+
+To improve our models, use the following table to select towns for checking. Once you check an indicator, enter it at the [master spreadsheet](https://docs.google.com/spreadsheets/d/1gAp_qpH7brx-IBpkPuWfBaQ_c6H1vSGrSj4CveZvJ0g/edit?usp=sharing). 
+
+Note that this document may update. If that's the case, just start from the top again. 
+
+
+```{r, get_assignments, message=FALSE}
+
+drake::loadd(urls)
+drake::loadd(labels)
+drake::loadd(site_preds)
+
+site_preds_nolabels <- anti_join(site_preds, select(labels, ST_FIPS, variable)) %>%
+  left_join(urls) %>%
+  group_by(ST_FIPS) %>%
+  mutate(checker = sample(c("Karla", "William", "Jenny"), size = 1)) %>%
+  arrange(abs(prob - .5))
+
+```
+
+
+```{r, incorrect_table}
+knitr::kable(site_preds_nolabels)
+```
+
