@@ -9,20 +9,10 @@ plan <- drake_plan(
   ##URLs
   urls =  target(download_urls(),
                  trigger = trigger(change = lubridate::date(get_urls_date()))),
-  scraped_sites = as.integer(str_extract(fs::dir_ls("./data/scraped_sites/sites_rds/"), "[0-9]{2,}")),
-
-  ##Scrape Missing Sites
-  unscraped_sites = unique(labels$ST_FIPS[labels$ST_FIPS %in% scraped_sites == FALSE &
-                                            labels$ST_FIPS %in% urls$ST_FIPS]),
-  #scraped_missing = target(scrape_missing(unscraped_sites, urls)),
-
-  bad_urls = filter(urls, ST_FIPS %in% report_scraping_errors(file_in("./data/scraped_sites/sites_rds/"))) %>%
-    write_csv(path = file_out("./data/bad_urls.csv")),
-  delete_bad_urls = fs::file_delete(fs::dir_ls(file_in("./data/scraped_sites/sites_rds/"))[fs::file_size(
-    fs::dir_ls(file_in("./data/scraped_sites/sites_rds/"))) <= 44]),
+  scraped_sites = as.integer(str_extract(dir("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/"), "[0-9]{2,}")),
 
   #Create Training Data
-  site_text = target(remove_scrape_errors(import_rds(file_in("./data/scraped_sites/sites_rds"))),
+  site_text = target(remove_scrape_errors(import_rds(unique(labels$ST_FIPS))),
                      format = "qs"),
   sitetext_df = target(create_textdf(site_text), format = "qs"),
   trained_rec = target(make_recipe(sitetext_df), format = "qs"),

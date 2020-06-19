@@ -3,33 +3,7 @@ library(tidymodels)
 library(textrecipes)
 library(rvest)
 
-##
-drake::loadd(trained_rec)
-drake::loadd(bdg_mod)
-drake::loadd(agd_mod)
-drake::loadd(bid_mod)
-drake::loadd(cafr_mod)
-drake::loadd(min_mod)
-drake::loadd(rec_mod)
 
-source("./code/functions/ml_functions.R")
-source("./code/functions/scraping_functions.R")
-source("./code/functions/pipeline_functions.R")
-source("./code/functions/text_functions.R")
-
-debug(predict_sites)
-predict_sites(mods = list(bdg_mod = bdg_mod,
-                          agd_mod = agd_mod,
-                          bid_mod = bid_mod,
-                          cafr_mod = cafr_mod,
-                          min_mod = min_mod,
-                          rec_mod = rec_mod),
-              trained_rec = trained_rec,
-              rds_dir = "/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")
-
-
-
-###
 drake::loadd(urls)
 drake::loadd(labels)
 

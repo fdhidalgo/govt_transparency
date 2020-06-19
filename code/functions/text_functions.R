@@ -1,10 +1,14 @@
-import_rds <- function(dir){
-  raw_scraped <- vector(mode = "list",
-                        length = length(dir(dir, pattern = "rds")))
-  raw_scraped <- map(dir(dir, pattern = "rds", full.names = TRUE), read_rds)
-  names(raw_scraped) <- gsub(pattern = "^([0-9]{2,}).*",
-                             x = dir(dir, pattern = "rds"),
-                             replacement = "\\1")
+import_rds <- function(st_fips){
+
+  scraped_stfips <- as.integer(str_extract(dir("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/"), "[0-9]{2,}"))
+  scraped_rds <- fs::dir_ls("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")
+  training_rds <- scraped_rds[scraped_stfips %in% st_fips]
+
+  st_fips_training <- str_extract(training_rds, "[0-9]{4,}")
+
+  raw_scraped <- map(training_rds, read_rds)
+  names(raw_scraped) <- st_fips_training
+
   raw_scraped <- raw_scraped[sapply(raw_scraped, class) != "try-error"]
   raw_scraped <- raw_scraped[duplicated(names(raw_scraped)) == FALSE]
   raw_scraped <- raw_scraped[map_dbl(raw_scraped,  ~ length(.x)) > 1]
