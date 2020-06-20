@@ -1,6 +1,6 @@
 # Improving the Model
 
-**Last Update**: 2020-06-17
+**Last Update**: 2020-06-19
 
 This document lists towns that we don’t have any ground truth labels
 for. They are arranged such that the indicators with the highest
@@ -14,505 +14,23060 @@ spreadsheet](https://docs.google.com/spreadsheets/d/1gAp_qpH7brx-IBpkPuWfBaQ_c6H
 Note that this document may update. If that’s the case, just start from
 the top again.
 
-| ST\_FIPS |      prob | indicator | state          | city\_name                | url                                     | checker |
-| -------: | --------: | :-------- | :------------- | :------------------------ | :-------------------------------------- | :------ |
-|  2685080 | 0.4999333 | CAFR      | Michigan       | Webberville village       | villageofwebberville.com                | William |
-|  2914788 | 0.4999214 | REC       | Missouri       | Clever                    | www.clevermo.com                        | William |
-|  3739600 | 0.5001122 | BDG       | North Carolina | Lucama                    | townoflucama.org                        | Jenny   |
-|  4270776 | 0.4998214 | REC       | Pennsylvania   | Silver Lake Township      | www.silverlaketwp.org                   | Jenny   |
-|  3806660 | 0.5002451 | BDG       | North Dakota   | Beulah                    | www.beulahnd.org                        | William |
-|  2910810 | 0.4996511 | AGD       | Missouri       | Camdenton                 | www.camdentoncity.com                   | Jenny   |
-|  5483500 | 0.4995476 | REC       | West Virginia  | Vienna                    | vienna-wv.com                           | William |
-|  5123376 | 0.5005268 | BDG       | Virginia       | Drakes Branch town        | www.towndrakesbranch.com                | Karla   |
-|  2660580 | 0.5005331 | BDG       | Michigan       | Olivet                    | www.cityofolivet.org                    | Karla   |
-|  3683129 | 0.5005429 | CAFR      | New York       | Worcester                 | www.rootsweb.com                        | Karla   |
-|  4543495 | 0.4993067 | BID       | South Carolina | McBee                     | townofmcbeesc.com                       | Jenny   |
-|  3627419 | 0.4992492 | BID       | New York       | Fredonia village          | villageoffredoniany.com                 | Jenny   |
-|  4663100 | 0.4992246 | BID       | South Dakota   | Tea                       | www.teasd.com                           | Jenny   |
-|   684550 | 0.4992080 | BDG       | California     | Westminster               | www.westminster-ca.gov                  | Karla   |
-|  2504545 | 0.4991595 | CAFR      | Massachusetts  | Becket                    | www.townofbecket.org                    | Jenny   |
-|  2607960 | 0.4990929 | CAFR      | Michigan       | Bessemer                  | www.cityofbessemer.org                  | Karla   |
-|  5555800 | 0.5009737 | BDG       | Wisconsin      | Neillsville city          | www.neillsville-wi.com                  | Karla   |
-|   181720 | 0.5009878 | AGD       | Alabama        | Wetumpka                  | www.cityofwetumpka.com                  | Jenny   |
-|  3352100 | 0.5010167 | REC       | New Hampshire  | New London                | www.nl-nh.com                           | Karla   |
-|  1883420 | 0.5011175 | MIN       | Indiana        | Westville town            | westville.us                            | William |
-|   114008 | 0.5011380 | MIN       | Alabama        | Chatom                    | www.chatom.org                          | Karla   |
-|  2338425 | 0.4988119 | BDG       | Maine          | Lebanon town              | www.lebanon-me.org                      | William |
-|  4027850 | 0.5013368 | BDG       | Oklahoma       | Freedom                   | www.freedomokla.com                     | Jenny   |
-|  3738860 | 0.4986546 | AGD       | North Carolina | Locust                    | www.locustnc.com                        | Karla   |
-|  3622876 | 0.5013524 | REC       | New York       | East Rockaway village     | www.villageofeastrockaway.org           | Karla   |
-|  1235900 | 0.5015238 | CAFR      | Florida        | Jupiter Inlet Colony      | www.jupiterinletcolony.org              | William |
-|  4565095 | 0.4984619 | REC       | South Carolina | Seneca                    | www.seneca.sc.us                        | William |
-|  5583825 | 0.5016683 | BDG       | Wisconsin      | Waterford                 | www.waterford-wi.org                    | William |
-|  1772546 | 0.5017274 | BID       | Illinois       | Sterling                  | ci.sterling.il.us                       | William |
-|  5528850 | 0.4982619 | CAFR      | Wisconsin      | Germantown                | townofgermantown.com                    | Jenny   |
-|  2682780 | 0.4982036 | BID       | Michigan       | Wakefield                 | www.cityofwakefield.org                 | Jenny   |
-|  1313305 | 0.5018286 | CAFR      | Georgia        | Wayne County              | www.waynecountyga.us                    | William |
-|  2685080 | 0.5018714 | REC       | Michigan       | Webberville village       | villageofwebberville.com                | William |
-|  3119350 | 0.5019221 | BDG       | Nebraska       | Gordon city               | gordon-ne.us                            | Jenny   |
-|  2743954 | 0.4980461 | AGD       | Minnesota      | Moose Lake city           | www.cityofmooselake.com                 | Jenny   |
-|  2156136 | 0.4979535 | BDG       | Kentucky       | Nicholasville             | www.nicholasville.org                   | William |
-|  1912720 | 0.5020810 | REC       | Iowa           | Chariton                  | www.chariton.org                        | Jenny   |
-|   612552 | 0.4978309 | BDG       | California     | Cerritos                  | www.ci.cerritos.ca.us                   | Karla   |
-|  2711350 | 0.5021881 | REC       | Minnesota      | Chisago City              | www.ci.chisago.mn.us                    | Karla   |
-|  1933420 | 0.4977939 | MIN       | Iowa           | Guthrie Center            | www.guthriecenter.com                   | Karla   |
-|  4863464 | 0.4977414 | AGD       | Texas          | Rotan                     | www.rotan.org                           | William |
-|  2048600 | 0.4977142 | AGD       | Kansas         | Moscow                    | www.moscow.org                          | Jenny   |
-|  1919945 | 0.4977095 | CAFR      | Iowa           | Denison                   | www.denisonia.com                       | Jenny   |
-|  1313259 | 0.4976764 | BDG       | Georgia        | Stewart County            | www.stewartcountyga.gov                 | William |
-|  1916635 | 0.4976637 | BDG       | Iowa           | Corydon city              | www.cityofcorydoniowa.com               | Karla   |
-|  2516670 | 0.4975786 | CAFR      | Massachusetts  | Deerfield town            | www.deerfieldma.us                      | Karla   |
-|  3810420 | 0.5024667 | CAFR      | North Dakota   | Buffalo                   | www.buffalond.com                       | Karla   |
-|  1966135 | 0.4974286 | REC       | Iowa           | Red Oak                   | www.redoakiowa.com                      | Karla   |
-|  2124382 | 0.5027281 | MIN       | Kentucky       | Elkhorn City              | www.elkhorncity.org                     | Karla   |
-|  3842780 | 0.4972573 | MIN       | North Dakota   | Kindred                   | cityofkindrednd.com                     | Karla   |
-|  4000200 | 0.5027476 | REC       | Oklahoma       | Ada                       | www.adaok.com                           | Karla   |
-|  3640508 | 0.5029024 | REC       | New York       | Lake George village       | www.lakegeorge.com                      | Karla   |
-|  3931402 | 0.5029262 | REC       | Ohio           | Granville village (pt.)   | granville.oh.us                         | Jenny   |
-|  5110040 | 0.4969510 | BDG       | Virginia       | Broadway                  | www.town.broadway.va.us                 | Jenny   |
-|  1207875 | 0.4969478 | BDG       | Florida        | Boynton Beach             | www.bbpd.org                            | Karla   |
-|  3644974 | 0.4968913 | MIN       | New York       | Manheim                   | www.townofmanheim.org                   | Karla   |
-|  3878180 | 0.5031547 | BDG       | North Dakota   | Taylor                    | cityoftaylornd.net                      | Karla   |
-|  3806660 | 0.5032071 | REC       | North Dakota   | Beulah                    | www.beulahnd.org                        | William |
-|  5529775 | 0.5032095 | BDG       | Wisconsin      | Goodman                   | www.townofgoodman.com                   | Jenny   |
-|  3912168 | 0.4966262 | CAFR      | Ohio           | Carlisle village          | carlisleoh.org                          | Karla   |
-|  3969708 | 0.5034306 | BID       | Ohio           | St. Paris village         | www.stparisohio.org                     | William |
-|  1259725 | 0.5034976 | REC       | Florida        | Redington Beach town      | townofredingtonbeach.com                | Jenny   |
-|  4835180 | 0.4962155 | BID       | Texas          | Hubbard city              | hubbardcity.com                         | Karla   |
-|  1905365 | 0.5038206 | BID       | Iowa           | Bedford                   | www.bedfordia.org                       | Karla   |
-|   642006 | 0.4961524 | REC       | California     | Livingston                | www.livingstoncity.com                  | William |
-|  4854960 | 0.4961095 | CAFR      | Texas          | Panhandle town            | www.panhandletx.govoffice2.com          | Jenny   |
-|  5123760 | 0.5041952 | CAFR      | Virginia       | Dumfries                  | www.dumfriesva.gov                      | Jenny   |
-|  2606460 | 0.5042738 | CAFR      | Michigan       | Bear Lake                 | www.bearlakemichigan.org                | William |
-|  4962030 | 0.5042810 | CAFR      | Utah           | Price                     | www.pricecityutah.com                   | Karla   |
-|  1816804 | 0.5043071 | CAFR      | Indiana        | Danville                  | www.danvilleindiana.org                 | Jenny   |
-|  3602044 | 0.4956905 | CAFR      | New York       | Amityville village        | amityville.com                          | Karla   |
-|  4876636 | 0.5043713 | MIN       | Texas          | Waskom                    | cityofwaskom.com                        | William |
-|   152608 | 0.5044482 | MIN       | Alabama        | Mount Vernon              | www.mtvernonal.com                      | William |
-|  3535040 | 0.5046714 | REC       | New Mexico     | Jal                       | www.cityofjal.us                        | Jenny   |
-|  3627419 | 0.4953190 | REC       | New York       | Fredonia village          | villageoffredoniany.com                 | Jenny   |
-|  1313315 | 0.4950357 | CAFR      | Georgia        | Wilcox County             | wilcoxcountygeorgia.com                 | Karla   |
-|  1752597 | 0.4949190 | CAFR      | Illinois       | New Lenox Township        | www.newlenox.org                        | Jenny   |
-|  1313171 | 0.5051000 | CAFR      | Georgia        | Lamar County              | www.lamarcountyga.com                   | Karla   |
-|  3135980 | 0.4948024 | CAFR      | Nebraska       | Ogallala city             | www.ogallala-ne.gov                     | William |
-|   868105 | 0.5052318 | BDG       | Colorado       | San Luis                  | townofsanluisco.org                     | Karla   |
-|  3683129 | 0.4947143 | REC       | New York       | Worcester                 | www.rootsweb.com                        | Karla   |
-|  2735378 | 0.4946262 | REC       | Minnesota      | Lancaster                 | www.lancastermn.org                     | Jenny   |
-|   203220 | 0.4945405 | REC       | Alaska         | Anderson                  | www.anderson.govoffice.com              | Jenny   |
-|  3417080 | 0.4945000 | REC       | New Jersey     | Delanco township          | www.delancotownship.com                 | Jenny   |
-|  4753000 | 0.4943881 | CAFR      | Tennessee      | Newport city              | www.cityofnewport-tn.com                | Karla   |
-|  5117552 | 0.5056225 | BDG       | Virginia       | Clintwood                 | www.townofclintwood.com                 | Karla   |
-|  2878360 | 0.4943716 | MIN       | Mississippi    | Waynesboro                | www.waynesboroms.us                     | William |
-|  2711350 | 0.4943438 | BDG       | Minnesota      | Chisago City              | www.ci.chisago.mn.us                    | Karla   |
-|   150312 | 0.4943262 | REC       | Alabama        | Montevallo                | www.cityofmontevallo.com                | Karla   |
-|  2538540 | 0.4943048 | CAFR      | Massachusetts  | Marion                    | www.marionma.gov                        | Jenny   |
-|  3620698 | 0.5056952 | CAFR      | New York       | Dobbs Ferry village       | www.dobbsferry.com                      | Jenny   |
-|  3964150 | 0.5057429 | CAFR      | Ohio           | Port Clinton              | www.portclinton.com                     | Jenny   |
-|  2905068 | 0.5058095 | CAFR      | Missouri       | Bethany                   | www.bethanymo.com                       | William |
-|  5133488 | 0.5058341 | BID       | Virginia       | Grottoes town             | www.ci.grottoes.va.us                   | William |
-|  2643900 | 0.5058519 | BDG       | Michigan       | Krakow Township           | www.krakowtownship.org                  | William |
-|   668014 | 0.4941321 | BID       | California     | San Juan Bautista         | www.san-juan-bautista.ca.us             | Karla   |
-|   157000 | 0.5059245 | MIN       | Alabama        | Oneonta                   | www.cityofoneonta.us                    | Karla   |
-|  1981705 | 0.4940690 | REC       | Iowa           | Walcott                   | cityofwalcott.com                       | William |
-|   167056 | 0.4939902 | MIN       | Alabama        | Russellville city         | www.russellvilleal.org                  | Karla   |
-|  3603287 | 0.4939476 | CAFR      | New York       | Austerlitz                | austerlitzny.com                        | William |
-|   885705 | 0.4939405 | REC       | Colorado       | Winter Park               | www.wpgov.com                           | Jenny   |
-|  2725280 | 0.5062734 | BID       | Minnesota      | Granite Falls             | www.granitefalls.com                    | Karla   |
-|  2756788 | 0.4937111 | BDG       | Minnesota      | St. Charles               | www.stcharlesmn.org                     | Karla   |
-|  1820728 | 0.4935929 | CAFR      | Indiana        | Elkhart                   | www.elkhartindiana.org                  | Karla   |
-|   170128 | 0.5066658 | MIN       | Alabama        | Shorter                   | www.shorteralabama.com                  | William |
-|  2518560 | 0.5066976 | BID       | Massachusetts  | East Brookfield           | www.eastbrookfieldma.us                 | Jenny   |
-|  2136604 | 0.4932920 | AGD       | Kentucky       | Highland Heights          | hhky.com                                | William |
-|  3620379 | 0.4932849 | BID       | New York       | Dering Harbor             | deringharborvillage.org                 | William |
-|  5569275 | 0.5068730 | BID       | Wisconsin      | Rome town                 | townofrome.com                          | Karla   |
-|  3678806 | 0.5069663 | MIN       | New York       | Waverly                   | www.waverlybarton.com                   | William |
-|  3544490 | 0.5071827 | BDG       | New Mexico     | Lovington                 | www.lovington.org                       | Karla   |
-|   159760 | 0.4927314 | BDG       | Alabama        | Pike Road                 | www.pikeroad.us                         | Jenny   |
-|  3945976 | 0.4924083 | BID       | Ohio           | Macedonia                 | www.macedonia.oh.us                     | William |
-|  2949394 | 0.5076631 | BDG       | Missouri       | Monroe City               | www.monroecitymo.org                    | William |
-|  1659320 | 0.5076717 | BDG       | Idaho          | Orofino city              | www.orofino.com                         | Jenny   |
-|  4880560 | 0.4923041 | BDG       | Texas          | Yoakum                    | www.cityofyoakum.org                    | Karla   |
-|  1756926 | 0.4920945 | BDG       | Illinois       | Ottawa                    | www.cityofottawa.org                    | Karla   |
-|  4250328 | 0.5080232 | BDG       | Pennsylvania   | Monaghan township         | www.monaghantownship.com                | Karla   |
-|  2221240 | 0.5081738 | REC       | Louisiana      | Donaldsonville            | www.donaldsonville-la.gov               | William |
-|   144608 | 0.4917948 | BID       | Alabama        | Loxley                    | www.townofloxley.org                    | William |
-|  3776220 | 0.5082571 | REC       | North Carolina | Zebulon                   | www.townofzebulon.org                   | Karla   |
-|  4000200 | 0.4916690 | CAFR      | Oklahoma       | Ada                       | www.adaok.com                           | Karla   |
-|  3334820 | 0.5084476 | CAFR      | New Hampshire  | Haverhill                 | www.haverhill-nh.com                    | Jenny   |
-|   104684 | 0.5087024 | REC       | Alabama        | Bayou La Batre            | cityofbayoulabatre.com                  | William |
-|   133856 | 0.5087714 | REC       | Alabama        | Headland city             | www.headlandalabama.org                 | Karla   |
-|  3332180 | 0.5090578 | AGD       | New Hampshire  | Groton                    | www.town-of-groton.com                  | William |
-|   123296 | 0.5091168 | MIN       | Alabama        | Elba                      | www.elbaalabama.net                     | William |
-|  2049100 | 0.4907718 | BDG       | Kansas         | Mulvane                   | www.mulvanekansas.com                   | William |
-|  3921602 | 0.4907586 | BDG       | Ohio           | Delphos city              | cityofdelphos.com                       | William |
-|  4615700 | 0.5092598 | BDG       | South Dakota   | Deadwood                  | www.deadwood.com                        | Jenny   |
-|  1275750 | 0.5093666 | BDG       | Florida        | Welaka                    | www.welaka-fl.gov                       | William |
-|  2020450 | 0.5094747 | MIN       | Kansas         | Ellis                     | www.ellis.ks.us                         | Karla   |
-|  4800160 | 0.4903114 | BDG       | Texas          | Abernathy city (pt.)      | cityofabernathy.org                     | William |
-|   522660 | 0.4902500 | CAFR      | Arkansas       | Fairfield Bay city        | visitfairfieldbay.com                   | William |
-|  4863464 | 0.5097889 | BDG       | Texas          | Rotan                     | www.rotan.org                           | William |
-|  3879340 | 0.4901976 | CAFR      | North Dakota   | Tower City                | www.towercitynd.com                     | Jenny   |
-|   143120 | 0.5098214 | CAFR      | Alabama        | Lincoln                   | www.lincolnalabama.com                  | Jenny   |
-|  3616067 | 0.5098738 | REC       | New York       | Clay                      | www.townofclay.org                      | Jenny   |
-|  3739600 | 0.5098905 | CAFR      | North Carolina | Lucama                    | townoflucama.org                        | Jenny   |
-|  2641920 | 0.5098929 | CAFR      | Michigan       | Jonesville city           | www.jonesville.org                      | William |
-|  2028675 | 0.4899686 | BDG       | Kansas         | Greensburg                | www.greensburgks.org                    | Jenny   |
-|  2663300 | 0.4898910 | BDG       | Michigan       | Pellston village          | www.pellstonmi.com                      | Jenny   |
-|  1982065 | 0.5102024 | REC       | Iowa           | Walnut                    | www.walnutiowa.org                      | Jenny   |
-|  4831592 | 0.5102119 | REC       | Texas          | Gun Barrel City           | www.gunbarrelcity.net                   | William |
-|  3768500 | 0.5102586 | BDG       | North Carolina | Troutman                  | www.townoftroutman.org                  | Jenny   |
-|  1311784 | 0.4896373 | BID       | Georgia        | Buford                    | www.cityofbuford.com                    | William |
-|  4741980 | 0.5104738 | CAFR      | Tennessee      | Lexington city            | lexingtontn.gov                         | Jenny   |
-|  5518525 | 0.4895207 | BDG       | Wisconsin      | Dale                      | www.townofdale.org                      | Karla   |
-|  4846968 | 0.5104978 | AGD       | Texas          | Mason                     | www.mason.tx.citygovt.org               | William |
-|  2006125 | 0.4894580 | MIN       | Kansas         | Bentley                   | www.bentleyks.webs.com                  | William |
-|  5511850 | 0.5105921 | BID       | Wisconsin      | Calamus                   | www.townofcalamus.com                   | Karla   |
-|  1313305 | 0.4893381 | REC       | Georgia        | Wayne County              | www.waynecountyga.us                    | William |
-|  3663957 | 0.4892310 | CAFR      | New York       | Round Lake                | www.roundlakevillage.org                | Karla   |
-|  4532065 | 0.5109452 | REC       | South Carolina | Hanahan city              | cityofhanahan.com                       | Jenny   |
-|  5537900 | 0.5109690 | CAFR      | Wisconsin      | Jefferson                 | www.jeffersonwis.com                    | Karla   |
-|  3622260 | 0.5109857 | CAFR      | New York       | East Hills village        | villageofeasthills.org                  | Karla   |
-|  2335240 | 0.5110493 | BDG       | Maine          | Islesboro                 | www.townofislesboro.com                 | Karla   |
-|   124256 | 0.4889101 | BDG       | Alabama        | Epes                      | www.cityofepesalabama.com               | William |
-|  1728872 | 0.5113452 | REC       | Illinois       | Geneva                    | geneva.il.us                            | Karla   |
-|   162496 | 0.4885967 | AGD       | Alabama        | Prichard                  | www.thecityofprichard.org               | William |
-|  3678168 | 0.5114190 | CAFR      | New York       | Wappingers Falls village  | www.wappingersfallsny.gov               | Karla   |
-|  3548620 | 0.5114466 | BDG       | New Mexico     | Milan village             | www.milanil.org                         | Karla   |
-|  2718152 | 0.4885214 | REC       | Minnesota      | Edgerton                  | www.edgertonmn.com                      | William |
-|  4770580 | 0.5115381 | REC       | Tennessee      | Spring Hill               | www.springhilltn.org                    | Karla   |
-|  5380500 | 0.5115857 | REC       | Washington     | Zillah                    | www.cityofzillah.us                     | Karla   |
-|  1884122 | 0.5116929 | REC       | Indiana        | Whiting                   | whitingindiana.com                      | William |
-|  4870904 | 0.5117583 | BID       | Texas          | Sulphur Springs city      | www.sulphurspringstx.org                | William |
-|  2151978 | 0.5117628 | BDG       | Kentucky       | Middletown                | cityofmiddletownky.org                  | Karla   |
-|  1351604 | 0.5118653 | MIN       | Georgia        | Milner city               | milnerga.com                            | Karla   |
-|  3768580 | 0.4879131 | BID       | North Carolina | Tryon                     | www.tryon-nc.com                        | Karla   |
-|  3467020 | 0.5121255 | BDG       | New Jersey     | Shiloh borough            | shilohborough.com                       | Jenny   |
-|  4816240 | 0.4878151 | BID       | Texas          | Commerce                  | commercetx.org                          | William |
-|  4863782 | 0.5122340 | BDG       | Texas          | Runaway Bay city          | www.runawaybaytexas.com                 | Jenny   |
-|  4976900 | 0.4877351 | BDG       | Utah           | Toquerville               | www.toquerville.org                     | Karla   |
-|  2171454 | 0.4877262 | REC       | Kentucky       | Smiths Grove city         | www.smithsgrove.org                     | Karla   |
-|  4642260 | 0.4875765 | BDG       | South Dakota   | Milbank                   | www.milbanksd.com                       | Karla   |
-|  3739600 | 0.5124640 | AGD       | North Carolina | Lucama                    | townoflucama.org                        | Jenny   |
-|  5117440 | 0.4874571 | REC       | Virginia       | Clifton Forge             | www.cliftonforgeva.gov                  | Karla   |
-|  4251496 | 0.5126277 | MIN       | Pennsylvania   | Mount Carmel borough      | www.mountcarmelborough.org              | Karla   |
-|  3638583 | 0.4871306 | MIN       | New York       | Jerusalem                 | jerusalem-ny.org                        | Jenny   |
-|  3712860 | 0.4869433 | BID       | North Carolina | Clayton                   | www.townofclaytonnc.org                 | William |
-|  1742496 | 0.4868496 | BDG       | Illinois       | Lebanon city              | www.lebanonil.org                       | Karla   |
-|  3612771 | 0.5131715 | MIN       | New York       | Castile                   | www.castileny.com                       | Jenny   |
-|  2921502 | 0.4868189 | MIN       | Missouri       | El Dorado Springs city    | www.cityofeldoradospringsmo.com         | Jenny   |
-|   515460 | 0.4867904 | BDG       | Arkansas       | Corning                   | www.corningar.gov                       | Jenny   |
-|  4281576 | 0.5132738 | REC       | Pennsylvania   | Watson Township           | www.watsontwp.org                       | William |
-|  2660860 | 0.5132968 | BDG       | Michigan       | Ontonagon village         | villageofontonagon.org                  | Jenny   |
-|  2744476 | 0.4866452 | REC       | Minnesota      | Mound city                | cityofmound.com                         | Jenny   |
-|  2938072 | 0.4864667 | REC       | Missouri       | Kearney                   | www.ci.kearney.mo.us                    | William |
-|  5515725 | 0.5136087 | BID       | Wisconsin      | Clintonville              | clintonvillewi.org                      | Jenny   |
-|   664224 | 0.4863717 | MIN       | California     | Salinas                   | www.cityofsalinas.org                   | Karla   |
-|  3140920 | 0.4863585 | AGD       | Nebraska       | Red Cloud                 | www.visitredcloud.com                   | William |
-|  3714280 | 0.5136547 | BDG       | North Carolina | Connelly Springs          | connellysprings.com                     | William |
-|  1905365 | 0.4863048 | REC       | Iowa           | Bedford                   | www.bedfordia.org                       | Karla   |
-|  3106610 | 0.5137067 | BID       | Nebraska       | Broken Bow                | www.cityofbrokenbow.org                 | Karla   |
-|  1906355 | 0.4862810 | REC       | Iowa           | Bettendorf                | www.bettendorf.org                      | Jenny   |
-|  4876228 | 0.5138143 | CAFR      | Texas          | Waller                    | www.wallertexas.com                     | William |
-|  3716180 | 0.5138690 | CAFR      | North Carolina | Dallas                    | www.dallasnc.net                        | Jenny   |
-|  2703070 | 0.5139753 | BDG       | Minnesota      | Avon                      | www.cityofavonmn.com                    | Jenny   |
-|  3738860 | 0.4858262 | REC       | North Carolina | Locust                    | www.locustnc.com                        | Karla   |
-|  2722652 | 0.4857676 | AGD       | Minnesota      | Freeport                  | freeportmn.org                          | William |
-|  3665541 | 0.5144409 | BID       | New York       | Schodack                  | www.schodack.org                        | Jenny   |
-|  4027850 | 0.4855542 | AGD       | Oklahoma       | Freedom                   | www.freedomokla.com                     | Jenny   |
-|  2746348 | 0.4854840 | BDG       | Minnesota      | Nisswa                    | cityofnisswa.com                        | William |
-|  3112315 | 0.5145214 | REC       | Nebraska       | David City                | davidcityne.com                         | Karla   |
-|  3417080 | 0.4854286 | CAFR      | New Jersey     | Delanco township          | www.delancotownship.com                 | Jenny   |
-|  1778370 | 0.4854190 | REC       | Illinois       | Wadsworth village         | www.villageofwadsworth.org              | William |
-|   959980 | 0.4853429 | CAFR      | Connecticut    | Plainfield                | www.plainfieldct.org                    | Jenny   |
-|   124256 | 0.4849881 | BID       | Alabama        | Epes                      | www.cityofepesalabama.com               | William |
-|  2700172 | 0.5150479 | BDG       | Minnesota      | Ada                       | www.adamn.gov                           | Karla   |
-|  2746348 | 0.4848381 | CAFR      | Minnesota      | Nisswa                    | cityofnisswa.com                        | William |
-|  3813180 | 0.4847659 | BDG       | North Dakota   | Center                    | www.centernd.net                        | Karla   |
-|   119360 | 0.4847619 | CAFR      | Alabama        | Daleville                 | www.dalevilleal.com                     | Jenny   |
-|  3317140 | 0.4847290 | BID       | New Hampshire  | Danville                  | www.townofdanville.org                  | William |
-|  1911080 | 0.5152908 | AGD       | Iowa           | Carroll                   | www.cityofcarroll.com                   | Jenny   |
-|  5380500 | 0.4845977 | BDG       | Washington     | Zillah                    | www.cityofzillah.us                     | Karla   |
-|  3958828 | 0.5154500 | REC       | Ohio           | Orrville city             | www.orrville.com                        | Karla   |
-|  2911638 | 0.5154526 | MIN       | Missouri       | Carterville               | www.cartervillemo.com                   | William |
-|  2640320 | 0.4844524 | CAFR      | Michigan       | Imlay City                | www.imlaycity.org                       | Jenny   |
-|  2330550 | 0.5155548 | REC       | Maine          | Hallowell                 | www.hallowell.govoffice.com             | Karla   |
-|  2744044 | 0.5156333 | REC       | Minnesota      | Mora                      | ci.mora.mn.us                           | William |
-|  4247968 | 0.5156557 | AGD       | Pennsylvania   | Marysville borough        | www.marysvilleboro.com                  | Karla   |
-|  2613880 | 0.5156714 | REC       | Michigan       | Cass City                 | casscity.org                            | Jenny   |
-|   812635 | 0.5157357 | REC       | Colorado       | Cedaredge town            | cedaredgecolorado.com                   | William |
-|  3316980 | 0.4842338 | BDG       | New Hampshire  | Danbury                   | www.townofdanburynh.com                 | Jenny   |
-|  1222975 | 0.4842000 | BID       | Florida        | Florida City              | www.floridacityfl.gov                   | Karla   |
-|  4235520 | 0.5158000 | REC       | Pennsylvania   | Honesdale borough         | honesdaleborough.com                    | Karla   |
-|  4500550 | 0.5158643 | REC       | South Carolina | Aiken                     | www.cityofaikensc.gov                   | Jenny   |
-|  1982065 | 0.4841321 | BID       | Iowa           | Walnut                    | www.walnutiowa.org                      | Jenny   |
-|  1275750 | 0.5159929 | REC       | Florida        | Welaka                    | www.welaka-fl.gov                       | William |
-|  4758080 | 0.5160249 | BDG       | Tennessee      | Pigeon Forge              | www.mypigeonforge.com                   | Jenny   |
-|  1847448 | 0.4838833 | REC       | Indiana        | Martinsville              | www.martinsville.in.gov                 | Karla   |
-|  3332180 | 0.4837157 | BDG       | New Hampshire  | Groton                    | www.town-of-groton.com                  | William |
-|  3661148 | 0.5163452 | REC       | New York       | Rensselaer city           | www.rensselaerny.gov                    | Karla   |
-|  4806060 | 0.5166976 | REC       | Texas          | Bayou Vista               | bayouvista.us                           | Karla   |
-|  1644290 | 0.5167336 | BDG       | Idaho          | Kuna                      | www.cityofkuna.com                      | Karla   |
-|   169120 | 0.5167452 | REC       | Alabama        | Selma                     | www.selma-al.gov                        | William |
-|   855045 | 0.4831663 | MIN       | Colorado       | Nunn                      | www.nunncolorado.com                    | Karla   |
-|  3618663 | 0.5168865 | MIN       | New York       | Covert                    | www.townofcovert.org                    | Jenny   |
-|  1982065 | 0.4831071 | CAFR      | Iowa           | Walnut                    | www.walnutiowa.org                      | Jenny   |
-|   959980 | 0.5169300 | AGD       | Connecticut    | Plainfield                | www.plainfieldct.org                    | Jenny   |
-|  1814716 | 0.4828190 | REC       | Indiana        | Columbia City             | columbiacity.net                        | William |
-|  2663720 | 0.4824810 | CAFR      | Michigan       | Perry township            | perrytownship-mi.us                     | Karla   |
-|  3675506 | 0.5175381 | REC       | New York       | Trumansburg               | trumansburg-ny.gov                      | Karla   |
-|  3618663 | 0.5176232 | BDG       | New York       | Covert                    | www.townofcovert.org                    | Jenny   |
-|  1222975 | 0.4823436 | AGD       | Florida        | Florida City              | www.floridacityfl.gov                   | Karla   |
-|  4269752 | 0.4823383 | BDG       | Pennsylvania   | Sharon Hill borough       | sharonhillboro.com                      | Karla   |
-|  4175150 | 0.5176970 | BDG       | Oregon         | Turner city               | www.cityofturner.org                    | William |
-|  4829660 | 0.4822929 | CAFR      | Texas          | Gladewater city           | www.cityofgladewater.com                | Karla   |
-|  4258432 | 0.5178929 | CAFR      | Pennsylvania   | Patton borough            | www.pattonboro.com                      | Karla   |
-|  2753656 | 0.5180024 | REC       | Minnesota      | Redwood Falls             | www.ci.redwood-falls.mn.us              | William |
-|  1880504 | 0.5180952 | CAFR      | Indiana        | Washington city           | www.washingtonin.us                     | Karla   |
-|  3474210 | 0.5181405 | BID       | New Jersey     | Tuckerton                 | www.tuckertonborough.com                | Jenny   |
-|   109208 | 0.4818357 | BDG       | Alabama        | Brewton                   | www.cityofbrewton.org                   | Karla   |
-|  2675820 | 0.4818071 | REC       | Michigan       | Spring Lake               | www.springlakevillage.org               | Karla   |
-|   142640 | 0.4818043 | MIN       | Alabama        | Lexington                 | www.lexingtonal.org                     | Jenny   |
-|  3628651 | 0.5182048 | BID       | New York       | Geneva (town), New York   | townofgeneva.com                        | Karla   |
-|  3135980 | 0.5182810 | REC       | Nebraska       | Ogallala city             | www.ogallala-ne.gov                     | William |
-|  2660860 | 0.5183833 | CAFR      | Michigan       | Ontonagon village         | villageofontonagon.org                  | Jenny   |
-|  2040225 | 0.5184294 | BID       | Kansas         | Liberty Township          | www.marioncoks.net                      | Karla   |
-|  4548355 | 0.5184703 | AGD       | South Carolina | Mount Croghan             | www.mtcroghan.com                       | Karla   |
-|  3727870 | 0.4813881 | REC       | North Carolina | Green Level town          | greenlevelnc.com                        | Karla   |
-|  2047425 | 0.4813262 | BDG       | Kansas         | Mission Woods             | missionwoods-ks.org                     | Jenny   |
-|  3739600 | 0.4813179 | BID       | North Carolina | Lucama                    | townoflucama.org                        | Jenny   |
-|  2771086 | 0.5187095 | CAFR      | Minnesota      | Winsted                   | winsted.mn.us                           | William |
-|  1735398 | 0.5187570 | AGD       | Illinois       | Hoffman village           | www.villageofhoffman.us                 | Jenny   |
-|  2952742 | 0.4811668 | MIN       | Missouri       | Noel                      | www.4noel.com                           | William |
-|  4871960 | 0.5188347 | BDG       | Texas          | Taylor Lake Village       | www.taylorlakevillage.us                | Karla   |
-|  3111195 | 0.5188456 | BDG       | Nebraska       | Crawford                  | crawfordnebraska.net                    | Jenny   |
-|  1644290 | 0.4811113 | AGD       | Idaho          | Kuna                      | www.cityofkuna.com                      | Karla   |
-|  5569275 | 0.5189405 | CAFR      | Wisconsin      | Rome town                 | townofrome.com                          | Karla   |
-|  3612188 | 0.5189832 | BDG       | New York       | Canastota village         | canastota.com                           | Jenny   |
-|  3670420 | 0.4810000 | REC       | New York       | Spring Valley village     | www.villagespringvalley.org             | William |
-|  4615700 | 0.4809810 | CAFR      | South Dakota   | Deadwood                  | www.deadwood.com                        | Jenny   |
-|  4057600 | 0.4808721 | MIN       | Oklahoma       | Pawhuska                  | www.pawhuska.com                        | Jenny   |
-|  1912765 | 0.4807929 | REC       | Iowa           | Charles City              | cityofcharlescity.org                   | Karla   |
-|  5516300 | 0.5193762 | CAFR      | Wisconsin      | Colfax town               | www.villageofcolfaxwi.org               | William |
-|  3520270 | 0.5194381 | REC       | New Mexico     | Deming city               | cityofdeming.org                        | Jenny   |
-|  5071425 | 0.4805333 | CAFR      | Vermont        | Sunderland town           | www.sunderlandvt.org                    | Karla   |
-|  4507255 | 0.5194905 | REC       | South Carolina | Blythewood                | www.townofblythewoodsc.gov              | Karla   |
-|  1706756 | 0.4804846 | BDG       | Illinois       | Blue Mound village        | www.bluemoundsvillage.com               | Karla   |
-|  1905365 | 0.4804677 | BDG       | Iowa           | Bedford                   | www.bedfordia.org                       | Karla   |
-|  4860044 | 0.5196626 | BDG       | Texas          | Quanah                    | www.quanahnet.com                       | Jenny   |
-|   570100 | 0.4802564 | BDG       | Arkansas       | Tuckerman                 | www.tuckermanar.net                     | William |
-|   133448 | 0.4802262 | BID       | Alabama        | Hartselle city            | www.hartselle.org                       | Jenny   |
-|  1769875 | 0.5198000 | CAFR      | Illinois       | Sidney village            | <http://villageofsidney.com/index.html> | William |
-|  4948610 | 0.4801691 | AGD       | Utah           | Marysvale                 | www.marysvaleutah.org                   | Karla   |
-|  5505200 | 0.4801140 | BDG       | Wisconsin      | Bass Lake                 | basslakewi.gov                          | Jenny   |
-|  2545000 | 0.5199643 | REC       | Massachusetts  | New Bedford               | www.newbedford-ma.gov                   | Karla   |
-|  2725604 | 0.5200304 | BDG       | Minnesota      | Greenbush                 | greenbushmn.govoffice2.com              | Karla   |
-|  4863464 | 0.4798905 | REC       | Texas          | Rotan                     | www.rotan.org                           | William |
-|  4256608 | 0.4796940 | AGD       | Pennsylvania   | Old Lycoming Township     | www.oldlycomingtwp.org                  | Jenny   |
-|  3766040 | 0.5203361 | BDG       | North Carolina | Surf City, North Carolina | www.townofsurfcity.com                  | Jenny   |
-|  4113750 | 0.4796630 | BDG       | Oregon         | Clatskanie city           | cityofclatskanie.com                    | William |
-|  4753000 | 0.4796524 | REC       | Tennessee      | Newport city              | www.cityofnewport-tn.com                | Karla   |
-|  2652940 | 0.5204833 | REC       | Michigan       | Melvindale                | www.melvindale.org                      | Karla   |
-|   167056 | 0.5205904 | BDG       | Alabama        | Russellville city         | www.russellvilleal.org                  | Karla   |
-|  3474210 | 0.5206475 | AGD       | New Jersey     | Tuckerton                 | www.tuckertonborough.com                | Jenny   |
-|  5371960 | 0.4793230 | BID       | Washington     | Toppenish                 | www.cityoftoppenish.us                  | Karla   |
-|  2342520 | 0.5208229 | AGD       | Maine          | Madawaska                 | www.townofmadawaska.com                 | Karla   |
-|  3768500 | 0.4791703 | AGD       | North Carolina | Troutman                  | www.townoftroutman.org                  | Jenny   |
-|  2652940 | 0.4790690 | BID       | Michigan       | Melvindale                | www.melvindale.org                      | Karla   |
-|  2606460 | 0.4790524 | REC       | Michigan       | Bear Lake                 | www.bearlakemichigan.org                | William |
-|   163288 | 0.4790508 | BID       | Alabama        | Rainbow City city         | www.rbcalabama.com                      | Karla   |
-|  3638583 | 0.4790413 | BDG       | New York       | Jerusalem                 | jerusalem-ny.org                        | Jenny   |
-|  5333000 | 0.4789774 | BID       | Washington     | Ilwaco                    | www.ilwaco-wa.gov                       | William |
-|  4211336 | 0.5210448 | BID       | Pennsylvania   | Carnegie borough          | carnegieborough.com                     | Jenny   |
-|  3710240 | 0.4789313 | BID       | North Carolina | Canton                    | www.cantonnc.com                        | Jenny   |
-|  3470110 | 0.5212258 | BID       | New Jersey     | Spring Lake borough       | springlakeboro.org                      | Karla   |
-|   828690 | 0.5212274 | AGD       | Colorado       | Frisco                    | www.townoffrisco.com                    | Karla   |
-|  3137280 | 0.5213190 | CAFR      | Nebraska       | Ord                       | www.ordnebraska.com                     | Jenny   |
-|   552970 | 0.5213429 | REC       | Arkansas       | Ozark city                | www.cityofozarkar.com                   | Jenny   |
-|  5515725 | 0.5214929 | REC       | Wisconsin      | Clintonville              | clintonvillewi.org                      | Jenny   |
-|  2772328 | 0.5215167 | REC       | Minnesota      | Zumbrota city             | ci.zumbrota.mn.us                       | Karla   |
-|  2452825 | 0.5216178 | BDG       | Maryland       | Millington town           | www.millingtonmd.us                     | Jenny   |
-|  2338425 | 0.4781333 | CAFR      | Maine          | Lebanon town              | www.lebanon-me.org                      | William |
-|  4758080 | 0.4780976 | CAFR      | Tennessee      | Pigeon Forge              | www.mypigeonforge.com                   | Jenny   |
-|  4513015 | 0.4779980 | BDG       | South Carolina | Central town              | cityofcentral.org                       | Karla   |
-|  2711800 | 0.4779071 | REC       | Minnesota      | Clearwater                | www.clearwatercity.com                  | Karla   |
-|  2854840 | 0.4778929 | BID       | Mississippi    | Oxford                    | www.oxfordms.net                        | William |
-|  3677684 | 0.5223476 | CAFR      | New York       | Voorheesville village     | www.villageofvoorheesville.com          | Karla   |
-|  4722000 | 0.5223697 | MIN       | Tennessee      | Dunlap                    | www.sequatchie.com                      | William |
-|   134816 | 0.5224810 | CAFR      | Alabama        | Hillsboro town            | www.hillsborotx.org                     | Jenny   |
-|   144608 | 0.4774381 | AGD       | Alabama        | Loxley                    | www.townofloxley.org                    | William |
-|  5575625 | 0.5226519 | BDG       | Wisconsin      | Spooner city              | cityofspooner.org                       | Karla   |
-|   653896 | 0.5227143 | REC       | California     | Ontario                   | www.ci.ontario.ca.us                    | Karla   |
-|  1847448 | 0.5228190 | BID       | Indiana        | Martinsville              | www.martinsville.in.gov                 | Karla   |
-|  1361628 | 0.4768906 | AGD       | Georgia        | Plains                    | www.plainsgeorgia.org                   | Jenny   |
-|  2171688 | 0.4766714 | CAFR      | Kentucky       | Somerset                  | www.cityofsomerset.com                  | William |
-|  5535850 | 0.4766595 | CAFR      | Wisconsin      | Hortonville               | www.hortonvillewi.org                   | William |
-|  3137280 | 0.4766020 | BDG       | Nebraska       | Ord                       | www.ordnebraska.com                     | Jenny   |
-|  5135000 | 0.5234044 | BDG       | Virginia       | Hampton                   | www.hampton.gov                         | Jenny   |
-|  2467400 | 0.4765333 | CAFR      | Maryland       | Rock Hall                 | www.rockhallmd.com                      | Jenny   |
-|  2420050 | 0.5234897 | BDG       | Maryland       | Cottage City              | www.cottagecitymd.gov                   | Karla   |
-|  1270345 | 0.4764417 | BID       | Florida        | Sweetwater city           | www.cityofsweetwater.fl.gov             | Karla   |
-|   143120 | 0.4763952 | REC       | Alabama        | Lincoln                   | www.lincolnalabama.com                  | Jenny   |
-|  4175550 | 0.5236188 | BDG       | Oregon         | Ukiah                     | www.cityofukiahoregon.com               | Jenny   |
-|  2656160 | 0.5236833 | AGD       | Michigan       | Mundy Township            | www.mundytwp-mi.gov                     | Jenny   |
-|  2153130 | 0.4763159 | BDG       | Kentucky       | Monticello                | www.monticelloky.com                    | Jenny   |
-|  3343220 | 0.5236937 | BID       | New Hampshire  | Londonderry               | www.londonderrynh.org                   | Jenny   |
-|  3667411 | 0.5237258 | BID       | New York       | Silver Creek village      | silvercreekny.com                       | Jenny   |
-|  3661148 | 0.5237266 | BID       | New York       | Rensselaer city           | www.rensselaerny.gov                    | Karla   |
-|  2634000 | 0.4762379 | AGD       | Michigan       | Grand Rapids              | www.grcity.us                           | William |
-|  2026300 | 0.4762164 | BDG       | Kansas         | Girard                    | www.girardkansas.gov                    | William |
-|  4611220 | 0.5238273 | MIN       | South Dakota   | Chamberlain               | www.chamberlainsd.com                   | William |
-|  1814716 | 0.5238834 | AGD       | Indiana        | Columbia City             | columbiacity.net                        | William |
-|  3921602 | 0.5240714 | REC       | Ohio           | Delphos city              | cityofdelphos.com                       | William |
-|  4741980 | 0.5240802 | BID       | Tennessee      | Lexington city            | lexingtontn.gov                         | Jenny   |
-|  2629220 | 0.5241095 | REC       | Michigan       | Flushing Township         | www.flushingtownship.com                | William |
-|  3602044 | 0.5243091 | BDG       | New York       | Amityville village        | amityville.com                          | Karla   |
-|  4057550 | 0.4756348 | BDG       | Oklahoma       | Pauls Valley              | www.paulsvalley.com                     | Jenny   |
-|  3684143 | 0.5244597 | BDG       | New York       | Youngstown village        | youngstownnewyork.us                    | Jenny   |
-|  5509225 | 0.5247067 | BDG       | Wisconsin      | Bradley                   | www.townofbradley.org                   | William |
-|  2184891 | 0.4752695 | BDG       | Kentucky       | Worthington Hills         | www.worthingtonhillsky.org              | William |
-|  5511525 | 0.4750940 | AGD       | Wisconsin      | Butternut                 | www.butternutwi.com                     | William |
-|   128552 | 0.5249429 | MIN       | Alabama        | Fultondale                | www.cityoffultondale.com                | Karla   |
-|  1343668 | 0.4750177 | MIN       | Georgia        | Kingston                  | www.cityofkingstonga.org                | William |
-|  4079450 | 0.5249956 | BDG       | Oklahoma       | Weatherford               | cityofweatherford.com                   | William |
-|  4543495 | 0.4749857 | AGD       | South Carolina | McBee                     | townofmcbeesc.com                       | Jenny   |
-|   922280 | 0.4749602 | MIN       | Connecticut    | East Haddam               | www.easthaddam.org                      | Karla   |
-|  4831592 | 0.4749567 | BID       | Texas          | Gun Barrel City           | www.gunbarrelcity.net                   | William |
-|  1349616 | 0.5250595 | CAFR      | Georgia        | Mansfield city            | www.mansfieldga.gov                     | William |
-|  1735398 | 0.5250650 | MIN       | Illinois       | Hoffman village           | www.villageofhoffman.us                 | Jenny   |
-|   619990 | 0.4749190 | CAFR      | California     | Duarte                    | www.accessduarte.com                    | Jenny   |
-|  3842020 | 0.5250833 | REC       | North Dakota   | Kenmare                   | www.kenmarend.com                       | Jenny   |
-|  4837156 | 0.5251143 | BID       | Texas          | Jacinto City              | www.jacintocity-tx.gov                  | Jenny   |
-|  3938052 | 0.4748561 | MIN       | Ohio           | Jackson Township          | www.jackson-sandusky.com                | William |
-|  3635694 | 0.5251631 | BID       | New York       | Horseheads village        | www.horseheads.org                      | Karla   |
-|  3668286 | 0.4748258 | AGD       | New York       | Solvay village            | villageofsolvay.com                     | Jenny   |
-|  2667625 | 0.4747417 | AGD       | Michigan       | Redford                   | www.redfordtwp.com                      | Jenny   |
-|  1829718 | 0.5252619 | REC       | Indiana        | Greensburg                | www.cityofgreensburg.com                | Karla   |
-|   125840 | 0.5252719 | BDG       | Alabama        | Fayette                   | fayetteal.org                           | Karla   |
-|  3677684 | 0.5253012 | BID       | New York       | Voorheesville village     | www.villageofvoorheesville.com          | Karla   |
-|  2910810 | 0.5253056 | BID       | Missouri       | Camdenton                 | www.camdentoncity.com                   | Jenny   |
-|  2627960 | 0.5253139 | BDG       | Michigan       | Ferrysburg                | www.ferrysburg.org                      | William |
-|  1769875 | 0.5253893 | BDG       | Illinois       | Sidney village            | <http://villageofsidney.com/index.html> | William |
-|  3638748 | 0.5254286 | BID       | New York       | Johnson City village      | www.villageofjc.com                     | Karla   |
-|  3937016 | 0.5255000 | CAFR      | Ohio           | Huron                     | www.cityofhuron.org                     | Karla   |
-|  4522795 | 0.4744974 | MIN       | South Carolina | Edgefield                 | www.edgefieldsc.net                     | Jenny   |
-|   472420 | 0.4744500 | REC       | Arizona        | Taylor                    | www.tayloraz.org                        | Karla   |
-|   203220 | 0.5255782 | BID       | Alaska         | Anderson                  | www.anderson.govoffice.com              | Jenny   |
-|   138272 | 0.5256786 | BID       | Alabama        | Jacksonville              | www.jacksonville-al.org                 | Jenny   |
-|  3640662 | 0.4742829 | BDG       | New York       | Lake Luzerne              | www.townoflakeluzerne.com               | Jenny   |
-|  1249725 | 0.5257832 | BDG       | Florida        | North Redington Beach     | townofnorthredingtonbeach.com           | William |
-|   825610 | 0.5258298 | BDG       | Colorado       | Fairplay                  | fairplayco.us                           | William |
-|  4576165 | 0.5258508 | BID       | South Carolina | Westminster               | www.westminstersc.org                   | Karla   |
-|  5338845 | 0.4740286 | REC       | Washington     | Leavenworth               | www.cityofleavenworth.com               | Karla   |
-|  3768580 | 0.4739810 | REC       | North Carolina | Tryon                     | www.tryon-nc.com                        | Karla   |
-|   807410 | 0.5261145 | BDG       | Colorado       | Blue River                | www.townofblueriver.com                 | Jenny   |
-|  3303220 | 0.5261287 | BDG       | New Hampshire  | Barnstead                 | www.barnstead.org                       | William |
-|  1944400 | 0.5261833 | REC       | Iowa           | Le Mars                   | www.lemarsiowa.com                      | Jenny   |
-|  1319112 | 0.5262262 | REC       | Georgia        | Commerce city             | www.commercega.org                      | William |
-|  5508075 | 0.4737571 | BDG       | Wisconsin      | Blair                     | cityofblair.org                         | William |
-|  2131114 | 0.5262615 | BID       | Kentucky       | Glasgow                   | www.glasgow-ky.com                      | Jenny   |
-|  1981705 | 0.5262762 | BID       | Iowa           | Walcott                   | cityofwalcott.com                       | William |
-|  4079450 | 0.5263905 | REC       | Oklahoma       | Weatherford               | cityofweatherford.com                   | William |
-|   161008 | 0.4734595 | CAFR      | Alabama        | Pleasant Grove            | www.cityofpg.com                        | Karla   |
-|  1227400 | 0.4732119 | REC       | Florida        | Green Cove Springs        | www.greencovesprings.com                | Jenny   |
-|  2147854 | 0.5268788 | MIN       | Kentucky       | Louisa                    | www.cityoflouisa.org                    | Karla   |
-|  2248365 | 0.4730853 | BID       | Louisiana      | Mansfield city            | www.cityofmansfield.net                 | Karla   |
-|  2542145 | 0.4729786 | BID       | Massachusetts  | Monson                    | www.monson-ma.gov                       | Jenny   |
-|  2744044 | 0.5271575 | BID       | Minnesota      | Mora                      | ci.mora.mn.us                           | William |
-|  2579110 | 0.5271762 | CAFR      | Massachusetts  | Whately                   | www.whately.org                         | William |
-|  4532065 | 0.5272369 | BID       | South Carolina | Hanahan city              | cityofhanahan.com                       | Jenny   |
-|  1706756 | 0.4727524 | REC       | Illinois       | Blue Mound village        | www.bluemoundsvillage.com               | Karla   |
-|  1816138 | 0.5273333 | CAFR      | Indiana        | Crown Point               | www.crownpoint.in.gov                   | Karla   |
-|  3612188 | 0.4726353 | AGD       | New York       | Canastota village         | canastota.com                           | Jenny   |
-|   128552 | 0.5274143 | REC       | Alabama        | Fultondale                | www.cityoffultondale.com                | Karla   |
-|  4016500 | 0.4725573 | BDG       | Oklahoma       | Commerce                  | www.commerceokla.com                    | Jenny   |
-|  3714340 | 0.5274690 | REC       | North Carolina | Conover                   | www.conovernc.gov                       | William |
-|  4838116 | 0.5276095 | REC       | Texas          | Jourdanton city           | jourdantontexas.org                     | Jenny   |
-|   182992 | 0.4721548 | REC       | Alabama        | Winfield                  | www.winfieldcity.org                    | Karla   |
-|  2711350 | 0.4721119 | CAFR      | Minnesota      | Chisago City              | www.ci.chisago.mn.us                    | Karla   |
-|  3905074 | 0.4721110 | MIN       | Ohio           | Bellaire village          | bellaireohio.net                        | Karla   |
-|  4873352 | 0.5278976 | BDG       | Texas          | Tool city                 | tooltexas.org                           | William |
-|  1702154 | 0.4719917 | MIN       | Illinois       | Arlington Heights         | www.vah.com                             | Jenny   |
-|  3665596 | 0.5280641 | AGD       | New York       | Schoharie                 | www.schohariecounty-ny.gov              | Karla   |
-|  1383896 | 0.4719238 | REC       | Georgia        | Woodbury city             | www.cityofwoodburyga.gov                | Jenny   |
-|  3111230 | 0.5282223 | BDG       | Nebraska       | Creighton                 | www.creighton.org                       | Karla   |
-|  3661148 | 0.5282405 | CAFR      | New York       | Rensselaer city           | www.rensselaerny.gov                    | Karla   |
-|  3535040 | 0.5282908 | BDG       | New Mexico     | Jal                       | www.cityofjal.us                        | Jenny   |
-|   901150 | 0.5284034 | AGD       | Connecticut    | Ansonia                   | www.cityofansonia.com                   | Jenny   |
-|  1906355 | 0.4715746 | BID       | Iowa           | Bettendorf                | www.bettendorf.org                      | Jenny   |
-|   109208 | 0.5284647 | BID       | Alabama        | Brewton                   | www.cityofbrewton.org                   | Karla   |
-|  2655100 | 0.4714329 | BDG       | Michigan       | Montague city             | cityofmontague.org                      | Jenny   |
-|   619990 | 0.5286259 | BDG       | California     | Duarte                    | www.accessduarte.com                    | Jenny   |
-|  1659320 | 0.5286720 | AGD       | Idaho          | Orofino city              | www.orofino.com                         | Jenny   |
-|  2144344 | 0.5287166 | MIN       | Kentucky       | Lebanon                   | lebanon.ky.gov                          | Karla   |
-|  3806660 | 0.4712595 | CAFR      | North Dakota   | Beulah                    | www.beulahnd.org                        | William |
-|   124256 | 0.5288190 | CAFR      | Alabama        | Epes                      | www.cityofepesalabama.com               | William |
-|  1752597 | 0.5288320 | AGD       | Illinois       | New Lenox Township        | www.newlenox.org                        | Jenny   |
-|  1911080 | 0.4711095 | CAFR      | Iowa           | Carroll                   | www.cityofcarroll.com                   | Jenny   |
-|  5117440 | 0.5289429 | BID       | Virginia       | Clifton Forge             | www.cliftonforgeva.gov                  | Karla   |
-|  3678102 | 0.5289760 | BDG       | New York       | Walworth                  | www.townofwalworthny.gov                | Karla   |
-|  4065700 | 0.5289828 | BDG       | Oklahoma       | Sayre city                | www.sayreok.net                         | Karla   |
-|  2504545 | 0.5290417 | BID       | Massachusetts  | Becket                    | www.townofbecket.org                    | Jenny   |
-|  1081350 | 0.5291548 | CAFR      | Delaware       | Wyoming                   | wyoming.delaware.gov                    | William |
-|  2131114 | 0.4708238 | REC       | Kentucky       | Glasgow                   | www.glasgow-ky.com                      | Jenny   |
-|  4600820 | 0.4708021 | AGD       | South Dakota   | Alexandria                | www.alexandriasd.com                    | Karla   |
-|  3660147 | 0.4704881 | REC       | New York       | Putnam Valley             | www.putnamvalley.com                    | Karla   |
-|  2980767 | 0.4703143 | CAFR      | Missouri       | Wood Heights city         | woodheights-mo.gov                      | William |
-|  3878940 | 0.4702952 | REC       | North Dakota   | Tioga city                | www.tiogand.net                         | Jenny   |
-|  2756788 | 0.4701929 | CAFR      | Minnesota      | St. Charles               | www.stcharlesmn.org                     | Karla   |
-|  2028675 | 0.5298238 | CAFR      | Kansas         | Greensburg                | www.greensburgks.org                    | Jenny   |
-|  4716480 | 0.5298792 | MIN       | Tennessee      | Collinwood                | www.cityofcollinwood.org                | Karla   |
-|  1880504 | 0.4699230 | BID       | Indiana        | Washington city           | www.washingtonin.us                     | Karla   |
-|   144608 | 0.4699221 | BDG       | Alabama        | Loxley                    | www.townofloxley.org                    | William |
-|  2663300 | 0.5301762 | REC       | Michigan       | Pellston village          | www.pellstonmi.com                      | Jenny   |
-|  1911170 | 0.4698167 | REC       | Iowa           | Carson, Iowa              | www.carsonia.com                        | Jenny   |
-|  1659320 | 0.4697933 | BID       | Idaho          | Orofino city              | www.orofino.com                         | Jenny   |
-|   110240 | 0.4697834 | BDG       | Alabama        | Brundidge                 | www.brundidge.org                       | Karla   |
-|   133448 | 0.4696262 | REC       | Alabama        | Hartselle city            | www.hartselle.org                       | Jenny   |
-|  5118400 | 0.5304881 | CAFR      | Virginia       | Colonial Beach            | www.colonialbeachva.net                 | Jenny   |
-|   104660 | 0.4693996 | BID       | Alabama        | Bay Minette               | www.cityofbayminette.org                | Karla   |
-|  2541585 | 0.4693131 | BID       | Massachusetts  | Millville, Massachusetts  | www.millvillema.org                     | William |
-|  3905074 | 0.5307499 | BDG       | Ohio           | Bellaire village          | bellaireohio.net                        | Karla   |
-|  2568610 | 0.4691976 | CAFR      | Massachusetts  | Sutton                    | www.suttonma.org                        | Karla   |
-|   886090 | 0.4691694 | BID       | Colorado       | Woodland Park             | www.city-woodlandpark.org               | Karla   |
-|  3340100 | 0.5308429 | BID       | New Hampshire  | Kingston                  | www.kingstonnh.org                      | Jenny   |
-|  2612240 | 0.5308595 | CAFR      | Michigan       | Byron Township            | www.byrontownship.org                   | Karla   |
-|  3532520 | 0.5308595 | REC       | New Mexico     | Hobbs                     | www.hobbsnm.org                         | Karla   |
-|   162496 | 0.5309979 | BDG       | Alabama        | Prichard                  | www.thecityofprichard.org               | William |
-|   110240 | 0.5310049 | MIN       | Alabama        | Brundidge                 | www.brundidge.org                       | Karla   |
-|  3807020 | 0.5311648 | BDG       | North Dakota   | Binford                   | www.gobinford.com                       | Jenny   |
-|  2386760 | 0.4687429 | CAFR      | Maine          | Winterport                | www.winterportmaine.gov                 | William |
-|   623126 | 0.4686833 | REC       | California     | Exeter                    | www.cityofexeter.com                    | Karla   |
-|  2076050 | 0.4685899 | BDG       | Kansas         | Waverly                   | www.cityofwaverly.org                   | Jenny   |
-|  4258432 | 0.4684692 | BDG       | Pennsylvania   | Patton borough            | www.pattonboro.com                      | Karla   |
-|  3721360 | 0.5315571 | REC       | North Carolina | Enfield                   | www.enfieldnc.org                       | Karla   |
-|  4924850 | 0.5316908 | MIN       | Utah           | Farr West                 | farrwestcity.net                        | William |
-|  4252808 | 0.4682781 | MIN       | Pennsylvania   | Nazareth                  | www.nazarethboroughpa.com               | William |
-|  1843686 | 0.5317855 | MIN       | Indiana        | Ligonier                  | ligonier-in.org                         | Jenny   |
-|  1260975 | 0.5317905 | BID       | Florida        | Riviera Beach             | www.rivierabch.com                      | William |
-|  3643225 | 0.4681352 | MIN       | New York       | Lodi                      | www.lodiny.com                          | William |
-|  3936582 | 0.4680758 | BID       | Ohio           | Hubbard                   | www.cityofhubbard-oh.gov                | Jenny   |
-|  2547135 | 0.4680536 | BID       | Massachusetts  | North Brookfield          | www.northbrookfield.net                 | William |
-|  2048800 | 0.5320262 | CAFR      | Kansas         | Moundridge                | www.moundridge.com                      | Jenny   |
-|  1850148 | 0.5320786 | REC       | Indiana        | Monon                     | www.monononline.com                     | William |
-|  3678168 | 0.5322143 | REC       | New York       | Wappingers Falls village  | www.wappingersfallsny.gov               | Karla   |
-|  5632435 | 0.5322167 | CAFR      | Wyoming        | Glenrock town             | glenrock.org                            | William |
-|  2601260 | 0.5322671 | BID       | Michigan       | Allegan                   | www.cityofallegan.org                   | William |
-|  2423025 | 0.4677214 | CAFR      | Maryland       | District Heights          | www.districtheights.org                 | Jenny   |
-|  1384456 | 0.5322810 | REC       | Georgia        | Wrens                     | cityofwrens.com                         | Karla   |
-|  5082000 | 0.5324677 | MIN       | Vermont        | Weston                    | www.weston-vermont.com                  | Karla   |
-|  3919036 | 0.5324921 | BID       | Ohio           | Coventry township         | www.coventrytownship.com                | Jenny   |
-|   134816 | 0.5326635 | BID       | Alabama        | Hillsboro town            | www.hillsborotx.org                     | Jenny   |
-|  3648428 | 0.4673152 | AGD       | New York       | Moriah                    | www.porthenrymoriah.com                 | Jenny   |
-|  4801744 | 0.5327810 | REC       | Texas          | Aledo                     | www.aledo-texas.com                     | Karla   |
-|  2722958 | 0.5329048 | REC       | Minnesota      | Fulda                     | www.fps.mntm.org                        | Jenny   |
-|  3642554 | 0.5330000 | CAFR      | New York       | Lindenhurst village       | www.villageoflindenhurstny.gov          | William |
-|  3739480 | 0.5330143 | REC       | North Carolina | Lowell                    | www.lowellnc.com                        | Jenny   |
-|  4863464 | 0.5330618 | MIN       | Texas          | Rotan                     | www.rotan.org                           | William |
-|  4504060 | 0.4668452 | CAFR      | South Carolina | Barnwell                  | www.cityofbarnwell.com                  | Jenny   |
-|  1702583 | 0.4667738 | AGD       | Illinois       | Ashton village            | www.ashtonusa.com                       | Jenny   |
-|  3678806 | 0.4667500 | CAFR      | New York       | Waverly                   | www.waverlybarton.com                   | William |
-|  3936582 | 0.5333167 | REC       | Ohio           | Hubbard                   | www.cityofhubbard-oh.gov                | Jenny   |
-|  4967000 | 0.4666510 | AGD       | Utah           | Salt Lake City            | www.slcgov.com                          | Jenny   |
-|   552970 | 0.5333516 | BID       | Arkansas       | Ozark city                | www.cityofozarkar.com                   | Jenny   |
-|  1764707 | 0.4666354 | MIN       | Illinois       | Robinson                  | cityofrobinson.com                      | Jenny   |
-|  1313133 | 0.5334762 | REC       | Georgia        | Greene County             | www.greenecountyga.gov                  | William |
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+ST\_FIPS
+
+</th>
+
+<th style="text-align:right;">
+
+prob
+
+</th>
+
+<th style="text-align:left;">
+
+indicator
+
+</th>
+
+<th style="text-align:left;">
+
+state
+
+</th>
+
+<th style="text-align:left;">
+
+city\_name
+
+</th>
+
+<th style="text-align:left;">
+
+url
+
+</th>
+
+<th style="text-align:left;">
+
+checker
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+3718320
+
+</td>
+
+<td style="text-align:right;">
+
+0.5000001
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Dunn city
+
+</td>
+
+<td style="text-align:left;">
+
+dunn-nc.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5138424
+
+</td>
+
+<td style="text-align:right;">
+
+0.4999947
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Virginia
+
+</td>
+
+<td style="text-align:left;">
+
+Hopewell
+
+</td>
+
+<td style="text-align:left;">
+
+hopewellva.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2707516
+
+</td>
+
+<td style="text-align:right;">
+
+0.5000814
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Breezy Point
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofbreezypointmn.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2128918
+
+</td>
+
+<td style="text-align:right;">
+
+0.5002731
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Franklin
+
+</td>
+
+<td style="text-align:left;">
+
+www.franklinky.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2040225
+
+</td>
+
+<td style="text-align:right;">
+
+0.4996873
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Liberty Township
+
+</td>
+
+<td style="text-align:left;">
+
+www.marioncoks.net
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2673100
+
+</td>
+
+<td style="text-align:right;">
+
+0.5003726
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Sheridan village
+
+</td>
+
+<td style="text-align:left;">
+
+villageofsheridan.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3907832
+
+</td>
+
+<td style="text-align:right;">
+
+0.5004471
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Botkins
+
+</td>
+
+<td style="text-align:left;">
+
+www.botkinsohio.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2626860
+
+</td>
+
+<td style="text-align:right;">
+
+0.5005000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Excelsior township
+
+</td>
+
+<td style="text-align:left;">
+
+www.excelsiortownship.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2010600
+
+</td>
+
+<td style="text-align:right;">
+
+0.4995000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Carbondale
+
+</td>
+
+<td style="text-align:left;">
+
+carbondaleks.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2153418
+
+</td>
+
+<td style="text-align:right;">
+
+0.4995000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Morehead
+
+</td>
+
+<td style="text-align:left;">
+
+morehead-ky.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+571960
+
+</td>
+
+<td style="text-align:right;">
+
+0.5005245
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Arkansas
+
+</td>
+
+<td style="text-align:left;">
+
+Vilonia
+
+</td>
+
+<td style="text-align:left;">
+
+www.vilonia.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3675506
+
+</td>
+
+<td style="text-align:right;">
+
+0.5006068
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Trumansburg
+
+</td>
+
+<td style="text-align:left;">
+
+trumansburg-ny.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3712580
+
+</td>
+
+<td style="text-align:right;">
+
+0.5006169
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Chocowinity
+
+</td>
+
+<td style="text-align:left;">
+
+www.beaufort-county.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2501885
+
+</td>
+
+<td style="text-align:right;">
+
+0.4993702
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+Ashburnham
+
+</td>
+
+<td style="text-align:left;">
+
+www.ashburnham-ma.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2711008
+
+</td>
+
+<td style="text-align:right;">
+
+0.4993328
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Chatfield
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.chatfield.mn.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3665541
+
+</td>
+
+<td style="text-align:right;">
+
+0.5007016
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Schodack
+
+</td>
+
+<td style="text-align:left;">
+
+www.schodack.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3667411
+
+</td>
+
+<td style="text-align:right;">
+
+0.5007937
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Silver Creek village
+
+</td>
+
+<td style="text-align:left;">
+
+silvercreekny.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1982065
+
+</td>
+
+<td style="text-align:right;">
+
+0.4991667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Walnut
+
+</td>
+
+<td style="text-align:left;">
+
+www.walnutiowa.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5537900
+
+</td>
+
+<td style="text-align:right;">
+
+0.4991667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Jefferson
+
+</td>
+
+<td style="text-align:left;">
+
+www.jeffersonwis.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1239725
+
+</td>
+
+<td style="text-align:right;">
+
+0.5009007
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Layton
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityoflayton.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3437380
+
+</td>
+
+<td style="text-align:right;">
+
+0.4990981
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New Jersey
+
+</td>
+
+<td style="text-align:left;">
+
+Lacey Township
+
+</td>
+
+<td style="text-align:left;">
+
+www.laceytownship.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3377380
+
+</td>
+
+<td style="text-align:right;">
+
+0.5009167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Troy
+
+</td>
+
+<td style="text-align:left;">
+
+www.troy-nh.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2961418
+
+</td>
+
+<td style="text-align:right;">
+
+0.5009830
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Rich Hill city
+
+</td>
+
+<td style="text-align:left;">
+
+www.richhillmo.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1877768
+
+</td>
+
+<td style="text-align:right;">
+
+0.5010000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Union City
+
+</td>
+
+<td style="text-align:left;">
+
+www.myunioncity.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2047425
+
+</td>
+
+<td style="text-align:right;">
+
+0.4990000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Mission Woods
+
+</td>
+
+<td style="text-align:left;">
+
+missionwoods-ks.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2703070
+
+</td>
+
+<td style="text-align:right;">
+
+0.4990000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Avon
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofavonmn.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4863782
+
+</td>
+
+<td style="text-align:right;">
+
+0.5010000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Runaway Bay city
+
+</td>
+
+<td style="text-align:left;">
+
+www.runawaybaytexas.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4976900
+
+</td>
+
+<td style="text-align:right;">
+
+0.5010000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Utah
+
+</td>
+
+<td style="text-align:left;">
+
+Toquerville
+
+</td>
+
+<td style="text-align:left;">
+
+www.toquerville.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5373080
+
+</td>
+
+<td style="text-align:right;">
+
+0.4990000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Washington
+
+</td>
+
+<td style="text-align:left;">
+
+Twisp
+
+</td>
+
+<td style="text-align:left;">
+
+townoftwisp.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5486452
+
+</td>
+
+<td style="text-align:right;">
+
+0.5010000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+West Virginia
+
+</td>
+
+<td style="text-align:left;">
+
+Wheeling
+
+</td>
+
+<td style="text-align:left;">
+
+www.wheelingwv.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4811992
+
+</td>
+
+<td style="text-align:right;">
+
+0.5010252
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Calvert
+
+</td>
+
+<td style="text-align:left;">
+
+www.texasescapes.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3749380
+
+</td>
+
+<td style="text-align:right;">
+
+0.5010767
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Oriental
+
+</td>
+
+<td style="text-align:left;">
+
+www.townoforiental.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+650734
+
+</td>
+
+<td style="text-align:right;">
+
+0.5011933
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Needles
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofneedles.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+660900
+
+</td>
+
+<td style="text-align:right;">
+
+0.5012180
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Rio Dell
+
+</td>
+
+<td style="text-align:left;">
+
+riodellcity.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3882980
+
+</td>
+
+<td style="text-align:right;">
+
+0.4987634
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+North Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Walhalla
+
+</td>
+
+<td style="text-align:left;">
+
+walhalland.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2675820
+
+</td>
+
+<td style="text-align:right;">
+
+0.5012448
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Spring Lake
+
+</td>
+
+<td style="text-align:left;">
+
+www.springlakevillage.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4051150
+
+</td>
+
+<td style="text-align:right;">
+
+0.5012972
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Oklahoma
+
+</td>
+
+<td style="text-align:left;">
+
+Newcastle
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofnewcastleok.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4640220
+
+</td>
+
+<td style="text-align:right;">
+
+0.4986779
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+South Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Madison
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofmadisonsd.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1816300
+
+</td>
+
+<td style="text-align:right;">
+
+0.5013870
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Culver
+
+</td>
+
+<td style="text-align:left;">
+
+townofculver.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2660860
+
+</td>
+
+<td style="text-align:right;">
+
+0.4985833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Ontonagon village
+
+</td>
+
+<td style="text-align:left;">
+
+villageofontonagon.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1986835
+
+</td>
+
+<td style="text-align:right;">
+
+0.5015000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Woodbine
+
+</td>
+
+<td style="text-align:left;">
+
+woodbineia.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2174082
+
+</td>
+
+<td style="text-align:right;">
+
+0.5015000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Strathmoor Village
+
+</td>
+
+<td style="text-align:left;">
+
+cityofstrathmoorvillage.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5110040
+
+</td>
+
+<td style="text-align:right;">
+
+0.4985000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Virginia
+
+</td>
+
+<td style="text-align:left;">
+
+Broadway
+
+</td>
+
+<td style="text-align:left;">
+
+www.town.broadway.va.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1024540
+
+</td>
+
+<td style="text-align:right;">
+
+0.4984167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Delaware
+
+</td>
+
+<td style="text-align:left;">
+
+Elsmere
+
+</td>
+
+<td style="text-align:left;">
+
+elsmere.delaware.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2715022
+
+</td>
+
+<td style="text-align:right;">
+
+0.5016879
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Dayton
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofdaytonmn.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1313123
+
+</td>
+
+<td style="text-align:right;">
+
+0.4982770
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Gilmer County
+
+</td>
+
+<td style="text-align:left;">
+
+gilmercounty-ga.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2612240
+
+</td>
+
+<td style="text-align:right;">
+
+0.5018333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Byron Township
+
+</td>
+
+<td style="text-align:left;">
+
+www.byrontownship.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3613079
+
+</td>
+
+<td style="text-align:right;">
+
+0.5018333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Cayuga Heights
+
+</td>
+
+<td style="text-align:left;">
+
+www.cayuga-heights.ny.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4805384
+
+</td>
+
+<td style="text-align:right;">
+
+0.4981405
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Balcones Heights
+
+</td>
+
+<td style="text-align:left;">
+
+bhtx.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2414325
+
+</td>
+
+<td style="text-align:right;">
+
+0.5019080
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+Cecilton
+
+</td>
+
+<td style="text-align:left;">
+
+www.ceciltonmd.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5048850
+
+</td>
+
+<td style="text-align:right;">
+
+0.4980833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Vermont
+
+</td>
+
+<td style="text-align:left;">
+
+Newport
+
+</td>
+
+<td style="text-align:left;">
+
+www.newportvermont.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5524225
+
+</td>
+
+<td style="text-align:right;">
+
+0.5019671
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Erin
+
+</td>
+
+<td style="text-align:left;">
+
+www.erintownship.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1333896
+
+</td>
+
+<td style="text-align:right;">
+
+0.5020000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Good Hope city
+
+</td>
+
+<td style="text-align:left;">
+
+goodhopega.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1928605
+
+</td>
+
+<td style="text-align:right;">
+
+0.4980000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Fort Madison
+
+</td>
+
+<td style="text-align:left;">
+
+www.fortmadison.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2153472
+
+</td>
+
+<td style="text-align:right;">
+
+0.4980000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Morganfield
+
+</td>
+
+<td style="text-align:left;">
+
+www.morganfieldkentucky.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+528660
+
+</td>
+
+<td style="text-align:right;">
+
+0.5020000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Arkansas
+
+</td>
+
+<td style="text-align:left;">
+
+Greenland city
+
+</td>
+
+<td style="text-align:left;">
+
+www.greenland-ar.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2904114
+
+</td>
+
+<td style="text-align:right;">
+
+0.5020306
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Bella Villa
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofbellavilla-mo.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+828690
+
+</td>
+
+<td style="text-align:right;">
+
+0.4979515
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Colorado
+
+</td>
+
+<td style="text-align:left;">
+
+Frisco
+
+</td>
+
+<td style="text-align:left;">
+
+www.townoffrisco.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1264975
+
+</td>
+
+<td style="text-align:right;">
+
+0.5021389
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Seminole
+
+</td>
+
+<td style="text-align:left;">
+
+www.myseminole.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2746348
+
+</td>
+
+<td style="text-align:right;">
+
+0.4978333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Nisswa
+
+</td>
+
+<td style="text-align:left;">
+
+cityofnisswa.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1935580
+
+</td>
+
+<td style="text-align:right;">
+
+0.4977500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Hazleton city
+
+</td>
+
+<td style="text-align:left;">
+
+hazletonia.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3744100
+
+</td>
+
+<td style="text-align:right;">
+
+0.5023055
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Montreat town
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofmontreat.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3710240
+
+</td>
+
+<td style="text-align:right;">
+
+0.5023182
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Canton
+
+</td>
+
+<td style="text-align:left;">
+
+www.cantonnc.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2023600
+
+</td>
+
+<td style="text-align:right;">
+
+0.4976716
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Florence
+
+</td>
+
+<td style="text-align:left;">
+
+www.florenceks.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3314660
+
+</td>
+
+<td style="text-align:right;">
+
+0.5023333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Conway
+
+</td>
+
+<td style="text-align:left;">
+
+www.conwaynh.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3677684
+
+</td>
+
+<td style="text-align:right;">
+
+0.4976429
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Voorheesville village
+
+</td>
+
+<td style="text-align:left;">
+
+www.villageofvoorheesville.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+472420
+
+</td>
+
+<td style="text-align:right;">
+
+0.4975833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Arizona
+
+</td>
+
+<td style="text-align:left;">
+
+Taylor
+
+</td>
+
+<td style="text-align:left;">
+
+www.tayloraz.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+157000
+
+</td>
+
+<td style="text-align:right;">
+
+0.4975614
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Oneonta
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofoneonta.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1266725
+
+</td>
+
+<td style="text-align:right;">
+
+0.4975000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Sneads
+
+</td>
+
+<td style="text-align:left;">
+
+www.sneadsfl.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4767760
+
+</td>
+
+<td style="text-align:right;">
+
+0.4975000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Tennessee
+
+</td>
+
+<td style="text-align:left;">
+
+Shelbyville
+
+</td>
+
+<td style="text-align:left;">
+
+www.shelbyvilletn.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4825224
+
+</td>
+
+<td style="text-align:right;">
+
+0.4975000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Fairview town
+
+</td>
+
+<td style="text-align:left;">
+
+www.fairviewtexas.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2124382
+
+</td>
+
+<td style="text-align:right;">
+
+0.5026009
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Elkhorn City
+
+</td>
+
+<td style="text-align:left;">
+
+www.elkhorncity.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3137280
+
+</td>
+
+<td style="text-align:right;">
+
+0.5026205
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Nebraska
+
+</td>
+
+<td style="text-align:left;">
+
+Ord
+
+</td>
+
+<td style="text-align:left;">
+
+www.ordnebraska.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2416225
+
+</td>
+
+<td style="text-align:right;">
+
+0.5026404
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+Chestertown town
+
+</td>
+
+<td style="text-align:left;">
+
+townofchestertown.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2273640
+
+</td>
+
+<td style="text-align:right;">
+
+0.4973468
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Louisiana
+
+</td>
+
+<td style="text-align:left;">
+
+Sulphur
+
+</td>
+
+<td style="text-align:left;">
+
+www.sulphur.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1230525
+
+</td>
+
+<td style="text-align:right;">
+
+0.5027159
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+High Springs
+
+</td>
+
+<td style="text-align:left;">
+
+highsprings.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2622140
+
+</td>
+
+<td style="text-align:right;">
+
+0.4972706
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+DeWitt Charter Township
+
+</td>
+
+<td style="text-align:left;">
+
+www.dewitttownship.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2542145
+
+</td>
+
+<td style="text-align:right;">
+
+0.4972671
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+Monson
+
+</td>
+
+<td style="text-align:left;">
+
+www.monson-ma.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3678674
+
+</td>
+
+<td style="text-align:right;">
+
+0.5027500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Watervliet city
+
+</td>
+
+<td style="text-align:left;">
+
+www.watervliet.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3710680
+
+</td>
+
+<td style="text-align:right;">
+
+0.5028333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Carthage
+
+</td>
+
+<td style="text-align:left;">
+
+townofcarthage.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1275750
+
+</td>
+
+<td style="text-align:right;">
+
+0.5030000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Welaka
+
+</td>
+
+<td style="text-align:left;">
+
+www.welaka-fl.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2633000
+
+</td>
+
+<td style="text-align:right;">
+
+0.4970000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Goodwell township
+
+</td>
+
+<td style="text-align:left;">
+
+goodwelltownship.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2637460
+
+</td>
+
+<td style="text-align:right;">
+
+0.5030000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Heath township
+
+</td>
+
+<td style="text-align:left;">
+
+heathtownship.net
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4631860
+
+</td>
+
+<td style="text-align:right;">
+
+0.4970000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+South Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Ipswich
+
+</td>
+
+<td style="text-align:left;">
+
+www.ipswich-sd.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4778600
+
+</td>
+
+<td style="text-align:right;">
+
+0.5030000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Tennessee
+
+</td>
+
+<td style="text-align:left;">
+
+Waynesboro
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofwaynesboro.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2144344
+
+</td>
+
+<td style="text-align:right;">
+
+0.4969928
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Lebanon
+
+</td>
+
+<td style="text-align:left;">
+
+lebanon.ky.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5526850
+
+</td>
+
+<td style="text-align:right;">
+
+0.5030361
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Fountain City
+
+</td>
+
+<td style="text-align:left;">
+
+www.fountaincitywisconsin.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1829718
+
+</td>
+
+<td style="text-align:right;">
+
+0.5030630
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Greensburg
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofgreensburg.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3644974
+
+</td>
+
+<td style="text-align:right;">
+
+0.4969319
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Manheim
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofmanheim.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1916635
+
+</td>
+
+<td style="text-align:right;">
+
+0.4969167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Corydon city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofcorydoniowa.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2015925
+
+</td>
+
+<td style="text-align:right;">
+
+0.5031500
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Council Grove
+
+</td>
+
+<td style="text-align:left;">
+
+www.councilgrove.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+619990
+
+</td>
+
+<td style="text-align:right;">
+
+0.4968333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Duarte
+
+</td>
+
+<td style="text-align:left;">
+
+www.accessduarte.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5579700
+
+</td>
+
+<td style="text-align:right;">
+
+0.5031667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Three Lakes
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofthreelakes.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5336710
+
+</td>
+
+<td style="text-align:right;">
+
+0.4967718
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Washington
+
+</td>
+
+<td style="text-align:left;">
+
+La Center
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.lacenter.wa.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4866464
+
+</td>
+
+<td style="text-align:right;">
+
+0.4967000
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Sealy
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.sealy.tx.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2655100
+
+</td>
+
+<td style="text-align:right;">
+
+0.5035000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Montague city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofmontague.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3666993
+
+</td>
+
+<td style="text-align:right;">
+
+0.5035000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Sherrill
+
+</td>
+
+<td style="text-align:left;">
+
+www.sherrillny.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+642468
+
+</td>
+
+<td style="text-align:right;">
+
+0.5035000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Lomita
+
+</td>
+
+<td style="text-align:left;">
+
+www.lomita.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2914788
+
+</td>
+
+<td style="text-align:right;">
+
+0.4965000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Clever
+
+</td>
+
+<td style="text-align:left;">
+
+www.clevermo.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3453040
+
+</td>
+
+<td style="text-align:right;">
+
+0.4964167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Jersey
+
+</td>
+
+<td style="text-align:left;">
+
+North Haledon
+
+</td>
+
+<td style="text-align:left;">
+
+www.northhaledon.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4821628
+
+</td>
+
+<td style="text-align:right;">
+
+0.5035869
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Duncanville city
+
+</td>
+
+<td style="text-align:left;">
+
+www.duncanville.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1632950
+
+</td>
+
+<td style="text-align:right;">
+
+0.4962698
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Idaho
+
+</td>
+
+<td style="text-align:left;">
+
+Grangeville
+
+</td>
+
+<td style="text-align:left;">
+
+grangeville.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2421325
+
+</td>
+
+<td style="text-align:right;">
+
+0.5037863
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+Cumberland
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.cumberland.md.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1847448
+
+</td>
+
+<td style="text-align:right;">
+
+0.4962115
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Martinsville
+
+</td>
+
+<td style="text-align:left;">
+
+www.martinsville.in.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2662980
+
+</td>
+
+<td style="text-align:right;">
+
+0.4961667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Paw Paw
+
+</td>
+
+<td style="text-align:left;">
+
+www.pawpaw.net
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1081350
+
+</td>
+
+<td style="text-align:right;">
+
+0.5038333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Delaware
+
+</td>
+
+<td style="text-align:left;">
+
+Wyoming
+
+</td>
+
+<td style="text-align:left;">
+
+wyoming.delaware.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2905068
+
+</td>
+
+<td style="text-align:right;">
+
+0.4960833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Bethany
+
+</td>
+
+<td style="text-align:left;">
+
+www.bethanymo.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3931402
+
+</td>
+
+<td style="text-align:right;">
+
+0.5039184
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Granville village (pt.)
+
+</td>
+
+<td style="text-align:left;">
+
+granville.oh.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2738222
+
+</td>
+
+<td style="text-align:right;">
+
+0.4960055
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Loretto
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.loretto.mn.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+200065
+
+</td>
+
+<td style="text-align:right;">
+
+0.5040000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Alaska
+
+</td>
+
+<td style="text-align:left;">
+
+Adak
+
+</td>
+
+<td style="text-align:left;">
+
+adak-ak.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2653760
+
+</td>
+
+<td style="text-align:right;">
+
+0.4960000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Middleville village
+
+</td>
+
+<td style="text-align:left;">
+
+villageofmiddleville.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3709140
+
+</td>
+
+<td style="text-align:right;">
+
+0.5040726
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Burnsville
+
+</td>
+
+<td style="text-align:left;">
+
+townofburnsville.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3921602
+
+</td>
+
+<td style="text-align:right;">
+
+0.5042412
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Delphos city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofdelphos.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4770820
+
+</td>
+
+<td style="text-align:right;">
+
+0.5042500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Tennessee
+
+</td>
+
+<td style="text-align:left;">
+
+Stanton
+
+</td>
+
+<td style="text-align:left;">
+
+haywoodcountybrownsville.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3768580
+
+</td>
+
+<td style="text-align:right;">
+
+0.4957123
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Tryon
+
+</td>
+
+<td style="text-align:left;">
+
+www.tryon-nc.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1309488
+
+</td>
+
+<td style="text-align:right;">
+
+0.4957050
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Bostwick
+
+</td>
+
+<td style="text-align:left;">
+
+www.bostwickga.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3758440
+
+</td>
+
+<td style="text-align:right;">
+
+0.4956968
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Rutherford College
+
+</td>
+
+<td style="text-align:left;">
+
+www.rutherfordcollegenc.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2739266
+
+</td>
+
+<td style="text-align:right;">
+
+0.5044167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Madison city
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.madison.mn.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4519420
+
+</td>
+
+<td style="text-align:right;">
+
+0.5044821
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+South Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Dillon
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofdillonsc.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1373004
+
+</td>
+
+<td style="text-align:right;">
+
+0.5045000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Stapleton city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofstapleton.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2028675
+
+</td>
+
+<td style="text-align:right;">
+
+0.5045000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Greensburg
+
+</td>
+
+<td style="text-align:left;">
+
+www.greensburgks.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2734676
+
+</td>
+
+<td style="text-align:right;">
+
+0.5045000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Lake Lillian
+
+</td>
+
+<td style="text-align:left;">
+
+lakelillian.govoffice.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3111230
+
+</td>
+
+<td style="text-align:right;">
+
+0.5045000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Nebraska
+
+</td>
+
+<td style="text-align:left;">
+
+Creighton
+
+</td>
+
+<td style="text-align:left;">
+
+www.creighton.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3317140
+
+</td>
+
+<td style="text-align:right;">
+
+0.5045000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Danville
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofdanville.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3548620
+
+</td>
+
+<td style="text-align:right;">
+
+0.5045000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+New Mexico
+
+</td>
+
+<td style="text-align:left;">
+
+Milan village
+
+</td>
+
+<td style="text-align:left;">
+
+www.milanil.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4052900
+
+</td>
+
+<td style="text-align:right;">
+
+0.4953483
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Oklahoma
+
+</td>
+
+<td style="text-align:left;">
+
+Nowata city
+
+</td>
+
+<td style="text-align:left;">
+
+nowataok.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2736728
+
+</td>
+
+<td style="text-align:right;">
+
+0.4952907
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Lester Prairie
+
+</td>
+
+<td style="text-align:left;">
+
+www.lesterprairiemn.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+124256
+
+</td>
+
+<td style="text-align:right;">
+
+0.4952500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Epes
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofepesalabama.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4281576
+
+</td>
+
+<td style="text-align:right;">
+
+0.5047762
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Watson Township
+
+</td>
+
+<td style="text-align:left;">
+
+www.watsontwp.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3739360
+
+</td>
+
+<td style="text-align:right;">
+
+0.4951325
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Louisburg
+
+</td>
+
+<td style="text-align:left;">
+
+townoflouisburg.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5317320
+
+</td>
+
+<td style="text-align:right;">
+
+0.5049213
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Washington
+
+</td>
+
+<td style="text-align:left;">
+
+Deer Park
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofdeerparkwa.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2738564
+
+</td>
+
+<td style="text-align:right;">
+
+0.5049504
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Luverne city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofluverne.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1916635
+
+</td>
+
+<td style="text-align:right;">
+
+0.5050000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Corydon city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofcorydoniowa.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3602044
+
+</td>
+
+<td style="text-align:right;">
+
+0.4950000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Amityville village
+
+</td>
+
+<td style="text-align:left;">
+
+amityville.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4513015
+
+</td>
+
+<td style="text-align:right;">
+
+0.5050000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+South Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Central town
+
+</td>
+
+<td style="text-align:left;">
+
+cityofcentral.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5114952
+
+</td>
+
+<td style="text-align:right;">
+
+0.5050000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Virginia
+
+</td>
+
+<td style="text-align:left;">
+
+Charlotte Court House town
+
+</td>
+
+<td style="text-align:left;">
+
+www.towncch.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3735460
+
+</td>
+
+<td style="text-align:right;">
+
+0.4949826
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Kenansville town
+
+</td>
+
+<td style="text-align:left;">
+
+www.kenansville.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3975014
+
+</td>
+
+<td style="text-align:right;">
+
+0.4949032
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Streetsboro
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofstreetsboro.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4024650
+
+</td>
+
+<td style="text-align:right;">
+
+0.4948333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Oklahoma
+
+</td>
+
+<td style="text-align:left;">
+
+Eufaula
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofeufaulaok.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4540615
+
+</td>
+
+<td style="text-align:right;">
+
+0.5052080
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+South Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Laurens
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityoflaurenssc.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1728872
+
+</td>
+
+<td style="text-align:right;">
+
+0.5052490
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Geneva
+
+</td>
+
+<td style="text-align:left;">
+
+geneva.il.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2677700
+
+</td>
+
+<td style="text-align:right;">
+
+0.4946338
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Swartz Creek
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofswartzcreek.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2136604
+
+</td>
+
+<td style="text-align:right;">
+
+0.4946337
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Highland Heights
+
+</td>
+
+<td style="text-align:left;">
+
+hhky.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1313171
+
+</td>
+
+<td style="text-align:right;">
+
+0.4945833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Lamar County
+
+</td>
+
+<td style="text-align:left;">
+
+www.lamarcountyga.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2184891
+
+</td>
+
+<td style="text-align:right;">
+
+0.5055000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Worthington Hills
+
+</td>
+
+<td style="text-align:left;">
+
+www.worthingtonhillsky.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4253920
+
+</td>
+
+<td style="text-align:right;">
+
+0.5055000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+New Oxford borough
+
+</td>
+
+<td style="text-align:left;">
+
+oxfordboro.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3806660
+
+</td>
+
+<td style="text-align:right;">
+
+0.4945000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+North Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Beulah
+
+</td>
+
+<td style="text-align:left;">
+
+www.beulahnd.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5522225
+
+</td>
+
+<td style="text-align:right;">
+
+0.4945000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Eaton
+
+</td>
+
+<td style="text-align:left;">
+
+townofeaton-wi.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3603287
+
+</td>
+
+<td style="text-align:right;">
+
+0.4944950
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Austerlitz
+
+</td>
+
+<td style="text-align:left;">
+
+austerlitzny.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2021275
+
+</td>
+
+<td style="text-align:right;">
+
+0.4944197
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Emporia
+
+</td>
+
+<td style="text-align:left;">
+
+www.emporia-kansas.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2048800
+
+</td>
+
+<td style="text-align:right;">
+
+0.5055833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Moundridge
+
+</td>
+
+<td style="text-align:left;">
+
+www.moundridge.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3106610
+
+</td>
+
+<td style="text-align:right;">
+
+0.5056425
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Nebraska
+
+</td>
+
+<td style="text-align:left;">
+
+Broken Bow
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofbrokenbow.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5346020
+
+</td>
+
+<td style="text-align:right;">
+
+0.5056627
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Washington
+
+</td>
+
+<td style="text-align:left;">
+
+Milton
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofmilton.net
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3671674
+
+</td>
+
+<td style="text-align:right;">
+
+0.4943000
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Stony Point
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofstonypoint.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2629200
+
+</td>
+
+<td style="text-align:right;">
+
+0.5058314
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Flushing
+
+</td>
+
+<td style="text-align:left;">
+
+www.flushingcity.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2568610
+
+</td>
+
+<td style="text-align:right;">
+
+0.4941667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+Sutton
+
+</td>
+
+<td style="text-align:left;">
+
+www.suttonma.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3334820
+
+</td>
+
+<td style="text-align:right;">
+
+0.5058333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Haverhill
+
+</td>
+
+<td style="text-align:left;">
+
+www.haverhill-nh.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5322745
+
+</td>
+
+<td style="text-align:right;">
+
+0.5058669
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Washington
+
+</td>
+
+<td style="text-align:left;">
+
+Everson
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.everson.wa.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3376740
+
+</td>
+
+<td style="text-align:right;">
+
+0.5059464
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Thornton
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofthornton.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4225360
+
+</td>
+
+<td style="text-align:right;">
+
+0.5060000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Farrell city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityoffarrell.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1742496
+
+</td>
+
+<td style="text-align:right;">
+
+0.4940000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Lebanon city
+
+</td>
+
+<td style="text-align:left;">
+
+www.lebanonil.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2517300
+
+</td>
+
+<td style="text-align:right;">
+
+0.4939167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+Douglas
+
+</td>
+
+<td style="text-align:left;">
+
+www.douglasma.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3360020
+
+</td>
+
+<td style="text-align:right;">
+
+0.5061667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Pembroke
+
+</td>
+
+<td style="text-align:left;">
+
+www.pembroke-nh.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+122816
+
+</td>
+
+<td style="text-align:right;">
+
+0.5061751
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Eclectic
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofeclectic.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3139100
+
+</td>
+
+<td style="text-align:right;">
+
+0.4938044
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Nebraska
+
+</td>
+
+<td style="text-align:left;">
+
+Pierce
+
+</td>
+
+<td style="text-align:left;">
+
+piercenebraska.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4722200
+
+</td>
+
+<td style="text-align:right;">
+
+0.4937949
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Tennessee
+
+</td>
+
+<td style="text-align:left;">
+
+Dyersburg
+
+</td>
+
+<td style="text-align:left;">
+
+www.dyersburgtn.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2500555
+
+</td>
+
+<td style="text-align:right;">
+
+0.5062500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+Adams
+
+</td>
+
+<td style="text-align:left;">
+
+town.adams.ma.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3945976
+
+</td>
+
+<td style="text-align:right;">
+
+0.4936675
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Macedonia
+
+</td>
+
+<td style="text-align:left;">
+
+www.macedonia.oh.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2732174
+
+</td>
+
+<td style="text-align:right;">
+
+0.4935966
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Jordan
+
+</td>
+
+<td style="text-align:left;">
+
+jordanmn.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3768580
+
+</td>
+
+<td style="text-align:right;">
+
+0.4935529
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Tryon
+
+</td>
+
+<td style="text-align:left;">
+
+www.tryon-nc.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+642006
+
+</td>
+
+<td style="text-align:right;">
+
+0.4935393
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Livingston
+
+</td>
+
+<td style="text-align:left;">
+
+www.livingstoncity.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+110240
+
+</td>
+
+<td style="text-align:right;">
+
+0.4935000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Brundidge
+
+</td>
+
+<td style="text-align:left;">
+
+www.brundidge.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5072925
+
+</td>
+
+<td style="text-align:right;">
+
+0.4933795
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Vermont
+
+</td>
+
+<td style="text-align:left;">
+
+Tinmouth town
+
+</td>
+
+<td style="text-align:left;">
+
+www.tinmouthvt.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3658728
+
+</td>
+
+<td style="text-align:right;">
+
+0.4933705
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Pleasantville village
+
+</td>
+
+<td style="text-align:left;">
+
+www.pleasantville-ny.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3973670
+
+</td>
+
+<td style="text-align:right;">
+
+0.4933689
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+South Point
+
+</td>
+
+<td style="text-align:left;">
+
+www.villageofsouthpoint.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2911638
+
+</td>
+
+<td style="text-align:right;">
+
+0.5066582
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Carterville
+
+</td>
+
+<td style="text-align:left;">
+
+www.cartervillemo.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3758860
+
+</td>
+
+<td style="text-align:right;">
+
+0.5066673
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Salisbury city
+
+</td>
+
+<td style="text-align:left;">
+
+www.salisburync.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2744044
+
+</td>
+
+<td style="text-align:right;">
+
+0.5067191
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Mora
+
+</td>
+
+<td style="text-align:left;">
+
+ci.mora.mn.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5501550
+
+</td>
+
+<td style="text-align:right;">
+
+0.4931792
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Altoona
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.altoona.wi.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1036760
+
+</td>
+
+<td style="text-align:right;">
+
+0.4930000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Delaware
+
+</td>
+
+<td style="text-align:left;">
+
+Houston
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofhouston.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2660860
+
+</td>
+
+<td style="text-align:right;">
+
+0.4930000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Ontonagon village
+
+</td>
+
+<td style="text-align:left;">
+
+villageofontonagon.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2467400
+
+</td>
+
+<td style="text-align:right;">
+
+0.4929353
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+Rock Hall
+
+</td>
+
+<td style="text-align:left;">
+
+www.rockhallmd.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4171000
+
+</td>
+
+<td style="text-align:right;">
+
+0.5070937
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Oregon
+
+</td>
+
+<td style="text-align:left;">
+
+Sumpter
+
+</td>
+
+<td style="text-align:left;">
+
+www.historicsumpter.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4816240
+
+</td>
+
+<td style="text-align:right;">
+
+0.4929048
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Commerce
+
+</td>
+
+<td style="text-align:left;">
+
+commercetx.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2348645
+
+</td>
+
+<td style="text-align:right;">
+
+0.5071505
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Maine
+
+</td>
+
+<td style="text-align:left;">
+
+Newcastle
+
+</td>
+
+<td style="text-align:left;">
+
+www.newcastlemaine.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+182992
+
+</td>
+
+<td style="text-align:right;">
+
+0.4928198
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Winfield
+
+</td>
+
+<td style="text-align:left;">
+
+www.winfieldcity.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4866968
+
+</td>
+
+<td style="text-align:right;">
+
+0.5072004
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Seymour
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofseymour.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3334420
+
+</td>
+
+<td style="text-align:right;">
+
+0.5072290
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Harrisville
+
+</td>
+
+<td style="text-align:left;">
+
+www.harrisvillenh.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1811062
+
+</td>
+
+<td style="text-align:right;">
+
+0.5072500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Cedar Lake
+
+</td>
+
+<td style="text-align:left;">
+
+cedarlakein.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3713000
+
+</td>
+
+<td style="text-align:right;">
+
+0.4927401
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Cleveland town
+
+</td>
+
+<td style="text-align:left;">
+
+www.clevelandnc.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3716180
+
+</td>
+
+<td style="text-align:right;">
+
+0.5073333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Dallas
+
+</td>
+
+<td style="text-align:left;">
+
+www.dallasnc.net
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3711340
+
+</td>
+
+<td style="text-align:right;">
+
+0.5073514
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Cedar Point
+
+</td>
+
+<td style="text-align:left;">
+
+www.cedarpointnc.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1906355
+
+</td>
+
+<td style="text-align:right;">
+
+0.5073684
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Bettendorf
+
+</td>
+
+<td style="text-align:left;">
+
+www.bettendorf.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+557260
+
+</td>
+
+<td style="text-align:right;">
+
+0.4926282
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Arkansas
+
+</td>
+
+<td style="text-align:left;">
+
+Prescott
+
+</td>
+
+<td style="text-align:left;">
+
+www.prescottar.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2028675
+
+</td>
+
+<td style="text-align:right;">
+
+0.5075000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Greensburg
+
+</td>
+
+<td style="text-align:left;">
+
+www.greensburgks.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5505350
+
+</td>
+
+<td style="text-align:right;">
+
+0.5075000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Bayfield
+
+</td>
+
+<td style="text-align:left;">
+
+cityofbayfield.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+157576
+
+</td>
+
+<td style="text-align:right;">
+
+0.4925000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Oxford
+
+</td>
+
+<td style="text-align:left;">
+
+www.oxfordalabama.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4523470
+
+</td>
+
+<td style="text-align:right;">
+
+0.4925000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+South Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Elloree
+
+</td>
+
+<td style="text-align:left;">
+
+www.elloreesc.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4834532
+
+</td>
+
+<td style="text-align:right;">
+
+0.4925000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Holliday
+
+</td>
+
+<td style="text-align:left;">
+
+hollidaytx.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5569275
+
+</td>
+
+<td style="text-align:right;">
+
+0.4924421
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Rome town
+
+</td>
+
+<td style="text-align:left;">
+
+townofrome.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1233150
+
+</td>
+
+<td style="text-align:right;">
+
+0.4923630
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Hypoluxo
+
+</td>
+
+<td style="text-align:left;">
+
+www.hypoluxo.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2702872
+
+</td>
+
+<td style="text-align:right;">
+
+0.4923333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Aurora city
+
+</td>
+
+<td style="text-align:left;">
+
+www.aurora-mn.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1949350
+
+</td>
+
+<td style="text-align:right;">
+
+0.5076909
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Marcus
+
+</td>
+
+<td style="text-align:left;">
+
+www.marcusiowa.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1313105
+
+</td>
+
+<td style="text-align:right;">
+
+0.4922373
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Elbert County
+
+</td>
+
+<td style="text-align:left;">
+
+www.elbertga.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2053925
+
+</td>
+
+<td style="text-align:right;">
+
+0.4922352
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Ozawkie
+
+</td>
+
+<td style="text-align:left;">
+
+www.ozawkie.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1850148
+
+</td>
+
+<td style="text-align:right;">
+
+0.5077987
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Monon
+
+</td>
+
+<td style="text-align:left;">
+
+www.monononline.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1884122
+
+</td>
+
+<td style="text-align:right;">
+
+0.5078932
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Whiting
+
+</td>
+
+<td style="text-align:left;">
+
+whitingindiana.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2755078
+
+</td>
+
+<td style="text-align:right;">
+
+0.4920986
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Rockville
+
+</td>
+
+<td style="text-align:left;">
+
+www.rockvillecity.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+153016
+
+</td>
+
+<td style="text-align:right;">
+
+0.5080000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Muscle Shoals city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofmuscleshoals.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2643900
+
+</td>
+
+<td style="text-align:right;">
+
+0.5080000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Krakow Township
+
+</td>
+
+<td style="text-align:left;">
+
+www.krakowtownship.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2606460
+
+</td>
+
+<td style="text-align:right;">
+
+0.4920000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Bear Lake
+
+</td>
+
+<td style="text-align:left;">
+
+www.bearlakemichigan.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2734865
+
+</td>
+
+<td style="text-align:right;">
+
+0.5080000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Lake St. Croix Beach
+
+</td>
+
+<td style="text-align:left;">
+
+lscb.govoffice.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5506200
+
+</td>
+
+<td style="text-align:right;">
+
+0.4920000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Bell
+
+</td>
+
+<td style="text-align:left;">
+
+cornucopiawisconsin.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4876636
+
+</td>
+
+<td style="text-align:right;">
+
+0.4919217
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Waskom
+
+</td>
+
+<td style="text-align:left;">
+
+cityofwaskom.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4653460
+
+</td>
+
+<td style="text-align:right;">
+
+0.5080833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+South Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Redfield
+
+</td>
+
+<td style="text-align:left;">
+
+www.redfield-sd.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1814716
+
+</td>
+
+<td style="text-align:right;">
+
+0.5081711
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Columbia City
+
+</td>
+
+<td style="text-align:left;">
+
+columbiacity.net
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2977146
+
+</td>
+
+<td style="text-align:right;">
+
+0.5083118
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Warsaw
+
+</td>
+
+<td style="text-align:left;">
+
+www.welcometowarsaw.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3980766
+
+</td>
+
+<td style="text-align:right;">
+
+0.4916667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Wapakoneta city
+
+</td>
+
+<td style="text-align:left;">
+
+wapakoneta.net
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4835180
+
+</td>
+
+<td style="text-align:right;">
+
+0.5083333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Hubbard city
+
+</td>
+
+<td style="text-align:left;">
+
+hubbardcity.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5503550
+
+</td>
+
+<td style="text-align:right;">
+
+0.4915833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Athens
+
+</td>
+
+<td style="text-align:left;">
+
+athenswis.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4854048
+
+</td>
+
+<td style="text-align:right;">
+
+0.4915595
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Onalaska
+
+</td>
+
+<td style="text-align:left;">
+
+cityofonalaska.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2171688
+
+</td>
+
+<td style="text-align:right;">
+
+0.4915000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Somerset
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofsomerset.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3316980
+
+</td>
+
+<td style="text-align:right;">
+
+0.5085000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Danbury
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofdanburynh.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+639259
+
+</td>
+
+<td style="text-align:right;">
+
+0.4915000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Laguna Woods
+
+</td>
+
+<td style="text-align:left;">
+
+www.lagunawoodscity.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5142424
+
+</td>
+
+<td style="text-align:right;">
+
+0.4914921
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Virginia
+
+</td>
+
+<td style="text-align:left;">
+
+Kilmarnock town
+
+</td>
+
+<td style="text-align:left;">
+
+www.kilmarnockva.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1772546
+
+</td>
+
+<td style="text-align:right;">
+
+0.5085337
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Sterling
+
+</td>
+
+<td style="text-align:left;">
+
+ci.sterling.il.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3728240
+
+</td>
+
+<td style="text-align:right;">
+
+0.5086528
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Grimesland
+
+</td>
+
+<td style="text-align:left;">
+
+grimesland.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3482423
+
+</td>
+
+<td style="text-align:right;">
+
+0.4913333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Jersey
+
+</td>
+
+<td style="text-align:left;">
+
+Woodland Park borough
+
+</td>
+
+<td style="text-align:left;">
+
+www.wpnj.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+178204
+
+</td>
+
+<td style="text-align:right;">
+
+0.4912499
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Valley
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofvalley.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2047425
+
+</td>
+
+<td style="text-align:right;">
+
+0.5087588
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Mission Woods
+
+</td>
+
+<td style="text-align:left;">
+
+missionwoods-ks.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4866644
+
+</td>
+
+<td style="text-align:right;">
+
+0.5087663
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Seguin
+
+</td>
+
+<td style="text-align:left;">
+
+www.seguintexas.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1911170
+
+</td>
+
+<td style="text-align:right;">
+
+0.4912136
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Carson, Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+www.carsonia.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2652940
+
+</td>
+
+<td style="text-align:right;">
+
+0.4911082
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Melvindale
+
+</td>
+
+<td style="text-align:left;">
+
+www.melvindale.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4260000
+
+</td>
+
+<td style="text-align:right;">
+
+0.4910834
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Philadelphia
+
+</td>
+
+<td style="text-align:left;">
+
+www.phila.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3758720
+
+</td>
+
+<td style="text-align:right;">
+
+0.4910147
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+St. Pauls
+
+</td>
+
+<td style="text-align:left;">
+
+www.stpaulsnc.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1330088
+
+</td>
+
+<td style="text-align:right;">
+
+0.5090000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Flemington city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofflemington.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4627540
+
+</td>
+
+<td style="text-align:right;">
+
+0.5090000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+South Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Hartford
+
+</td>
+
+<td style="text-align:left;">
+
+www.hartfordsd.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2053200
+
+</td>
+
+<td style="text-align:right;">
+
+0.5090068
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Osage City
+
+</td>
+
+<td style="text-align:left;">
+
+www.osagecity.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4766720
+
+</td>
+
+<td style="text-align:right;">
+
+0.4909853
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Tennessee
+
+</td>
+
+<td style="text-align:left;">
+
+Savannah
+
+</td>
+
+<td style="text-align:left;">
+
+cityofsavannah.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2338425
+
+</td>
+
+<td style="text-align:right;">
+
+0.4908333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Maine
+
+</td>
+
+<td style="text-align:left;">
+
+Lebanon town
+
+</td>
+
+<td style="text-align:left;">
+
+www.lebanon-me.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3469390
+
+</td>
+
+<td style="text-align:right;">
+
+0.5091667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Jersey
+
+</td>
+
+<td style="text-align:left;">
+
+South Plainfield
+
+</td>
+
+<td style="text-align:left;">
+
+www.southplainfieldnj.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+160648
+
+</td>
+
+<td style="text-align:right;">
+
+0.4908333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Pinson
+
+</td>
+
+<td style="text-align:left;">
+
+thecityofpinson.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3709360
+
+</td>
+
+<td style="text-align:right;">
+
+0.4906268
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Butner
+
+</td>
+
+<td style="text-align:left;">
+
+www.butnernc.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5536525
+
+</td>
+
+<td style="text-align:right;">
+
+0.5094224
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Hurley city
+
+</td>
+
+<td style="text-align:left;">
+
+www.hurleywi.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1906355
+
+</td>
+
+<td style="text-align:right;">
+
+0.4905754
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Bettendorf
+
+</td>
+
+<td style="text-align:left;">
+
+www.bettendorf.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5500100
+
+</td>
+
+<td style="text-align:right;">
+
+0.4905648
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Abbotsford
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.abbotsford.wi.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3771780
+
+</td>
+
+<td style="text-align:right;">
+
+0.4905468
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Weldon
+
+</td>
+
+<td style="text-align:left;">
+
+www.historicweldonnc.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2685080
+
+</td>
+
+<td style="text-align:right;">
+
+0.4904672
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Webberville village
+
+</td>
+
+<td style="text-align:left;">
+
+villageofwebberville.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2125606
+
+</td>
+
+<td style="text-align:right;">
+
+0.4901953
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Evarts
+
+</td>
+
+<td style="text-align:left;">
+
+www.evartskentucky.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1912720
+
+</td>
+
+<td style="text-align:right;">
+
+0.5098209
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Chariton
+
+</td>
+
+<td style="text-align:left;">
+
+www.chariton.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1380480
+
+</td>
+
+<td style="text-align:right;">
+
+0.4901551
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Warm Springs
+
+</td>
+
+<td style="text-align:left;">
+
+www.warmspringsga.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2652940
+
+</td>
+
+<td style="text-align:right;">
+
+0.5099996
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Melvindale
+
+</td>
+
+<td style="text-align:left;">
+
+www.melvindale.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1613150
+
+</td>
+
+<td style="text-align:right;">
+
+0.4900000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Idaho
+
+</td>
+
+<td style="text-align:left;">
+
+Cascade
+
+</td>
+
+<td style="text-align:left;">
+
+cascadeid.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4113750
+
+</td>
+
+<td style="text-align:right;">
+
+0.5100000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Oregon
+
+</td>
+
+<td style="text-align:left;">
+
+Clatskanie city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofclatskanie.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4250328
+
+</td>
+
+<td style="text-align:right;">
+
+0.5100000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Monaghan township
+
+</td>
+
+<td style="text-align:left;">
+
+www.monaghantownship.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5380500
+
+</td>
+
+<td style="text-align:right;">
+
+0.4900000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Washington
+
+</td>
+
+<td style="text-align:left;">
+
+Zillah
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofzillah.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3770540
+
+</td>
+
+<td style="text-align:right;">
+
+0.5101389
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Wake Forest
+
+</td>
+
+<td style="text-align:left;">
+
+www.wakeforestnc.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2421325
+
+</td>
+
+<td style="text-align:right;">
+
+0.5101793
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+Cumberland
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.cumberland.md.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2954038
+
+</td>
+
+<td style="text-align:right;">
+
+0.5102539
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Odessa
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofodessamo.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4250408
+
+</td>
+
+<td style="text-align:right;">
+
+0.5102567
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Monongahela city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofmonongahela-pa.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1778370
+
+</td>
+
+<td style="text-align:right;">
+
+0.4897148
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Wadsworth village
+
+</td>
+
+<td style="text-align:left;">
+
+www.villageofwadsworth.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+134816
+
+</td>
+
+<td style="text-align:right;">
+
+0.5103333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Hillsboro town
+
+</td>
+
+<td style="text-align:left;">
+
+www.hillsborotx.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5535850
+
+</td>
+
+<td style="text-align:right;">
+
+0.4896667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Hortonville
+
+</td>
+
+<td style="text-align:left;">
+
+www.hortonvillewi.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+536550
+
+</td>
+
+<td style="text-align:right;">
+
+0.5103423
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Arkansas
+
+</td>
+
+<td style="text-align:left;">
+
+Keo
+
+</td>
+
+<td style="text-align:left;">
+
+www.keoar.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4770580
+
+</td>
+
+<td style="text-align:right;">
+
+0.4896176
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Tennessee
+
+</td>
+
+<td style="text-align:left;">
+
+Spring Hill
+
+</td>
+
+<td style="text-align:left;">
+
+www.springhilltn.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2624540
+
+</td>
+
+<td style="text-align:right;">
+
+0.5103853
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Eaton Rapids city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofeatonrapids.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4834832
+
+</td>
+
+<td style="text-align:right;">
+
+0.5104167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Horizon City
+
+</td>
+
+<td style="text-align:left;">
+
+www.horizoncity.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2639180
+
+</td>
+
+<td style="text-align:right;">
+
+0.4895000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Hopkins village
+
+</td>
+
+<td style="text-align:left;">
+
+www.hopkinstownship.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2663000
+
+</td>
+
+<td style="text-align:right;">
+
+0.5105000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Paw Paw township
+
+</td>
+
+<td style="text-align:left;">
+
+www.pawpawtownship.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5069550
+
+</td>
+
+<td style="text-align:right;">
+
+0.5105000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Vermont
+
+</td>
+
+<td style="text-align:left;">
+
+Springfield
+
+</td>
+
+<td style="text-align:left;">
+
+www.springfieldvt.govoffice2.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1931350
+
+</td>
+
+<td style="text-align:right;">
+
+0.4895000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Glenwood
+
+</td>
+
+<td style="text-align:left;">
+
+cityofglenwood.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5529775
+
+</td>
+
+<td style="text-align:right;">
+
+0.4895000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Goodman
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofgoodman.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2152140
+
+</td>
+
+<td style="text-align:right;">
+
+0.4894415
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Midway city
+
+</td>
+
+<td style="text-align:left;">
+
+meetmeinmidway.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1712710
+
+</td>
+
+<td style="text-align:right;">
+
+0.4894103
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Chatsworth town
+
+</td>
+
+<td style="text-align:left;">
+
+www.chatsworthillinois.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2420050
+
+</td>
+
+<td style="text-align:right;">
+
+0.5106299
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+Cottage City
+
+</td>
+
+<td style="text-align:left;">
+
+www.cottagecitymd.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4285592
+
+</td>
+
+<td style="text-align:right;">
+
+0.4893333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Wilson borough
+
+</td>
+
+<td style="text-align:left;">
+
+wilsonborough.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2627960
+
+</td>
+
+<td style="text-align:right;">
+
+0.4892500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Ferrysburg
+
+</td>
+
+<td style="text-align:left;">
+
+www.ferrysburg.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2725918
+
+</td>
+
+<td style="text-align:right;">
+
+0.4892500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Greenwood
+
+</td>
+
+<td style="text-align:left;">
+
+www.greenwoodmn.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+133448
+
+</td>
+
+<td style="text-align:right;">
+
+0.5107901
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Hartselle city
+
+</td>
+
+<td style="text-align:left;">
+
+www.hartselle.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1336220
+
+</td>
+
+<td style="text-align:right;">
+
+0.4891935
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Hamilton
+
+</td>
+
+<td style="text-align:left;">
+
+hamiltoncityhall.net
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3935658
+
+</td>
+
+<td style="text-align:right;">
+
+0.4891667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Hiram village
+
+</td>
+
+<td style="text-align:left;">
+
+www.hiramvillage.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4615700
+
+</td>
+
+<td style="text-align:right;">
+
+0.4891667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+South Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Deadwood
+
+</td>
+
+<td style="text-align:left;">
+
+www.deadwood.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5516300
+
+</td>
+
+<td style="text-align:right;">
+
+0.5108333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Colfax town
+
+</td>
+
+<td style="text-align:left;">
+
+www.villageofcolfaxwi.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4211336
+
+</td>
+
+<td style="text-align:right;">
+
+0.4890381
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Carnegie borough
+
+</td>
+
+<td style="text-align:left;">
+
+carnegieborough.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+203220
+
+</td>
+
+<td style="text-align:right;">
+
+0.5109850
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Alaska
+
+</td>
+
+<td style="text-align:left;">
+
+Anderson
+
+</td>
+
+<td style="text-align:left;">
+
+www.anderson.govoffice.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1807174
+
+</td>
+
+<td style="text-align:right;">
+
+0.4890000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Brazil
+
+</td>
+
+<td style="text-align:left;">
+
+brazil.in.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2518560
+
+</td>
+
+<td style="text-align:right;">
+
+0.4889298
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+East Brookfield
+
+</td>
+
+<td style="text-align:left;">
+
+www.eastbrookfieldma.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4827420
+
+</td>
+
+<td style="text-align:right;">
+
+0.4888036
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Freeport
+
+</td>
+
+<td style="text-align:left;">
+
+freeport.tx.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3654078
+
+</td>
+
+<td style="text-align:right;">
+
+0.4887696
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Nunda village
+
+</td>
+
+<td style="text-align:left;">
+
+villageofnunda.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5549400
+
+</td>
+
+<td style="text-align:right;">
+
+0.5112554
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Marion
+
+</td>
+
+<td style="text-align:left;">
+
+marion.govoffice2.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+143120
+
+</td>
+
+<td style="text-align:right;">
+
+0.4886012
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Lincoln
+
+</td>
+
+<td style="text-align:left;">
+
+www.lincolnalabama.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5522850
+
+</td>
+
+<td style="text-align:right;">
+
+0.5114167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Egg Harbor
+
+</td>
+
+<td style="text-align:left;">
+
+www.villageofeggharbor.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5525350
+
+</td>
+
+<td style="text-align:right;">
+
+0.4885243
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Farmington
+
+</td>
+
+<td style="text-align:left;">
+
+www.farmingtontown.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+167056
+
+</td>
+
+<td style="text-align:right;">
+
+0.5114844
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Russellville city
+
+</td>
+
+<td style="text-align:left;">
+
+www.russellvilleal.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3969708
+
+</td>
+
+<td style="text-align:right;">
+
+0.5114905
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+St. Paris village
+
+</td>
+
+<td style="text-align:left;">
+
+www.stparisohio.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4807432
+
+</td>
+
+<td style="text-align:right;">
+
+0.5115000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Bellville
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofbellville.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4907470
+
+</td>
+
+<td style="text-align:right;">
+
+0.5115000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Utah
+
+</td>
+
+<td style="text-align:left;">
+
+Boulder
+
+</td>
+
+<td style="text-align:left;">
+
+boulder.utah.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4982620
+
+</td>
+
+<td style="text-align:right;">
+
+0.4885000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Utah
+
+</td>
+
+<td style="text-align:left;">
+
+Wellsville
+
+</td>
+
+<td style="text-align:left;">
+
+www.wellsvillecity.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4962030
+
+</td>
+
+<td style="text-align:right;">
+
+0.5115000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Utah
+
+</td>
+
+<td style="text-align:left;">
+
+Price
+
+</td>
+
+<td style="text-align:left;">
+
+www.pricecityutah.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4113750
+
+</td>
+
+<td style="text-align:right;">
+
+0.4884530
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Oregon
+
+</td>
+
+<td style="text-align:left;">
+
+Clatskanie city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofclatskanie.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3645920
+
+</td>
+
+<td style="text-align:right;">
+
+0.4883209
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+www.rootsweb.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3952052
+
+</td>
+
+<td style="text-align:right;">
+
+0.5117500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Moreland Hills
+
+</td>
+
+<td style="text-align:left;">
+
+www.morelandhills.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4000200
+
+</td>
+
+<td style="text-align:right;">
+
+0.5117500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Oklahoma
+
+</td>
+
+<td style="text-align:left;">
+
+Ada
+
+</td>
+
+<td style="text-align:left;">
+
+www.adaok.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3958828
+
+</td>
+
+<td style="text-align:right;">
+
+0.4882457
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Orrville city
+
+</td>
+
+<td style="text-align:left;">
+
+www.orrville.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1812124
+
+</td>
+
+<td style="text-align:right;">
+
+0.4882012
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Charlestown
+
+</td>
+
+<td style="text-align:left;">
+
+cityofcharlestown.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2736800
+
+</td>
+
+<td style="text-align:right;">
+
+0.5118333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Lewiston
+
+</td>
+
+<td style="text-align:left;">
+
+www.lewistonmn.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1962355
+
+</td>
+
+<td style="text-align:right;">
+
+0.4881377
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Perry
+
+</td>
+
+<td style="text-align:left;">
+
+www.perryia.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+129992
+
+</td>
+
+<td style="text-align:right;">
+
+0.5119285
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Glencoe
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofglencoe.net
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2663300
+
+</td>
+
+<td style="text-align:right;">
+
+0.4880000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Pellston village
+
+</td>
+
+<td style="text-align:left;">
+
+www.pellstonmi.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3813180
+
+</td>
+
+<td style="text-align:right;">
+
+0.4880000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+North Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Center
+
+</td>
+
+<td style="text-align:left;">
+
+www.centernd.net
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1928605
+
+</td>
+
+<td style="text-align:right;">
+
+0.4879100
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Fort Madison
+
+</td>
+
+<td style="text-align:left;">
+
+www.fortmadison.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3670420
+
+</td>
+
+<td style="text-align:right;">
+
+0.4878818
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Spring Valley village
+
+</td>
+
+<td style="text-align:left;">
+
+www.villagespringvalley.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4846224
+
+</td>
+
+<td style="text-align:right;">
+
+0.5121234
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Malakoff city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofmalakoff.net
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1319112
+
+</td>
+
+<td style="text-align:right;">
+
+0.5121625
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Commerce city
+
+</td>
+
+<td style="text-align:left;">
+
+www.commercega.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5371960
+
+</td>
+
+<td style="text-align:right;">
+
+0.5121687
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Washington
+
+</td>
+
+<td style="text-align:left;">
+
+Toppenish
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityoftoppenish.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2273640
+
+</td>
+
+<td style="text-align:right;">
+
+0.5122500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Louisiana
+
+</td>
+
+<td style="text-align:left;">
+
+Sulphur
+
+</td>
+
+<td style="text-align:left;">
+
+www.sulphur.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1313287
+
+</td>
+
+<td style="text-align:right;">
+
+0.5122885
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Turner County
+
+</td>
+
+<td style="text-align:left;">
+
+turnercountygeorgia.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3470110
+
+</td>
+
+<td style="text-align:right;">
+
+0.4877036
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New Jersey
+
+</td>
+
+<td style="text-align:left;">
+
+Spring Lake borough
+
+</td>
+
+<td style="text-align:left;">
+
+springlakeboro.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+168352
+
+</td>
+
+<td style="text-align:right;">
+
+0.4876808
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Satsuma
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofsatsuma.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1230525
+
+</td>
+
+<td style="text-align:right;">
+
+0.5123333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+High Springs
+
+</td>
+
+<td style="text-align:left;">
+
+highsprings.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4741980
+
+</td>
+
+<td style="text-align:right;">
+
+0.5123333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Tennessee
+
+</td>
+
+<td style="text-align:left;">
+
+Lexington city
+
+</td>
+
+<td style="text-align:left;">
+
+lexingtontn.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3878940
+
+</td>
+
+<td style="text-align:right;">
+
+0.4876635
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Tioga city
+
+</td>
+
+<td style="text-align:left;">
+
+www.tiogand.net
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1270345
+
+</td>
+
+<td style="text-align:right;">
+
+0.4876619
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Sweetwater city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofsweetwater.fl.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3749800
+
+</td>
+
+<td style="text-align:right;">
+
+0.4875310
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Oxford
+
+</td>
+
+<td style="text-align:left;">
+
+www.oxfordnc.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2736800
+
+</td>
+
+<td style="text-align:right;">
+
+0.5125000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Lewiston
+
+</td>
+
+<td style="text-align:left;">
+
+www.lewistonmn.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4269752
+
+</td>
+
+<td style="text-align:right;">
+
+0.5125000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Sharon Hill borough
+
+</td>
+
+<td style="text-align:left;">
+
+sharonhillboro.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4205504
+
+</td>
+
+<td style="text-align:right;">
+
+0.4875000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Ben Avon, Allegheny County, Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+www.benavon.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+203220
+
+</td>
+
+<td style="text-align:right;">
+
+0.4874448
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Alaska
+
+</td>
+
+<td style="text-align:left;">
+
+Anderson
+
+</td>
+
+<td style="text-align:left;">
+
+www.anderson.govoffice.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4247968
+
+</td>
+
+<td style="text-align:right;">
+
+0.4874229
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Marysville borough
+
+</td>
+
+<td style="text-align:left;">
+
+www.marysvilleboro.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3934328
+
+</td>
+
+<td style="text-align:right;">
+
+0.4874167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Hartville
+
+</td>
+
+<td style="text-align:left;">
+
+www.hartvilleoh.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2041300
+
+</td>
+
+<td style="text-align:right;">
+
+0.4873998
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Lincoln Center
+
+</td>
+
+<td style="text-align:left;">
+
+www.lincolnks.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1852776
+
+</td>
+
+<td style="text-align:right;">
+
+0.5126366
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+New Chicago town
+
+</td>
+
+<td style="text-align:left;">
+
+townofnewchicago.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4235520
+
+</td>
+
+<td style="text-align:right;">
+
+0.4873333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Honesdale borough
+
+</td>
+
+<td style="text-align:left;">
+
+honesdaleborough.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+641152
+
+</td>
+
+<td style="text-align:right;">
+
+0.5127700
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Lemoore
+
+</td>
+
+<td style="text-align:left;">
+
+www.lemoore.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3921469
+
+</td>
+
+<td style="text-align:right;">
+
+0.4871308
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Delaware City township
+
+</td>
+
+<td style="text-align:left;">
+
+www.delawaretownshipohio.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4513150
+
+</td>
+
+<td style="text-align:right;">
+
+0.5128784
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+South Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Chapin
+
+</td>
+
+<td style="text-align:left;">
+
+www.chapinsc.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5515725
+
+</td>
+
+<td style="text-align:right;">
+
+0.5128940
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Clintonville
+
+</td>
+
+<td style="text-align:left;">
+
+clintonvillewi.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3663957
+
+</td>
+
+<td style="text-align:right;">
+
+0.4870000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Round Lake
+
+</td>
+
+<td style="text-align:left;">
+
+www.roundlakevillage.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3112315
+
+</td>
+
+<td style="text-align:right;">
+
+0.5130000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Nebraska
+
+</td>
+
+<td style="text-align:left;">
+
+David City
+
+</td>
+
+<td style="text-align:left;">
+
+davidcityne.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3645920
+
+</td>
+
+<td style="text-align:right;">
+
+0.5130000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+www.rootsweb.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4863464
+
+</td>
+
+<td style="text-align:right;">
+
+0.5130000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Rotan
+
+</td>
+
+<td style="text-align:left;">
+
+www.rotan.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2033425
+
+</td>
+
+<td style="text-align:right;">
+
+0.5130861
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Hugoton
+
+</td>
+
+<td style="text-align:left;">
+
+cityofhugoton.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3351380
+
+</td>
+
+<td style="text-align:right;">
+
+0.4868333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Newfields
+
+</td>
+
+<td style="text-align:left;">
+
+www.newfieldsnh.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+133448
+
+</td>
+
+<td style="text-align:right;">
+
+0.4868333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Hartselle city
+
+</td>
+
+<td style="text-align:left;">
+
+www.hartselle.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3025300
+
+</td>
+
+<td style="text-align:right;">
+
+0.5132438
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Montana
+
+</td>
+
+<td style="text-align:left;">
+
+Fairview
+
+</td>
+
+<td style="text-align:left;">
+
+www.midrivers.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2756788
+
+</td>
+
+<td style="text-align:right;">
+
+0.4867259
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+St. Charles
+
+</td>
+
+<td style="text-align:left;">
+
+www.stcharlesmn.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2136604
+
+</td>
+
+<td style="text-align:right;">
+
+0.4866979
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Highland Heights
+
+</td>
+
+<td style="text-align:left;">
+
+hhky.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2516670
+
+</td>
+
+<td style="text-align:right;">
+
+0.5133333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+Deerfield town
+
+</td>
+
+<td style="text-align:left;">
+
+www.deerfieldma.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4854960
+
+</td>
+
+<td style="text-align:right;">
+
+0.5133333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Panhandle town
+
+</td>
+
+<td style="text-align:left;">
+
+www.panhandletx.govoffice2.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3768520
+
+</td>
+
+<td style="text-align:right;">
+
+0.4866562
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Troy
+
+</td>
+
+<td style="text-align:left;">
+
+troy.nc.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3661148
+
+</td>
+
+<td style="text-align:right;">
+
+0.5134611
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Rensselaer city
+
+</td>
+
+<td style="text-align:left;">
+
+www.rensselaerny.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2626420
+
+</td>
+
+<td style="text-align:right;">
+
+0.4865000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Essexville city
+
+</td>
+
+<td style="text-align:left;">
+
+www.essexville.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4035000
+
+</td>
+
+<td style="text-align:right;">
+
+0.4865000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Oklahoma
+
+</td>
+
+<td style="text-align:left;">
+
+Hobart city
+
+</td>
+
+<td style="text-align:left;">
+
+hobartmainst.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2663300
+
+</td>
+
+<td style="text-align:right;">
+
+0.5135129
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Pellston village
+
+</td>
+
+<td style="text-align:left;">
+
+www.pellstonmi.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3474210
+
+</td>
+
+<td style="text-align:right;">
+
+0.5135683
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New Jersey
+
+</td>
+
+<td style="text-align:left;">
+
+Tuckerton
+
+</td>
+
+<td style="text-align:left;">
+
+www.tuckertonborough.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4831592
+
+</td>
+
+<td style="text-align:right;">
+
+0.4864036
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Gun Barrel City
+
+</td>
+
+<td style="text-align:left;">
+
+www.gunbarrelcity.net
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5520450
+
+</td>
+
+<td style="text-align:right;">
+
+0.4863833
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Dorchester
+
+</td>
+
+<td style="text-align:left;">
+
+www.dorchesterwi.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5546575
+
+</td>
+
+<td style="text-align:right;">
+
+0.5136179
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Lyndon
+
+</td>
+
+<td style="text-align:left;">
+
+www.townoflyndon.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2655100
+
+</td>
+
+<td style="text-align:right;">
+
+0.4863798
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Montague city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofmontague.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4128100
+
+</td>
+
+<td style="text-align:right;">
+
+0.4863333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Oregon
+
+</td>
+
+<td style="text-align:left;">
+
+Gaston
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofgaston.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1911080
+
+</td>
+
+<td style="text-align:right;">
+
+0.4863237
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Carroll
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofcarroll.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1820728
+
+</td>
+
+<td style="text-align:right;">
+
+0.4862540
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Elkhart
+
+</td>
+
+<td style="text-align:left;">
+
+www.elkhartindiana.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2174082
+
+</td>
+
+<td style="text-align:right;">
+
+0.4861667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Strathmoor Village
+
+</td>
+
+<td style="text-align:left;">
+
+cityofstrathmoorvillage.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1246500
+
+</td>
+
+<td style="text-align:right;">
+
+0.4861667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Monticello
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofmonticello.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2938072
+
+</td>
+
+<td style="text-align:right;">
+
+0.4861388
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Kearney
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.kearney.mo.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2053550
+
+</td>
+
+<td style="text-align:right;">
+
+0.5138643
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Ottawa
+
+</td>
+
+<td style="text-align:left;">
+
+www.ottawaks.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3683129
+
+</td>
+
+<td style="text-align:right;">
+
+0.5139167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Worcester
+
+</td>
+
+<td style="text-align:left;">
+
+www.rootsweb.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1769875
+
+</td>
+
+<td style="text-align:right;">
+
+0.5140000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Sidney village
+
+</td>
+
+<td style="text-align:left;">
+
+<http://villageofsidney.com/index.html>
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1781802
+
+</td>
+
+<td style="text-align:right;">
+
+0.5140000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Williamsfield village
+
+</td>
+
+<td style="text-align:left;">
+
+www.williamsfield.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+113264
+
+</td>
+
+<td style="text-align:right;">
+
+0.4859925
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Center Point
+
+</td>
+
+<td style="text-align:left;">
+
+www.thecityofcenterpoint.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1982065
+
+</td>
+
+<td style="text-align:right;">
+
+0.4859626
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Walnut
+
+</td>
+
+<td style="text-align:left;">
+
+www.walnutiowa.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4027850
+
+</td>
+
+<td style="text-align:right;">
+
+0.4859398
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Oklahoma
+
+</td>
+
+<td style="text-align:left;">
+
+Freedom
+
+</td>
+
+<td style="text-align:left;">
+
+www.freedomokla.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+634246
+
+</td>
+
+<td style="text-align:right;">
+
+0.4859355
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Holtville
+
+</td>
+
+<td style="text-align:left;">
+
+www.holtville.ca.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4219752
+
+</td>
+
+<td style="text-align:right;">
+
+0.4859167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Downingtown borough
+
+</td>
+
+<td style="text-align:left;">
+
+www.downingtown.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4835180
+
+</td>
+
+<td style="text-align:right;">
+
+0.5141274
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Hubbard city
+
+</td>
+
+<td style="text-align:left;">
+
+hubbardcity.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1259725
+
+</td>
+
+<td style="text-align:right;">
+
+0.4858554
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Redington Beach town
+
+</td>
+
+<td style="text-align:left;">
+
+townofredingtonbeach.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2053550
+
+</td>
+
+<td style="text-align:right;">
+
+0.4858151
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Ottawa
+
+</td>
+
+<td style="text-align:left;">
+
+www.ottawaks.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+150312
+
+</td>
+
+<td style="text-align:right;">
+
+0.5141898
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Montevallo
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofmontevallo.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5348820
+
+</td>
+
+<td style="text-align:right;">
+
+0.4857505
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Washington
+
+</td>
+
+<td style="text-align:left;">
+
+Newport
+
+</td>
+
+<td style="text-align:left;">
+
+www.newport-wa.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4805528
+
+</td>
+
+<td style="text-align:right;">
+
+0.4857450
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Bandera
+
+</td>
+
+<td style="text-align:left;">
+
+www.banderatex.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2471650
+
+</td>
+
+<td style="text-align:right;">
+
+0.5144095
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+Sharptown
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofsharptown.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2142598
+
+</td>
+
+<td style="text-align:right;">
+
+0.4855653
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Kingsley
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofkingsley.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2151978
+
+</td>
+
+<td style="text-align:right;">
+
+0.5145000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Middletown
+
+</td>
+
+<td style="text-align:left;">
+
+cityofmiddletownky.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3025300
+
+</td>
+
+<td style="text-align:right;">
+
+0.5145000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Montana
+
+</td>
+
+<td style="text-align:left;">
+
+Fairview
+
+</td>
+
+<td style="text-align:left;">
+
+www.midrivers.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3728240
+
+</td>
+
+<td style="text-align:right;">
+
+0.5145000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Grimesland
+
+</td>
+
+<td style="text-align:left;">
+
+grimesland.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3976022
+
+</td>
+
+<td style="text-align:right;">
+
+0.5145000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Sylvania
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofsylvania.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3544490
+
+</td>
+
+<td style="text-align:right;">
+
+0.4855000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+New Mexico
+
+</td>
+
+<td style="text-align:left;">
+
+Lovington
+
+</td>
+
+<td style="text-align:left;">
+
+www.lovington.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5518525
+
+</td>
+
+<td style="text-align:right;">
+
+0.4855000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Dale
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofdale.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3964150
+
+</td>
+
+<td style="text-align:right;">
+
+0.4854167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Port Clinton
+
+</td>
+
+<td style="text-align:left;">
+
+www.portclinton.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1919945
+
+</td>
+
+<td style="text-align:right;">
+
+0.5145833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Denison
+
+</td>
+
+<td style="text-align:left;">
+
+www.denisonia.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3645920
+
+</td>
+
+<td style="text-align:right;">
+
+0.5146151
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+www.rootsweb.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2423025
+
+</td>
+
+<td style="text-align:right;">
+
+0.5146667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Maryland
+
+</td>
+
+<td style="text-align:left;">
+
+District Heights
+
+</td>
+
+<td style="text-align:left;">
+
+www.districtheights.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+677364
+
+</td>
+
+<td style="text-align:right;">
+
+0.4853159
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Susanville city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofsusanville.net
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1779397
+
+</td>
+
+<td style="text-align:right;">
+
+0.4853069
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Wayne village (pt.)
+
+</td>
+
+<td style="text-align:left;">
+
+villageofwayne.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+181720
+
+</td>
+
+<td style="text-align:right;">
+
+0.4852719
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Wetumpka
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofwetumpka.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2006125
+
+</td>
+
+<td style="text-align:right;">
+
+0.5148944
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Bentley
+
+</td>
+
+<td style="text-align:left;">
+
+www.bentleyks.webs.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2019300
+
+</td>
+
+<td style="text-align:right;">
+
+0.4850639
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Eastborough
+
+</td>
+
+<td style="text-align:left;">
+
+www.eastborough-ks.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4000200
+
+</td>
+
+<td style="text-align:right;">
+
+0.5149371
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Oklahoma
+
+</td>
+
+<td style="text-align:left;">
+
+Ada
+
+</td>
+
+<td style="text-align:left;">
+
+www.adaok.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3660147
+
+</td>
+
+<td style="text-align:right;">
+
+0.5149639
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Putnam Valley
+
+</td>
+
+<td style="text-align:left;">
+
+www.putnamvalley.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+113648
+
+</td>
+
+<td style="text-align:right;">
+
+0.5149934
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Centre
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofcentre.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2005600
+
+</td>
+
+<td style="text-align:right;">
+
+0.5150000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Belleville city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofbellevillekansas.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4880560
+
+</td>
+
+<td style="text-align:right;">
+
+0.5150000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Yoakum
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofyoakum.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4861340
+
+</td>
+
+<td style="text-align:right;">
+
+0.4850000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Redwater city
+
+</td>
+
+<td style="text-align:left;">
+
+redwatertexas.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5505200
+
+</td>
+
+<td style="text-align:right;">
+
+0.5150000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Bass Lake
+
+</td>
+
+<td style="text-align:left;">
+
+basslakewi.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3770540
+
+</td>
+
+<td style="text-align:right;">
+
+0.5150258
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Wake Forest
+
+</td>
+
+<td style="text-align:left;">
+
+www.wakeforestnc.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1004650
+
+</td>
+
+<td style="text-align:right;">
+
+0.5150833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Delaware
+
+</td>
+
+<td style="text-align:left;">
+
+Bellefonte
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofbellefonte.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2629200
+
+</td>
+
+<td style="text-align:right;">
+
+0.4847861
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Flushing
+
+</td>
+
+<td style="text-align:left;">
+
+www.flushingcity.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4872824
+
+</td>
+
+<td style="text-align:right;">
+
+0.4847226
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Thrall
+
+</td>
+
+<td style="text-align:left;">
+
+www.thrallisd.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3661885
+
+</td>
+
+<td style="text-align:right;">
+
+0.4847144
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Ripley
+
+</td>
+
+<td style="text-align:left;">
+
+www.ripley-ny.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3908084
+
+</td>
+
+<td style="text-align:right;">
+
+0.4846667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Bradford
+
+</td>
+
+<td style="text-align:left;">
+
+bradfordoh.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2921502
+
+</td>
+
+<td style="text-align:right;">
+
+0.4845953
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+El Dorado Springs city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofeldoradospringsmo.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2670680
+
+</td>
+
+<td style="text-align:right;">
+
+0.5154167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+St. Clair
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofstclair.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2053550
+
+</td>
+
+<td style="text-align:right;">
+
+0.5155000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Ottawa
+
+</td>
+
+<td style="text-align:left;">
+
+www.ottawaks.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+837600
+
+</td>
+
+<td style="text-align:right;">
+
+0.5155000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Colorado
+
+</td>
+
+<td style="text-align:left;">
+
+Hot Sulphur Springs
+
+</td>
+
+<td style="text-align:left;">
+
+www.hotsulphurspringsco.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2746348
+
+</td>
+
+<td style="text-align:right;">
+
+0.4845000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Nisswa
+
+</td>
+
+<td style="text-align:left;">
+
+cityofnisswa.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3640530
+
+</td>
+
+<td style="text-align:right;">
+
+0.4845000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Lake Grove village
+
+</td>
+
+<td style="text-align:left;">
+
+lakegroveny.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4829336
+
+</td>
+
+<td style="text-align:right;">
+
+0.4844820
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Georgetown
+
+</td>
+
+<td style="text-align:left;">
+
+www.georgetown.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4575850
+
+</td>
+
+<td style="text-align:right;">
+
+0.5155833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+South Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+West Columbia
+
+</td>
+
+<td style="text-align:left;">
+
+www.westcolumbiasc.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3505780
+
+</td>
+
+<td style="text-align:right;">
+
+0.4843689
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New Mexico
+
+</td>
+
+<td style="text-align:left;">
+
+Aztec
+
+</td>
+
+<td style="text-align:left;">
+
+www.aztecnm.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5039325
+
+</td>
+
+<td style="text-align:right;">
+
+0.4843650
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Vermont
+
+</td>
+
+<td style="text-align:left;">
+
+Leicester
+
+</td>
+
+<td style="text-align:left;">
+
+www.leicestervt.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4258432
+
+</td>
+
+<td style="text-align:right;">
+
+0.4843333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Patton borough
+
+</td>
+
+<td style="text-align:left;">
+
+www.pattonboro.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1971625
+
+</td>
+
+<td style="text-align:right;">
+
+0.5156667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Sergeant Bluff
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofsergeantbluff.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5344690
+
+</td>
+
+<td style="text-align:right;">
+
+0.5156667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Washington
+
+</td>
+
+<td style="text-align:left;">
+
+Medical Lake city
+
+</td>
+
+<td style="text-align:left;">
+
+medical-lake.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+142640
+
+</td>
+
+<td style="text-align:right;">
+
+0.4842034
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Lexington
+
+</td>
+
+<td style="text-align:left;">
+
+www.lexingtonal.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2303355
+
+</td>
+
+<td style="text-align:right;">
+
+0.5160000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Maine
+
+</td>
+
+<td style="text-align:left;">
+
+Bath
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofbath.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2760376
+
+</td>
+
+<td style="text-align:right;">
+
+0.5160000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Silver Lake
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofsilverlake.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1769875
+
+</td>
+
+<td style="text-align:right;">
+
+0.4839894
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Sidney village
+
+</td>
+
+<td style="text-align:left;">
+
+<http://villageofsidney.com/index.html>
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4778600
+
+</td>
+
+<td style="text-align:right;">
+
+0.5160256
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Tennessee
+
+</td>
+
+<td style="text-align:left;">
+
+Waynesboro
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofwaynesboro.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3532520
+
+</td>
+
+<td style="text-align:right;">
+
+0.5160446
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New Mexico
+
+</td>
+
+<td style="text-align:left;">
+
+Hobbs
+
+</td>
+
+<td style="text-align:left;">
+
+www.hobbsnm.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+616322
+
+</td>
+
+<td style="text-align:right;">
+
+0.5160833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Corning
+
+</td>
+
+<td style="text-align:left;">
+
+www.corning.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4854780
+
+</td>
+
+<td style="text-align:right;">
+
+0.4839167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Palmhurst
+
+</td>
+
+<td style="text-align:left;">
+
+cityofpalmhursttx.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3638748
+
+</td>
+
+<td style="text-align:right;">
+
+0.5160865
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Johnson City village
+
+</td>
+
+<td style="text-align:left;">
+
+www.villageofjc.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4246792
+
+</td>
+
+<td style="text-align:right;">
+
+0.4838183
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Malvern borough
+
+</td>
+
+<td style="text-align:left;">
+
+malvern.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4863464
+
+</td>
+
+<td style="text-align:right;">
+
+0.4836738
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Rotan
+
+</td>
+
+<td style="text-align:left;">
+
+www.rotan.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1235900
+
+</td>
+
+<td style="text-align:right;">
+
+0.4836667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Jupiter Inlet Colony
+
+</td>
+
+<td style="text-align:left;">
+
+www.jupiterinletcolony.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2772328
+
+</td>
+
+<td style="text-align:right;">
+
+0.4836629
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Zumbrota city
+
+</td>
+
+<td style="text-align:left;">
+
+ci.zumbrota.mn.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5551250
+
+</td>
+
+<td style="text-align:right;">
+
+0.5163402
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Merrill
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.merrill.wi.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3973894
+
+</td>
+
+<td style="text-align:right;">
+
+0.4836285
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+South Zanesville village
+
+</td>
+
+<td style="text-align:left;">
+
+www.villageofsouthzanesville.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3107730
+
+</td>
+
+<td style="text-align:right;">
+
+0.4836242
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Nebraska
+
+</td>
+
+<td style="text-align:left;">
+
+Cambridge
+
+</td>
+
+<td style="text-align:left;">
+
+www.cambridgene.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2077500
+
+</td>
+
+<td style="text-align:right;">
+
+0.5163803
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Westwood
+
+</td>
+
+<td style="text-align:left;">
+
+www.westwoodks.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2978370
+
+</td>
+
+<td style="text-align:right;">
+
+0.5165000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Wellston city
+
+</td>
+
+<td style="text-align:left;">
+
+wellstonmo.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4829660
+
+</td>
+
+<td style="text-align:right;">
+
+0.5165000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Gladewater city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofgladewater.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2521150
+
+</td>
+
+<td style="text-align:right;">
+
+0.4835000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+Edgartown
+
+</td>
+
+<td style="text-align:left;">
+
+www.edgartown-ma.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5515600
+
+</td>
+
+<td style="text-align:right;">
+
+0.4835000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Clinton
+
+</td>
+
+<td style="text-align:left;">
+
+clintonwi.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+133856
+
+</td>
+
+<td style="text-align:right;">
+
+0.5165312
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Headland city
+
+</td>
+
+<td style="text-align:left;">
+
+www.headlandalabama.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3705340
+
+</td>
+
+<td style="text-align:right;">
+
+0.5166668
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Bethania
+
+</td>
+
+<td style="text-align:left;">
+
+townofbethania.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3921602
+
+</td>
+
+<td style="text-align:right;">
+
+0.4833277
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Delphos city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofdelphos.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1728144
+
+</td>
+
+<td style="text-align:right;">
+
+0.5166861
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Fulton
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityoffulton.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5486452
+
+</td>
+
+<td style="text-align:right;">
+
+0.4832956
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+West Virginia
+
+</td>
+
+<td style="text-align:left;">
+
+Wheeling
+
+</td>
+
+<td style="text-align:left;">
+
+www.wheelingwv.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3387060
+
+</td>
+
+<td style="text-align:right;">
+
+0.4831667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Woodstock
+
+</td>
+
+<td style="text-align:left;">
+
+www.woodstocknh.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+153016
+
+</td>
+
+<td style="text-align:right;">
+
+0.5168333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Muscle Shoals city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofmuscleshoals.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3661148
+
+</td>
+
+<td style="text-align:right;">
+
+0.4830968
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Rensselaer city
+
+</td>
+
+<td style="text-align:left;">
+
+www.rensselaerny.gov
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4579090
+
+</td>
+
+<td style="text-align:right;">
+
+0.5169572
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+South Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Woodruff city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofwoodruff.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2156136
+
+</td>
+
+<td style="text-align:right;">
+
+0.4830000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Nicholasville
+
+</td>
+
+<td style="text-align:left;">
+
+www.nicholasville.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4534360
+
+</td>
+
+<td style="text-align:right;">
+
+0.4830000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+South Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Holly Hill
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofhollyhillsc.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5565600
+
+</td>
+
+<td style="text-align:right;">
+
+0.5170000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Princeton
+
+</td>
+
+<td style="text-align:left;">
+
+cityofprincetonwi.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2682780
+
+</td>
+
+<td style="text-align:right;">
+
+0.5170171
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Wakefield
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofwakefield.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4945860
+
+</td>
+
+<td style="text-align:right;">
+
+0.5170382
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Utah
+
+</td>
+
+<td style="text-align:left;">
+
+Logan
+
+</td>
+
+<td style="text-align:left;">
+
+www.loganutah.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4805528
+
+</td>
+
+<td style="text-align:right;">
+
+0.5170457
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Bandera
+
+</td>
+
+<td style="text-align:left;">
+
+www.banderatex.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5528850
+
+</td>
+
+<td style="text-align:right;">
+
+0.4829167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Germantown
+
+</td>
+
+<td style="text-align:left;">
+
+townofgermantown.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1242625
+
+</td>
+
+<td style="text-align:right;">
+
+0.5170833
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Florida
+
+</td>
+
+<td style="text-align:left;">
+
+Malabar
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofmalabar.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5142424
+
+</td>
+
+<td style="text-align:right;">
+
+0.4828543
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Virginia
+
+</td>
+
+<td style="text-align:left;">
+
+Kilmarnock town
+
+</td>
+
+<td style="text-align:left;">
+
+www.kilmarnockva.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2171454
+
+</td>
+
+<td style="text-align:right;">
+
+0.4828341
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Smiths Grove city
+
+</td>
+
+<td style="text-align:left;">
+
+www.smithsgrove.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1982065
+
+</td>
+
+<td style="text-align:right;">
+
+0.4828254
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Walnut
+
+</td>
+
+<td style="text-align:left;">
+
+www.walnutiowa.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2736800
+
+</td>
+
+<td style="text-align:right;">
+
+0.4827684
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Lewiston
+
+</td>
+
+<td style="text-align:left;">
+
+www.lewistonmn.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2204685
+
+</td>
+
+<td style="text-align:right;">
+
+0.5172417
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Louisiana
+
+</td>
+
+<td style="text-align:left;">
+
+Bastrop
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofbastrop.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2682300
+
+</td>
+
+<td style="text-align:right;">
+
+0.4827549
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Vicksburg village
+
+</td>
+
+<td style="text-align:left;">
+
+vicksburgmi.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3119385
+
+</td>
+
+<td style="text-align:right;">
+
+0.5172687
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Nebraska
+
+</td>
+
+<td style="text-align:left;">
+
+Gothenburg
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.gothenburg.ne.us
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2930214
+
+</td>
+
+<td style="text-align:right;">
+
+0.4826667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Hannibal
+
+</td>
+
+<td style="text-align:left;">
+
+www.hannibal-mo.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+508290
+
+</td>
+
+<td style="text-align:right;">
+
+0.4826667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Arkansas
+
+</td>
+
+<td style="text-align:left;">
+
+Bradley
+
+</td>
+
+<td style="text-align:left;">
+
+bradleyark.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3967356
+
+</td>
+
+<td style="text-align:right;">
+
+0.5173973
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Rittman
+
+</td>
+
+<td style="text-align:left;">
+
+rittman.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3677684
+
+</td>
+
+<td style="text-align:right;">
+
+0.5174167
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Voorheesville village
+
+</td>
+
+<td style="text-align:left;">
+
+www.villageofvoorheesville.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3535040
+
+</td>
+
+<td style="text-align:right;">
+
+0.5175000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+New Mexico
+
+</td>
+
+<td style="text-align:left;">
+
+Jal
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofjal.us
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4175150
+
+</td>
+
+<td style="text-align:right;">
+
+0.5175000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Oregon
+
+</td>
+
+<td style="text-align:left;">
+
+Turner city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofturner.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+609878
+
+</td>
+
+<td style="text-align:right;">
+
+0.5175000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+California
+
+</td>
+
+<td style="text-align:left;">
+
+Calipatria
+
+</td>
+
+<td style="text-align:left;">
+
+www.calipatria.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2218055
+
+</td>
+
+<td style="text-align:right;">
+
+0.4825000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Louisiana
+
+</td>
+
+<td style="text-align:left;">
+
+Coushatta town
+
+</td>
+
+<td style="text-align:left;">
+
+townofcoushatta.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3720600
+
+</td>
+
+<td style="text-align:right;">
+
+0.4825000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Elizabethtown
+
+</td>
+
+<td style="text-align:left;">
+
+www.elizabethtownnc.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1313305
+
+</td>
+
+<td style="text-align:right;">
+
+0.5175054
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Wayne County
+
+</td>
+
+<td style="text-align:left;">
+
+www.waynecountyga.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3642950
+
+</td>
+
+<td style="text-align:right;">
+
+0.5175900
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Livonia village
+
+</td>
+
+<td style="text-align:left;">
+
+www.livoniany.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3842020
+
+</td>
+
+<td style="text-align:right;">
+
+0.5176121
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Dakota
+
+</td>
+
+<td style="text-align:left;">
+
+Kenmare
+
+</td>
+
+<td style="text-align:left;">
+
+www.kenmarend.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1336220
+
+</td>
+
+<td style="text-align:right;">
+
+0.5176759
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Hamilton
+
+</td>
+
+<td style="text-align:left;">
+
+hamiltoncityhall.net
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1866852
+
+</td>
+
+<td style="text-align:right;">
+
+0.4821786
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+St. John
+
+</td>
+
+<td style="text-align:left;">
+
+www.stjohnin.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1809532
+
+</td>
+
+<td style="text-align:right;">
+
+0.5178333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Butler city
+
+</td>
+
+<td style="text-align:left;">
+
+www.butler.in.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2341067
+
+</td>
+
+<td style="text-align:right;">
+
+0.5178333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Maine
+
+</td>
+
+<td style="text-align:left;">
+
+Long Island
+
+</td>
+
+<td style="text-align:left;">
+
+townoflongisland.us
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2760250
+
+</td>
+
+<td style="text-align:right;">
+
+0.5178651
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Silver Bay city
+
+</td>
+
+<td style="text-align:left;">
+
+www.silverbay.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1812124
+
+</td>
+
+<td style="text-align:right;">
+
+0.5180000
+
+</td>
+
+<td style="text-align:left;">
+
+BDG
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Charlestown
+
+</td>
+
+<td style="text-align:left;">
+
+cityofcharlestown.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1646540
+
+</td>
+
+<td style="text-align:right;">
+
+0.4819151
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Idaho
+
+</td>
+
+<td style="text-align:left;">
+
+Lewiston
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityoflewiston.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3741420
+
+</td>
+
+<td style="text-align:right;">
+
+0.5181177
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+North Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Marion city
+
+</td>
+
+<td style="text-align:left;">
+
+marionnc.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2919396
+
+</td>
+
+<td style="text-align:right;">
+
+0.4818362
+
+</td>
+
+<td style="text-align:left;">
+
+MIN
+
+</td>
+
+<td style="text-align:left;">
+
+Missouri
+
+</td>
+
+<td style="text-align:left;">
+
+Dexter city
+
+</td>
+
+<td style="text-align:left;">
+
+www.visitdexter.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1816804
+
+</td>
+
+<td style="text-align:right;">
+
+0.4818333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Indiana
+
+</td>
+
+<td style="text-align:left;">
+
+Danville
+
+</td>
+
+<td style="text-align:left;">
+
+www.danvilleindiana.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4876228
+
+</td>
+
+<td style="text-align:right;">
+
+0.4818333
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Waller
+
+</td>
+
+<td style="text-align:left;">
+
+www.wallertexas.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2751064
+
+</td>
+
+<td style="text-align:right;">
+
+0.4817714
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Pine City city
+
+</td>
+
+<td style="text-align:left;">
+
+www.pinecity.govoffice.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4778600
+
+</td>
+
+<td style="text-align:right;">
+
+0.5182415
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Tennessee
+
+</td>
+
+<td style="text-align:left;">
+
+Waynesboro
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofwaynesboro.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3912168
+
+</td>
+
+<td style="text-align:right;">
+
+0.5182445
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Carlisle village
+
+</td>
+
+<td style="text-align:left;">
+
+carlisleoh.org
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3135980
+
+</td>
+
+<td style="text-align:right;">
+
+0.4817500
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Nebraska
+
+</td>
+
+<td style="text-align:left;">
+
+Ogallala city
+
+</td>
+
+<td style="text-align:left;">
+
+www.ogallala-ne.gov
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1949215
+
+</td>
+
+<td style="text-align:right;">
+
+0.4816667
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Iowa
+
+</td>
+
+<td style="text-align:left;">
+
+Maquoketa
+
+</td>
+
+<td style="text-align:left;">
+
+maquoketaia.com
+
+</td>
+
+<td style="text-align:left;">
+
+William
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2735378
+
+</td>
+
+<td style="text-align:right;">
+
+0.4816298
+
+</td>
+
+<td style="text-align:left;">
+
+REC
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Lancaster
+
+</td>
+
+<td style="text-align:left;">
+
+www.lancastermn.org
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4549570
+
+</td>
+
+<td style="text-align:right;">
+
+0.4815552
+
+</td>
+
+<td style="text-align:left;">
+
+AGD
+
+</td>
+
+<td style="text-align:left;">
+
+South Carolina
+
+</td>
+
+<td style="text-align:left;">
+
+Newberry
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofnewberry.com
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2541585
+
+</td>
+
+<td style="text-align:right;">
+
+0.4815385
+
+</td>
+
+<td style="text-align:left;">
+
+BID
+
+</td>
+
+<td style="text-align:left;">
+
+Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+Millville, Massachusetts
+
+</td>
+
+<td style="text-align:left;">
+
+www.millvillema.org
+
+</td>
+
+<td style="text-align:left;">
+
+Karla
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+119360
+
+</td>
+
+<td style="text-align:right;">
+
+0.4815000
+
+</td>
+
+<td style="text-align:left;">
+
+CAFR
+
+</td>
+
+<td style="text-align:left;">
+
+Alabama
+
+</td>
+
+<td style="text-align:left;">
+
+Daleville
+
+</td>
+
+<td style="text-align:left;">
+
+www.dalevilleal.com
+
+</td>
+
+<td style="text-align:left;">
+
+Jenny
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
