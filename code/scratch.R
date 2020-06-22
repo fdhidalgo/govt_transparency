@@ -15,9 +15,6 @@ fs::file_delete(fs::dir_ls("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/s
 preds <- left_join(site_preds, urls) %>%
   mutate(label = ifelse(prob >= .5, 1, 0))
 
-active_lrn <- mutate(site_preds, dist = abs(prob - .5)) %>%
-  arrange(dist)
-
 preds %>%
   filter(!is.na(state)) %>%
   group_by(state, ST_FIPS) %>%

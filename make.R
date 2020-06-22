@@ -9,7 +9,7 @@ drake::r_outdated()
 drake::r_make()
 r_vis_drake_graph()
 
-drake::make(plan = plan, targets = "unscraped_sites")
+drake::make(plan = plan, targets = "site_text")
 
 #drake::make(plan = plan, targets = c("scraped_sites",
 #                                     "unscraped_sites", "scraped_missing"))

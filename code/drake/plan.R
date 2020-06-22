@@ -48,6 +48,10 @@ plan <- drake_plan(
   active_learning_assignments = target(rmarkdown::render(
     knitr_in("./code/reports/active_learning_assignments.Rmd"),
     output_format = rmarkdown::md_document(variant = "gfm"),
+    output_dir = "./reports/")),
+  descriptive_analysis = target(rmarkdown::render(
+    knitr_in("./code/reports/transparency_scores_descriptive.Rmd"),
+    output_format = rmarkdown::md_document(variant = "gfm"),
     output_dir = "./reports/"))
 )
 

@@ -1,0 +1,91 @@
+---
+title: "Transparency Scores Descriptive Analyses"
+output: github_document
+---
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(geofacet)
+library(ggridges)
+```
+
+**Last Update**: `r Sys.Date()`
+
+```{r, get_scores, message=FALSE}
+drake::loadd(urls)
+drake::loadd(labels)
+drake::loadd(site_preds)
+
+preds <- left_join(site_preds, urls) %>%
+  mutate(label = ifelse(prob >= .5, 1, 0))
+```
+
+As of now, we have `r length(unique(preds$ST_FIPS))` towns with predicted transparency scores. 
+
+## Transparency Scores by State
+
+```{r, transparency_state, fig.height = 8, fig.width = 6, message=FALSE, warning=FALSE}
+preds %>%
+  filter(!is.na(state)) %>%
+  group_by(state, ST_FIPS) %>%
+  summarise(transparency_score = sum(label)) %>%
+  group_by(state) %>%
+  summarise(mean_trans_score = mean(transparency_score),
+            n_towns = n()) %>%
+  mutate(state = fct_reorder(state, mean_trans_score)) %>%
+  ggplot(aes(x = mean_trans_score, y = state, size = n_towns)) +
+  geom_point() +
+  xlab("Average Transparency Score") + 
+  ylab("") + 
+  cowplot::theme_cowplot() +
+  theme(legend.position="bottom") + 
+  labs(size = "# of Towns") + 
+  ggtitle("Average Transparency Score by State")
+```
+
+```{r, state_map, message=FALSE, warning=FALSE, fig.width = 11, fig.height = 8}
+
+preds %>%
+  filter(!is.na(state)) %>%
+  group_by(state, ST_FIPS) %>%
+  summarise(transparency_score = sum(label)) %>%
+  group_by(state, transparency_score) %>%
+  summarise(n = n()) %>%
+  ggplot(aes(y = as.factor(transparency_score), x = n, fill = transparency_score)) + 
+  geom_col() +
+  facet_geo(~ state, scales = "free_x") + 
+  theme_bw() + 
+  ylab("Transparency Score") +
+  theme(legend.position="none")
+
+
+
+```
+
+## Correlation with Population
+
+```{r census_pop, warning=FALSE, message=FALSE}
+census <- read_csv("../../data/census/census_ST_FIPS.csv")
+
+pop2010 <- census %>% 
+  mutate(ST_FIPS = as.numeric(ST_FIPS)) %>%
+  group_by(ST_FIPS) %>% 
+  summarise(pop_2010 = sum(as.numeric(CENSUS2010POP, na.rm = TRUE)))
+
+group_by(preds, ST_FIPS) %>%
+  summarise(trans_score = sum(label)) %>%
+  left_join(pop2010) %>%
+  filter(pop_2010 > 1000 & pop_2010 < 300000) %>%
+  ggplot(aes(x = pop_2010, y = as.factor(trans_score), fill = stat(x))) +
+  geom_density_ridges_gradient(jittered_points = TRUE, alpha = .4, point_size = .3) +
+  scale_x_log10("Population (Log Scale)",label = scales::comma_format()) +
+  scale_fill_viridis_c(option = "C") +
+  theme_ridges()  +
+  ylab("Transparency Score") +
+  theme(legend.position = "none")
+
+
+
+```
+
