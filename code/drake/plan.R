@@ -42,16 +42,13 @@ plan <- drake_plan(
                                     rds_dir = drake::file_in("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")),
                       trigger = trigger(condition = fs::dir_exists("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/"))),
   model_performance_report = target(rmarkdown::render(
-    knitr_in("./code/reports/model_performance.Rmd"),
-    output_format = rmarkdown::md_document(variant = "gfm"),
-    output_dir = "./reports/")),
+    knitr_in("./reports/model_performance.Rmd"),
+    output_format = rmarkdown::md_document(variant = "gfm"))),
   active_learning_assignments = target(rmarkdown::render(
-    knitr_in("./code/reports/active_learning_assignments.Rmd"),
-    output_format = rmarkdown::md_document(variant = "gfm"),
-    output_dir = "./reports/")),
+    knitr_in("./reports/active_learning_assignments.Rmd"),
+    output_format = rmarkdown::md_document(variant = "gfm"))),
   descriptive_analysis = target(rmarkdown::render(
-    knitr_in("./code/reports/transparency_scores_descriptive.Rmd"),
-    output_format = rmarkdown::md_document(variant = "gfm"),
-    output_dir = "./reports/"))
+    knitr_in("./reports/transparency_scores_descriptive.Rmd"),
+    output_format = rmarkdown::md_document(variant = "gfm")))
 )
 
