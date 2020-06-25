@@ -64,7 +64,13 @@ BDG
 
 <td style="text-align:right;">
 
-0.68
+0.67
+
+</td>
+
+<td style="text-align:right;">
+
+0.80
 
 </td>
 
@@ -76,13 +82,7 @@ BDG
 
 <td style="text-align:right;">
 
-0.70
-
-</td>
-
-<td style="text-align:right;">
-
-0.81
+0.82
 
 </td>
 
@@ -110,13 +110,13 @@ AGD
 
 <td style="text-align:right;">
 
-0.77
+0.79
 
 </td>
 
 <td style="text-align:right;">
 
-0.88
+0.87
 
 </td>
 
@@ -166,25 +166,25 @@ CAFR
 
 <td style="text-align:right;">
 
-0.56
+0.57
 
 </td>
 
 <td style="text-align:right;">
 
-0.78
+0.79
 
 </td>
 
 <td style="text-align:right;">
 
-0.77
+0.79
 
 </td>
 
 <td style="text-align:right;">
 
-0.78
+0.79
 
 </td>
 
@@ -212,7 +212,7 @@ MIN
 
 <td style="text-align:right;">
 
-0.64
+0.66
 
 </td>
 
@@ -234,13 +234,7 @@ REC
 
 <td style="text-align:right;">
 
-0.51
-
-</td>
-
-<td style="text-align:right;">
-
-0.74
+0.52
 
 </td>
 
@@ -252,7 +246,13 @@ REC
 
 <td style="text-align:right;">
 
-0.74
+0.77
+
+</td>
+
+<td style="text-align:right;">
+
+0.75
 
 </td>
 
