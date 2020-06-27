@@ -22,7 +22,7 @@
 - **Noncompliance Penalties**:
 	- The Open Records Act allows any person, firm, corporation or other entity to bring a civil action to enforce compliance with the law. Moreover, the Attorney General may bring a civil or criminal action to enforce compliance with the law [2]
 	- Additionally, public officials who participate in closed meetings in violation of the law can be subject to recall [2]
--**Digital Requirements in Georgia Sunshine Laws**
+- **Digital Requirements in Georgia Sunshine Laws**
 	- Open Meetings Act - agencies are required to post meeting information and schedules on its website if it has one [2]
 	- Open Records Act - the law provides detailed guidelines related to requests for records maintained electronically. Specifically, agencies must provide electronic or printed copies of electronic records using the computer programs that the agency uses if they use one, and individuals are entitled to request production in the format in which the agency keeps the record or in a standard export format [2]
 	- HB-397 was an update to the Georgia Sunshine Laws in 2012 which set out new guideliens for how towns would have to disclose information digitally
