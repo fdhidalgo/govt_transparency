@@ -1,6 +1,3 @@
-Transparency Scores Descriptive Analyses
-================
-
 **Last Update**: 2020-06-29
 
 As of now, we have 8800 towns with predicted transparency scores.

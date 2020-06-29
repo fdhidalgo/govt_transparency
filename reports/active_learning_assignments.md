@@ -1,6 +1,6 @@
 # Improving the Model
 
-**Last Update**: 2020-06-24
+**Last Update**: 2020-06-29
 
 This document lists towns that we don’t have any ground truth labels
 for. They are arranged such that the indicators with the highest
@@ -14,505 +14,505 @@ spreadsheet](https://docs.google.com/spreadsheets/d/1gAp_qpH7brx-IBpkPuWfBaQ_c6H
 Note that this document may update. If that’s the case, just start from
 the top again.
 
-| ST\_FIPS |      prob | indicator | state          | city\_name                        | url                                      | checker |
-| -------: | --------: | :-------- | :------------- | :-------------------------------- | :--------------------------------------- | :------ |
-|  3820340 | 0.5000000 | CAFR      | North Dakota   | Drayton                           | draytonnd.com                            | Karla   |
-|  4630900 | 0.4999581 | BDG       | South Dakota   | Humboldt town                     | www.humboldt.govoffice.com               | Karla   |
-|  3918350 | 0.4999361 | BID       | Ohio           | Conneaut                          | www.conneautohio.gov                     | William |
-|  5520350 | 0.5000799 | BID       | Wisconsin      | Dodgeville city                   | www.cityofdodgeville.com                 | William |
-|  2056150 | 0.5000833 | CAFR      | Kansas         | Plainville                        | plainvilleks.com                         | Karla   |
-|  3721740 | 0.5000833 | CAFR      | North Carolina | Erwin                             | www.erwin-nc.org                         | William |
-|  4847628 | 0.5000833 | CAFR      | Texas          | Menard city                       | co.menard.tx.us                          | Jenny   |
-|  1783245 | 0.5000963 | BDG       | Illinois       | Woodridge                         | www.vil.woodridge.il.us                  | Karla   |
-|  3474210 | 0.5001316 | AGD       | New Jersey     | Tuckerton                         | www.tuckertonborough.com                 | Jenny   |
-|  3654078 | 0.5001476 | MIN       | New York       | Nunda village                     | villageofnunda.org                       | Jenny   |
-|  5569850 | 0.4998517 | BID       | Wisconsin      | Roxbury town                      | town.roxbury.wi.us                       | William |
-|  2156136 | 0.4998333 | CAFR      | Kentucky       | Nicholasville                     | www.nicholasville.org                    | Jenny   |
-|  2644200 | 0.4998333 | CAFR      | Michigan       | Laingsburg                        | laingsburg.us                            | Jenny   |
-|  5029575 | 0.4997819 | BID       | Vermont        | Granville                         | www.granvillevermont.org                 | Jenny   |
-|  2229850 | 0.4997714 | REC       | Louisiana      | Gonzales                          | www.gonzalesla.com                       | Karla   |
-|  2416225 | 0.4997667 | REC       | Maryland       | Chestertown town                  | townofchestertown.com                    | Karla   |
-|  4850772 | 0.5002500 | CAFR      | Texas          | Newark city (pt.)                 | newarktexas.com                          | Karla   |
-|  1975855 | 0.4997464 | BDG       | Iowa           | Strawberry Point                  | www.strawberrypt.com                     | Jenny   |
-|  2902044 | 0.4997180 | MIN       | Missouri       | Arrow Rock                        | www.arrowrock.org                        | William |
-|  3641135 | 0.5003034 | BDG       | New York       | Lancaster village                 | www.lancastervillage.org                 | Jenny   |
-|  1321716 | 0.5003737 | AGD       | Georgia        | Darien                            | www.cityofdarienga.com                   | Karla   |
-|  1313227 | 0.4996219 | BID       | Georgia        | Pickens County                    | pickenscountyga.gov                      | William |
-|  1313131 | 0.4996119 | REC       | Georgia        | Grady County                      | www.gradycountyga.gov                    | Jenny   |
-|  2642780 | 0.5004167 | CAFR      | Michigan       | Kent City village                 | www.kentcitymi.org                       | Karla   |
-|  4724040 | 0.5004478 | BDG       | Tennessee      | Englewood town                    | townofenglewood.com                      | William |
-|  2657230 | 0.4995516 | MIN       | Michigan       | New Buffalo township              | <https://newbuffalotownship.org/>        | Karla   |
-|  1632950 | 0.4995150 | BID       | Idaho          | Grangeville                       | grangeville.us                           | Jenny   |
-|  1911215 | 0.4995005 | BDG       | Iowa           | Carter Lake                       | www.cityofcarterlake.com                 | Karla   |
-|  2567595 | 0.5005094 | BDG       | Massachusetts  | Stockbridge                       | townofstockbridge.com                    | Karla   |
-|  2572985 | 0.5005253 | BID       | Massachusetts  | Wareham                           | www.wareham.ma.us                        | William |
-|  4215432 | 0.4994678 | BDG       | Pennsylvania   | Colwyn borough                    | colwynborough.com                        | Karla   |
-|  5559350 | 0.5006238 | REC       | Wisconsin      | Oconto city                       | cityofoconto.com                         | William |
-|  2744044 | 0.4993500 | REC       | Minnesota      | Mora                              | ci.mora.mn.us                            | William |
-|  3702840 | 0.5006667 | CAFR      | North Carolina | Ayden                             | www.ayden.com                            | William |
-|  4834220 | 0.5007077 | BID       | Texas          | Hitchcock                         | www.cityofhitchcock.org                  | Jenny   |
-|  3404695 | 0.5007737 | BID       | New Jersey     | Belleville township               | <http://www.bellevillenj.org/>           | Jenny   |
-|  5550025 | 0.4992245 | BID       | Wisconsin      | Mauston                           | www.mauston.com                          | William |
-|  2005500 | 0.5008101 | BDG       | Kansas         | Belle Plaine                      | www.bpks.org                             | William |
-|  1742496 | 0.4991643 | REC       | Illinois       | Lebanon city                      | www.lebanonil.org                        | Jenny   |
-|  3465160 | 0.4991214 | REC       | New Jersey     | Runnemede, New Jersey             | runnemedenj.org                          | Jenny   |
-|  3615011 | 0.5008806 | BID       | New York       | Cheektowaga                       | www.tocny.org                            | Karla   |
-|   433280 | 0.4990841 | BID       | Arizona        | Holbrook                          | www.ci.holbrook.az.us                    | Jenny   |
-|  3988084 | 0.4990833 | CAFR      | Ohio           | Zanesville city                   | www.coz.org                              | Jenny   |
-|  2151978 | 0.5009258 | BDG       | Kentucky       | Middletown                        | cityofmiddletownky.org                   | William |
-|   511500 | 0.4990259 | MIN       | Arkansas       | Carlisle                          | www.carlislear.org                       | Karla   |
-|  2753656 | 0.4990143 | REC       | Minnesota      | Redwood Falls                     | www.ci.redwood-falls.mn.us               | Jenny   |
-|  4715480 | 0.4990048 | REC       | Tennessee      | Clifton                           | www.cityofclifton.com                    | Karla   |
-|  3405650 | 0.5009952 | REC       | New Jersey     | Bethlehem township                | <http://www.bethlehemtownship.org/>      | Jenny   |
-|  1754898 | 0.4989863 | BDG       | Illinois       | Oak Park township                 | www.oakparktownship.org                  | William |
-|  3736500 | 0.5010190 | REC       | North Carolina | Lake Lure                         | www.townoflakelure.com                   | William |
-|   535500 | 0.5010197 | BID       | Arkansas       | Johnson city                      | cityofjohnson.com                        | Karla   |
-|  3705340 | 0.4989505 | MIN       | North Carolina | Bethania                          | townofbethania.org                       | Jenny   |
-|  2731328 | 0.4989343 | BID       | Minnesota      | Isanti                            | www.cityofisanti.us                      | William |
-|  2702872 | 0.4988781 | BDG       | Minnesota      | Aurora city                       | www.aurora-mn.com                        | William |
-|  3138960 | 0.5011447 | MIN       | Nebraska       | Peru city                         | www.perunebraska.org                     | Karla   |
-|  3760505 | 0.5011717 | MIN       | North Carolina | Seven Devils                      | www.townofsevendevils.org                | William |
-|  2031850 | 0.4988160 | BDG       | Kansas         | Highland                          | www.cityofhighlandkansas.com             | Jenny   |
-|  4523470 | 0.5011929 | REC       | South Carolina | Elloree                           | www.elloreesc.com                        | Jenny   |
-|  2062175 | 0.4987952 | REC       | Kansas         | St. Francis                       | www.stfranciskansas.com                  | Karla   |
-|  4556950 | 0.5012071 | REC       | South Carolina | Pine Ridge                        | www.townofpineridgesc.com                | Jenny   |
-|  3405650 | 0.5012174 | BID       | New Jersey     | Bethlehem township                | <http://www.bethlehemtownship.org/>      | Jenny   |
-|  2669540 | 0.4987599 | BDG       | Michigan       | Roscommon village                 | roscommonvillage.com                     | Karla   |
-|  3653396 | 0.4987405 | REC       | New York       | Northport village                 | www.northportny.gov                      | Jenny   |
-|  5350570 | 0.5012665 | BID       | Washington     | Ocean Shores                      | www.osgov.com                            | Jenny   |
-|  2019300 | 0.4987024 | REC       | Kansas         | Eastborough                       | www.eastborough-ks.gov                   | William |
-|  5535350 | 0.4986973 | BDG       | Wisconsin      | Holland town                      | www.townofhollandwi.org                  | Jenny   |
-|  2750776 | 0.5013333 | CAFR      | Minnesota      | Pierz                             | www.pierzmn.org                          | Jenny   |
-|  3112315 | 0.5013662 | BDG       | Nebraska       | David City                        | davidcityne.com                          | Karla   |
-|  3981452 | 0.4986051 | BID       | Ohio           | Washington township               | <https://wtwp.com/>                      | Karla   |
-|  1331320 | 0.4986027 | MIN       | Georgia        | Franklin Springs city             | www.cityoffranklinsprings.com            | William |
-|   910100 | 0.5014167 | CAFR      | Connecticut    | Burlington                        | www.burlingtonct.us                      | Karla   |
-|  5513237 | 0.5014167 | CAFR      | Wisconsin      | Cato                              | www.townofcato.com                       | Jenny   |
-|   182992 | 0.5014857 | REC       | Alabama        | Winfield                          | www.winfieldcity.org                     | Karla   |
-|  3605320 | 0.5014995 | BID       | New York       | Bedford                           | www.bedfordny.gov                        | Jenny   |
-|  5071425 | 0.4985000 | CAFR      | Vermont        | Sunderland town                   | www.sunderlandvt.org                     | William |
-|  1313091 | 0.4984680 | MIN       | Georgia        | Dodge County                      | www.dodgecountyga.com                    | Jenny   |
-|  2768170 | 0.4984381 | BDG       | Minnesota      | Warren                            | www.warrenminnesota.com                  | Jenny   |
-|  3104650 | 0.4984136 | BDG       | Nebraska       | Berwyn                            | www.berwynne.org                         | William |
-|  3350980 | 0.5016013 | BID       | New Hampshire  | New Castle town                   | www.newbostonnh.gov                      | Jenny   |
-|   167056 | 0.4983711 | BDG       | Alabama        | Russellville city                 | www.russellvilleal.org                   | Jenny   |
-|  2131114 | 0.4983694 | BID       | Kentucky       | Glasgow                           | www.glasgow-ky.com                       | Karla   |
-|  1938010 | 0.4983333 | CAFR      | Iowa           | Ida Grove                         | idagroveia.com                           | Karla   |
-|  4216144 | 0.5016975 | BDG       | Pennsylvania   | Coraopolis                        | coraopolispa.com                         | Jenny   |
-|  2005600 | 0.4982941 | BDG       | Kansas         | Belleville city                   | www.cityofbellevillekansas.com           | Karla   |
-|  3771680 | 0.5017190 | REC       | North Carolina | Weddington                        | www.townofweddington.com                 | Karla   |
-|  2071575 | 0.5017476 | REC       | Kansas         | Troy                              | troykansas.com                           | Jenny   |
-|  1869480 | 0.5017653 | BDG       | Indiana        | Shipshewana                       | shipshewana.org                          | Karla   |
-|  1907480 | 0.5017952 | REC       | Iowa           | Boone                             | www.boonegov.com                         | Karla   |
-|  4631860 | 0.5018048 | REC       | South Dakota   | Ipswich                           | www.ipswich-sd.com                       | Jenny   |
-|  2715832 | 0.5018190 | REC       | Minnesota      | Detroit Lakes city                | cityofdetroitlakes.com                   | Karla   |
-|  5367875 | 0.5018273 | BDG       | Washington     | Stevenson                         | cityofstevenson.com                      | William |
-|   668014 | 0.5018428 | BID       | California     | San Juan Bautista                 | www.san-juan-bautista.ca.us              | Jenny   |
-|  3636112 | 0.4980623 | MIN       | New York       | Hume town                         | <http://www.humetown.org/>               | William |
-|  1018950 | 0.4980333 | MIN       | Delaware       | Dagsboro                          | townofdagsboro.com                       | Karla   |
-|  2766046 | 0.4980252 | BDG       | Minnesota      | Tyler city                        | www.tyler.govoffice.com                  | William |
-|  4762000 | 0.4980106 | MIN       | Tennessee      | Red Boiling Springs               | www.redboilingspringstn.com              | William |
-|  2914788 | 0.5019944 | BDG       | Missouri       | Clever                            | www.clevermo.com                         | Karla   |
-|  3774020 | 0.4980035 | BID       | North Carolina | Wilkesboro                        | www.wilkesboronorthcarolina.com          | William |
-|  2713420 | 0.5020000 | CAFR      | Minnesota      | Cosmos                            | www.cosmos-mn.com                        | Jenny   |
-|  4840384 | 0.4979937 | MIN       | Texas          | La Joya city                      | cityoflajoya.com                         | William |
-|  4519420 | 0.4979500 | REC       | South Carolina | Dillon                            | www.cityofdillonsc.us                    | Jenny   |
-|  1313271 | 0.5020681 | AGD       | Georgia        | Telfair County                    | www.telfairco.org                        | Karla   |
-|  2856960 | 0.4978914 | MIN       | Mississippi    | Philadelphia                      | www.philadelphiathecity.com              | Jenny   |
-|  2139304 | 0.4978895 | AGD       | Kentucky       | Indian Hills city                 | <https://indianhillsky.org/>             | William |
-|  2053450 | 0.4978595 | REC       | Kansas         | Oswego                            | www.oswegokansas.com                     | Karla   |
-|  1613150 | 0.4978564 | BDG       | Idaho          | Cascade                           | cascadeid.us                             | William |
-|  5351340 | 0.4978333 | CAFR      | Washington     | Omak city                         | <https://www.omakcity.com/>              | Karla   |
-|  5559875 | 0.5022199 | BID       | Wisconsin      | Omro                              | omro-wi.com                              | William |
-|  2065925 | 0.4977762 | REC       | Kansas         | Smith Center city                 | <https://www.smithcenterks.com/>         | Jenny   |
-|  2174082 | 0.4977500 | CAFR      | Kentucky       | Strathmoor Village                | cityofstrathmoorvillage.com              | Karla   |
-|  2907318 | 0.5022621 | MIN       | Missouri       | Boonville                         | boonvillemo.org                          | William |
-|  3362500 | 0.5022661 | BID       | New Hampshire  | Plaistow                          | www.plaistow.com                         | Karla   |
-|  1857132 | 0.5023167 | REC       | Indiana        | Osgood                            | www.osgoodindiana.org                    | Karla   |
-|  2724074 | 0.5023333 | CAFR      | Minnesota      | Glenwood                          | ci.glenwood.mn.us                        | Karla   |
-|  3711340 | 0.4976543 | BID       | North Carolina | Cedar Point                       | www.cedarpointnc.org                     | Karla   |
-|  5130208 | 0.4976354 | BDG       | Virginia       | Galax                             | www.galaxva.com                          | Karla   |
-|   124256 | 0.5023826 | BID       | Alabama        | Epes                              | www.cityofepesalabama.com                | Jenny   |
-|  1812124 | 0.5024666 | AGD       | Indiana        | Charlestown                       | cityofcharlestown.com                    | Jenny   |
-|  1224900 | 0.4975181 | BDG       | Florida        | Frostproof city                   | www.cityoffrostproof.com                 | Karla   |
-|  4803372 | 0.4975000 | CAFR      | Texas          | Anson city                        | <https://anson-tx.us/>                   | Karla   |
-|   161008 | 0.4975000 | CAFR      | Alabama        | Pleasant Grove                    | www.cityofpg.com                         | William |
-|  4811368 | 0.4975000 | CAFR      | Texas          | Burkburnett                       | www.burkburnett.org                      | Karla   |
-|  5360055 | 0.4974957 | BDG       | Washington     | Roslyn                            | www.ci.roslyn.wa.us                      | William |
-|  4544575 | 0.5025049 | BID       | South Carolina | Marion                            | www.marionsc.gov                         | Karla   |
-|  1850652 | 0.4974927 | MIN       | Indiana        | Montezuma                         | www.montezuma.in.gov                     | William |
-|  4863464 | 0.5025227 | BDG       | Texas          | Rotan                             | www.rotan.org                            | Jenny   |
-|  1806616 | 0.5025317 | BID       | Indiana        | Boonville city                    | <http://www.cityofboonvilleindiana.com/> | Karla   |
-|  2747690 | 0.4974571 | REC       | Minnesota      | Oak Grove                         | www.ci.oak-grove.mn.us                   | Karla   |
-|  2163912 | 0.4974524 | REC       | Kentucky       | Radcliff                          | www.radcliff.org                         | Karla   |
-|  1971625 | 0.5025769 | BDG       | Iowa           | Sergeant Bluff                    | www.cityofsergeantbluff.com              | William |
-|  2731040 | 0.4974214 | REC       | Minnesota      | International Falls               | www.ci.international-falls.mn.us         | Jenny   |
-|  2038175 | 0.5025993 | MIN       | Kansas         | Lakin                             | www.lakinkansas.org                      | Karla   |
-|  1267325 | 0.5026165 | BDG       | Florida        | South Daytona                     | www.southdaytona.org                     | Jenny   |
-|  2031850 | 0.4973753 | MIN       | Kansas         | Highland                          | www.cityofhighlandkansas.com             | Jenny   |
-|  4778600 | 0.4973714 | REC       | Tennessee      | Waynesboro                        | www.cityofwaynesboro.org                 | William |
-|  3340900 | 0.4973713 | MIN       | New Hampshire  | Langdon town                      | langdonnh.org                            | William |
-|  1664810 | 0.5026357 | REC       | Idaho          | Post Falls                        | www.postfallsidaho.org                   | Karla   |
-|  2630480 | 0.4973548 | REC       | Michigan       | Frederic township                 | <https://www.frederictownship.org/>      | Karla   |
-|  1714117 | 0.5026810 | REC       | Illinois       | Chillicothe                       | www.cityofchillicotheil.com              | Karla   |
-|  2669180 | 0.4973143 | BDG       | Michigan       | Rockwood                          | www.rockwoodmi.org                       | Jenny   |
-|  4262320 | 0.5026866 | MIN       | Pennsylvania   | Port Vue borough                  | www.portvue.org                          | Jenny   |
-|   103028 | 0.4973059 | MIN       | Alabama        | Attalla                           | www.attallacity.com                      | William |
-|  1732200 | 0.5027262 | REC       | Illinois       | Hainesville village               | hainesville.org                          | Karla   |
-|  3948706 | 0.4972690 | REC       | Ohio           | Mechanicsburg                     | www.mechanicsburgohio.org                | Jenny   |
-|  3306260 | 0.5027500 | CAFR      | New Hampshire  | Boscawen                          | www.townofboscawen.org                   | William |
-|  1313285 | 0.5028193 | BDG       | Georgia        | Troup County                      | www.troupcountyga.org                    | Karla   |
-|  3738220 | 0.5028333 | CAFR      | North Carolina | Lillington                        | lillingtonnc.org                         | Jenny   |
-|  2558825 | 0.5028333 | CAFR      | Massachusetts  | Rutland                           | www.townofrutland.org                    | Jenny   |
-|  2877520 | 0.4971286 | REC       | Mississippi    | Walnut Grove                      | www.walnutgrove-ms.com                   | William |
-|  3479610 | 0.4971082 | BID       | New Jersey     | West New York town                | www.westnewyorknj.org                    | Karla   |
-|  2041375 | 0.5029690 | REC       | Kansas         | Lindsborg city                    | www.lindsborgcity.org                    | William |
-|  4766720 | 0.5029714 | REC       | Tennessee      | Savannah                          | cityofsavannah.org                       | William |
-|  3140920 | 0.5030417 | BDG       | Nebraska       | Red Cloud                         | www.visitredcloud.com                    | William |
-|  2278470 | 0.5030831 | BDG       | Louisiana      | Vidalia town                      | cityofvidaliala.com                      | Jenny   |
-|  2718152 | 0.4969024 | REC       | Minnesota      | Edgerton                          | www.edgertonmn.com                       | Karla   |
-|  3140710 | 0.4968333 | CAFR      | Nebraska       | Ravenna                           | myravenna.com                            | Jenny   |
-|  2737592 | 0.4968299 | BID       | Minnesota      | Littlefork                        | www.cityoflittlefork.com                 | William |
-|  3428650 | 0.4968244 | BID       | New Jersey     | Guttenberg                        | www.guttenbergnj.org                     | Jenny   |
-|  3903730 | 0.5031788 | BDG       | Ohio           | Ballville Township                | www.ballville.org                        | William |
-|  2181930 | 0.5032020 | BDG       | Kentucky       | West Point city                   | westpoint.ky.gov                         | Karla   |
-|  1717523 | 0.4967844 | BID       | Illinois       | Crete village                     | <https://www.villageofcrete.org/>        | Jenny   |
-|   169120 | 0.4967643 | REC       | Alabama        | Selma                             | www.selma-al.gov                         | William |
-|  2729294 | 0.4967500 | CAFR      | Minnesota      | Hinckley                          | www.hinckley.govoffice2.com              | William |
-|  2650320 | 0.4967190 | MIN       | Michigan       | Mackinaw City                     | www.mackinawcity.org                     | Karla   |
-|  2760250 | 0.4966905 | REC       | Minnesota      | Silver Bay city                   | www.silverbay.com                        | William |
-|  2629760 | 0.5033177 | MIN       | Michigan       | Fort Gratiot charter township     | <http://www.nundatownship.com/>          | William |
-|  1772949 | 0.5033333 | CAFR      | Illinois       | Stonington village                | www.horsecaveky.com                      | Jenny   |
-|  2138008 | 0.5033333 | CAFR      | Kentucky       | Horse Cave                        | www.horsecaveky.com                      | Karla   |
-|  4820884 | 0.5033969 | MIN       | Texas          | Donna                             | www.cityofdonna.org                      | William |
-|  1968160 | 0.4965776 | BID       | Iowa           | Rock Rapids                       | www.rockrapids.com                       | Karla   |
-|  2676560 | 0.5034268 | BDG       | Michigan       | Stockbridge                       | www.vil.stockbridge.mi.us                | Jenny   |
-|  2758612 | 0.4965724 | BID       | Minnesota      | Sartell city                      | www.sartellmn.com                        | Jenny   |
-|  5043600 | 0.4965431 | BDG       | Vermont        | Marshfield (town)                 | www.town.marshfield.vt.us                | Jenny   |
-|  3660147 | 0.4965346 | BID       | New York       | Putnam Valley                     | www.putnamvalley.com                     | Karla   |
-|  5565600 | 0.5034707 | BDG       | Wisconsin      | Princeton                         | cityofprincetonwi.com                    | Jenny   |
-|  5589025 | 0.5034834 | MIN       | Wisconsin      | Woodville village                 | villageofwoodville.org                   | Jenny   |
-|  3736220 | 0.4965103 | BID       | North Carolina | Kure Beach                        | www.townofkurebeach.org                  | William |
-|   901430 | 0.5035330 | BID       | Connecticut    | Ashford                           | www.ashfordtownhall.org                  | Jenny   |
-|  2049100 | 0.4964361 | BDG       | Kansas         | Mulvane                           | www.mulvanekansas.com                    | Jenny   |
-|  3735600 | 0.4964167 | CAFR      | North Carolina | Kernersville town (pt.)           | www.kernersvillenc.com                   | Karla   |
-|  3850580 | 0.5035833 | CAFR      | North Dakota   | Mapleton                          | www.mapletonnd.com                       | Jenny   |
-|  1981705 | 0.5035879 | BID       | Iowa           | Walcott                           | cityofwalcott.com                        | Jenny   |
-|  1977340 | 0.4963881 | REC       | Iowa           | Templeton                         | www.templetoniowa.com                    | Karla   |
-|  1857258 | 0.4963416 | AGD       | Indiana        | Otterbein                         | otterbein.in.gov                         | Karla   |
-|  3724570 | 0.5036657 | BDG       | North Carolina | Foxfire                           | www.foxfirenc.com                        | William |
-|  1874510 | 0.4962548 | REC       | Indiana        | Swayzee                           | www.swayzee.org                          | Jenny   |
-|  2726738 | 0.5037500 | CAFR      | Minnesota      | Ham Lake                          | www.ci.ham-lake.mn.us                    | William |
-|  1704303 | 0.5037589 | BID       | Illinois       | Beach Park village (pt.)          | villageofbeachpark.com                   | Jenny   |
-|  3630169 | 0.4962200 | BID       | New York       | Great Neck                        | www.greatneckvillage.org                 | Karla   |
-|  2950402 | 0.4962143 | REC       | Missouri       | Mountain Grove city               | www.mountaingrove.net                    | Karla   |
-|  4907470 | 0.5038003 | BDG       | Utah           | Boulder                           | boulder.utah.gov                         | William |
-|  2706256 | 0.5038491 | MIN       | Minnesota      | Blackduck                         | www.blackduckmn.com                      | Jenny   |
-|  3626704 | 0.5038504 | MIN       | New York       | Fort Ann (village), New York      | www.fortann.us                           | Karla   |
-|  2029600 | 0.5038672 | BDG       | Kansas         | Halstead city                     | halsteadks.com                           | Jenny   |
-|  1713074 | 0.4960724 | AGD       | Illinois       | Cherry Valley village (pt.)       | cherryvalley.org                         | William |
-|  4241680 | 0.5039603 | BDG       | Pennsylvania   | Latrobe                           | www.cityoflatrobe.com                    | Karla   |
-|  1706756 | 0.5039810 | REC       | Illinois       | Blue Mound village                | www.bluemoundsvillage.com                | Karla   |
-|  4872824 | 0.4960100 | AGD       | Texas          | Thrall                            | www.thrallisd.com                        | Karla   |
-|  4865552 | 0.4960000 | CAFR      | Texas          | San Leanna                        | sanleannatx.com                          | William |
-|  2634000 | 0.4959799 | BDG       | Michigan       | Grand Rapids                      | www.grcity.us                            | Karla   |
-|   636770 | 0.4959781 | MIN       | California     | Irvine                            | www.cityofirvine.org                     | Karla   |
-|  3749800 | 0.4959780 | BID       | North Carolina | Oxford                            | www.oxfordnc.org                         | William |
-|  2041300 | 0.4959516 | MIN       | Kansas         | Lincoln Center                    | www.lincolnks.org                        | Karla   |
-|  3463660 | 0.5040548 | REC       | New Jersey     | Riverton borough                  | <http://www.riverton-nj.com/>            | Jenny   |
-|  1902260 | 0.5040593 | BDG       | Iowa           | Anita                             | www.anitaiowa.com                        | Karla   |
-|  1971625 | 0.4959167 | CAFR      | Iowa           | Sergeant Bluff                    | www.cityofsergeantbluff.com              | William |
-|  1814716 | 0.4958976 | REC       | Indiana        | Columbia City                     | columbiacity.net                         | Jenny   |
-|  3924052 | 0.5041283 | BDG       | Ohio           | East Sparta                       | eastspartavillage.com                    | William |
-|  3602737 | 0.4958429 | REC       | New York       | Asharoken                         | www.asharoken.com                        | Karla   |
-|  4219752 | 0.4958333 | CAFR      | Pennsylvania   | Downingtown borough               | www.downingtown.org                      | Jenny   |
-|   104684 | 0.5042081 | MIN       | Alabama        | Bayou La Batre                    | cityofbayoulabatre.com                   | Karla   |
-|  2348820 | 0.5042685 | BID       | Maine          | New Gloucester                    | www.newgloucester.com                    | William |
-|  1812628 | 0.4957143 | REC       | Indiana        | Cicero                            | www.ciceroin.org                         | Karla   |
-|  2559105 | 0.4957129 | MIN       | Massachusetts  | Salem                             | www.salem.com                            | William |
-|  2273395 | 0.4956667 | CAFR      | Louisiana      | Stonewall town                    | www.thetownofstonewall.com               | Karla   |
-|  2204685 | 0.4956277 | MIN       | Louisiana      | Bastrop                           | www.cityofbastrop.com                    | Karla   |
-|  1711228 | 0.4956238 | REC       | Illinois       | Carlyle                           | carlylelake.com                          | William |
-|  2738564 | 0.4956217 | BID       | Minnesota      | Luverne city                      | www.cityofluverne.org                    | Jenny   |
-|  4600820 | 0.4956127 | BDG       | South Dakota   | Alexandria                        | www.alexandriasd.com                     | Karla   |
-|  2574525 | 0.5043881 | REC       | Massachusetts  | Wendell                           | www.wendellmass.us                       | Jenny   |
-|  1975810 | 0.5043906 | BDG       | Iowa           | Stratford                         | stratfordiowa.com                        | Jenny   |
-|   239960 | 0.5044167 | CAFR      | Alaska         | Kivalina                          | www.kivalinacity.com                     | Karla   |
-|  3365540 | 0.4955786 | BID       | New Hampshire  | Rollinsford                       | www.rollinsford.nh.us                    | William |
-|  1848456 | 0.4955000 | CAFR      | Indiana        | Meridian Hills                    | www.meridianhills.org                    | Jenny   |
-|  5027700 | 0.5045024 | REC       | Vermont        | Georgia                           | www.townofgeorgia.com                    | Karla   |
-|  3602044 | 0.5045265 | BDG       | New York       | Amityville village                | amityville.com                           | Karla   |
-|  3345460 | 0.5045374 | AGD       | New Hampshire  | Marlborough                       | www.marlboroughnh.org                    | William |
-|  2200835 | 0.4954328 | MIN       | Louisiana      | Albany village                    | townofalbanyla.com                       | Jenny   |
-|  1925590 | 0.5045833 | CAFR      | Iowa           | Emmetsburg                        | www.emmetsburg.com                       | Karla   |
-|   113672 | 0.5046840 | MIN       | Alabama        | Centreville                       | <https://cityofcentreville.com/>         | William |
-|  2342520 | 0.5047241 | AGD       | Maine          | Madawaska                         | www.townofmadawaska.com                  | William |
-|  2452825 | 0.5047537 | BDG       | Maryland       | Millington town                   | www.millingtonmd.us                      | Jenny   |
-|  3625241 | 0.4952333 | REC       | New York       | Fallsburg                         | www.townoffallsburg.com                  | Karla   |
-|  2040225 | 0.5047702 | BID       | NA             | NA                                | NA                                       | Jenny   |
-|  5508475 | 0.5047810 | REC       | Wisconsin      | Blue Mounds                       | www.bluemoundsvillage.com                | Karla   |
-|  2721644 | 0.4951741 | MIN       | Minnesota      | Ford Township                     | www.fordtownship.org                     | Jenny   |
-|  4963570 | 0.4951511 | BID       | Utah           | Richfield                         | www.richfieldcity.com                    | William |
-|  2715022 | 0.5048571 | REC       | Minnesota      | Dayton                            | www.cityofdaytonmn.com                   | Karla   |
-|  2131114 | 0.4951405 | REC       | Kentucky       | Glasgow                           | www.glasgow-ky.com                       | Karla   |
-|  3374740 | 0.4951240 | BDG       | New Hampshire  | Sugar Hill                        | www.sugarhillnh.org                      | Karla   |
-|  1020900 | 0.4951056 | AGD       | Delaware       | Dewey Beach                       | www.townofdeweybeach.com                 | Jenny   |
-|  3665893 | 0.5049571 | REC       | New York       | Scotia village                    | www.villageofscotia.org                  | Karla   |
-|  3709140 | 0.5049701 | BID       | North Carolina | Burnsville                        | townofburnsville.org                     | Jenny   |
-|  2669540 | 0.4950167 | REC       | Michigan       | Roscommon village                 | roscommonvillage.com                     | Karla   |
-|  5586400 | 0.5049850 | BID       | Wisconsin      | Weyauwega                         | www.cityofweyauwega-wi.gov               | William |
-|  4001800 | 0.4950071 | REC       | Oklahoma       | Alva                              | www.alvaok.org                           | Jenny   |
-|  3146520 | 0.4950000 | CAFR      | Nebraska       | Springfield                       | www.springfieldnebraska.com              | Jenny   |
-|   807410 | 0.5050146 | BDG       | Colorado       | Blue River                        | www.townofblueriver.com                  | Jenny   |
-|  3985484 | 0.5050396 | BDG       | Ohio           | Willoughby city                   | willoughbyohio.com                       | Jenny   |
-|  4539895 | 0.5050402 | BID       | South Carolina | Lancaster                         | www.lancastercitysc.com                  | William |
-|  2315920 | 0.5050464 | MIN       | Maine          | Cutler                            | cutlermaine.net                          | Jenny   |
-|  3717340 | 0.4949167 | CAFR      | North Carolina | Dobson town                       | www.dobson-nc.com                        | Jenny   |
-|   837600 | 0.4949035 | BDG       | Colorado       | Hot Sulphur Springs               | www.hotsulphurspringsco.com              | Karla   |
-|  4853988 | 0.4948831 | BID       | Texas          | Olmos Park                        | www.olmospark.org                        | Jenny   |
-|   913810 | 0.5051190 | REC       | Connecticut    | Chaplin                           | chaplinct.org                            | Jenny   |
-|  3603408 | 0.5051667 | CAFR      | New York       | Babylon village                   | www.villageofbabylonny.gov               | Karla   |
-|   254920 | 0.5051690 | REC       | Alaska         | Nome                              | www.nomealaska.org                       | Jenny   |
-|  1353172 | 0.4947548 | REC       | Georgia        | Mountain Park city                | mountainparkgov.com                      | Jenny   |
-|  2663260 | 0.5052764 | BDG       | Michigan       | Peck village                      | www.mipeck.us                            | William |
-|  2685080 | 0.5053262 | REC       | Michigan       | Webberville village               | villageofwebberville.com                 | William |
-|  2617640 | 0.5053333 | CAFR      | Michigan       | Commerce Township                 | www.commercetwp.com                      | Karla   |
-|  4258432 | 0.5053333 | CAFR      | Pennsylvania   | Patton borough                    | www.pattonboro.com                       | Jenny   |
-|  5510750 | 0.5053429 | REC       | Wisconsin      | Buchanan                          | www.townofbuchanan.org                   | Jenny   |
-|  1319112 | 0.5053452 | REC       | Georgia        | Commerce city                     | www.commercega.org                       | William |
-|  2901648 | 0.4946452 | REC       | Missouri       | Arcadia city                      | www.arcadiaca.gov                        | Jenny   |
-|   547390 | 0.4946048 | REC       | Arkansas       | Mountain Home city                | www.cityofmountainhome.com               | Karla   |
-|  5349555 | 0.5054167 | CAFR      | Washington     | North Bonneville                  | www.northbonneville.net                  | William |
-|  5516500 | 0.5054364 | BDG       | Wisconsin      | Combined Locks                    | www.combinedlocks.org                    | Jenny   |
-|  2755546 | 0.5054405 | REC       | Minnesota      | Roseau                            | www.city.roseau.mn.us                    | Karla   |
-|  4136050 | 0.5054721 | BDG       | Oregon         | Imbler                            | www.imbleroregon.com                     | Karla   |
-|  3447700 | 0.5055000 | CAFR      | New Jersey     | Moonachie                         | www.moonachie.us                         | Jenny   |
-|   641992 | 0.5055096 | BDG       | California     | Livermore                         | www.cityoflivermore.net                  | Jenny   |
-|   677364 | 0.5055405 | REC       | California     | Susanville city                   | cityofsusanville.net                     | Karla   |
-|  3741420 | 0.5055667 | REC       | North Carolina | Marion city                       | marionnc.org                             | Karla   |
-|  3914184 | 0.4944303 | AGD       | Ohio           | Chillicothe city                  | www.chillicothe.com                      | Karla   |
-|  1313271 | 0.4944286 | REC       | Georgia        | Telfair County                    | www.telfairco.org                        | Karla   |
-|  1313095 | 0.5055764 | BDG       | Georgia        | Dougherty County                  | www.dougherty.ga.us                      | William |
-|  4534360 | 0.4944218 | BDG       | South Carolina | Holly Hill                        | www.townofhollyhillsc.com                | Karla   |
-|  4140300 | 0.5055802 | BID       | Oregon         | Lafayette city                    | ci.lafayette.or.us                       | William |
-|   571960 | 0.5056138 | MIN       | Arkansas       | Vilonia                           | <https://www.cityofvilonia.net>          | William |
-|  2334190 | 0.5056333 | REC       | Maine          | Howland                           | www.howlandmaine.com                     | William |
-|  2644715 | 0.5056501 | BID       | Michigan       | Lake Isabella village (pt.)       | lakeisabellami.org                       | Jenny   |
-|  2153490 | 0.5056728 | BDG       | Kentucky       | Morgantown city                   | morgantown-ky.com                        | Jenny   |
-|  4967440 | 0.5056950 | BID       | Utah           | Sandy city                        | sandy.utah.gov                           | William |
-|  4285592 | 0.5057500 | CAFR      | Pennsylvania   | Wilson borough                    | wilsonborough.org                        | Karla   |
-|  5032425 | 0.5058333 | CAFR      | Vermont        | Hartland                          | www.hartland.govoffice.com               | William |
-|  5587500 | 0.5058502 | BDG       | Wisconsin      | Wilson                            | www.townwilson.com                       | Karla   |
-|  3430180 | 0.5058810 | REC       | New Jersey     | Harrison Township                 | harrisontwp.us                           | Jenny   |
-|  1313271 | 0.5059270 | BID       | Georgia        | Telfair County                    | www.telfairco.org                        | Karla   |
-|  2127856 | 0.5059429 | REC       | Kentucky       | Flemingsburg city                 | <http://www.flemingsburgky.org/>         | Karla   |
-|  4229760 | 0.4940522 | AGD       | Pennsylvania   | Glen Rock borough                 | www.glenrockpa.org                       | Karla   |
-|  3745660 | 0.4940045 | BID       | North Carolina | Murphy                            | www.townofmurphync.com                   | Karla   |
-|  5027700 | 0.5060000 | CAFR      | Vermont        | Georgia                           | www.townofgeorgia.com                    | Karla   |
-|  5530125 | 0.4940000 | CAFR      | Wisconsin      | Grand Rapids                      | www.townofgrandrapids.org                | Karla   |
-|  3626704 | 0.4939302 | BDG       | New York       | Fort Ann (village), New York      | www.fortann.us                           | Karla   |
-|  3649902 | 0.5060833 | CAFR      | New York       | Newark Valley (village), New York | villagenv.com                            | Jenny   |
-|  5340980 | 0.5061241 | BDG       | Washington     | Mabton                            | www.cityofmabton.com                     | William |
-|  5536525 | 0.5061333 | MIN       | Wisconsin      | Hurley city                       | www.hurleywi.com                         | Karla   |
-|  2675820 | 0.4938452 | REC       | Michigan       | Spring Lake                       | www.springlakevillage.org                | Karla   |
-|  4868756 | 0.4937804 | MIN       | Texas          | Sonora                            | www.sonora-texas.com                     | Karla   |
-|  5536425 | 0.4937284 | BDG       | Wisconsin      | Humboldt town                     | <https://townofhumboldt.com/>            | Karla   |
-|  4856156 | 0.5062758 | BDG       | Texas          | Patton Village                    | www.pattonvillage.us                     | Jenny   |
-|  2747068 | 0.5062802 | BID       | Minnesota      | North Mankato                     | www.northmankato.com                     | Jenny   |
-|  3657749 | 0.4937143 | REC       | New York       | Piermont                          | piermont-ny.gov                          | Jenny   |
-|   664224 | 0.4936952 | MIN       | California     | Salinas                           | www.cityofsalinas.org                    | William |
-|  1313233 | 0.4936750 | MIN       | Georgia        | Polk County                       | polkgeorgia.com                          | Karla   |
-|  3327300 | 0.4936248 | BDG       | New Hampshire  | Franconia                         | www.franconianh.org                      | Jenny   |
-|  2758612 | 0.4935929 | REC       | Minnesota      | Sartell city                      | www.sartellmn.com                        | Jenny   |
-|  1782400 | 0.4935847 | MIN       | Illinois       | Winfield village (pt.)            | winfieldvillage.com                      | Karla   |
-|  4208680 | 0.4935800 | AGD       | Pennsylvania   | Brighton township                 | <https://brightontwp.org/>               | Karla   |
-|  1902260 | 0.4935784 | MIN       | Iowa           | Anita                             | www.anitaiowa.com                        | Karla   |
-|  4175550 | 0.4935424 | BDG       | Oregon         | Ukiah                             | www.cityofukiahoregon.com                | Karla   |
-|  3950918 | 0.4935381 | REC       | Ohio           | Minster                           | www.minsteroh.com                        | William |
-|  1313305 | 0.5064738 | REC       | Georgia        | Wayne County                      | www.waynecountyga.us                     | Karla   |
-|  3625241 | 0.5064758 | BID       | New York       | Fallsburg                         | www.townoffallsburg.com                  | Karla   |
-|  1747150 | 0.5064772 | BDG       | Illinois       | Marseilles city (pt.)             | cityofmarseilles.com                     | Karla   |
-|  2256820 | 0.4935000 | CAFR      | Louisiana      | Oak Grove town                    | <https://www.townofoakgrove.com/>        | Jenny   |
-|  1719642 | 0.5065350 | AGD       | Illinois       | Des Plaines                       | www.desplaines.org                       | William |
-|  1313169 | 0.5065381 | REC       | Georgia        | Jones County                      | www.jonescountyga.org                    | William |
-|  3806660 | 0.4934545 | BDG       | North Dakota   | Beulah                            | www.beulahnd.org                         | Jenny   |
-|  1313207 | 0.5065714 | REC       | Georgia        | Monroe County                     | www.monroecoga.org                       | Jenny   |
-|  4276904 | 0.5065720 | AGD       | Pennsylvania   | Titusville city                   | cityoftitusvillepa.gov                   | Karla   |
-|  3974034 | 0.4934167 | MIN       | Ohio           | Spencerville                      | spencervilleoh.com                       | Karla   |
-|  2546925 | 0.5065833 | CAFR      | Massachusetts  | Northbridge                       | www.northbridgemass.org                  | Karla   |
-|  4834532 | 0.4934167 | CAFR      | Texas          | Holliday                          | hollidaytx.org                           | William |
-|  2632020 | 0.5065833 | CAFR      | Michigan       | Gibraltar city                    | www.cityofgibraltar.net                  | Karla   |
-|  3766700 | 0.4934071 | REC       | North Carolina | Tarboro                           | www.tarboro-nc.com                       | William |
-|  4834532 | 0.4933787 | BDG       | Texas          | Holliday                          | hollidaytx.org                           | William |
-|  3678806 | 0.4933711 | MIN       | New York       | Waverly                           | www.waverlybarton.com                    | Jenny   |
-|  2273640 | 0.5066374 | BID       | Louisiana      | Sulphur                           | www.sulphur.org                          | Jenny   |
-|  1266725 | 0.5066580 | BDG       | Florida        | Sneads                            | www.sneadsfl.com                         | William |
-|  2677700 | 0.4933333 | CAFR      | Michigan       | Swartz Creek                      | www.cityofswartzcreek.org                | William |
-|  2261825 | 0.5066883 | BDG       | Louisiana      | Port Barre town                   | www.townofportbarre.com                  | William |
-|  3952052 | 0.4932833 | REC       | Ohio           | Moreland Hills                    | www.morelandhills.com                    | Karla   |
-|  3482960 | 0.5067313 | AGD       | New Jersey     | Wrightstown borough               | www.wrightstownborough.com               | Karla   |
-|  3981928 | 0.5067474 | BDG       | Ohio           | Wauseon                           | www.cityofwauseon.com                    | William |
-|  2032825 | 0.4932500 | CAFR      | Kansas         | Holton                            | www.holtonkansas.org                     | Jenny   |
-|  1264975 | 0.5067753 | BID       | Florida        | Seminole                          | www.myseminole.com                       | Jenny   |
-|  3332180 | 0.4932178 | AGD       | New Hampshire  | Groton                            | www.town-of-groton.com                   | Karla   |
-|  2010600 | 0.4932115 | BDG       | Kansas         | Carbondale                        | carbondaleks.com                         | Karla   |
-|  4872824 | 0.5068266 | BID       | Texas          | Thrall                            | www.thrallisd.com                        | Karla   |
-|  3912784 | 0.4931694 | MIN       | Ohio           | Cedarville                        | www.cedarvilleohio.net                   | Jenny   |
-|   624638 | 0.5068653 | BDG       | California     | Folsom                            | www.folsom.ca.us                         | William |
-|   639892 | 0.5069167 | CAFR      | California     | Lakewood                          | www.lakewoodcity.org                     | William |
-|  5363960 | 0.4930539 | MIN       | Washington     | Shoreline                         | www.cityofshoreline.com                  | Karla   |
-|  3334420 | 0.4930526 | BID       | New Hampshire  | Harrisville                       | www.harrisvillenh.org                    | William |
-|  4217048 | 0.4930232 | BDG       | Pennsylvania   | Crescent township                 | crescenttownship.com                     | Karla   |
-|  5380500 | 0.5069952 | REC       | Washington     | Zillah                            | www.cityofzillah.us                      | Jenny   |
-|  4758080 | 0.5070000 | CAFR      | Tennessee      | Pigeon Forge                      | www.mypigeonforge.com                    | Jenny   |
-|  3452320 | 0.5070062 | BID       | New Jersey     | North Arlington                   | www.northarlington.org                   | William |
-|  2755078 | 0.5070119 | REC       | Minnesota      | Rockville                         | www.rockvillecity.org                    | Jenny   |
-|  3827260 | 0.4929357 | REC       | North Dakota   | Forman city                       | www.formannd.com                         | Karla   |
-|  2515200 | 0.4929190 | REC       | Massachusetts  | Conway                            | townofconway.com                         | Jenny   |
-|  4262160 | 0.5071102 | BDG       | Pennsylvania   | Porter township                   | <https://portertownshippa.com/>          | Jenny   |
-|  4829168 | 0.4928119 | REC       | Texas          | Gatesville                        | ci.gatesville.tx.us                      | William |
-|  2160852 | 0.5072024 | REC       | Kentucky       | Pikeville                         | pikevilleky.gov                          | Karla   |
-|  3849900 | 0.5072356 | BID       | North Dakota   | Mandan                            | www.cityofmandan.com                     | William |
-|  3482570 | 0.4927509 | BID       | New Jersey     | Wood-Ridge                        | www.njwoodridge.org                      | William |
-|   504600 | 0.4927468 | MIN       | Arkansas       | Beebe                             | www.beebeark.org                         | Karla   |
-|  1300660 | 0.5072618 | BDG       | Georgia        | Adrian city (pt.)                 | <https://www.cityofadrian.org/>          | William |
-|   868105 | 0.5072631 | BDG       | Colorado       | San Luis                          | townofsanluisco.org                      | Jenny   |
-|  5336710 | 0.4926667 | CAFR      | Washington     | La Center                         | www.ci.lacenter.wa.us                    | Jenny   |
-|  5048850 | 0.5073333 | CAFR      | Vermont        | Newport                           | www.newportvermont.org                   | William |
-|  1960645 | 0.5073333 | CAFR      | Iowa           | Oxford city                       | oxfordiowa.us                            | Karla   |
-|  3655816 | 0.5073786 | REC       | New York       | Ovid village                      | <https://www.townofovid.net/>            | Jenny   |
-|   453070 | 0.5074167 | CAFR      | Arizona        | Parker                            | www.townofparkerarizona.com              | William |
-|  3440110 | 0.4925308 | BDG       | New Jersey     | Liberty Township                  | www.libertytownship.org                  | Karla   |
-|  4175150 | 0.4925186 | BDG       | Oregon         | Turner city                       | www.cityofturner.org                     | William |
-|  1779397 | 0.5075068 | MIN       | Illinois       | Wayne village (pt.)               | villageofwayne.org                       | William |
-|  1334876 | 0.4924702 | BID       | Georgia        | Greensboro city                   | www.greensboroga.gov                     | Jenny   |
-|  4202184 | 0.4924487 | AGD       | Pennsylvania   | Altoona                           | www.altoonapa.gov                        | Karla   |
-|  3728240 | 0.5075695 | MIN       | North Carolina | Grimesland                        | grimesland.org                           | William |
-|  3944086 | 0.5075739 | AGD       | Ohio           | Lithopolis                        | www.lithopolis.org                       | Jenny   |
-|  4419180 | 0.4924248 | BID       | Rhode Island   | Cranston                          | www.cranstonri.com                       | Jenny   |
-|  5376160 | 0.4924095 | REC       | Washington     | Warden                            | www.cityofwarden.org                     | Karla   |
-|   472420 | 0.5076095 | REC       | Arizona        | Taylor                            | www.tayloraz.org                         | Karla   |
-|  1701543 | 0.4923771 | BDG       | Illinois       | Anna city                         | cityofanna.org                           | William |
-|  5326140 | 0.5076425 | MIN       | Washington     | Garfield                          | www.garfieldwa.com                       | Jenny   |
-|  5307870 | 0.4923521 | MIN       | Washington     | Bridgeport                        | www.bridgeportwashington.net             | William |
-|  2750776 | 0.5076690 | REC       | Minnesota      | Pierz                             | www.pierzmn.org                          | Jenny   |
-|  5017125 | 0.4923207 | BDG       | Vermont        | Danville                          | www.danvillevermont.org                  | William |
-|  5125408 | 0.4923159 | BDG       | Virginia       | Elkton                            | elktonva.gov                             | William |
-|   547390 | 0.5077058 | BID       | Arkansas       | Mountain Home city                | www.cityofmountainhome.com               | Karla   |
-|  4862384 | 0.5077333 | REC       | Texas          | River Oaks                        | www.riveroakstx.com                      | Jenny   |
-|  5560575 | 0.5077500 | CAFR      | Wisconsin      | Osseo                             | www.cityofosseo.us                       | Jenny   |
-|  4744420 | 0.4922196 | BDG       | Tennessee      | Lynnville                         | www.lynnville.org                        | William |
-|  2603520 | 0.4921714 | REC       | Michigan       | Armada                            | www.villageofarmada.org                  | Karla   |
-|  4233608 | 0.4921462 | BDG       | Pennsylvania   | Heidelberg township               | <https://heidelbergtownship.com/>        | Jenny   |
-|  2031850 | 0.5078656 | BID       | Kansas         | Highland                          | www.cityofhighlandkansas.com             | Jenny   |
-|  4503205 | 0.5079080 | MIN       | South Carolina | Atlantic Beach, South Carolina    | www.townofatlanticbeachsc.com            | Karla   |
-|  4937500 | 0.5079167 | CAFR      | Utah           | Hyrum                             | hyrumcity.org                            | William |
-|  1275750 | 0.5079359 | BDG       | Florida        | Welaka                            | www.welaka-fl.gov                        | William |
-|  1206100 | 0.5079502 | BDG       | Florida        | Beverly Beach                     | mybeverlybeach.org                       | Karla   |
-|  1313177 | 0.4920429 | REC       | Georgia        | Lee County                        | www.lee.ga.us                            | Karla   |
-|  4549570 | 0.4920377 | AGD       | South Carolina | Newberry                          | www.cityofnewberry.com                   | William |
-|  2720330 | 0.5079643 | REC       | Minnesota      | Fairmont city                     | fairmont.org                             | William |
-|  1850796 | 0.5079646 | MIN       | Indiana        | Montpelier city                   | www.montpeliercity.org                   | William |
-|  1323284 | 0.4920167 | REC       | Georgia        | Doerun city                       | www.cityofdoerun.com                     | Jenny   |
-|  3602407 | 0.5079881 | REC       | New York       | Arcade (village), New York        | www.villageofarcade.org                  | Karla   |
-|  1754898 | 0.5080000 | CAFR      | Illinois       | Oak Park township                 | www.oakparktownship.org                  | William |
-|  4807432 | 0.4920000 | CAFR      | Texas          | Bellville                         | www.cityofbellville.com                  | Jenny   |
-|  3758720 | 0.4919867 | BDG       | North Carolina | St. Pauls                         | www.stpaulsnc.gov                        | Jenny   |
-|  2872360 | 0.4919376 | BDG       | Mississippi    | Taylor                            | www.taylorms.org                         | Karla   |
-|  4612180 | 0.4919167 | CAFR      | South Dakota   | Clark                             | www.clarksd.com                          | William |
-|  3520270 | 0.5081095 | REC       | New Mexico     | Deming city                       | cityofdeming.org                         | Jenny   |
-|   658352 | 0.4918299 | BDG       | California     | Portola city                      | www.ci.portola.ca.us                     | Jenny   |
-|  1313291 | 0.4917911 | BID       | Georgia        | Union County                      | www.unioncountyga.gov                    | Jenny   |
-|  3735460 | 0.5082161 | BDG       | North Carolina | Kenansville town                  | www.kenansville.org                      | Karla   |
-|   541720 | 0.5082180 | MIN       | Arkansas       | Lowell                            | www.lowellarkansas.gov                   | Jenny   |
-|  4226592 | 0.5082459 | AGD       | Pennsylvania   | Forest Hills                      | www.foresthillspa.org                    | Karla   |
-|  3985484 | 0.5082476 | REC       | Ohio           | Willoughby city                   | willoughbyohio.com                       | Jenny   |
-|  3903730 | 0.4917500 | CAFR      | Ohio           | Ballville Township                | www.ballville.org                        | William |
-|  3724720 | 0.4917500 | CAFR      | North Carolina | Franklinton town                  | www.franklintonnc.us                     | William |
-|  4814668 | 0.5082568 | BDG       | Texas          | Childress city                    | <https://www.cityofchildress.com/>       | Karla   |
-|  4631860 | 0.4917288 | BDG       | South Dakota   | Ipswich                           | www.ipswich-sd.com                       | Jenny   |
-|  1331320 | 0.4916971 | BDG       | Georgia        | Franklin Springs city             | www.cityoffranklinsprings.com            | William |
-|  2939026 | 0.5083242 | AGD       | Missouri       | Kirksville, Missouri              | www.kirksvillecity.com                   | Karla   |
-|  1343668 | 0.4916570 | MIN       | Georgia        | Kingston                          | www.cityofkingstonga.org                 | Jenny   |
-|  1884122 | 0.4916524 | REC       | Indiana        | Whiting                           | whitingindiana.com                       | Karla   |
-|  2153490 | 0.4916318 | BID       | Kentucky       | Morgantown city                   | morgantown-ky.com                        | Jenny   |
-|  1817614 | 0.5083790 | AGD       | Indiana        | Delphi                            | www.cityofdelphi.org                     | William |
-|  1871486 | 0.5083815 | MIN       | Indiana        | Southport city                    | southport.in.gov                         | William |
-|  1829718 | 0.4916048 | REC       | Indiana        | Greensburg                        | www.cityofgreensburg.com                 | Jenny   |
-|  3634055 | 0.5084167 | CAFR      | New York       | Henderson                         | www.townofhendersonny.org                | Jenny   |
-|  2725280 | 0.4915823 | BID       | Minnesota      | Granite Falls                     | www.granitefalls.com                     | Jenny   |
-|  3562200 | 0.5084238 | REC       | New Mexico     | Red River                         | www.redriver.org                         | William |
-|  1905365 | 0.5084585 | BDG       | Iowa           | Bedford                           | www.bedfordia.org                        | Jenny   |
-|  1050800 | 0.4915405 | REC       | Delaware       | New Castle city                   | newcastlecity.delaware.gov               | William |
-|  3645106 | 0.4915164 | BDG       | New York       | Manorhaven village                | www.manorhaven.org                       | William |
-|  3766700 | 0.4914999 | BDG       | North Carolina | Tarboro                           | www.tarboro-nc.com                       | William |
-|  2316725 | 0.5085454 | BDG       | Maine          | Dayton                            | www.dayton-me.gov                        | William |
-|  5507300 | 0.4914479 | AGD       | Wisconsin      | Big Flats                         | bigflatswi.com                           | William |
-|  1931350 | 0.4914153 | BDG       | Iowa           | Glenwood                          | cityofglenwood.org                       | Jenny   |
-|  4111600 | 0.4914071 | REC       | Oregon         | Cascade Locks                     | www.cascade-locks.or.us                  | Jenny   |
-|  2640400 | 0.4913807 | BID       | Michigan       | Independence Township             | www.twp.independence.mi.us               | William |
-|  2703682 | 0.5086667 | CAFR      | Minnesota      | Barrett                           | www.barrettmn.com                        | Jenny   |
-|  3667411 | 0.4913177 | BID       | New York       | Silver Creek village              | silvercreekny.com                        | Jenny   |
-|   508290 | 0.5086876 | BID       | Arkansas       | Bradley                           | bradleyark.com                           | Jenny   |
-|  2031850 | 0.4912857 | REC       | Kansas         | Highland                          | www.cityofhighlandkansas.com             | Jenny   |
-|  5166928 | 0.4912724 | BDG       | Virginia       | Richlands                         | town.richlands.va.us                     | William |
-|  1239850 | 0.5088213 | BDG       | Florida        | Lee                               | www.leeflorida.org                       | William |
-|  3661148 | 0.4911760 | BID       | New York       | Rensselaer city                   | www.rensselaerny.gov                     | Jenny   |
-|  4716980 | 0.5088310 | REC       | Tennessee      | Coopertown                        | www.coopertowntn.org                     | Jenny   |
-|  5152120 | 0.5088679 | BDG       | Virginia       | Mineral                           | townofmineral.com                        | Jenny   |
-|  3377620 | 0.5088708 | BID       | New Hampshire  | Tuftonboro town                   | www.tuftonboro.org                       | Karla   |
-|  5346020 | 0.4911084 | BID       | Washington     | Milton                            | www.cityofmilton.net                     | William |
-|  1664900 | 0.4910927 | AGD       | Idaho          | Potlatch                          | www.cityofpotlatch.org                   | William |
-|  2316725 | 0.4910833 | CAFR      | Maine          | Dayton                            | www.dayton-me.gov                        | William |
-|  3774220 | 0.5089357 | REC       | North Carolina | Williamston town                  | <http://www.townofwilliamston.com/>      | William |
-|   133448 | 0.4910548 | REC       | Alabama        | Hartselle city                    | www.hartselle.org                        | Karla   |
-|  4138000 | 0.4910545 | BID       | Oregon         | Junction City                     | www.junctioncityoregon.gov               | Karla   |
-|  3678960 | 0.4910490 | AGD       | New York       | Webster village                   | www.villageofwebster.com                 | Karla   |
-|  1384456 | 0.5089810 | REC       | Georgia        | Wrens                             | cityofwrens.com                          | Jenny   |
-|  4031750 | 0.4909920 | BDG       | Oklahoma       | Guymon                            | www.guymonok.org                         | Jenny   |
-|  2139304 | 0.5090084 | BDG       | Kentucky       | Indian Hills city                 | <https://indianhillsky.org/>             | William |
-|  5543325 | 0.5090833 | CAFR      | Wisconsin      | Lena                              | villageoflena.net                        | Karla   |
-|  1811062 | 0.4909167 | CAFR      | Indiana        | Cedar Lake                        | cedarlakein.org                          | William |
-|  1700698 | 0.5091441 | BDG       | Illinois       | Algonquin Township                | www.algonquintownship.com                | Karla   |
-|  4109800 | 0.4908416 | BDG       | Oregon         | Burns                             | www.ci.burns.or.us                       | Karla   |
-|  1349008 | 0.5091663 | AGD       | Georgia        | Macon-Bibb County                 | www.maconbibb.us                         | Karla   |
-|  2734865 | 0.5091667 | CAFR      | Minnesota      | Lake St. Croix Beach              | lscb.govoffice.com                       | William |
-|  2338425 | 0.5091667 | CAFR      | Maine          | Lebanon town                      | www.lebanon-me.org                       | William |
-|  3852740 | 0.5091929 | REC       | North Dakota   | Michigan City                     | www.michigannd.com                       | William |
-|  2632320 | 0.4907500 | CAFR      | Michigan       | Gladwin                           | www.gladwin.org                          | Jenny   |
-|  5312630 | 0.5092503 | BID       | Washington     | Clarkston city                    | www.clarkston-wa.com                     | Jenny   |
-|  2866440 | 0.4907307 | MIN       | Mississippi    | Senatobia                         | www.cityofsenatobia.com                  | William |
-|  5538800 | 0.5093214 | REC       | Wisconsin      | Kaukauna                          | www.cityofkaukauna.com                   | Jenny   |
-|  2105446 | 0.5093333 | CAFR      | Kentucky       | Bellevue                          | bellevueky.org                           | William |
-|  4121050 | 0.4906453 | BID       | Oregon         | Dundee                            | www.dundeecity.org                       | Jenny   |
-|   601514 | 0.4905833 | CAFR      | California     | Amador City                       | www.amador-city.com                      | William |
-|  1313109 | 0.5094269 | AGD       | Georgia        | Evans County                      | evanscounty.org                          | Karla   |
-|  1348848 | 0.5094461 | BID       | Georgia        | McIntyre town                     | www.mcintyrega.com                       | Jenny   |
-|  1313259 | 0.4905504 | BDG       | Georgia        | Stewart County                    | www.stewartcountyga.gov                  | Karla   |
-|  2506015 | 0.5094514 | BID       | Massachusetts  | Blackstone                        | www.townofblackstone.org                 | William |
-|  4244832 | 0.4905423 | BID       | Pennsylvania   | Lower Allen township              | www.latwp.org                            | William |
-|  2379585 | 0.4904798 | AGD       | Maine          | Wales town                        | walesmaine.org                           | Jenny   |
-|  4758120 | 0.5095357 | REC       | Tennessee      | Pikeville city                    | pikevilleky.gov                          | William |
-|  4545790 | 0.5095595 | REC       | South Carolina | Meggett town                      | townofmeggettsc.org                      | William |
-|  1215375 | 0.4904223 | BDG       | Florida        | Crescent City city                | www.crescentcity-fl.com                  | Karla   |
-|  2663720 | 0.4904167 | CAFR      | Michigan       | Perry township                    | perrytownship-mi.us                      | Karla   |
-|  3135980 | 0.5095833 | CAFR      | Nebraska       | Ogallala city                     | www.ogallala-ne.gov                      | Karla   |
-|  5486452 | 0.4904119 | REC       | West Virginia  | Wheeling                          | www.wheelingwv.gov                       | Karla   |
-|  4821628 | 0.4904069 | MIN       | Texas          | Duncanville city                  | www.duncanville.com                      | William |
-|   508950 | 0.5096095 | BDG       | Arkansas       | Brinkley                          | www.brinkleyar.com                       | William |
-|  2553960 | 0.5096262 | REC       | Massachusetts  | Pittsfield city                   | www.cityofpittsfield.org                 | Jenny   |
-|  1911080 | 0.4903715 | AGD       | Iowa           | Carroll                           | www.cityofcarroll.com                    | William |
-|  1379948 | 0.5097071 | REC       | Georgia        | Waleska                           | cityofwaleska.com                        | William |
-|  4835984 | 0.5097143 | REC       | Texas          | Industry                          | www.industry-tx.com                      | Jenny   |
-|  3769260 | 0.5097369 | BDG       | North Carolina | Unionville                        | unionvillenc.com                         | Jenny   |
-|  5512225 | 0.5097613 | BID       | Wisconsin      | Cambridge                         | ci.cambridge.wi.us                       | Jenny   |
-|  4846968 | 0.4902290 | AGD       | Texas          | Mason                             | www.mason.tx.citygovt.org                | Jenny   |
-|  2669540 | 0.4902061 | BID       | Michigan       | Roscommon village                 | roscommonvillage.com                     | Karla   |
-|  2135380 | 0.4902058 | BDG       | Kentucky       | Hazel                             | www.hazelky.com                          | William |
-|  3519150 | 0.4902058 | BDG       | New Mexico     | Cuba village                      | www.cubanm.org                           | Jenny   |
-|  3721360 | 0.5097952 | REC       | North Carolina | Enfield                           | www.enfieldnc.org                        | Karla   |
-|  3714280 | 0.5098008 | BDG       | North Carolina | Connelly Springs                  | connellysprings.com                      | William |
-|  2755186 | 0.5098167 | REC       | Minnesota      | Rogers                            | rogersmn.gov                             | Karla   |
-|  3977322 | 0.4901833 | REC       | Ohio           | Trenton                           | www.ci.trenton.oh.us                     | Jenny   |
-|  3929246 | 0.5098251 | BID       | Ohio           | Gambier                           | villageofgambier.org                     | Karla   |
-|  3769840 | 0.5098325 | BDG       | North Carolina | Vass                              | www.townofvassnc.gov                     | Karla   |
+| ST\_FIPS |      prob | indicator | state          | city\_name                   | url                                       | checker |
+| -------: | --------: | :-------- | :------------- | :--------------------------- | :---------------------------------------- | :------ |
+|  2617640 | 0.5000000 | CAFR      | Michigan       | Commerce Township            | www.commercetwp.com                       | Jenny   |
+|  2031850 | 0.5000000 | CAFR      | Kansas         | Highland                     | www.cityofhighlandkansas.com              | William |
+|  2175738 | 0.4999939 | BID       | Kentucky       | Taylor Mill                  | www.taylormillky.gov                      | Jenny   |
+|  2758396 | 0.4999806 | REC       | Minnesota      | Sandstone                    | www.sandstone.govoffice.com               | Jenny   |
+|  4631860 | 0.5000358 | REC       | South Dakota   | Ipswich                      | www.ipswich-sd.com                        | Jenny   |
+|  2517300 | 0.5000833 | CAFR      | Massachusetts  | Douglas                      | www.douglasma.org                         | Jenny   |
+|  4636220 | 0.4999167 | MIN       | South Dakota   | Lead                         | leadmethere.org                           | William |
+|  3918070 | 0.5001055 | BDG       | Ohio           | Commercial Point village     | commercialpointohio.gov                   | Jenny   |
+|  2040225 | 0.5001314 | BID       | NA             | NA                           | NA                                        | William |
+|  3423700 | 0.5001890 | BID       | New Jersey     | Flemington                   | www.historicflemington.com                | William |
+|  2558580 | 0.5002667 | AGD       | Massachusetts  | Royalston                    | www.royalston-ma.gov                      | Karla   |
+|  2077500 | 0.4997320 | BID       | Kansas         | Westwood                     | www.westwoodks.org                        | Karla   |
+|  4140300 | 0.5002831 | BID       | Oregon         | Lafayette city               | ci.lafayette.or.us                        | Jenny   |
+|  3730120 | 0.4997054 | REC       | North Carolina | Havelock                     | www.havelocknc.us                         | Jenny   |
+|  2410225 | 0.5003253 | BDG       | Maryland       | Brookeville                  | www.townofbrookevillemd.org               | William |
+|  5525600 | 0.5003675 | BID       | Wisconsin      | Fennimore                    | www.fennimore.com                         | Jenny   |
+|  4863464 | 0.5003812 | REC       | Texas          | Rotan                        | www.rotan.org                             | Karla   |
+|  2153418 | 0.4996167 | AGD       | Kentucky       | Morehead                     | morehead-ky.gov                           | Jenny   |
+|  1313289 | 0.4995873 | REC       | Georgia        | Twiggs County                | www.twiggscounty.us                       | Karla   |
+|  5669845 | 0.4995836 | BDG       | Wyoming        | Sheridan city                | sheridanwy.net                            | Jenny   |
+|   528780 | 0.5004167 | MIN       | Arkansas       | Greenwood                    | www.greenwoodarkansas.com                 | William |
+|  5184960 | 0.5004712 | REC       | Virginia       | West Point                   | www.west-point.va.us                      | William |
+|  4266192 | 0.4995208 | BDG       | Pennsylvania   | Rose Valley borough          | www.rosevalleyborough.org                 | Karla   |
+|  4924850 | 0.5005000 | MIN       | Utah           | Farr West                    | farrwestcity.net                          | William |
+|  2651560 | 0.4995000 | MIN       | Michigan       | Marenisco township           | <http://marenisco.org/>                   | Jenny   |
+|  4721400 | 0.4995000 | MIN       | Tennessee      | Dover                        | www.dovertn.com                           | William |
+|  3464170 | 0.5005031 | BDG       | New Jersey     | Rockleigh borough            | www.rockleighnj.org                       | Karla   |
+|  3668242 | 0.5005492 | BID       | New York       | Sodus Point                  | www.soduspoint.info                       | William |
+|  3611209 | 0.4994333 | AGD       | New York       | Burlington town              | <http://www.townofburlingtonny.com/>      | William |
+|  4285592 | 0.5005833 | CAFR      | Pennsylvania   | Wilson borough               | wilsonborough.org                         | Jenny   |
+|  4510720 | 0.5005833 | CAFR      | South Carolina | Calhoun Falls                | www.townofcalhounfallssc.com              | William |
+|   139856 | 0.4994167 | MIN       | Alabama        | Kimberly                     | www.kimberlyal.org                        | Jenny   |
+|  2053550 | 0.5006477 | BID       | Kansas         | Ottawa                       | www.ottawaks.gov                          | Karla   |
+|  1700250 | 0.5006498 | REC       | Illinois       | Addison Township             | www.addisontownship.com                   | Jenny   |
+|  5559100 | 0.4993470 | BDG       | Wisconsin      | Oakland                      | www.townofoakland.net                     | Karla   |
+|  3822140 | 0.4993167 | AGD       | North Dakota   | Edgeley                      | www.edgeley.com                           | Karla   |
+|  2105662 | 0.5006910 | BDG       | Kentucky       | Benham                       | www.benhamky.org                          | William |
+|  5121648 | 0.4992642 | BID       | Virginia       | Dayton                       | daytonva.us                               | Jenny   |
+|  3959052 | 0.5007430 | REC       | Ohio           | Ottoville village            | villageofottoville.org                    | Jenny   |
+|   284510 | 0.4992499 | BDG       | Alaska         | Whittier                     | www.whittieralaska.gov                    | William |
+|  2131114 | 0.5007556 | REC       | Kentucky       | Glasgow                      | www.glasgow-ky.com                        | Jenny   |
+|  4576165 | 0.4992274 | REC       | South Carolina | Westminster                  | www.westminstersc.org                     | Jenny   |
+|  4829336 | 0.4992129 | REC       | Texas          | Georgetown                   | www.georgetown.org                        | Karla   |
+|  4510720 | 0.4992000 | AGD       | South Carolina | Calhoun Falls                | www.townofcalhounfallssc.com              | William |
+|   178552 | 0.4991944 | REC       | Alabama        | Vestavia Hills               | vhal.org                                  | Jenny   |
+|  5524450 | 0.4991796 | BDG       | Wisconsin      | Eureka                       | townofeureka.org                          | William |
+|  4017550 | 0.5008282 | REC       | Oklahoma       | Council Hill                 | www.okhistory.org                         | Jenny   |
+|  1313319 | 0.4991697 | BID       | Georgia        | Wilkinson County             | www.wilkinsoncounty.net                   | Karla   |
+|   947515 | 0.4991569 | BID       | Connecticut    | Milford                      | www.ci.milford.ct.us                      | Jenny   |
+|  3667411 | 0.4991333 | AGD       | New York       | Silver Creek village         | silvercreekny.com                         | William |
+|   150312 | 0.4990504 | BID       | Alabama        | Montevallo                   | www.cityofmontevallo.com                  | William |
+|  1201750 | 0.4990458 | BID       | Florida        | Arcadia                      | www.arcadia-fl.gov                        | William |
+|  2917632 | 0.4990434 | BDG       | Missouri       | Crystal City                 | www.crystalcitymo.org                     | Karla   |
+|  3846640 | 0.4989851 | BDG       | North Dakota   | Lincoln                      | www.cityoflincolnnd.com                   | Jenny   |
+|  2606980 | 0.5010450 | BDG       | Michigan       | Bellaire                     | www.bellairemichigan.com                  | Jenny   |
+|  3660510 | 0.4989460 | BID       | New York       | Ramapo                       | www.ramapo.org                            | William |
+|  5504625 | 0.4989269 | REC       | Wisconsin      | Baraboo                      | www.cityofbaraboo.com                     | Jenny   |
+|  1966405 | 0.4989267 | BDG       | Iowa           | Remsen                       | www.remseniowa.net                        | Karla   |
+|  4863020 | 0.4989167 | MIN       | Texas          | Roma                         | www.cityofroma.net                        | William |
+|  5644760 | 0.5010833 | CAFR      | Wyoming        | Lander                       | www.landerwyoming.org                     | Jenny   |
+|   645736 | 0.4989167 | CAFR      | California     | Maricopa                     | www.cityofmaricopa.org                    | William |
+|  4501360 | 0.4989080 | REC       | South Carolina | Anderson                     | www.cityofandersonsc.com                  | Karla   |
+|  3439390 | 0.5011083 | REC       | New Jersey     | Lavallette, New Jersey       | www.lavallette.org                        | William |
+|  4801576 | 0.5011208 | REC       | Texas          | Alamo                        | www.alamotexas.org                        | William |
+|  2605900 | 0.4988500 | AGD       | Michigan       | Bath Township                | bathtownship.us                           | Jenny   |
+|  3410750 | 0.5011667 | MIN       | New Jersey     | Carteret borough             | www.ci.carteret.nj.us                     | Karla   |
+|  4211336 | 0.5011667 | CAFR      | Pennsylvania   | Carnegie borough             | carnegieborough.com                       | Karla   |
+|  3403580 | 0.4988028 | REC       | New Jersey     | Bayonne                      | www.bayonnenj.org                         | Jenny   |
+|  3771780 | 0.5012167 | AGD       | North Carolina | Weldon                       | www.historicweldonnc.com                  | Jenny   |
+|  5011125 | 0.5012314 | BDG       | Vermont        | Cabot                        | www.cabotvt.us                            | Karla   |
+|  2026300 | 0.4987500 | CAFR      | Kansas         | Girard                       | www.girardkansas.gov                      | Karla   |
+|  3615968 | 0.4987398 | BID       | New York       | Clarkstown                   | town.clarkstown.ny.us                     | Jenny   |
+|  2901648 | 0.4987340 | REC       | Missouri       | Arcadia city                 | www.arcadiaca.gov                         | Karla   |
+|   919480 | 0.5012899 | BDG       | Connecticut    | Derby                        | www.derbyct.gov                           | Karla   |
+|  3879420 | 0.5012910 | BDG       | North Dakota   | Towner                       | www.townernd.com                          | Karla   |
+|  3453040 | 0.4986667 | CAFR      | New Jersey     | North Haledon                | www.northhaledon.com                      | Karla   |
+|  5448148 | 0.5013382 | BDG       | West Virginia  | Logan city                   | <https://logancounty.wv.gov/>             | William |
+|  1738115 | 0.4986533 | BDG       | Illinois       | Jacksonville city            | www.jacksonvilleil.com                    | William |
+|  4136050 | 0.5013832 | BDG       | Oregon         | Imbler                       | www.imbleroregon.com                      | William |
+|  2630820 | 0.4986099 | BID       | Michigan       | Frenchtown Charter Township  | www.frenchtowntownship.org                | Jenny   |
+|  2339755 | 0.4985940 | REC       | Maine          | Lincolnville                 | www.town.lincolnville.me.us               | William |
+|  4662100 | 0.5014167 | MIN       | South Dakota   | Sturgis                      | www.sturgis-sd.gov                        | William |
+|  2123932 | 0.5014194 | BDG       | Kentucky       | Edgewood                     | www.edgewoodky.com                        | William |
+|  3641223 | 0.4985667 | AGD       | New York       | Lansing (village), New York  | www.vlansing.org                          | Jenny   |
+|  5363960 | 0.4985636 | BDG       | Washington     | Shoreline                    | www.cityofshoreline.com                   | Jenny   |
+|  2772328 | 0.4985573 | BID       | Minnesota      | Zumbrota city                | ci.zumbrota.mn.us                         | Karla   |
+|  3823220 | 0.4985500 | AGD       | North Dakota   | Ellendale city               | www.ellendalend.com                       | Karla   |
+|  4612180 | 0.5015000 | CAFR      | South Dakota   | Clark                        | www.clarksd.com                           | Jenny   |
+|  3728200 | 0.4985000 | MIN       | North Carolina | Grifton town (pt.)           | grifton.com                               | William |
+|  1740065 | 0.5015239 | BID       | Illinois       | Kingston village             | www.villageofkingston.org                 | William |
+|  4281576 | 0.5015260 | REC       | Pennsylvania   | Watson Township              | www.watsontwp.org                         | William |
+|  1353172 | 0.5015508 | REC       | Georgia        | Mountain Park city           | mountainparkgov.com                       | Jenny   |
+|  3769840 | 0.4983823 | BDG       | North Carolina | Vass                         | www.townofvassnc.gov                      | Jenny   |
+|  4977890 | 0.4983722 | REC       | Utah           | Uintah                       | uintahcity.com                            | Karla   |
+|  2663000 | 0.4983671 | BDG       | Michigan       | Paw Paw township             | www.pawpawtownship.org                    | Jenny   |
+|  2739266 | 0.5016667 | CAFR      | Minnesota      | Madison city                 | www.ci.madison.mn.us                      | Karla   |
+|  3731960 | 0.5016667 | CAFR      | North Carolina | Holden Beach                 | www.hbtownhall.com                        | William |
+|  1825360 | 0.5016667 | MIN       | Indiana        | Franklin township            | <http://www.franklintownshipindiana.org/> | Jenny   |
+|  2753080 | 0.4983333 | CAFR      | Minnesota      | Randall                      | www.randall.govoffice2.com                | William |
+|  1811062 | 0.4983333 | CAFR      | Indiana        | Cedar Lake                   | cedarlakein.org                           | Karla   |
+|  2406800 | 0.4982763 | BDG       | Maryland       | Berlin                       | www.townofberlinmd.com                    | Karla   |
+|  1869480 | 0.4982501 | BDG       | Indiana        | Shipshewana                  | shipshewana.org                           | Karla   |
+|   200065 | 0.4982500 | CAFR      | Alaska         | Adak                         | adak-ak.us                                | Jenny   |
+|  5580125 | 0.5017500 | CAFR      | Wisconsin      | Tomahawk city                | www.cityoftomahawkwi.com                  | Karla   |
+|  2631800 | 0.4981807 | BDG       | Michigan       | Genesee Township             | www.geneseetwp.com                        | Jenny   |
+|  1854414 | 0.5018333 | MIN       | Indiana        | North township               | <http://northtownshiptrustee.com/>        | Jenny   |
+|  4859396 | 0.5018333 | MIN       | Texas          | Presidio                     | presidiotx.us                             | Karla   |
+|   641152 | 0.4981592 | REC       | California     | Lemoore                      | www.lemoore.com                           | Jenny   |
+|  5346020 | 0.4981434 | BID       | Washington     | Milton                       | www.cityofmilton.net                      | Karla   |
+|  1313177 | 0.5018878 | REC       | Georgia        | Lee County                   | www.lee.ga.us                             | William |
+|  2171454 | 0.4980942 | BDG       | Kentucky       | Smiths Grove city            | www.smithsgrove.org                       | Karla   |
+|  1968250 | 0.4980833 | MIN       | Iowa           | Rockwell                     | www.rockwell-ia.org                       | William |
+|  3938052 | 0.4980833 | MIN       | Ohio           | Jackson Township             | www.jackson-sandusky.com                  | William |
+|  1349616 | 0.5019167 | CAFR      | Georgia        | Mansfield city               | www.mansfieldga.gov                       | Karla   |
+|  1313161 | 0.5019428 | REC       | Georgia        | Jeff Davis County            | www.hazlehurst-jeffdavis.org              | Karla   |
+|  4815436 | 0.4980046 | BDG       | Texas          | Cleveland                    | www.clevelandtexas.net                    | William |
+|  4846968 | 0.5020000 | CAFR      | Texas          | Mason                        | www.mason.tx.citygovt.org                 | William |
+|  1802674 | 0.4979756 | REC       | Indiana        | Auburn city                  | <https://www.ci.auburn.in.us/>            | William |
+|  2455925 | 0.5020269 | REC       | Maryland       | New Windsor town             | newwindsormd.gov                          | William |
+|  5156000 | 0.4979462 | BDG       | Virginia       | Newport News                 | www.nngov.com                             | Karla   |
+|  3968056 | 0.4979447 | BID       | Ohio           | Rocky River                  | www.rrcity.com                            | Jenny   |
+|  3981452 | 0.4979187 | BID       | Ohio           | Washington township          | <https://wtwp.com/>                       | Jenny   |
+|  2927334 | 0.5021064 | REC       | Missouri       | Glendale                     | www.glendalemo.org                        | Jenny   |
+|  5525350 | 0.4978333 | MIN       | Wisconsin      | Farmington                   | www.farmingtontown.com                    | Karla   |
+|  2671660 | 0.4977903 | BID       | Michigan       | Saranac                      | www.saranac.k12.mi.us                     | Karla   |
+|  1832818 | 0.4977669 | BDG       | Indiana        | Hebron town                  | hebronindiana.org                         | Karla   |
+|  3129260 | 0.5022500 | CAFR      | Nebraska       | Louisville                   | www.louisvillenebraska.com                | Karla   |
+|  5565600 | 0.4976972 | BDG       | Wisconsin      | Princeton                    | cityofprincetonwi.com                     | Karla   |
+|  3315060 | 0.4976939 | BDG       | New Hampshire  | Cornish                      | www.cornishnh.net                         | William |
+|   236990 | 0.5023333 | CAFR      | Alaska         | Kaktovik                     | www.asrc.com                              | Jenny   |
+|  3710240 | 0.5023333 | CAFR      | North Carolina | Canton                       | www.cantonnc.com                          | Karla   |
+|  5560575 | 0.4976667 | CAFR      | Wisconsin      | Osseo                        | www.cityofosseo.us                        | William |
+|   472420 | 0.4976628 | REC       | Arizona        | Taylor                       | www.tayloraz.org                          | Karla   |
+|  3904920 | 0.4976369 | BID       | Ohio           | Bedford Heights              | www.bedfordheights.gov                    | Jenny   |
+|  5027700 | 0.5023639 | REC       | Vermont        | Georgia                      | www.townofgeorgia.com                     | William |
+|  4208040 | 0.4976333 | AGD       | Pennsylvania   | Bradford                     | www.bradfordpa.com                        | Jenny   |
+|  2341067 | 0.5023805 | REC       | Maine          | Long Island                  | townoflongisland.us                       | Karla   |
+|  3678960 | 0.4976166 | REC       | New York       | Webster village              | www.villageofwebster.com                  | Jenny   |
+|  2755186 | 0.5023876 | BID       | Minnesota      | Rogers                       | rogersmn.gov                              | William |
+|  4873664 | 0.4976076 | BDG       | Texas          | Trinity city                 | cityoftrinity.com                         | Jenny   |
+|  4229760 | 0.5024000 | AGD       | Pennsylvania   | Glen Rock borough            | www.glenrockpa.org                        | William |
+|  2053200 | 0.4975833 | CAFR      | Kansas         | Osage City                   | www.osagecity.com                         | Jenny   |
+|   854935 | 0.4975833 | MIN       | Colorado       | Nucla                        | nucla-naturita.com                        | Jenny   |
+|   641936 | 0.4975813 | REC       | California     | Live Oak                     | www.liveoakcity.org                       | Karla   |
+|  4967440 | 0.4975384 | REC       | Utah           | Sandy city                   | sandy.utah.gov                            | Karla   |
+|  4576165 | 0.5024823 | BID       | South Carolina | Westminster                  | www.westminstersc.org                     | Jenny   |
+|  4623020 | 0.5024841 | BDG       | South Dakota   | Freeman city                 | www.cityoffreeman.com                     | William |
+|   133424 | 0.4974820 | REC       | Alabama        | Hartford                     | www.cityofhartfordal.org                  | Jenny   |
+|  4840756 | 0.4974326 | BDG       | Texas          | Lakeside City                | www.lakesidecitytx.org                    | William |
+|  1959565 | 0.5025833 | MIN       | Iowa           | Orient                       | www.orientiowa.com                        | Jenny   |
+|  3562200 | 0.4973863 | REC       | New Mexico     | Red River                    | www.redriver.org                          | Karla   |
+|  2935000 | 0.4973691 | BDG       | Missouri       | Independence                 | www.indepmo.org                           | William |
+|  4285592 | 0.5026340 | BID       | Pennsylvania   | Wilson borough               | wilsonborough.org                         | Jenny   |
+|  2426200 | 0.4973476 | REC       | Maryland       | Emmitsburg town              | <http://www.emmitsburgmd.gov/>            | Jenny   |
+|   472420 | 0.5026667 | CAFR      | Arizona        | Taylor                       | www.tayloraz.org                          | Karla   |
+|  1837782 | 0.4973333 | CAFR      | Indiana        | Jasper                       | www.jasperindiana.gov                     | William |
+|  1275750 | 0.5026723 | BDG       | Florida        | Welaka                       | www.welaka-fl.gov                         | Karla   |
+|  4246792 | 0.4972945 | REC       | Pennsylvania   | Malvern borough              | malvern.org                               | Karla   |
+|  4756720 | 0.5027208 | REC       | Tennessee      | Paris                        | paristn.gov                               | William |
+|  1246550 | 0.5027500 | CAFR      | Florida        | Moore Haven                  | www.moorehaven.org                        | Jenny   |
+|   200065 | 0.5027578 | BDG       | Alaska         | Adak                         | adak-ak.us                                | Jenny   |
+|   634904 | 0.5027585 | REC       | California     | Hughson                      | hughson.org                               | Jenny   |
+|  4802188 | 0.4971978 | BDG       | Texas          | Alto                         | www.altotexas.org                         | William |
+|  4863464 | 0.4971850 | BDG       | Texas          | Rotan                        | www.rotan.org                             | Karla   |
+|  4867424 | 0.4971701 | BDG       | Texas          | Shepherd city                | <http://www.shepherdtx.org>               | Karla   |
+|  1313319 | 0.4971667 | CAFR      | Georgia        | Wilkinson County             | www.wilkinsoncounty.net                   | Karla   |
+|  1779397 | 0.5028333 | MIN       | Illinois       | Wayne village (pt.)          | villageofwayne.org                        | William |
+|  5347980 | 0.4971667 | CAFR      | Washington     | Napavine                     | www.cityofnapavine.com                    | William |
+|  5560500 | 0.5029060 | REC       | Wisconsin      | Oshkosh                      | www.ci.oshkosh.wi.us                      | Karla   |
+|  3773300 | 0.5029167 | MIN       | North Carolina | White Lake                   | www.whitelakenc.org                       | William |
+|  5508950 | 0.5029167 | CAFR      | Wisconsin      | Boulder Junction             | townofboulderjunction.org                 | William |
+|  2734865 | 0.4970374 | BDG       | Minnesota      | Lake St. Croix Beach         | lscb.govoffice.com                        | Jenny   |
+|   603526 | 0.4969848 | BID       | California     | Bakersfield city             | www.bakersfieldcity.us                    | Jenny   |
+|  3972494 | 0.4969790 | BID       | Ohio           | Silver Lake                  | villageofsilverlake.com                   | Jenny   |
+|  1809532 | 0.4969664 | REC       | Indiana        | Butler city                  | www.butler.in.us                          | Karla   |
+|  2156136 | 0.5030364 | BDG       | Kentucky       | Nicholasville                | www.nicholasville.org                     | Karla   |
+|  1926175 | 0.5030630 | BDG       | Iowa           | Everly                       | everlyiowa.com                            | Karla   |
+|  4222296 | 0.5030667 | AGD       | Pennsylvania   | Eddystone borough            | eddystoneboro.org                         | Karla   |
+|  1313083 | 0.5030786 | REC       | Georgia        | Dade County                  | www.dadecounty-ga.gov                     | Karla   |
+|  3807020 | 0.4969174 | BDG       | North Dakota   | Binford                      | www.gobinford.com                         | Karla   |
+|  5181024 | 0.5030833 | CAFR      | Virginia       | Victoria town                | victoriava.net                            | Karla   |
+|  2877520 | 0.5030852 | REC       | Mississippi    | Walnut Grove                 | www.walnutgrove-ms.com                    | William |
+|  1323284 | 0.5030980 | REC       | Georgia        | Doerun city                  | www.cityofdoerun.com                      | Jenny   |
+|  2652940 | 0.5031005 | BID       | Michigan       | Melvindale                   | www.melvindale.org                        | Jenny   |
+|  3660829 | 0.5031318 | BDG       | New York       | Red Creek                    | www.redcreekny.com                        | Karla   |
+|  1333896 | 0.5031379 | BDG       | Georgia        | Good Hope city               | goodhopega.com                            | William |
+|  2946388 | 0.4968333 | CAFR      | Missouri       | Marshfield                   | www.marshfieldmo.gov                      | Karla   |
+|  3350900 | 0.4968247 | BID       | New Hampshire  | Newbury                      | www.newburynh.org                         | Karla   |
+|  4257752 | 0.4967652 | BDG       | Pennsylvania   | Palo Alto borough            | www.cityofutica.org                       | William |
+|  3679174 | 0.5032500 | CAFR      | New York       | Wesley Hills village         | www.wesleyhills.org                       | William |
+|  4644260 | 0.4967500 | MIN       | South Dakota   | Murdo                        | www.murdosd.com                           | Karla   |
+|  4865552 | 0.5032500 | CAFR      | Texas          | San Leanna                   | sanleannatx.com                           | Karla   |
+|  2432900 | 0.4967500 | CAFR      | Maryland       | Glen Echo                    | www.glenecho.org                          | Jenny   |
+|  1825702 | 0.4967493 | BDG       | Indiana        | Frankton                     | www.franktonindiana.net                   | Jenny   |
+|  1713074 | 0.4967333 | AGD       | Illinois       | Cherry Valley village (pt.)  | cherryvalley.org                          | William |
+|  3473140 | 0.4967331 | BDG       | New Jersey     | Totowa borough               | www.totowanj.org                          | Karla   |
+|  4523470 | 0.4966861 | REC       | South Carolina | Elloree                      | www.elloreesc.com                         | Jenny   |
+|  4722200 | 0.5033167 | AGD       | Tennessee      | Dyersburg                    | www.dyersburgtn.gov                       | Karla   |
+|  4577875 | 0.5033235 | BDG       | South Carolina | Williamston town             | www.williamstonsc.us                      | William |
+|  1733136 | 0.4966667 | MIN       | Illinois       | Harrisburg                   | thecityofharrisburgil.com                 | Jenny   |
+|   124256 | 0.4966371 | BID       | Alabama        | Epes                         | www.cityofepesalabama.com                 | Jenny   |
+|  4138000 | 0.4966334 | BID       | Oregon         | Junction City                | www.junctioncityoregon.gov                | Karla   |
+|  1263375 | 0.4966192 | BID       | Florida        | San Antonio                  | www.sanantonioflorida.org                 | Jenny   |
+|  3535040 | 0.4965937 | REC       | New Mexico     | Jal                          | www.cityofjal.us                          | Karla   |
+|  3115430 | 0.4965833 | CAFR      | Nebraska       | Elmwood                      | www.elmwoodnebraska.com                   | Jenny   |
+|  4286920 | 0.5034167 | CAFR      | Pennsylvania   | Yardley borough              | www.yardleyboro.com                       | Jenny   |
+|  1713074 | 0.4965833 | CAFR      | Illinois       | Cherry Valley village (pt.)  | cherryvalley.org                          | William |
+|  3351220 | 0.5034167 | CAFR      | New Hampshire  | New Durham                   | www.newdurhamnh.us                        | Karla   |
+|  2926182 | 0.4965676 | BDG       | Missouri       | Fulton city                  | fultonmo.org                              | Jenny   |
+|  1313275 | 0.5034832 | BDG       | Georgia        | Thomas County                | thomascountyboc.org                       | William |
+|  2914788 | 0.5034851 | REC       | Missouri       | Clever                       | www.clevermo.com                          | Jenny   |
+|  2236255 | 0.5034999 | REC       | Louisiana      | Houma                        | www.tpcg.org                              | William |
+|  3614014 | 0.4965000 | CAFR      | New York       | Chatham                      | chathamnewyork.us                         | William |
+|  4824036 | 0.4965000 | MIN       | Texas          | Elsa city                    | <http://www.cityofelsa.net/>              | Jenny   |
+|   547390 | 0.5035072 | BID       | Arkansas       | Mountain Home city           | www.cityofmountainhome.com                | William |
+|  1976935 | 0.4964833 | AGD       | Iowa           | Tabor                        | www.taboriowa.us                          | William |
+|  2644940 | 0.4964667 | AGD       | Michigan       | Lake Orion village           | www.lakeorion.org                         | Jenny   |
+|  4836008 | 0.5035658 | REC       | Texas          | Ingleside                    | www.inglesidetx.gov                       | Jenny   |
+|  2049100 | 0.4964262 | BDG       | Kansas         | Mulvane                      | www.mulvanekansas.com                     | Karla   |
+|  2616920 | 0.4964228 | BDG       | Michigan       | Cohoctah township            | www.cohoctahtownship.org                  | William |
+|  3673627 | 0.4964167 | CAFR      | New York       | Thompson town                | <https://townofthompson.com/>             | William |
+|  1224100 | 0.4963820 | REC       | Florida        | Fort Meade                   | www.cityoffortmeade.com                   | William |
+|  4562980 | 0.5036196 | BDG       | South Carolina | Salem                        | salemsc.us                                | Karla   |
+|  3350980 | 0.4963752 | BID       | New Hampshire  | New Castle town              | www.newbostonnh.gov                       | Jenny   |
+|  2519295 | 0.4963403 | BID       | Massachusetts  | Eastham                      | www.eastham-ma.gov                        | William |
+|  2103556 | 0.4962711 | BDG       | Kentucky       | Barbourmeade                 | barbourmeade.org                          | Jenny   |
+|  5025375 | 0.4962695 | BDG       | Vermont        | Fair Haven                   | www.fairhavenvt.org                       | William |
+|  2625660 | 0.5037500 | MIN       | Michigan       | Elm River Township           | www.elmrivertownship.com                  | William |
+|  4622260 | 0.5037670 | REC       | South Dakota   | Fort Pierre                  | www.fortpierre.com                        | William |
+|   922910 | 0.5037755 | REC       | Connecticut    | East Haven                   | www.townofeasthavenct.org                 | Karla   |
+|  4549570 | 0.5038000 | AGD       | South Carolina | Newberry                     | www.cityofnewberry.com                    | Karla   |
+|  4579090 | 0.4961966 | REC       | South Carolina | Woodruff city                | www.cityofwoodruff.com                    | Karla   |
+|  3711340 | 0.5038199 | BID       | North Carolina | Cedar Point                  | www.cedarpointnc.org                      | William |
+|  1258025 | 0.5038333 | CAFR      | Florida        | Pomona Park                  | pomonapark.com                            | Karla   |
+|  1720292 | 0.4961667 | CAFR      | Illinois       | Dolton                       | vodolton.org                              | Karla   |
+|  5338355 | 0.5038333 | CAFR      | Washington     | Langley city                 | www.langleywa.org                         | Karla   |
+|  3735600 | 0.5038667 | AGD       | North Carolina | Kernersville town (pt.)      | www.kernersvillenc.com                    | William |
+|  4880356 | 0.4961194 | REC       | Texas          | Wylie city (pt.)             | wylietexas.gov                            | William |
+|  4267224 | 0.4961173 | REC       | Pennsylvania   | St. Clair borough            | www.stclair-gov.org                       | William |
+|  2712592 | 0.4960833 | CAFR      | Minnesota      | Collegeville Township        | www.collegevilletownship.com              | Karla   |
+|  5336710 | 0.4960833 | CAFR      | Washington     | La Center                    | www.ci.lacenter.wa.us                     | Karla   |
+|  3921469 | 0.5039167 | MIN       | Ohio           | Delaware City township       | www.delawaretownshipohio.org              | Jenny   |
+|  1758239 | 0.5039167 | CAFR      | Illinois       | Paxton city                  | cityofpaxton.com                          | Jenny   |
+|  4821628 | 0.4960804 | REC       | Texas          | Duncanville city             | www.duncanville.com                       | Jenny   |
+|  1961590 | 0.5039376 | REC       | Iowa           | Parkersburg                  | www.parkersburgia.com                     | Karla   |
+|  1924600 | 0.4960585 | BDG       | Iowa           | Eldridge                     | cityofeldridgeia.org                      | Jenny   |
+|  4814668 | 0.5039719 | BDG       | Texas          | Childress city               | <https://www.cityofchildress.com/>        | Karla   |
+|  3144700 | 0.4960273 | BDG       | Nebraska       | Shelton                      | villageofshelton.net                      | William |
+|  2741570 | 0.4960229 | BDG       | Minnesota      | Melrose                      | www.cityofmelrose.com                     | Jenny   |
+|  4842844 | 0.5040000 | MIN       | Texas          | Linden city                  | lindentexas.org                           | Karla   |
+|  4780540 | 0.4960000 | CAFR      | Tennessee      | Whiteville                   | www.townofwhiteville.com                  | Jenny   |
+|  4269000 | 0.5040329 | BID       | Pennsylvania   | Scranton                     | www.scrantonpa.gov                        | William |
+|  2603520 | 0.4959379 | REC       | Michigan       | Armada                       | www.villageofarmada.org                   | Jenny   |
+|  4281576 | 0.4959167 | CAFR      | Pennsylvania   | Watson Township              | www.watsontwp.org                         | William |
+|  2634380 | 0.5041500 | AGD       | Michigan       | Grant township               | granttownship.net                         | Karla   |
+|  1300660 | 0.4958490 | BDG       | Georgia        | Adrian city (pt.)            | <https://www.cityofadrian.org/>           | Jenny   |
+|   967610 | 0.4958381 | BID       | Connecticut    | Seymour                      | www.seymourct.org                         | William |
+|  5568100 | 0.4958333 | MIN       | Wisconsin      | Rio                          | www.riowi.us                              | William |
+|  5583975 | 0.4958333 | CAFR      | Wisconsin      | Watertown city               | ci.watertown.wi.us                        | William |
+|   104684 | 0.5041667 | CAFR      | Alabama        | Bayou La Batre               | cityofbayoulabatre.com                    | Karla   |
+|  2747068 | 0.5041752 | BID       | Minnesota      | North Mankato                | www.northmankato.com                      | Karla   |
+|   167056 | 0.5041787 | BDG       | Alabama        | Russellville city            | www.russellvilleal.org                    | Jenny   |
+|  3626704 | 0.4957836 | BDG       | New York       | Fort Ann (village), New York | www.fortann.us                            | William |
+|  5515600 | 0.4957500 | MIN       | Wisconsin      | Clinton                      | clintonwi.org                             | Karla   |
+|  4873268 | 0.5042735 | BDG       | Texas          | Tolar                        | cityoftolar.org                           | Karla   |
+|  3632314 | 0.4957218 | BDG       | New York       | Harrietstown                 | www.saranaclake.com                       | William |
+|  1230525 | 0.4956990 | REC       | Florida        | High Springs                 | highsprings.us                            | Jenny   |
+|   571960 | 0.5043333 | MIN       | Arkansas       | Vilonia                      | <https://www.cityofvilonia.net>           | Jenny   |
+|  2014700 | 0.5043333 | MIN       | Kansas         | Coldwater                    | www.coldwaterks.com                       | William |
+|  5546575 | 0.4956274 | BID       | Wisconsin      | Lyndon                       | www.townoflyndon.com                      | William |
+|  2842280 | 0.5044000 | AGD       | Mississippi    | Louisville                   | www.cityoflouisvillems.com                | Jenny   |
+|  1809910 | 0.5044074 | BDG       | Indiana        | Camden                       | www.townofcamden.org                      | William |
+|  2009200 | 0.4955833 | MIN       | Kansas         | Buhler                       | www.buhlerks.org                          | Karla   |
+|  4952130 | 0.4955833 | CAFR      | Utah           | Moroni city                  | moronicity.org                            | Jenny   |
+|  5152120 | 0.5044356 | BDG       | Virginia       | Mineral                      | townofmineral.com                         | Karla   |
+|  1769875 | 0.5044697 | BDG       | Illinois       | Sidney village               | <http://villageofsidney.com/index.html>   | William |
+|  4918140 | 0.5045542 | BID       | Utah           | Daniel                       | danielutah.org                            | Karla   |
+|  3768500 | 0.4954077 | BDG       | NA             | NA                           | NA                                        | William |
+|  3949644 | 0.4953833 | AGD       | Ohio           | Middleburg Heights city      | middleburgheights.com                     | Jenny   |
+|  2702152 | 0.4953333 | CAFR      | Minnesota      | Arlington city               | www.arlingtonmn.com                       | Jenny   |
+|  4829432 | 0.4952913 | REC       | Texas          | Giddings                     | www.giddings.net                          | Karla   |
+|  2256820 | 0.4952812 | BDG       | Louisiana      | Oak Grove town               | <https://www.townofoakgrove.com/>         | Karla   |
+|  3651693 | 0.5047342 | REC       | New York       | North Castle                 | www.northcastleny.com                     | William |
+|  2420775 | 0.4952552 | REC       | Maryland       | Crisfield                    | cityofcrisfield.com                       | Jenny   |
+|  3863900 | 0.4952500 | CAFR      | North Dakota   | Portland                     | www.mayvilleportland.com                  | Karla   |
+|  2024275 | 0.5047500 | MIN       | Kansas         | Frankfort city               | cityoffrankfort.org                       | Jenny   |
+|  2527900 | 0.5047817 | BDG       | Massachusetts  | Hamilton                     | www.hamiltonma.gov                        | William |
+|  5536425 | 0.5047909 | BDG       | Wisconsin      | Humboldt town                | <https://townofhumboldt.com/>             | Karla   |
+|  3436690 | 0.4951878 | REC       | New Jersey     | Kenilworth                   | www.kenilworthnj.com                      | William |
+|  2542145 | 0.5048333 | CAFR      | Massachusetts  | Monson                       | www.monson-ma.gov                         | Jenny   |
+|  1237225 | 0.4951559 | REC       | Florida        | LaBelle                      | www.citylabelle.com                       | Jenny   |
+|  1933465 | 0.4951474 | REC       | Iowa           | Guttenberg                   | www.cityofguttenberg.com                  | Jenny   |
+|  1820800 | 0.4951417 | BID       | Indiana        | Ellettsville                 | www.ellettsville.in.us                    | William |
+|  2453625 | 0.4951112 | REC       | Maryland       | Morningside town             | morningsidemaryland.com                   | William |
+|  2926182 | 0.5049167 | CAFR      | Missouri       | Fulton city                  | fultonmo.org                              | Jenny   |
+|  3310100 | 0.5049167 | MIN       | New Hampshire  | Carroll                      | www.twinmountain.com                      | Jenny   |
+|   601444 | 0.5049167 | CAFR      | California     | Alturas                      | www.cityofalturas.org                     | Karla   |
+|  1884752 | 0.4950612 | REC       | Indiana        | Winchester city              | www.winchester-in.gov                     | William |
+|  4937170 | 0.4950587 | REC       | Utah           | Hurricane                    | www.cityofhurricane.com                   | Karla   |
+|  2316725 | 0.5049889 | BDG       | Maine          | Dayton                       | www.dayton-me.gov                         | Karla   |
+|  5524050 | 0.5049915 | BDG       | Wisconsin      | Empire                       | www.empire-town.org                       | Jenny   |
+|  5581250 | 0.5050000 | CAFR      | Wisconsin      | Twin Lakes village           | villageoftwinlakes.net                    | William |
+|  5163288 | 0.4950000 | MIN       | Virginia       | Pocahontas                   | pocahontasva.org                          | Jenny   |
+|  1749854 | 0.4949999 | REC       | Illinois       | Mokena village               | www.mokena.org                            | Karla   |
+|  1905365 | 0.4949542 | BDG       | Iowa           | Bedford                      | www.bedfordia.org                         | Jenny   |
+|  1339244 | 0.4949453 | BID       | Georgia        | Hogansville city             | cityofhogansville.org                     | Jenny   |
+|  2656360 | 0.4949318 | REC       | Michigan       | Muskegon Heights city        | muskegonheights.us                        | William |
+|  2715832 | 0.5050746 | REC       | Minnesota      | Detroit Lakes city           | cityofdetroitlakes.com                    | William |
+|  2909046 | 0.5050833 | MIN       | Missouri       | Brunswick, Missouri          | www.brunswickmo.com                       | Karla   |
+|  3339780 | 0.4949167 | CAFR      | New Hampshire  | Kensington                   | www.town.kensington.nh.us                 | Jenny   |
+|  1708225 | 0.4949167 | MIN       | Illinois       | Bridgeview                   | villageofbridgeview.com                   | Karla   |
+|  3340420 | 0.5051667 | CAFR      | New Hampshire  | Lancaster                    | www.lancasternh.org                       | William |
+|  2174082 | 0.5051727 | BDG       | Kentucky       | Strathmoor Village           | cityofstrathmoorvillage.com               | William |
+|  3952374 | 0.4948062 | REC       | Ohio           | Morrow                       | www.vil.morrow.oh.us                      | Karla   |
+|  5176256 | 0.4948061 | REC       | Virginia       | Stuart                       | www.patrickchamber.com                    | William |
+|  3646855 | 0.5051987 | BID       | New York       | Middleburgh                  | www.schohariecounty-ny.gov                | William |
+|  2739230 | 0.5052000 | AGD       | Minnesota      | Madelia                      | www.madeliamn.com                         | Jenny   |
+|  1378156 | 0.4947958 | BDG       | Georgia        | Unadilla city                | cityofunadillaga.com                      | Karla   |
+|   157576 | 0.4947600 | BDG       | Alabama        | Oxford                       | www.oxfordalabama.org                     | William |
+|  3630521 | 0.4947554 | REC       | New York       | Green Island village         | <https://villageofgreenisland.com/>       | Karla   |
+|  3301460 | 0.4947500 | MIN       | New Hampshire  | Andover                      | www.andovernhus.com                       | Karla   |
+|  4271776 | 0.5052517 | REC       | Pennsylvania   | Somerset                     | www.somersetborough.com                   | Karla   |
+|  2047425 | 0.4947333 | AGD       | Kansas         | Mission Woods                | missionwoods-ks.org                       | William |
+|  2033075 | 0.5052855 | BDG       | Kansas         | Hope                         | www.cityofhopeks.com                      | William |
+|  2579985 | 0.4947144 | BDG       | Massachusetts  | Williamstown                 | williamstown.ws                           | Jenny   |
+|  2113492 | 0.5053333 | MIN       | Kentucky       | Cave City                    | cavecity.com                              | Karla   |
+|  1210275 | 0.4946506 | REC       | Florida        | Cape Coral                   | www.capecoral.net                         | Jenny   |
+|  2754268 | 0.4946431 | BDG       | Minnesota      | Richmond city                | www.ci.richmond.mn.us                     | Jenny   |
+|  1905365 | 0.5054140 | BID       | Iowa           | Bedford                      | www.bedfordia.org                         | Jenny   |
+|  1313229 | 0.4945833 | CAFR      | Georgia        | Pierce County                | <https://piercecountyga.gov/>             | Karla   |
+|  2955388 | 0.4945833 | MIN       | Missouri       | Osceola                      | www.cityofosceolamo.com                   | William |
+|  1702583 | 0.4945833 | AGD       | Illinois       | Ashton village               | www.ashtonusa.com                         | Karla   |
+|  3957582 | 0.4945288 | BDG       | Ohio           | Oak Harbor                   | www.oakharbor.oh.us                       | Jenny   |
+|  2517685 | 0.5054743 | REC       | Massachusetts  | Dudley                       | dudleyma.gov                              | Karla   |
+|  1219900 | 0.5054789 | BID       | Florida        | Edgewood                     | www.edgewood-fl.gov                       | Jenny   |
+|  2749966 | 0.5054868 | BID       | Minnesota      | Paynesville                  | www.paynesvillemn.com                     | Karla   |
+|  1054050 | 0.4945000 | CAFR      | Delaware       | Odessa                       | odessa.delaware.gov                       | William |
+|  4540615 | 0.4945000 | MIN       | South Carolina | Laurens                      | www.cityoflaurenssc.com                   | William |
+|  4519420 | 0.5055182 | REC       | South Carolina | Dillon                       | www.cityofdillonsc.us                     | Jenny   |
+|  2656640 | 0.4944740 | REC       | Michigan       | Napoleon township            | www.napoleontownship.us                   | Karla   |
+|   134816 | 0.4944554 | REC       | Alabama        | Hillsboro town               | www.hillsborotx.org                       | Karla   |
+|  4834088 | 0.4944554 | REC       | Texas          | Hillsboro                    | www.hillsborotx.org                       | Karla   |
+|  5367875 | 0.5055724 | BDG       | Washington     | Stevenson                    | cityofstevenson.com                       | William |
+|  3863900 | 0.5055941 | REC       | North Dakota   | Portland                     | www.mayvilleportland.com                  | Karla   |
+|  1837782 | 0.5056082 | BID       | Indiana        | Jasper                       | www.jasperindiana.gov                     | William |
+|  4611220 | 0.5056667 | MIN       | South Dakota   | Chamberlain                  | www.chamberlainsd.com                     | Karla   |
+|  3133775 | 0.4943333 | CAFR      | Nebraska       | Neligh                       | www.neligh.org                            | William |
+|  4256608 | 0.4943333 | CAFR      | Pennsylvania   | Old Lycoming Township        | www.oldlycomingtwp.org                    | Jenny   |
+|  2710144 | 0.5056943 | BID       | Minnesota      | Carver                       | www.cityofcarver.com                      | Jenny   |
+|  1361628 | 0.5057500 | MIN       | Georgia        | Plains                       | www.plainsgeorgia.org                     | William |
+|  2722472 | 0.5057500 | CAFR      | Minnesota      | Frazee                       | www.frazeecity.com                        | Karla   |
+|  4702320 | 0.4942486 | BDG       | Tennessee      | Athens                       | www.cityofathenstn.com                    | William |
+|   104684 | 0.5057833 | AGD       | Alabama        | Bayou La Batre               | cityofbayoulabatre.com                    | Karla   |
+|  2413000 | 0.4942093 | REC       | Maryland       | Capitol Heights town         | msa.maryland.gov                          | Karla   |
+|  3732840 | 0.4941693 | BID       | North Carolina | Hot Springs                  | www.hotspringsnc.org                      | William |
+|  4862384 | 0.5058533 | REC       | Texas          | River Oaks                   | www.riveroakstx.com                       | Karla   |
+|   658352 | 0.4941089 | BDG       | California     | Portola city                 | www.ci.portola.ca.us                      | Jenny   |
+|  3358500 | 0.5059187 | BDG       | New Hampshire  | Orford                       | www.orfordnh.us                           | Karla   |
+|  2024000 | 0.4940447 | BDG       | Kansas         | Fort Scott                   | www.fortscott.com                         | Jenny   |
+|  3665596 | 0.5059716 | BID       | New York       | Schoharie                    | www.schohariecounty-ny.gov                | Jenny   |
+|  4445460 | 0.4940269 | REC       | Rhode Island   | Middletown                   | middletownri.com                          | William |
+|  3639232 | 0.4940108 | REC       | New York       | Kenmore village              | www.villageofkenmore.org                  | William |
+|  2867040 | 0.5060355 | BID       | Mississippi    | Shelby city                  | yahoo.com                                 | Jenny   |
+|  2746348 | 0.4939283 | BDG       | Minnesota      | Nisswa                       | cityofnisswa.com                          | Jenny   |
+|  3440890 | 0.4939167 | MIN       | New Jersey     | Livingston                   | livingstontownship.org                    | William |
+|  1769524 | 0.4939167 | CAFR      | Illinois       | Shiloh                       | shilohil.org                              | William |
+|  4575850 | 0.4939167 | CAFR      | South Carolina | West Columbia                | www.westcolumbiasc.gov                    | Karla   |
+|  2700262 | 0.5061667 | CAFR      | Minnesota      | Adrian                       | www.adrian.govoffice2.com                 | Karla   |
+|  3482960 | 0.5061667 | AGD       | New Jersey     | Wrightstown borough          | www.wrightstownborough.com                | Karla   |
+|  4250472 | 0.5061667 | CAFR      | Pennsylvania   | Monroe township              | monroetwp.net                             | William |
+|  3936316 | 0.4938333 | MIN       | Ohio           | Hopewell township            | <https://hopewelltownship.net/>           | Jenny   |
+|  2024000 | 0.4937838 | REC       | Kansas         | Fort Scott                   | www.fortscott.com                         | Jenny   |
+|   910100 | 0.5062500 | CAFR      | Connecticut    | Burlington                   | www.burlingtonct.us                       | Karla   |
+|  2131114 | 0.4937493 | BID       | Kentucky       | Glasgow                      | www.glasgow-ky.com                        | Jenny   |
+|  5517737 | 0.5062573 | BID       | Wisconsin      | Cross                        | townofcross.com                           | Karla   |
+|  3642950 | 0.5062827 | REC       | New York       | Livonia village              | www.livoniany.org                         | William |
+|  1227650 | 0.5062841 | BDG       | Florida        | Gretna                       | www.mygretna.net                          | Jenny   |
+|  1800910 | 0.5062841 | BDG       | Indiana        | Alexandria                   | www.alexandriaindiana.net                 | Jenny   |
+|  1852992 | 0.5062841 | BDG       | Indiana        | New Haven                    | www.newhavenin.org                        | Jenny   |
+|  2144686 | 0.5062841 | BDG       | Kentucky       | Leitchfield                  | www.leitchfield.org                       | Karla   |
+|  2500170 | 0.5062841 | BDG       | Massachusetts  | Abington                     | www.abingtonma.gov                        | Karla   |
+|  2526675 | 0.5062841 | BDG       | Massachusetts  | Granville                    | www.townofgranville.org                   | Karla   |
+|  2533220 | 0.5062841 | BDG       | Massachusetts  | Kingston                     | www.kingstonmass.org                      | Karla   |
+|  2535215 | 0.5062841 | BDG       | Massachusetts  | Lexington                    | www.lexingtonma.gov                       | Karla   |
+|  2553225 | 0.5062841 | BDG       | Massachusetts  | Phillipston                  | www.phillipston-ma.gov                    | Jenny   |
+|  2631960 | 0.5062841 | BDG       | Michigan       | Gerrish township             | <https://gerrishtownship.org/>            | William |
+|  3129750 | 0.5062841 | BDG       | Nebraska       | Lynch                        | www.lynchne.com                           | William |
+|  3702080 | 0.5062841 | BDG       | North Carolina | Asheboro city                | ci.asheboro.nc.us                         | William |
+|  3983972 | 0.5062841 | BDG       | Ohio           | Weston village (pt.)         | westonohio.org                            | Karla   |
+|  3983986 | 0.5062841 | BDG       | Ohio           | Weston township              | <https://www.westonohio.org/>             | William |
+|  4046050 | 0.5062841 | BDG       | Oklahoma       | Mangum city                  | <https://www.cityofmangum.com/>           | Jenny   |
+|  4252200 | 0.5062841 | BDG       | Pennsylvania   | Muhlenberg township          | <https://www.muhlenbergtwp.com/>          | William |
+|  4529005 | 0.5062841 | BDG       | South Carolina | Gifford                      | www.hamptoncountysc.org                   | William |
+|  4716420 | 0.5062841 | BDG       | Tennessee      | Collierville                 | collierville.com                          | William |
+|  4728540 | 0.5062841 | BDG       | Tennessee      | Gallatin                     | www.gallatin-tn.gov                       | William |
+|  4937390 | 0.5062841 | BDG       | Utah           | Hyde Park                    | utahreach.org                             | Jenny   |
+|  5486116 | 0.5062841 | BDG       | West Virginia  | West Union                   | www.westunion-wv.com                      | William |
+|  5605245 | 0.5062841 | BDG       | Wyoming        | Bar Nunn                     | www.townofbarnunn.com                     | Karla   |
+|   840185 | 0.5062929 | BID       | Colorado       | Keenesburg                   | www.townofkeenesburg.com                  | Karla   |
+|  1353508 | 0.5063057 | BDG       | Georgia        | Mount Vernon city            | <http://mtvernonga.org/>                  | Jenny   |
+|  4175150 | 0.4936667 | CAFR      | Oregon         | Turner city                  | www.cityofturner.org                      | Jenny   |
+|  2806220 | 0.4936497 | REC       | Mississippi    | Biloxi                       | www.biloxi.ms.us                          | Jenny   |
+|   672520 | 0.4936387 | REC       | California     | Soledad city                 | www.cityofsoledad.com                     | Jenny   |
+|  2763544 | 0.4936373 | REC       | Minnesota      | Sunfish Lake                 | www.sunfishlake.org                       | William |
+|  2562430 | 0.5063994 | BID       | Massachusetts  | Somerset                     | www.townofsomerset.org                    | Jenny   |
+|  5505600 | 0.5064167 | CAFR      | Wisconsin      | Bear Creek                   | www.townofbearcreek.blogspot.com          | William |
+|  3954334 | 0.4935833 | MIN       | Ohio           | New Carlisle                 | www.newcarlisleohio.net                   | William |
+|  3720580 | 0.5064333 | BID       | North Carolina | Elizabeth City               | www.cityofec.com                          | William |
+|   807410 | 0.5064333 | AGD       | Colorado       | Blue River                   | www.townofblueriver.com                   | Karla   |
+|   547390 | 0.4935564 | REC       | Arkansas       | Mountain Home city           | www.cityofmountainhome.com                | William |
+|  1704303 | 0.5064991 | BID       | Illinois       | Beach Park village (pt.)     | villageofbeachpark.com                    | Jenny   |
+|  2846640 | 0.5065116 | BID       | Mississippi    | Meridian                     | www.meridianms.org                        | William |
+|  2748598 | 0.4934729 | REC       | Minnesota      | Oronoco city                 | oronoco.com                               | Jenny   |
+|  4219784 | 0.5065324 | REC       | Pennsylvania   | Doylestown                   | www.doylestownborough.net                 | Karla   |
+|  2760250 | 0.5065554 | REC       | Minnesota      | Silver Bay city              | www.silverbay.com                         | Karla   |
+|  3625076 | 0.5065593 | BID       | New York       | Fairport village             | www.village.fairport.ny.us                | Karla   |
+|  2826860 | 0.5065679 | BDG       | Mississippi    | Gautier                      | www.gautier-ms.gov                        | William |
+|  2138818 | 0.5065730 | BDG       | Kentucky       | Hurstbourne Acres            | hurstbourneacres.org                      | Jenny   |
+|   239960 | 0.5065833 | CAFR      | Alaska         | Kivalina                     | www.kivalinacity.com                      | William |
+|  5011950 | 0.4934167 | CAFR      | Vermont        | Castleton                    | www.castletonvermont.org                  | William |
+|  4806200 | 0.4934167 | MIN       | Texas          | Beach City                   | www.beachcitytx.us                        | William |
+|  5379625 | 0.4934124 | REC       | Washington     | Woodland                     | www.ci.woodland.wa.us                     | William |
+|  2903160 | 0.4934096 | REC       | Missouri       | Ballwin                      | www.ballwin.mo.us                         | Karla   |
+|  5135976 | 0.4934047 | BID       | Virginia       | Haymarket                    | www.townofhaymarket.org                   | Karla   |
+|  3735460 | 0.4933723 | BDG       | North Carolina | Kenansville town             | www.kenansville.org                       | Karla   |
+|  1356308 | 0.5066596 | REC       | Georgia        | North High Shoals town       | www.northhighshoals.org                   | Karla   |
+|  3925914 | 0.5066620 | BDG       | Ohio           | Fairborn                     | ci.fairborn.oh.us                         | Jenny   |
+|  2675820 | 0.4933333 | CAFR      | Michigan       | Spring Lake                  | www.springlakevillage.org                 | William |
+|  5508850 | 0.5066897 | BDG       | Wisconsin      | Boscobel city                | <https://boscobelwisconsin.com/>          | Karla   |
+|  4879972 | 0.5067500 | CAFR      | Texas          | Wolfforth city               | www.wolfforthtx.us                        | Karla   |
+|  5511050 | 0.5067763 | REC       | Wisconsin      | Buffalo town                 | <http://tn.buffalo.wi.gov/>               | William |
+|  3605320 | 0.4932020 | BID       | New York       | Bedford                      | www.bedfordny.gov                         | Karla   |
+|  3605034 | 0.5068281 | REC       | New York       | Bayville village             | bayvilleny.gov                            | Karla   |
+|  4511125 | 0.4931667 | AGD       | South Carolina | Campobello                   | www.townofcampobello.com                  | Karla   |
+|  5308605 | 0.5068333 | MIN       | Washington     | Bucoda                       | bucoda.us                                 | William |
+|  1766430 | 0.5068440 | REC       | Illinois       | Rutland Township             | www.rutlandtownship.com                   | Karla   |
+|  1242900 | 0.4931429 | BDG       | Florida        | Mangonia Park                | www.townofmangoniapark.com                | Karla   |
+|  2550670 | 0.4931329 | BDG       | Massachusetts  | Oakham                       | www.oakham-ma.gov                         | Karla   |
+|  2741570 | 0.5068833 | AGD       | Minnesota      | Melrose                      | www.cityofmelrose.com                     | Jenny   |
+|  1745031 | 0.5068865 | BDG       | Illinois       | Loves Park city              | loves-park.il.us                          | William |
+|  4174850 | 0.5068865 | BDG       | Oregon         | Troutdale                    | www.ci.troutdale.or.us                    | Jenny   |
+|  5066175 | 0.5068865 | BDG       | Vermont        | South Burlington city        | www.sburl.com                             | William |
+|  5504425 | 0.4930833 | CAFR      | Wisconsin      | Baldwin                      | www.villageofbaldwin.com                  | William |
+|  5518425 | 0.5069167 | CAFR      | Wisconsin      | Dairyland                    | townofdairyland.com                       | William |
+|  1728872 | 0.4930721 | REC       | Illinois       | Geneva                       | geneva.il.us                              | Karla   |
+|  4863668 | 0.5069345 | BID       | Texas          | Royse City                   | www.roysecity.com                         | Karla   |
+|  5142424 | 0.5069407 | BID       | Virginia       | Kilmarnock town              | www.kilmarnockva.com                      | Jenny   |
+|  1874510 | 0.5069449 | REC       | Indiana        | Swayzee                      | www.swayzee.org                           | Jenny   |
+|   814765 | 0.4930500 | AGD       | Colorado       | Creede                       | www.creede.com                            | Karla   |
+|  2606460 | 0.4930497 | REC       | Michigan       | Bear Lake                    | www.bearlakemichigan.org                  | Karla   |
+|  1320316 | 0.5069535 | REC       | Georgia        | Crawfordville                | www.crawfordvillega.org                   | William |
+|  2364675 | 0.5069606 | REC       | Maine          | Saco city                    | sacomaine.org                             | Karla   |
+|  3020800 | 0.5069905 | BDG       | Montana        | Dillon city                  | dillonmt.org                              | William |
+|   404720 | 0.5069984 | BDG       | Arizona        | Avondale                     | avondale.org                              | William |
+|  2701864 | 0.5070000 | CAFR      | Minnesota      | Appleton                     | www.appletonmn.com                        | Karla   |
+|  3929428 | 0.5070667 | AGD       | Ohio           | Garfield Heights city        | www.garfieldhts.org                       | Karla   |
+|  3722600 | 0.5070817 | BDG       | North Carolina | Faith                        | www.faithnc.com                           | Jenny   |
+|  3966460 | 0.5070833 | MIN       | Ohio           | Rice Township                | ricetownship.com                          | Jenny   |
+|  4804672 | 0.5070984 | BID       | Texas          | Aurora                       | www.auroratexas.gov                       | Karla   |
+|  5551025 | 0.5071667 | CAFR      | Wisconsin      | Menomonie                    | www.menomonie-wi.gov                      | Jenny   |
+|  1851732 | 0.4928333 | AGD       | Indiana        | Mount Vernon                 | www.mountvernon.in.gov                    | William |
+|  4260000 | 0.4928333 | MIN       | Pennsylvania   | Philadelphia                 | www.phila.gov                             | Karla   |
+|  4829168 | 0.5072402 | BID       | Texas          | Gatesville                   | ci.gatesville.tx.us                       | Karla   |
+|  3678366 | 0.5072419 | REC       | New York       | Warwick, New York            | www.townofwarwick.org                     | Jenny   |
+|  3439420 | 0.5072500 | CAFR      | New Jersey     | Lawnside borough             | lawnside.net                              | Karla   |
+|  1820728 | 0.4927288 | BDG       | Indiana        | Elkhart                      | www.elkhartindiana.org                    | William |
+|  4967000 | 0.5072841 | BDG       | Utah           | Salt Lake City               | www.slcgov.com                            | Karla   |
+|  2815140 | 0.5072856 | REC       | Mississippi    | Collins city                 | cityofcollins.com                         | William |
+|  5166928 | 0.4926871 | BDG       | Virginia       | Richlands                    | town.richlands.va.us                      | William |
+|  4216144 | 0.4926779 | BDG       | Pennsylvania   | Coraopolis                   | coraopolispa.com                          | William |
+|  3905620 | 0.4926667 | MIN       | Ohio           | Benton township              | <https://www.bentontownship.org/>         | Karla   |
+|  4202328 | 0.4926667 | CAFR      | Pennsylvania   | Amity township               | <http://amitytownshippa.com/>             | William |
+|  2713006 | 0.4926667 | MIN       | Minnesota      | Cook                         | www.cookmn.us                             | Jenny   |
+|   157000 | 0.5073333 | MIN       | Alabama        | Oneonta                      | www.cityofoneonta.us                      | William |
+|   865190 | 0.5073333 | MIN       | Colorado       | Rocky Ford                   | www.rockyfordcolo.com                     | Jenny   |
+|  2064375 | 0.4926235 | BDG       | Kansas         | Sharon Springs               | www.wallacecounty.net                     | Karla   |
+|  2567000 | 0.4925723 | REC       | Massachusetts  | Springfield city             | www.springfield-ma.gov                    | Karla   |
+|  3934790 | 0.5074500 | AGD       | Ohio           | Hebron village               | <https://www.hebronvillage.org/>          | Karla   |
+|  1311616 | 0.5074772 | BDG       | Georgia        | Buchanan                     | buchananga.com                            | William |
+|  1877768 | 0.4925000 | MIN       | Indiana        | Union City                   | www.myunioncity.com                       | Karla   |
+|  2646440 | 0.4924667 | AGD       | Michigan       | Lawrence                     | www.lawrencemi.org                        | Karla   |
+|  1982200 | 0.5075592 | BDG       | Iowa           | Wapello                      | www.cityofwapello.com                     | Karla   |
+|  4982620 | 0.5076227 | BDG       | Utah           | Wellsville                   | www.wellsvillecity.com                    | William |
+|  4840204 | 0.5076572 | REC       | Texas          | La Feria city                | www.cityoflaferia.com                     | Jenny   |
+|  3957008 | 0.4923366 | BID       | Ohio           | North Royalton               | www.northroyalton.org                     | Karla   |
+|  3720600 | 0.5076667 | MIN       | North Carolina | Elizabethtown                | www.elizabethtownnc.org                   | William |
+|  4602900 | 0.5076667 | MIN       | South Dakota   | Avon                         | www.avonsd.com                            | Karla   |
+|  2663300 | 0.5076807 | REC       | Michigan       | Pellston village             | www.pellstonmi.com                        | William |
+|  1313321 | 0.4923182 | REC       | Georgia        | Worth County                 | www.worthcountyboc.com                    | Karla   |
+|  2956036 | 0.4923000 | AGD       | Missouri       | Palmyra                      | www.greatriverroad.com                    | William |
+|  2275425 | 0.4922971 | BID       | Louisiana      | Thibodaux                    | ci.thibodaux.la.us                        | Jenny   |
+|  2688380 | 0.5077125 | BID       | Michigan       | Woodhaven                    | www.woodhavenmi.org                       | Jenny   |
+|  3364420 | 0.5077261 | BDG       | New Hampshire  | Richmond                     | www.richmond.nh.gov                       | William |
+|  2737556 | 0.5077617 | REC       | Minnesota      | Little Falls city            | cityoflittlefalls.com                     | Jenny   |
+|  2950402 | 0.5077673 | REC       | Missouri       | Mountain Grove city          | www.mountaingrove.net                     | Karla   |
+|  2446475 | 0.5078025 | BDG       | Maryland       | Leonardtown                  | leonardtown.somd.com                      | Karla   |
+|  2420050 | 0.5078229 | BDG       | Maryland       | Cottage City                 | www.cottagecitymd.gov                     | Jenny   |
+|  5041200 | 0.5078249 | REC       | Vermont        | Ludlow                       | www.ludlow.vt.us                          | Jenny   |
+|  3362500 | 0.4921294 | REC       | New Hampshire  | Plaistow                     | www.plaistow.com                          | Jenny   |
+|  4807192 | 0.5078875 | BID       | Texas          | Beeville                     | www.beevilletx.org                        | Jenny   |
