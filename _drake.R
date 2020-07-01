@@ -9,4 +9,5 @@ options(clustermq.scheduler = "multicore")
 future::plan(future::multiprocess)
 
 drake_config(plan, parallelism = "future", jobs = 6,
-             memory_strategy = "autoclean")
+             memory_strategy = "autoclean", history = FALSE,
+             garbage_collection = TRUE)

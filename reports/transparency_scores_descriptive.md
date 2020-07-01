@@ -1,4 +1,4 @@
-**Last Update**: 2020-06-30
+**Last Update**: 2020-07-01
 
 As of now, we have 9400 towns with predicted transparency scores.
 

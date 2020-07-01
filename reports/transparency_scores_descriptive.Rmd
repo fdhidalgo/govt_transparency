@@ -76,7 +76,7 @@ pop2010 <- census %>%
 group_by(preds, ST_FIPS) %>%
   summarise(trans_score = sum(label)) %>%
   left_join(pop2010) %>%
-  filter(pop_2010 > 1000 & pop_2010 < 300000) %>%
+  filter(pop_2010 > 1000 & pop_2010 < 300000 & trans_score <= 6) %>%
   ggplot(aes(x = pop_2010, y = as.factor(trans_score), fill = stat(x))) +
   geom_density_ridges_gradient(jittered_points = TRUE, alpha = .4, point_size = .3) +
   scale_x_log10("Population (Log Scale)",label = scales::comma_format()) +
