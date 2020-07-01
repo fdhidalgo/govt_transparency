@@ -28,6 +28,7 @@
 **Additional Interesting Info**
 - On [1] - there are interesting cites to various transparency rating studies which were used on measuring town transparency in various states:
 	- Cites [5] through [9] are all various transparency ratings agencies that work on a national level - it may be interesting to review the methodologies of these studies and the ratings they give to various cities and towns
+</br>
 **Bibliography** </br>
 [1] https://ballotpedia.org/Mississippi_Public_Records_Act </br>
 [2] https://www.nfoic.org/coalitions/state-foi-resources/mississippi-foia-laws </br>
