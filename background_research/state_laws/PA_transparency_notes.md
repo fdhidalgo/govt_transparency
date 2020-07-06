@@ -32,11 +32,12 @@ https://www.openrecords.pa.gov/Documents/AnnualReport2019.pdf
 
 **COVID-19, Sunshine Act and Pennsylvania**:
 As of the April 20th, 2020, Act 15 of 2020, Subchapter E, went into effect. The act provisions specifically address that transparency still applies especially in a time of crisis. In particular, the revisions are regarding open meetings and the Sunshine Act. The provisions include the following:
-•	“Clarifying that local government agencies are authorized to hold remote meetings during the emergency. A physical quorum (i.e., a quorum all in the same room) is not needed. However, there must be a quorum participating remotely.
-•	“To the extent practicable” local government agencies must provide advance notice of all remote meetings including date, time, technology, and how the public can participate. Such notice must be posted on the agency’s website, in a newspaper of general circulation, or both. The OOR also encourages agencies to use social media, email newsletters, and any other method it has available to provide notice.
-•	“To the extent practicable,” local government agencies must provide for public participation directly through the teleconferencing or videoconferencing system used to hold the meeting, via email and/or via postal mail. (Ideally, agencies will accommodate all three methods and possibly others.)
-•	NOTE: “Practicable” is a much stronger word than “practical.” (Merriam-Webster defines “practicable” as “capable of being put into practice or of being done or accomplished; feasible.” In other words, unless it is actually impossible to do so, it must be done. This means that advance notice and public participation are essentially required.)
-•	If an emergency meeting (i.e., a meeting called without public notice) related to COVID-19 takes places, the minutes of that emergency meeting must be made available within 20 days.”
+
+*	“Clarifying that local government agencies are authorized to hold remote meetings during the emergency. A physical quorum (i.e., a quorum all in the same room) is not needed. However, there must be a quorum participating remotely.
+* “To the extent practicable” local government agencies must provide advance notice of all remote meetings including date, time, technology, and how the public can participate. Such notice must be posted on the agency’s website, in a newspaper of general circulation, or both. The OOR also encourages agencies to use social media, email newsletters, and any other method it has available to provide notice.
+*	“To the extent practicable,” local government agencies must provide for public participation directly through the teleconferencing or videoconferencing system used to hold the meeting, via email and/or via postal mail. (Ideally, agencies will accommodate all three methods and possibly others.)
+*	NOTE: “Practicable” is a much stronger word than “practical.” (Merriam-Webster defines “practicable” as “capable of being put into practice or of being done or accomplished; feasible.” In other words, unless it is actually impossible to do so, it must be done. This means that advance notice and public participation are essentially required.)
+*	If an emergency meeting (i.e., a meeting called without public notice) related to COVID-19 takes places, the minutes of that emergency meeting must be made available within 20 days.”
 
 Pennsylvania Office of Open Records. “The Sunshine Act and the Coronavirus (COVID-19).” 12 June 2020. https://openrecordspennsylvania.com/2020/03/11/the-sunshine-act-and-covid-19/
 
