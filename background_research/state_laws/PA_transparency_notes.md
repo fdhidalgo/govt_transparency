@@ -25,7 +25,9 @@ In the Sunshine Act - 65 Pa. C.S. § 701:
 Sunshine Act - 65 Pa. C.S. § 701 https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/65/65.HTM
 
 **Open Record Annual Report**: 
-According to the Pennsylvania Office of Open Records, in 2019, there was approximately *2658 appeals filed*, out of the appeals that were filed about 51.6% were filed by the citizens of Pennsylvania. There were *1006 Right-To-Know* requests in 2019, but it was found that **nearly 92% of the requests were misdirected** to the Office of Open Records (Pennsylvania Office of Open Records, 2019 Annual Report).
+According to the Pennsylvania Office of Open Records, in 2019, there was approximately *2658 appeals filed*, out of the appeals that were filed about 51.6% were filed by the citizens of Pennsylvania. There were *1006 Right-To-Know* requests in 2019, but it was found that **nearly 92% of the requests were misdirected** to the Office of Open Records 
+
+(Pennsylvania Office of Open Records, 2019 Annual Report).
 https://www.openrecords.pa.gov/Documents/AnnualReport2019.pdf
 
 **COVID-19, Sunshine Act and Pennsylvania**:
