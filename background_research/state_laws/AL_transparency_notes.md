@@ -1,15 +1,17 @@
 # Alabama Transparency Report
 **Alabama Open Meetings Law**: 
+
 “(a) It is the policy of this state that the deliberative process of governmental bodies shall be open to the public during meetings as defined in Section 36-25A-2(6). Except for executive sessions permitted in Section 36-25A-7(a) or as otherwise expressly provided by other federal or state laws or statutes, all meetings of a governmental body shall be open to the public and no meetings of a governmental body may be held without providing notice pursuant to the requirements of Section 36-25A-3. No executive sessions are required by this chapter to be held under any circumstances. Serial meetings or electronic communications shall not be utilized to circumvent any of the provisions of this chapter.”
 
 (Alabama Legislature. “Code of Alabama: § 36-25A-1. Purpose; open meetings requirement; short title.” http://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/36-25A-1.htm)
 
 **Alabama Public Records Law**:
+
 Rights of citizens to inspect and copy public writings; exceptions:
 “Every citizen has a right to inspect and take a copy of any public writing of this state, except as otherwise expressly provided by statute. Provided however, registration and circulation records and information concerning the use of the public, public school or college and university libraries of this state shall be exempted from this section. Provided further, any parent of a minor child shall have the right to inspect the registration and circulation records of any school or public library that pertain to his or her child. Notwithstanding the foregoing, records concerning security plans, procedures, assessments, measures, or systems, and any other records relating to, or having an impact upon, the security or safety of persons, structures, facilities, or other infrastructures, including without limitation information concerning critical infrastructure (as defined at 42 U.S.C. § 5195c(e) as amended) and critical energy infrastructure information (as defined at 18 C.F.R. § 388.113(c)(1) as amended) the public disclosure of which could reasonably be expected to be detrimental to the public safety or welfare, and records the disclosure of which would otherwise be detrimental to the best interests of the public shall be exempted from this section. Any public officer who receives a request for records that may appear to relate to critical infrastructure or critical energy infrastructure information, shall notify the owner of such infrastructure in writing of the request and provide the owner an opportunity to comment on the request and on the threats to public safety or welfare that could reasonably be expected from public disclosure on the records.”
 (Alabama Legislature. “Rights of citizens to inspect and copy public writings; exceptions.” http://alisondb.legislature.state.al.us/Alison/CodeOfAlabama/1975/Coatoc.htm)
 
-SB237: 
+**SB237**: 
 * On April 4th of 2019, Senator Ward of District 14 of the state of Alabama presented bill SB237, which was a proposal to amend the Alabama Open Records Act. 
 *	Amendments included a sample records request form that would be required and made available online. 
 *	Moreover, the bill addressed response time: 
