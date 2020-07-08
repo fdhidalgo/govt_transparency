@@ -1,3 +1,4 @@
+# Pennsylvania Transparency Report 
 Pennsylvania Right-to-Know Law and Sunshine Act: 
 *	In the **Right-to-Know Law**, that was enact on the 14th of February 2008, local governments are classified as an agency, which then requires them to follow specific transparency laws. 
   *	Under the Right-to-Know law, it is found that “any record in the possession of a ‘Commonwealth agency’ or a ‘local agency’ is presumed to be public. Similarly, defined legislative records of legislative agencies and financial records of judicial agencies are also presumed to be public. Such records are shielded from disclosure *only if the record is specifically exempt under the Law, protected by a privilege, or exempt from disclosure under another law or by judicial order or decree*.” (Pennsylvania Local Government Commission, Pennsylvania Right-to-Know Law, Issues-Citizens-Rights-01-Pennsylvania-Right-to-Know-Law.pdf)
