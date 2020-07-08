@@ -13,10 +13,9 @@ SB237:
 * On April 4th of 2019, Senator Ward of District 14 of the state of Alabama presented bill SB237, which was a proposal to amend the Alabama Open Records Act. 
 *	Amendments included a sample records request form that would be required and made available online. 
 *	Moreover, the bill addressed response time: 
-  *	“(c) A custodian of governmental records, as soon as is practicable, but in all cases within five working days of receiving a request, shall take one of the following actions: 
-     * (1) Provide the requested records.
-     
-	   * (2) a. Deny access to the requested records because release of the requested records is prohibited by law”
+  	* “(c) A custodian of governmental records, as soon as is practicable, but in all cases within five working days of receiving a request, shall take one of the following actions: 
+    		 * (1) Provide the requested records.
+		 * (2) a. Deny access to the requested records because release of the requested records is prohibited by law”
 * The synopsis of the bill goes as follows: “This bill would establish the Alabama Open Records Act, and would provide a process to provide citizens with better access to public records. This bill would provide procedures for making and responding to requests for access to public records, and would set the fees to be charged for copies. This bill would create the Office of the Public Access Counselor in the Department of Examiners of Public Accounts, and would provide for the appointment of the Public Access Counselor, and would provide for his or her powers and duties. This bill would establish an appeals process and administrative and judicial remedies, and would provide civil penalties for noncompliance.”
 * The bill was introduced in the Senate of Governmental Affairs and Committee and is pending committee action in house of origin. 
 
