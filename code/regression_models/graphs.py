@@ -7,6 +7,7 @@ trans_scores = []
 st_fips = []
 city_names = []
 state_names = []
+urls = []
 
 # *****Before running this, be sure to rewrite the path variables to where the file is in your computer*****
 
@@ -21,6 +22,7 @@ for line in file:
     st_fips.append(int(items[0]))
     city_names.append(items[4])
     state_names.append(items[3])
+    urls.append(items[5])
 file.close()
 
 def regression_model_generation(filename): # takes in pop_transp_score.csv as an argument
@@ -43,7 +45,7 @@ def residual_calculation(filename):
 
     for i in range(len(city_pop)):
         residual = abs(poly1d_fn(city_pop[i]) - trans_scores[i]) # this calculates trans_score from line of best fit (predicted) - trans_score from data (actual)
-        city_residual_mapping[st_fips[i]] = city_names[i], state_names[i], poly1d_fn(city_pop[i]), trans_scores[i], residual # cities should be referred by st_fips because multiple cities can have the same name, confusing the data
+        city_residual_mapping[st_fips[i]] = city_names[i], state_names[i], poly1d_fn(city_pop[i]), trans_scores[i], residual, urls[i] # cities should be referred by st_fips because multiple cities can have the same name, confusing the data
 
     return city_residual_mapping
 
@@ -55,7 +57,7 @@ def city_ranking(filename):
     ranking = sorted(city_residual_mapping.items(), key=lambda x: x[1][4]) # sorted generates a list, so we have to make ANOTHER dictionary called final_dict
 
     for i in range(len(ranking)):
-        final_dict[ranking[i][0]] = ranking[i][1][0], ranking[i][1][1], ranking[i][1][2], ranking[i][1][3], ranking[i][1][4], i + 1
+        final_dict[ranking[i][0]] = ranking[i][1][0], ranking[i][1][1], ranking[i][1][2], ranking[i][1][3], ranking[i][1][4], ranking[i][1][5], i + 1
 
     return final_dict
 
@@ -67,12 +69,12 @@ def csv_file_generator(filename):
     writer = csv.writer(a_file)
 
     for keys, values in final_dict.items():
-        writer.writerow([keys, values[0], values[1], values[2], values[3], values[4], values[5]])
+        writer.writerow([keys, values[0], values[1], values[2], values[3], values[4], values[5], values[6]])
 
     a_file.close()
 
 
-regression_model_generation("pop_transp_score.csv")
+# regression_model_generation("pop_transp_score.csv")
 # residual_calculation("pop_transp_score.csv")
 # city_ranking("pop_transp_score.csv")
 # csv_file_generator("pop_transp_score.csv")
