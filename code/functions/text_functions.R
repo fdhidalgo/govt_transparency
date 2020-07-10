@@ -27,12 +27,31 @@ get_linktext <- function(x){
 }
 
 get_pagetext <- function(x){
-  pagetext <- map(x, ~ .["page_text"]) %>%
-    unlist() %>%
-    str_trim()
-  pagetext <- pagetext[!is.na(pagetext)]
-  pagetext <- pagetext[pagetext != ""]
-  paste(pagetext, collapse = " ")
+  page_text <-  map(x, ~ unlist(.x[names(.x) == "page_text"]))
+  page_text <- page_text[sapply(page_text, function(x) length(x) != 0)]
+
+  bdg_counts <- map_int(page_text, ~ str_count(string = .x,
+                                               pattern = regex("budget", ignore_case = T)))
+  agd_counts <- map_int(page_text, ~ str_count(string = .x,
+                                               pattern = regex("agenda", ignore_case = T)))
+  bid_counts <- map_int(page_text, ~ str_count(string = .x["page_text"],
+                                               pattern = regex("\\bbid\\b|\\bbids\\b", ignore_case = T)))
+  cafr_counts <- map_int(page_text, ~ str_count(string = .x["page_text"],
+                                                pattern = regex("financ", ignore_case = T)))
+  min_counts <- map_int(page_text, ~ str_count(string = .x["page_text"],
+                                               pattern = regex("minutes", ignore_case = T)))
+  records_counts <- map_int(page_text, ~ str_count(string = .x["page_text"],
+                                                   pattern = regex("records", ignore_case = T)))
+
+  page_text <- page_text[bdg_counts > median(bdg_counts) |
+                           agd_counts > median(agd_counts) |
+                           bid_counts > median(bid_counts) |
+                           cafr_counts > median(cafr_counts) |
+                           min_counts > median(min_counts) |
+                           records_counts > median(records_counts)]
+
+
+  paste(page_text, collapse = " ")
 }
 
 get_titletext <- function(x){
@@ -56,7 +75,6 @@ create_textdf <- function(text_list){
   left_join(linktext_df, pagetext_df) %>%
     left_join(titletext_df)
 }
-
 
 
 count_tokens <- function(x){

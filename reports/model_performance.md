@@ -110,7 +110,7 @@ AGD
 
 <td style="text-align:right;">
 
-0.75
+0.76
 
 </td>
 
@@ -138,7 +138,7 @@ BID
 
 <td style="text-align:right;">
 
-0.78
+0.79
 
 </td>
 
@@ -150,7 +150,7 @@ BID
 
 <td style="text-align:right;">
 
-0.76
+0.77
 
 </td>
 
@@ -172,7 +172,7 @@ CAFR
 
 <td style="text-align:right;">
 
-0.78
+0.77
 
 </td>
 
@@ -184,7 +184,7 @@ CAFR
 
 <td style="text-align:right;">
 
-0.78
+0.77
 
 </td>
 
@@ -206,19 +206,19 @@ MIN
 
 <td style="text-align:right;">
 
-0.85
+0.83
 
 </td>
 
 <td style="text-align:right;">
 
-0.65
+0.63
 
 </td>
 
 <td style="text-align:right;">
 
-0.87
+0.86
 
 </td>
 
