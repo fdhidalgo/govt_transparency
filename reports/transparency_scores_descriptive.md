@@ -1,6 +1,6 @@
-**Last Update**: 2020-07-02
+**Last Update**: 2020-07-10
 
-As of now, we have 9400 towns with predicted transparency scores.
+As of now, we have 9700 towns with predicted transparency scores.
 
 ## Transparency Scores by State
 

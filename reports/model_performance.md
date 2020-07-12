@@ -144,7 +144,7 @@ BID
 
 <td style="text-align:right;">
 
-0.79
+0.80
 
 </td>
 
@@ -172,19 +172,19 @@ CAFR
 
 <td style="text-align:right;">
 
-0.77
-
-</td>
-
-<td style="text-align:right;">
-
-0.78
+0.76
 
 </td>
 
 <td style="text-align:right;">
 
 0.77
+
+</td>
+
+<td style="text-align:right;">
+
+0.76
 
 </td>
 
@@ -212,13 +212,13 @@ MIN
 
 <td style="text-align:right;">
 
-0.67
+0.69
 
 </td>
 
 <td style="text-align:right;">
 
-0.87
+0.86
 
 </td>
 
@@ -246,7 +246,7 @@ REC
 
 <td style="text-align:right;">
 
-0.75
+0.76
 
 </td>
 

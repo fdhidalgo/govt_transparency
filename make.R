@@ -16,5 +16,5 @@ drake::make(plan = plan, targets = "site_text")
 #drake::make(plan = plan, targets = c("site_text",
 #                                     "sitetext_df"))
 
-drake::drake_cache("/Users/dhidalgo/Dropbox (MIT)/projects/govt_transparency/.drake")$unlock()
+drake::drake_cache("/home/dhidalgo/Dropbox (MIT)/projects/govt_transparency/.drake")$unlock()
 drake::clean(list = drake::cached_unplanned(plan), garbage_collection = TRUE)

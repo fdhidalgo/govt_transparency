@@ -14,7 +14,7 @@ make_recipe <- function(sitetext_df){
     step_stopwords(ends_with("text")) %>%
     step_stem(ends_with("text")) %>%
     #step_texthash(ends_with("text"), num_terms = 10000) %>%
-    step_tokenfilter(ends_with("text"), max_tokens = 2000) %>%
+    step_tokenfilter(ends_with("text"), max_tokens = 10000) %>%
     step_tf(ends_with("text"), weight_scheme = "log normalization") %>%
     ##Remove near zero variance predictors
     step_nzv(all_predictors()) %>%
@@ -57,7 +57,7 @@ tune_mod <- function(recipe, labels,  dv){
   tune_grid <- grid_latin_hypercube(
     min_n(),
     finalize(mtry(), train_data),
-    size = 15
+    size = 10
   )
 
 
