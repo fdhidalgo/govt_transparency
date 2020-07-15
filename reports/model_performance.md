@@ -64,25 +64,25 @@ BDG
 
 <td style="text-align:right;">
 
-0.66
+0.67
 
 </td>
 
 <td style="text-align:right;">
 
-0.78
+0.80
 
 </td>
 
 <td style="text-align:right;">
 
-0.71
+0.74
 
 </td>
 
 <td style="text-align:right;">
 
-0.81
+0.83
 
 </td>
 
@@ -110,7 +110,7 @@ AGD
 
 <td style="text-align:right;">
 
-0.71
+0.72
 
 </td>
 
@@ -144,13 +144,13 @@ BID
 
 <td style="text-align:right;">
 
-0.81
+0.82
 
 </td>
 
 <td style="text-align:right;">
 
-0.78
+0.79
 
 </td>
 
@@ -172,7 +172,7 @@ CAFR
 
 <td style="text-align:right;">
 
-0.78
+0.79
 
 </td>
 
@@ -206,19 +206,19 @@ MIN
 
 <td style="text-align:right;">
 
-0.84
+0.85
 
 </td>
 
 <td style="text-align:right;">
 
-0.64
+0.68
 
 </td>
 
 <td style="text-align:right;">
 
-0.88
+0.87
 
 </td>
 
@@ -240,13 +240,13 @@ REC
 
 <td style="text-align:right;">
 
-0.79
+0.78
 
 </td>
 
 <td style="text-align:right;">
 
-0.82
+0.81
 
 </td>
 
@@ -263,10 +263,6 @@ REC
 </table>
 
 ## Errors Analysis
-
-    ## Joining, by = ".row"
-
-    ## Joining, by = "ST_FIPS"
 
 <table>
 
@@ -320,299 +316,19 @@ url
 
 <td style="text-align:left;">
 
-1
-
-</td>
-
-<td style="text-align:right;">
-
-0.0470841
-
-</td>
-
-<td style="text-align:right;">
-
-3766040
-
-</td>
-
-<td style="text-align:left;">
-
-North Carolina
-
-</td>
-
-<td style="text-align:left;">
-
-Surf City, North Carolina
-
-</td>
-
-<td style="text-align:left;">
-
-www.townofsurfcity.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-1
-
-</td>
-
-<td style="text-align:right;">
-
-0.0560043
-
-</td>
-
-<td style="text-align:right;">
-
-4204984
-
-</td>
-
-<td style="text-align:left;">
-
-Pennsylvania
-
-</td>
-
-<td style="text-align:left;">
-
-Beech Creek borough
-
-</td>
-
-<td style="text-align:left;">
-
-www.beechcreekborough.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-1
-
-</td>
-
-<td style="text-align:right;">
-
-0.0699021
-
-</td>
-
-<td style="text-align:right;">
-
-4205312
-
-</td>
-
-<td style="text-align:left;">
-
-Pennsylvania
-
-</td>
-
-<td style="text-align:left;">
-
-Bellevue borough
-
-</td>
-
-<td style="text-align:left;">
-
-www.bellevuepa.org
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 0
 
 </td>
 
 <td style="text-align:right;">
 
-0.8799591
+0.7400
 
 </td>
 
 <td style="text-align:right;">
 
-2356310
-
-</td>
-
-<td style="text-align:left;">
-
-Maine
-
-</td>
-
-<td style="text-align:left;">
-
-Oxford town
-
-</td>
-
-<td style="text-align:left;">
-
-www.oxfordmaine.org
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.8440587
-
-</td>
-
-<td style="text-align:right;">
-
-2743306
-
-</td>
-
-<td style="text-align:left;">
-
-Minnesota
-
-</td>
-
-<td style="text-align:left;">
-
-Minnetrista city
-
-</td>
-
-<td style="text-align:left;">
-
-cityofminnetrista.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.8435294
-
-</td>
-
-<td style="text-align:right;">
-
-5300905
-
-</td>
-
-<td style="text-align:left;">
-
-Washington
-
-</td>
-
-<td style="text-align:left;">
-
-Airway Heights
-
-</td>
-
-<td style="text-align:left;">
-
-cawh.org
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.8382616
-
-</td>
-
-<td style="text-align:right;">
-
-3975231
-
-</td>
-
-<td style="text-align:left;">
-
-Ohio
-
-</td>
-
-<td style="text-align:left;">
-
-Sugar Creek township
-
-</td>
-
-<td style="text-align:left;">
-
-www.sugarcreektownship.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.8290896
-
-</td>
-
-<td style="text-align:right;">
-
-1358744
+1364876
 
 </td>
 
@@ -624,13 +340,13 @@ Georgia
 
 <td style="text-align:left;">
 
-Oxford city
+Reynolds city
 
 </td>
 
 <td style="text-align:left;">
 
-www.oxfordgeorgia.org
+www.reynoldsga.com
 
 </td>
 
@@ -646,13 +362,53 @@ www.oxfordgeorgia.org
 
 <td style="text-align:right;">
 
-0.8270321
+0.6935
 
 </td>
 
 <td style="text-align:right;">
 
-3949056
+4040300
+
+</td>
+
+<td style="text-align:left;">
+
+Oklahoma
+
+</td>
+
+<td style="text-align:left;">
+
+Krebs
+
+</td>
+
+<td style="text-align:left;">
+
+cityofkrebs.com
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.6840
+
+</td>
+
+<td style="text-align:right;">
+
+3931164
 
 </td>
 
@@ -664,13 +420,13 @@ Ohio
 
 <td style="text-align:left;">
 
-Mentor city
+Grafton township
 
 </td>
 
 <td style="text-align:left;">
 
-cityofmentor.com
+<http://www.graftontownship.us>
 
 </td>
 
@@ -686,7 +442,167 @@ cityofmentor.com
 
 <td style="text-align:right;">
 
-0.8238164
+0.6830
+
+</td>
+
+<td style="text-align:right;">
+
+4131750
+
+</td>
+
+<td style="text-align:left;">
+
+Oregon
+
+</td>
+
+<td style="text-align:left;">
+
+Halsey city
+
+</td>
+
+<td style="text-align:left;">
+
+cityofhalsey.com
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.7730
+
+</td>
+
+<td style="text-align:right;">
+
+3360580
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Peterborough town
+
+</td>
+
+<td style="text-align:left;">
+
+www.townofpeterborough.com
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.7670
+
+</td>
+
+<td style="text-align:right;">
+
+5556150
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Neshkoro town
+
+</td>
+
+<td style="text-align:left;">
+
+<https://townofneshkoro.org/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.7180
+
+</td>
+
+<td style="text-align:right;">
+
+3312260
+
+</td>
+
+<td style="text-align:left;">
+
+New Hampshire
+
+</td>
+
+<td style="text-align:left;">
+
+Chesterfield town
+
+</td>
+
+<td style="text-align:left;">
+
+chesterfield.nh.gov
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.8300
 
 </td>
 
@@ -711,6 +627,86 @@ Beavercreek township
 <td style="text-align:left;">
 
 www.beavercreektownship.org
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.8005
+
+</td>
+
+<td style="text-align:right;">
+
+2758648
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Sauk Centre
+
+</td>
+
+<td style="text-align:left;">
+
+saukcentre.govoffice2.com
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+1
+
+</td>
+
+<td style="text-align:right;">
+
+0.1430
+
+</td>
+
+<td style="text-align:right;">
+
+4205312
+
+</td>
+
+<td style="text-align:left;">
+
+Pennsylvania
+
+</td>
+
+<td style="text-align:left;">
+
+Bellevue borough
+
+</td>
+
+<td style="text-align:left;">
+
+www.bellevuepa.org
 
 </td>
 
