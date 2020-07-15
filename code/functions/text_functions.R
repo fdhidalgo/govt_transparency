@@ -41,7 +41,7 @@ get_pagetext <- function(x){
   min_counts <- map_int(page_text, ~ str_count(string = .x["page_text"],
                                                pattern = regex("minutes", ignore_case = T)))
   records_counts <- map_int(page_text, ~ str_count(string = .x["page_text"],
-                                                   pattern = regex("records", ignore_case = T)))
+                                                   pattern = regex("records|request", ignore_case = T)))
 
   page_text <- page_text[bdg_counts > median(bdg_counts) |
                            agd_counts > median(agd_counts) |
@@ -81,4 +81,31 @@ count_tokens <- function(x){
   quanteda::corpus(x) %>%
     quanteda::tokens(what = "fastestword") %>%
     quanteda::ntoken()
+}
+
+
+dfm_maker <- function(text, append_name){
+  dfm <- tokens(
+    tokenizers::tokenize_words(text),
+    remove_punct = TRUE,
+    remove_symbols = TRUE,
+    remove_url = TRUE,
+    padding = TRUE) %>%
+    tokens_remove(stopwords("english"), padding  = TRUE) %>%
+    tokens_ngrams(1:2) %>%
+    dfm(tolower = TRUE,
+        stem = TRUE) %>%
+    dfm_trim(min_docfreq = 40)
+  colnames(dfm) <- paste(append_name, colnames(dfm), sep = "_")
+  dfm
+}
+
+make_training_dfm <- function(textdf){
+  pagetext_dfm <- dfm_maker(textdf$pagetext, "page")
+  linktext_dfm <- dfm_maker(textdf$linktext, "link")
+  titletext_dfm <- dfm_maker(textdf$titletext, "title")
+
+  sites_dfm <- cbind(pagetext_dfm, linktext_dfm, titletext_dfm)
+  sites_dfm$ST_FIPS <- textdf$ST_FIPS
+  sites_dfm
 }

@@ -1,63 +1,46 @@
-make_recipe <- function(sitetext_df){
-  rec_spec <- recipe(sitetext_df) %>%
-    update_role(ST_FIPS, new_role = "ID") %>%
-    #  update_role({{dv}}, new_role = "outcome") %>%
-    update_role(ends_with("text"), new_role = "predictor") %>%
-    # step_mutate({{dv}} := as.factor({{dv}}), skip = TRUE) %>%
-    step_mutate(linktext_raw = linktext,
-                pagetext_raw = pagetext,
-                titletext_raw = titletext) %>%
-    step_textfeature(ends_with("raw"),
-                     extract_functions = list("n_words" = count_tokens)) %>%
-    ##Create hash of text tokens
-    step_tokenize(ends_with("text")) %>%
-    step_stopwords(ends_with("text")) %>%
-    step_stem(ends_with("text")) %>%
-    #step_texthash(ends_with("text"), num_terms = 10000) %>%
-    step_tokenfilter(ends_with("text"), max_tokens = 10000) %>%
-    step_tf(ends_with("text"), weight_scheme = "log normalization") %>%
-    ##Remove near zero variance predictors
-    step_nzv(all_predictors()) %>%
-    step_rename_at(all_predictors(), fn = ~ janitor::make_clean_names(string = .))
 
-  trained_rec <- prep(rec_spec, training = sitetext_df, retain = TRUE)
-  trained_rec
-}
-
-tune_mod <- function(recipe, labels,  dv){
+tune_mod <- function(dfm, labels,  dv){
 
   labels_wide <- pivot_wider(select(labels, ST_FIPS, variable, label),
                              id_cols = ST_FIPS,
                              names_from = variable,
                              values_from = label)
-  train_data <- juice(recipe)
-  rm(recipe)
 
+  train_data <- convert(dfm, to = "data.frame", docid_field = "ST_FIPS")
+  train_data$ST_FIPS <- as.numeric(train_data$ST_FIPS)
+  train_data <- janitor::clean_names(train_data) %>%
+    rename("ST_FIPS" = "st_fips")
 
   train_data <- train_data %>%
     left_join(select(labels_wide, ST_FIPS, {{dv}})) %>%
     na.omit()
 
   dv_chr <- as.character(quo_name(enquo(dv)))
+  num_vars <- 10000
+  info_gain_vars <- FSelectorRcpp::information_gain(x = train_data, y= train_data[,dv_chr]
+                                                  , type  = "infogain") %>%
+    FSelectorRcpp::cut_attrs(k = num_vars)
 
-  rec_spec <- recipe(as.formula(paste(dv_chr, "~ .")), data = train_data) %>%
+  rec_spec <- recipe(x = train_data[, unique(c(info_gain_vars, "ST_FIPS"))]) %>%
     update_role(ST_FIPS, new_role = "ID") %>%
-    update_role(starts_with("tf"), new_role = "predictor") %>%
-    update_role(starts_with("textfeature"), new_role = "predictor") %>%
-    step_mutate({{dv}} := as.factor({{dv}}), skip = TRUE)
+    update_role({{dv}}, new_role = "outcome") %>%
+    update_role(starts_with("page"), new_role = "predictor") %>%
+    update_role(starts_with("title"), new_role = "predictor") %>%
+    update_role(starts_with("link"), new_role = "predictor") %>%
+    step_mutate({{dv}} := as.factor({{dv}}))
 
   mod_spec <- rand_forest(mode = "classification",
                           trees = 1000,
                           min_n = tune(),
                           mtry = tune()
   ) %>%
-    set_engine("ranger")
+    set_engine("ranger", importance = "permutation")
 
 
   tune_grid <- grid_latin_hypercube(
     min_n(),
-    finalize(mtry(), train_data),
-    size = 10
+    mtry = mtry(range = c(1, num_vars)),
+    size = 15
   )
 
 
