@@ -80,3 +80,21 @@ bind_rows(filter(bdg_mod$cv_metrics, .metric == "accuracy"),
 
 ```
 
+
+## Errors Analysis
+
+```{r error_analysis}
+drake::loadd(urls)
+st_fips <- bdg_mod$model_fitted$pre$mold$extras$roles$ID
+st_fips$.row <- 1:nrow(st_fips)
+bdg_mod$cv_preds %>%
+  filter(min_n == bdg_mod$cv_metrics$min_n[1] & mtry == bdg_mod$cv_metrics$mtry[1]) %>%
+  filter(.pred_class != BDG) %>%
+  arrange(desc(abs(.5 - .pred_1))) %>%
+  left_join(st_fips) %>%
+  left_join(urls) %>%
+  select(BDG, .pred_1, ST_FIPS, state, city_name, url) %>%
+  slice(1:10) %>%
+  knitr::kable()
+```
+
