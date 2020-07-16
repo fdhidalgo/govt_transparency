@@ -70,7 +70,7 @@ BDG
 
 <td style="text-align:right;">
 
-0.80
+0.81
 
 </td>
 
@@ -82,7 +82,7 @@ BDG
 
 <td style="text-align:right;">
 
-0.83
+0.84
 
 </td>
 
@@ -98,7 +98,7 @@ AGD
 
 <td style="text-align:right;">
 
-0.72
+0.71
 
 </td>
 
@@ -110,13 +110,13 @@ AGD
 
 <td style="text-align:right;">
 
-0.72
+0.74
 
 </td>
 
 <td style="text-align:right;">
 
-0.88
+0.87
 
 </td>
 
@@ -138,19 +138,19 @@ BID
 
 <td style="text-align:right;">
 
+0.78
+
+</td>
+
+<td style="text-align:right;">
+
 0.80
 
 </td>
 
 <td style="text-align:right;">
 
-0.82
-
-</td>
-
-<td style="text-align:right;">
-
-0.79
+0.78
 
 </td>
 
@@ -166,19 +166,19 @@ CAFR
 
 <td style="text-align:right;">
 
-0.55
+0.54
 
 </td>
 
 <td style="text-align:right;">
 
-0.79
+0.77
 
 </td>
 
 <td style="text-align:right;">
 
-0.80
+0.76
 
 </td>
 
@@ -206,13 +206,13 @@ MIN
 
 <td style="text-align:right;">
 
-0.85
+0.83
 
 </td>
 
 <td style="text-align:right;">
 
-0.68
+0.62
 
 </td>
 
@@ -316,19 +316,139 @@ url
 
 <td style="text-align:left;">
 
+1
+
+</td>
+
+<td style="text-align:right;">
+
+0.2590245
+
+</td>
+
+<td style="text-align:right;">
+
+2663260
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Peck village
+
+</td>
+
+<td style="text-align:left;">
+
+www.mipeck.us
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 0
 
 </td>
 
 <td style="text-align:right;">
 
-0.7400
+0.7122298
 
 </td>
 
 <td style="text-align:right;">
 
-1364876
+2660980
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+Orangeville township
+
+</td>
+
+<td style="text-align:left;">
+
+www.orangevilletownship.org
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.7088188
+
+</td>
+
+<td style="text-align:right;">
+
+3120260
+
+</td>
+
+<td style="text-align:left;">
+
+Nebraska
+
+</td>
+
+<td style="text-align:left;">
+
+Gretna
+
+</td>
+
+<td style="text-align:left;">
+
+www.gretnane.org
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.7080965
+
+</td>
+
+<td style="text-align:right;">
+
+1358744
 
 </td>
 
@@ -340,13 +460,13 @@ Georgia
 
 <td style="text-align:left;">
 
-Reynolds city
+Oxford city
 
 </td>
 
 <td style="text-align:left;">
 
-www.reynoldsga.com
+www.oxfordgeorgia.org
 
 </td>
 
@@ -362,311 +482,31 @@ www.reynoldsga.com
 
 <td style="text-align:right;">
 
-0.6935
+0.7646660
 
 </td>
 
 <td style="text-align:right;">
 
-4040300
+1375160
 
 </td>
 
 <td style="text-align:left;">
 
-Oklahoma
+Georgia
 
 </td>
 
 <td style="text-align:left;">
 
-Krebs
+Sylvania
 
 </td>
 
 <td style="text-align:left;">
 
-cityofkrebs.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.6840
-
-</td>
-
-<td style="text-align:right;">
-
-3931164
-
-</td>
-
-<td style="text-align:left;">
-
-Ohio
-
-</td>
-
-<td style="text-align:left;">
-
-Grafton township
-
-</td>
-
-<td style="text-align:left;">
-
-<http://www.graftontownship.us>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.6830
-
-</td>
-
-<td style="text-align:right;">
-
-4131750
-
-</td>
-
-<td style="text-align:left;">
-
-Oregon
-
-</td>
-
-<td style="text-align:left;">
-
-Halsey city
-
-</td>
-
-<td style="text-align:left;">
-
-cityofhalsey.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.7730
-
-</td>
-
-<td style="text-align:right;">
-
-3360580
-
-</td>
-
-<td style="text-align:left;">
-
-New Hampshire
-
-</td>
-
-<td style="text-align:left;">
-
-Peterborough town
-
-</td>
-
-<td style="text-align:left;">
-
-www.townofpeterborough.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.7670
-
-</td>
-
-<td style="text-align:right;">
-
-5556150
-
-</td>
-
-<td style="text-align:left;">
-
-Wisconsin
-
-</td>
-
-<td style="text-align:left;">
-
-Neshkoro town
-
-</td>
-
-<td style="text-align:left;">
-
-<https://townofneshkoro.org/>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.7180
-
-</td>
-
-<td style="text-align:right;">
-
-3312260
-
-</td>
-
-<td style="text-align:left;">
-
-New Hampshire
-
-</td>
-
-<td style="text-align:left;">
-
-Chesterfield town
-
-</td>
-
-<td style="text-align:left;">
-
-chesterfield.nh.gov
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.8300
-
-</td>
-
-<td style="text-align:right;">
-
-3904724
-
-</td>
-
-<td style="text-align:left;">
-
-Ohio
-
-</td>
-
-<td style="text-align:left;">
-
-Beavercreek township
-
-</td>
-
-<td style="text-align:left;">
-
-www.beavercreektownship.org
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.8005
-
-</td>
-
-<td style="text-align:right;">
-
-2758648
-
-</td>
-
-<td style="text-align:left;">
-
-Minnesota
-
-</td>
-
-<td style="text-align:left;">
-
-Sauk Centre
-
-</td>
-
-<td style="text-align:left;">
-
-saukcentre.govoffice2.com
+<https://www.cityofsylvaniaga.com/>
 
 </td>
 
@@ -682,31 +522,191 @@ saukcentre.govoffice2.com
 
 <td style="text-align:right;">
 
-0.1430
+0.2453005
 
 </td>
 
 <td style="text-align:right;">
 
-4205312
+1385128
 
 </td>
 
 <td style="text-align:left;">
 
-Pennsylvania
+Georgia
 
 </td>
 
 <td style="text-align:left;">
 
-Bellevue borough
+Zebulon city
 
 </td>
 
 <td style="text-align:left;">
 
-www.bellevuepa.org
+cityofzebulonga.us
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+1
+
+</td>
+
+<td style="text-align:right;">
+
+0.2772716
+
+</td>
+
+<td style="text-align:right;">
+
+2053375
+
+</td>
+
+<td style="text-align:left;">
+
+Kansas
+
+</td>
+
+<td style="text-align:left;">
+
+Oskaloosa
+
+</td>
+
+<td style="text-align:left;">
+
+cityofoskaloosaks.org
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+1
+
+</td>
+
+<td style="text-align:right;">
+
+0.1598952
+
+</td>
+
+<td style="text-align:right;">
+
+1703220
+
+</td>
+
+<td style="text-align:left;">
+
+Illinois
+
+</td>
+
+<td style="text-align:left;">
+
+Avon township
+
+</td>
+
+<td style="text-align:left;">
+
+avontownship.us
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.8069759
+
+</td>
+
+<td style="text-align:right;">
+
+4876240
+
+</td>
+
+<td style="text-align:left;">
+
+Texas
+
+</td>
+
+<td style="text-align:left;">
+
+Wallis
+
+</td>
+
+<td style="text-align:left;">
+
+www.wallistexas.org
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+1
+
+</td>
+
+<td style="text-align:right;">
+
+0.1155632
+
+</td>
+
+<td style="text-align:right;">
+
+2122204
+
+</td>
+
+<td style="text-align:left;">
+
+Kentucky
+
+</td>
+
+<td style="text-align:left;">
+
+Douglass Hills city
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofdouglasshills.com
 
 </td>
 
