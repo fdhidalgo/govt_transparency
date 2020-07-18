@@ -70,13 +70,13 @@ BDG
 
 <td style="text-align:right;">
 
-0.81
+0.80
 
 </td>
 
 <td style="text-align:right;">
 
-0.74
+0.72
 
 </td>
 
@@ -98,13 +98,13 @@ AGD
 
 <td style="text-align:right;">
 
-0.71
+0.72
 
 </td>
 
 <td style="text-align:right;">
 
-0.84
+0.83
 
 </td>
 
@@ -116,7 +116,7 @@ AGD
 
 <td style="text-align:right;">
 
-0.87
+0.86
 
 </td>
 
@@ -150,7 +150,7 @@ BID
 
 <td style="text-align:right;">
 
-0.78
+0.77
 
 </td>
 
@@ -166,19 +166,19 @@ CAFR
 
 <td style="text-align:right;">
 
-0.54
+0.55
 
 </td>
 
 <td style="text-align:right;">
 
-0.77
+0.78
 
 </td>
 
 <td style="text-align:right;">
 
-0.76
+0.79
 
 </td>
 
@@ -206,13 +206,13 @@ MIN
 
 <td style="text-align:right;">
 
-0.83
+0.84
 
 </td>
 
 <td style="text-align:right;">
 
-0.62
+0.68
 
 </td>
 
@@ -246,13 +246,13 @@ REC
 
 <td style="text-align:right;">
 
-0.81
+0.80
 
 </td>
 
 <td style="text-align:right;">
 
-0.77
+0.76
 
 </td>
 
@@ -316,37 +316,197 @@ url
 
 <td style="text-align:left;">
 
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.7195
+
+</td>
+
+<td style="text-align:right;">
+
+3615561
+
+</td>
+
+<td style="text-align:left;">
+
+New York
+
+</td>
+
+<td style="text-align:left;">
+
+Chittenango village
+
+</td>
+
+<td style="text-align:left;">
+
+www.chittenango.org
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.6925
+
+</td>
+
+<td style="text-align:right;">
+
+2741138
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Mayer
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofmayer.com
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.6895
+
+</td>
+
+<td style="text-align:right;">
+
+2768548
+
+</td>
+
+<td style="text-align:left;">
+
+Minnesota
+
+</td>
+
+<td style="text-align:left;">
+
+Watertown
+
+</td>
+
+<td style="text-align:left;">
+
+www.ci.watertown.mn.us
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+0.6870
+
+</td>
+
+<td style="text-align:right;">
+
+3909288
+
+</td>
+
+<td style="text-align:left;">
+
+Ohio
+
+</td>
+
+<td style="text-align:left;">
+
+Brook Park
+
+</td>
+
+<td style="text-align:left;">
+
+cityofbrookpark.com
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
 1
 
 </td>
 
 <td style="text-align:right;">
 
-0.2590245
+0.2570
 
 </td>
 
 <td style="text-align:right;">
 
-2663260
+1918435
 
 </td>
 
 <td style="text-align:left;">
 
-Michigan
+Iowa
 
 </td>
 
 <td style="text-align:left;">
 
-Peck village
+Danville
 
 </td>
 
 <td style="text-align:left;">
 
-www.mipeck.us
+www.danvilleiowa.com
 
 </td>
 
@@ -362,31 +522,31 @@ www.mipeck.us
 
 <td style="text-align:right;">
 
-0.7122298
+0.7380
 
 </td>
 
 <td style="text-align:right;">
 
-2660980
+4040300
 
 </td>
 
 <td style="text-align:left;">
 
-Michigan
+Oklahoma
 
 </td>
 
 <td style="text-align:left;">
 
-Orangeville township
+Krebs
 
 </td>
 
 <td style="text-align:left;">
 
-www.orangevilletownship.org
+cityofkrebs.com
 
 </td>
 
@@ -402,31 +562,31 @@ www.orangevilletownship.org
 
 <td style="text-align:right;">
 
-0.7088188
+0.7085
 
 </td>
 
 <td style="text-align:right;">
 
-3120260
+3954562
 
 </td>
 
 <td style="text-align:left;">
 
-Nebraska
+Ohio
 
 </td>
 
 <td style="text-align:left;">
 
-Gretna
+New Franklin city
 
 </td>
 
 <td style="text-align:left;">
 
-www.gretnane.org
+www.newfranklin.org
 
 </td>
 
@@ -436,19 +596,19 @@ www.gretnane.org
 
 <td style="text-align:left;">
 
-0
+1
 
 </td>
 
 <td style="text-align:right;">
 
-0.7080965
+0.1905
 
 </td>
 
 <td style="text-align:right;">
 
-1358744
+1357260
 
 </td>
 
@@ -460,13 +620,13 @@ Georgia
 
 <td style="text-align:left;">
 
-Oxford city
+Oakwood
 
 </td>
 
 <td style="text-align:left;">
 
-www.oxfordgeorgia.org
+www.cityofoakwood.net
 
 </td>
 
@@ -482,13 +642,13 @@ www.oxfordgeorgia.org
 
 <td style="text-align:right;">
 
-0.7646660
+0.7905
 
 </td>
 
 <td style="text-align:right;">
 
-1375160
+1380704
 
 </td>
 
@@ -500,133 +660,13 @@ Georgia
 
 <td style="text-align:left;">
 
-Sylvania
+Washington
 
 </td>
 
 <td style="text-align:left;">
 
-<https://www.cityofsylvaniaga.com/>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-1
-
-</td>
-
-<td style="text-align:right;">
-
-0.2453005
-
-</td>
-
-<td style="text-align:right;">
-
-1385128
-
-</td>
-
-<td style="text-align:left;">
-
-Georgia
-
-</td>
-
-<td style="text-align:left;">
-
-Zebulon city
-
-</td>
-
-<td style="text-align:left;">
-
-cityofzebulonga.us
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-1
-
-</td>
-
-<td style="text-align:right;">
-
-0.2772716
-
-</td>
-
-<td style="text-align:right;">
-
-2053375
-
-</td>
-
-<td style="text-align:left;">
-
-Kansas
-
-</td>
-
-<td style="text-align:left;">
-
-Oskaloosa
-
-</td>
-
-<td style="text-align:left;">
-
-cityofoskaloosaks.org
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-1
-
-</td>
-
-<td style="text-align:right;">
-
-0.1598952
-
-</td>
-
-<td style="text-align:right;">
-
-1703220
-
-</td>
-
-<td style="text-align:left;">
-
-Illinois
-
-</td>
-
-<td style="text-align:left;">
-
-Avon township
-
-</td>
-
-<td style="text-align:left;">
-
-avontownship.us
+www.cityofwashingtonga.gov
 
 </td>
 
@@ -642,71 +682,31 @@ avontownship.us
 
 <td style="text-align:right;">
 
-0.8069759
+0.8375
 
 </td>
 
 <td style="text-align:right;">
 
-4876240
+3312260
 
 </td>
 
 <td style="text-align:left;">
 
-Texas
+New Hampshire
 
 </td>
 
 <td style="text-align:left;">
 
-Wallis
+Chesterfield town
 
 </td>
 
 <td style="text-align:left;">
 
-www.wallistexas.org
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-1
-
-</td>
-
-<td style="text-align:right;">
-
-0.1155632
-
-</td>
-
-<td style="text-align:right;">
-
-2122204
-
-</td>
-
-<td style="text-align:left;">
-
-Kentucky
-
-</td>
-
-<td style="text-align:left;">
-
-Douglass Hills city
-
-</td>
-
-<td style="text-align:left;">
-
-www.cityofdouglasshills.com
+chesterfield.nh.gov
 
 </td>
 
