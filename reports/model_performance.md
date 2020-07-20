@@ -70,19 +70,19 @@ BDG
 
 <td style="text-align:right;">
 
-0.80
+0.82
 
 </td>
 
 <td style="text-align:right;">
 
-0.72
+0.75
 
 </td>
 
 <td style="text-align:right;">
 
-0.84
+0.85
 
 </td>
 
@@ -110,13 +110,13 @@ AGD
 
 <td style="text-align:right;">
 
-0.74
+0.71
 
 </td>
 
 <td style="text-align:right;">
 
-0.86
+0.87
 
 </td>
 
@@ -172,7 +172,7 @@ CAFR
 
 <td style="text-align:right;">
 
-0.78
+0.79
 
 </td>
 
@@ -184,7 +184,7 @@ CAFR
 
 <td style="text-align:right;">
 
-0.78
+0.79
 
 </td>
 
@@ -212,13 +212,13 @@ MIN
 
 <td style="text-align:right;">
 
-0.68
+0.66
 
 </td>
 
 <td style="text-align:right;">
 
-0.87
+0.86
 
 </td>
 
@@ -240,19 +240,19 @@ REC
 
 <td style="text-align:right;">
 
-0.78
-
-</td>
-
-<td style="text-align:right;">
-
-0.80
-
-</td>
-
-<td style="text-align:right;">
-
 0.76
+
+</td>
+
+<td style="text-align:right;">
+
+0.79
+
+</td>
+
+<td style="text-align:right;">
+
+0.75
 
 </td>
 
@@ -322,31 +322,71 @@ url
 
 <td style="text-align:right;">
 
-0.7195
+0.7195325
 
 </td>
 
 <td style="text-align:right;">
 
-3615561
+3119350
 
 </td>
 
 <td style="text-align:left;">
 
-New York
+Nebraska
 
 </td>
 
 <td style="text-align:left;">
 
-Chittenango village
+Gordon city
 
 </td>
 
 <td style="text-align:left;">
 
-www.chittenango.org
+gordon-ne.us
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+1
+
+</td>
+
+<td style="text-align:right;">
+
+0.3072417
+
+</td>
+
+<td style="text-align:right;">
+
+1383728
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Winterville
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofwinterville.com
 
 </td>
 
@@ -362,31 +402,71 @@ www.chittenango.org
 
 <td style="text-align:right;">
 
-0.6925
+0.6856444
 
 </td>
 
 <td style="text-align:right;">
 
-2741138
+2534655
 
 </td>
 
 <td style="text-align:left;">
 
-Minnesota
+Massachusetts
 
 </td>
 
 <td style="text-align:left;">
 
-Mayer
+Lee
 
 </td>
 
 <td style="text-align:left;">
 
-www.cityofmayer.com
+www.lee.ma.us
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+1
+
+</td>
+
+<td style="text-align:right;">
+
+0.3153641
+
+</td>
+
+<td style="text-align:right;">
+
+1337144
+
+</td>
+
+<td style="text-align:left;">
+
+Georgia
+
+</td>
+
+<td style="text-align:left;">
+
+Hartwell
+
+</td>
+
+<td style="text-align:left;">
+
+www.hartwell-ga.info
 
 </td>
 
@@ -402,7 +482,7 @@ www.cityofmayer.com
 
 <td style="text-align:right;">
 
-0.6895
+0.7345211
 
 </td>
 
@@ -436,173 +516,13 @@ www.ci.watertown.mn.us
 
 <td style="text-align:left;">
 
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.6870
-
-</td>
-
-<td style="text-align:right;">
-
-3909288
-
-</td>
-
-<td style="text-align:left;">
-
-Ohio
-
-</td>
-
-<td style="text-align:left;">
-
-Brook Park
-
-</td>
-
-<td style="text-align:left;">
-
-cityofbrookpark.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
 1
 
 </td>
 
 <td style="text-align:right;">
 
-0.2570
-
-</td>
-
-<td style="text-align:right;">
-
-1918435
-
-</td>
-
-<td style="text-align:left;">
-
-Iowa
-
-</td>
-
-<td style="text-align:left;">
-
-Danville
-
-</td>
-
-<td style="text-align:left;">
-
-www.danvilleiowa.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.7380
-
-</td>
-
-<td style="text-align:right;">
-
-4040300
-
-</td>
-
-<td style="text-align:left;">
-
-Oklahoma
-
-</td>
-
-<td style="text-align:left;">
-
-Krebs
-
-</td>
-
-<td style="text-align:left;">
-
-cityofkrebs.com
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-0
-
-</td>
-
-<td style="text-align:right;">
-
-0.7085
-
-</td>
-
-<td style="text-align:right;">
-
-3954562
-
-</td>
-
-<td style="text-align:left;">
-
-Ohio
-
-</td>
-
-<td style="text-align:left;">
-
-New Franklin city
-
-</td>
-
-<td style="text-align:left;">
-
-www.newfranklin.org
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:left;">
-
-1
-
-</td>
-
-<td style="text-align:right;">
-
-0.1905
+0.2668037
 
 </td>
 
@@ -636,37 +556,77 @@ www.cityofoakwood.net
 
 <td style="text-align:left;">
 
-0
+1
 
 </td>
 
 <td style="text-align:right;">
 
-0.7905
+0.2902222
 
 </td>
 
 <td style="text-align:right;">
 
-1380704
+1703220
 
 </td>
 
 <td style="text-align:left;">
 
-Georgia
+Illinois
 
 </td>
 
 <td style="text-align:left;">
 
-Washington
+Avon township
 
 </td>
 
 <td style="text-align:left;">
 
-www.cityofwashingtonga.gov
+<https://www.avonil.us/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+1
+
+</td>
+
+<td style="text-align:right;">
+
+0.1756957
+
+</td>
+
+<td style="text-align:right;">
+
+2670660
+
+</td>
+
+<td style="text-align:left;">
+
+Michigan
+
+</td>
+
+<td style="text-align:left;">
+
+St. Charles township
+
+</td>
+
+<td style="text-align:left;">
+
+www.stctownshipmi.com
 
 </td>
 
@@ -682,31 +642,71 @@ www.cityofwashingtonga.gov
 
 <td style="text-align:right;">
 
-0.8375
+0.7952387
 
 </td>
 
 <td style="text-align:right;">
 
-3312260
+3949056
 
 </td>
 
 <td style="text-align:left;">
 
-New Hampshire
+Ohio
 
 </td>
 
 <td style="text-align:left;">
 
-Chesterfield town
+Mentor city
 
 </td>
 
 <td style="text-align:left;">
 
-chesterfield.nh.gov
+cityofmentor.com
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+1
+
+</td>
+
+<td style="text-align:right;">
+
+0.1600781
+
+</td>
+
+<td style="text-align:right;">
+
+5586425
+
+</td>
+
+<td style="text-align:left;">
+
+Wisconsin
+
+</td>
+
+<td style="text-align:left;">
+
+Weyauwega town
+
+</td>
+
+<td style="text-align:left;">
+
+www.cityofweyauwega-wi.gov
 
 </td>
 
