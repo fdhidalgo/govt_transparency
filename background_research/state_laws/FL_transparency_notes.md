@@ -1,5 +1,5 @@
 # Florida Transparency Report 
-Public Records Statues
+Public Records Statutes
 * **119.01 General state policy on public records**:
   *	“1) It is the policy of this state that all state, county, and municipal records are open for personal inspection and copying by any person. Providing access to public records is a duty of each agency.
   
@@ -18,15 +18,15 @@ Public Officers, Employees, and Records, Chapter 119, Public Records Statute
 http://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0119/0119.html
 
 *	**166.241 Fiscal years, budgets, and budget amendments**:
-   * “(3) The tentative budget *must be posted on the municipality’s official website at least 2 days before the budget hearing*, held pursuant to s. 200.065 or other law, to consider such budget and must remain on the website for at least 45 days. *The final adopted budget must be posted on the municipality’s official website within 30 days after adoption and must remain on the website for at least 2 years*. If the municipality does not operate an official website, the municipality must, within a reasonable period of time as established by the county or counties in which the municipality is located, transmit the tentative budget and final budget to the manager or administrator of such county or counties who shall post the budgets on the county’s website.”
+  * “(3) The tentative budget *must be posted on the municipality’s official website at least 2 days before the budget hearing*, held pursuant to s. 200.065 or other law, to consider such budget and must remain on the website for at least 45 days. *The final adopted budget must be posted on the municipality’s official website within 30 days after adoption and must remain on the website for at least 2 years*. If the municipality does not operate an official website, the municipality must, within a reasonable period of time as established by the county or counties in which the municipality is located, transmit the tentative budget and final budget to the manager or administrator of such county or counties who shall post the budgets on the county’s website.”
 
-Municipalities, Chapter 166, 166.241 Fiscal years, Budgets, and Budget amendments Statue, http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0166/Sections/0166.241.html
+Municipalities, Chapter 166, 166.241 Fiscal years, Budgets, and Budget amendments Statute, http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0166/Sections/0166.241.html
 
 
 **Local Government Financial Reporting Requirements**:
 *	The Joint Legislative Auditing Committee is the entity that enforces the following provisions: 
-   * “*All counties, municipalities, and special districts are required to complete an annual financial report (AFR) for each fiscal year*. Counties, municipalities and independent special districts are required to submit the AFR to the Department of Financial Services (DFS)”
-   * The committee also provides Transparency Florida Status And Recommendations reports, “the report provides the Committee’s recommendations related to the possible expansion of the Transparency Florida website, including whether to expand the scope to include educational, *local governmental*, and other non-state governmental entities.”
+  * “*All counties, municipalities, and special districts are required to complete an annual financial report (AFR) for each fiscal year*. Counties, municipalities and independent special districts are required to submit the AFR to the Department of Financial Services (DFS)”
+  * The committee also provides Transparency Florida Status And Recommendations reports, “the report provides the Committee’s recommendations related to the possible expansion of the Transparency Florida website, including whether to expand the scope to include educational, *local governmental*, and other non-state governmental entities.”
 
 Florida Online Sunshine. “Local Government Financial Reporting for Counties, Municipalities, and Special Districts.” Official Internet Site of the Florida Legislature. http://www.leg.state.fl.us/cgi-bin/View_Page.pl?File=financialreporting.cfm&Directory=committees/joint/Jcla/&Tab=committees 
  
