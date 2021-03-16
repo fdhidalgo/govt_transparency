@@ -1,7 +1,7 @@
 import_rds <- function(st_fips){
 
-  scraped_stfips <- as.integer(str_extract(dir("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/"), "[0-9]{2,}"))
-  scraped_rds <- fs::dir_ls("/media/dhidalgo/A610EA2D10EA03E1/govt_transparency/sites/")
+  scraped_stfips <- as.integer(str_extract(dir("/media/spinner/govt_transparency/sites/"), "[0-9]{2,}"))
+  scraped_rds <- fs::dir_ls("/media/spinner/govt_transparency/sites/")
   training_rds <- scraped_rds[scraped_stfips %in% st_fips]
 
   st_fips_training <- str_extract(training_rds, "[0-9]{4,}")

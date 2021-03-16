@@ -21,7 +21,7 @@ preds <- left_join(site_preds, urls) %>%
   mutate(label = ifelse(prob >= .5, 1, 0))
 ```
 
-As of now, we have `r length(unique(preds$ST_FIPS))` towns with predicted transparency scores. 
+As of now, we have `r length(unique(preds$ST_FIPS))` towns with predicted transparency scores.
 
 ## Transparency Scores by State
 
@@ -89,3 +89,15 @@ group_by(preds, ST_FIPS) %>%
 
 ```
 
+```{r export predictions}
+
+census_merge <- select(census, STATE, PLACE, ST_FIPS) %>%
+  mutate(ST_FIPS = as.numeric(ST_FIPS)) %>%
+  rename(fips_state = "STATE", fips_place = "PLACE") %>%
+  filter(fips_place != "00000") %>%
+  distinct() 
+preds_export <- left_join(preds, census_merge)
+
+#write_csv(preds_export, "~/Downloads/transparency_scores.csv")
+
+```
